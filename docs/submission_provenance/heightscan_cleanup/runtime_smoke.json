@@ -1,0 +1,120 @@
+{
+  "environment_created": false,
+  "physics_steps": 0,
+  "tasks": [
+    {
+      "task": "Ant-rl-v0",
+      "config_import": "PASS",
+      "observation_terms": [
+        "base_lin_vel",
+        "base_ang_vel",
+        "base_yaw_roll",
+        "base_angle_to_target",
+        "base_up_proj",
+        "base_heading_proj",
+        "joint_pos_norm",
+        "joint_vel_rel",
+        "feet_body_forces",
+        "actions"
+      ],
+      "expected_input_dim_from_terms": 59,
+      "runner_class": "ActorCritic",
+      "default_num_envs": 256
+    },
+    {
+      "task": "Ant-rl-Ablation-Baseline-v0",
+      "config_import": "PASS",
+      "observation_terms": [
+        "base_lin_vel",
+        "base_ang_vel",
+        "base_yaw_roll",
+        "base_angle_to_target",
+        "base_up_proj",
+        "base_heading_proj",
+        "joint_pos_norm",
+        "joint_vel_rel",
+        "feet_body_forces",
+        "actions"
+      ],
+      "expected_input_dim_from_terms": 59,
+      "runner_class": "ActorCritic",
+      "default_num_envs": 2048
+    },
+    {
+      "task": "Ant-rl-Ablation-HeightScan-v0",
+      "config_import": "PASS",
+      "observation_terms": [
+        "base_lin_vel",
+        "base_ang_vel",
+        "base_yaw_roll",
+        "base_angle_to_target",
+        "base_up_proj",
+        "base_heading_proj",
+        "joint_pos_norm",
+        "joint_vel_rel",
+        "feet_body_forces",
+        "actions",
+        "height_scan"
+      ],
+      "expected_input_dim_from_terms": 122,
+      "runner_class": "ActorCritic",
+      "default_num_envs": 2048,
+      "checkpoint_sha256": "49a8a007f152ed9c63df616fbee12a866873be0ee0337ad83597d653ec9b3c06",
+      "checkpoint_input_dim": 122,
+      "saved_policy_and_scanner_parity": "PASS",
+      "saved_iteration": 804
+    },
+    {
+      "task": "Ant-rl-Ablation-HeightScan-Contact-Stock-v0",
+      "config_import": "PASS",
+      "observation_terms": [
+        "base_lin_vel",
+        "base_ang_vel",
+        "base_yaw_roll",
+        "base_angle_to_target",
+        "base_up_proj",
+        "base_heading_proj",
+        "joint_pos_norm",
+        "joint_vel_rel",
+        "feet_body_forces",
+        "actions",
+        "height_scan",
+        "foot_contacts"
+      ],
+      "expected_input_dim_from_terms": 126,
+      "runner_class": "ActorCritic",
+      "default_num_envs": 4096,
+      "checkpoint_sha256": "82c7d0f781c37e0620230ff4b401835d54ef0a18102cdbc8c22c28bb576f57b9",
+      "checkpoint_input_dim": 126,
+      "saved_policy_and_scanner_parity": "PASS",
+      "saved_iteration": 972
+    },
+    {
+      "task": "Ant-rl-Ablation-HeightScan-Contact-ModifiedReward-v0",
+      "config_import": "PASS",
+      "observation_terms": [
+        "base_lin_vel",
+        "base_ang_vel",
+        "base_yaw_roll",
+        "base_angle_to_target",
+        "base_up_proj",
+        "base_heading_proj",
+        "joint_pos_norm",
+        "joint_vel_rel",
+        "feet_body_forces",
+        "actions",
+        "height_scan",
+        "foot_contacts"
+      ],
+      "expected_input_dim_from_terms": 126,
+      "runner_class": "ActorCritic",
+      "default_num_envs": 4096,
+      "checkpoint_sha256": "0471caaadd646feac85cb7bbed0d2c3668279d2d65db9507030a649895ea11b4",
+      "checkpoint_input_dim": 126,
+      "saved_policy_and_scanner_parity": "PASS",
+      "saved_iteration": 788
+    }
+  ],
+  "policy_differences": [],
+  "status": "PASS"
+}

@@ -1,7 +1,7 @@
 """Team1 dynamics with canonical IsaacLab_RS stock rewards and HeightScan.
 
 HeightScan integration is adapted from the IsaacLab_RS Assignment 1 HeightScan
-implementation. Historical Ant-rl-v0 and its custom reward are unchanged.
+implementation. The custom reward remains available through Ant-rl-v0.
 """
 
 from isaaclab.managers import ObservationTermCfg as ObsTerm, SceneEntityCfg
@@ -14,7 +14,7 @@ from .ant_env_cfg import AntEnvCfg, ObservationsCfg, mdp
 
 @configclass
 class AblationBaseObservationsCfg(ObservationsCfg):
-    depth = None
+    """Stock proprioception without added terrain or contact features."""
 
 
 @configclass
@@ -45,7 +45,6 @@ class AblationBaseCfg(AntEnvCfg):
         super().__post_init__()
         self.seed = 42
         self.scene.num_envs = 2048
-        self.scene.depth_camera = None
 
 
 @configclass

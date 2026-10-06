@@ -1,0 +1,46 @@
+{
+  "environment_created": false,
+  "physics_steps": 0,
+  "tasks": [
+    {
+      "task": "Ant-rl-v0",
+      "config_import": "PASS",
+      "observation_terms": [
+        "base_lin_vel",
+        "base_ang_vel",
+        "base_yaw_roll",
+        "base_angle_to_target",
+        "base_up_proj",
+        "base_heading_proj",
+        "joint_pos_norm",
+        "joint_vel_rel",
+        "feet_body_forces",
+        "actions"
+      ],
+      "expected_input_dim_from_terms": 59,
+      "runner_class": "ActorCritic",
+      "default_num_envs": 256
+    },
+    {
+      "task": "Ant-rl-Ablation-Baseline-v0",
+      "config_import": "PASS",
+      "observation_terms": [
+        "base_lin_vel",
+        "base_ang_vel",
+        "base_yaw_roll",
+        "base_angle_to_target",
+        "base_up_proj",
+        "base_heading_proj",
+        "joint_pos_norm",
+        "joint_vel_rel",
+        "feet_body_forces",
+        "actions"
+      ],
+      "expected_input_dim_from_terms": 59,
+      "runner_class": "ActorCritic",
+      "default_num_envs": 2048
+    }
+  ],
+  "status": "FAIL",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/zxro/ant_rl_submission/docs/submission_provenance/heightscan_cleanup/smoke_configs.py\", line 64, in <module>\n    assert simplify(policy) == saved[\"observations\"][\"policy\"]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+}

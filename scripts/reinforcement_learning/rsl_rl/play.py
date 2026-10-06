@@ -44,8 +44,9 @@ cli_args.add_rsl_rl_args(parser)
 AppLauncher.add_app_launcher_args(parser)
 # parse the arguments
 args_cli, hydra_args = parser.parse_known_args()
-# depth observations always require camera rendering
-args_cli.enable_cameras = True
+# Enable rendering sensors when recording video.
+if args_cli.video:
+    args_cli.enable_cameras = True
 
 # clear out sys.argv for Hydra
 sys.argv = [sys.argv[0]] + hydra_args
@@ -75,10 +76,6 @@ import isaaclab_tasks  # noqa: F401
 import isaaclab_tasks.manager_based.classic.humanoid.mdp as mdp
 from isaaclab_tasks.utils import get_checkpoint_path
 from isaaclab_tasks.utils.hydra import hydra_task_config
-
-from ant.depth_actor_critic import DepthActorCritic, register_depth_actor_critic
-
-register_depth_actor_critic()
 
 
 @configclass
@@ -178,13 +175,10 @@ def main(env_cfg: ManagerBasedRLEnvCfg, agent_cfg: RslRlBaseRunnerCfg):
 
     policy_nn = runner.alg.policy
 
-    if isinstance(policy_nn, DepthActorCritic):
-        print("[INFO] Skipping JIT/ONNX export for the multimodal depth policy.")
-    else:
-        normalizer = getattr(policy_nn, "actor_obs_normalizer", None)
-        export_model_dir = os.path.join(os.path.dirname(resume_path), "exported")
-        export_policy_as_jit(policy_nn, normalizer=normalizer, path=export_model_dir, filename="policy.pt")
-        export_policy_as_onnx(policy_nn, normalizer=normalizer, path=export_model_dir, filename="policy.onnx")
+    normalizer = getattr(policy_nn, "actor_obs_normalizer", None)
+    export_model_dir = os.path.join(os.path.dirname(resume_path), "exported")
+    export_policy_as_jit(policy_nn, normalizer=normalizer, path=export_model_dir, filename="policy.pt")
+    export_policy_as_onnx(policy_nn, normalizer=normalizer, path=export_model_dir, filename="policy.onnx")
 
     dt = env.unwrapped.step_dt
 

@@ -1,4 +1,4 @@
-# IsaacLab_RS
+# Progressive improvement of HeightScan-based terrain-aware locomotion
 
 Robotics Simulation Assignment 1 submission.
 
@@ -20,7 +20,7 @@ See the [experiment analysis](experiments/observation_ablation/README.md) for nu
 | Canonical training/evaluation entry points | [scripts/](scripts/) |
 | Canonical training logs and config snapshots | [logs/rsl_rl/observation_ablation/](logs/rsl_rl/observation_ablation/) |
 | Experiment results, checkpoints and shared specifications | [experiments/observation_ablation/](experiments/observation_ablation/) |
-| Supplementary validation | [cross_eval_team1_policy/](cross_eval_team1_policy/), [validation_compare/](validation_compare/) |
+| Supplementary validation | [validation_compare/](validation_compare/) |
 | Copy inventory and provenance | [docs/submission_provenance/](docs/submission_provenance/) |
 | New submission checks | [validation/final_submission_check/](experiments/observation_ablation/validation/final_submission_check/) |
 
@@ -30,23 +30,29 @@ The supplementary validation directories are evidence archives, **not additional
 
 ## 3. Canonical experiments
 
+The intended sequence is **Baseline → HeightScan → HeightScan + Contact → HeightScan + Contact + Modified Reward**. Each stage adds terrain perception, then direct contact feedback, then changes reward design. “Improvement” describes the development objective: the measured modified-reward result does not establish improved robustness.
+
+| Variant | HeightScan | Contact Observation | Modified Reward |
+|---|---|---|---|
+| Baseline (`Ant-rl-Ablation-Baseline-v0`) | No | No | No |
+| HeightScan (`Ant-rl-Ablation-HeightScan-v0`) | Yes | No | No |
+| HeightScan + Contact (`Ant-rl-Ablation-HeightScan-Contact-Stock-v0`) | Yes | Yes | No |
+| Final (`Ant-rl-Ablation-HeightScan-Contact-ModifiedReward-v0`) | Yes | Yes | Yes |
+
+Baseline means the native 59-D project proprioception, including incoming foot wrench, with stock rewards. Contact here means an **additional explicit 4-D binary contact-state observation**. The baseline config existed before cleanup; registration and a distinct PPO run name make it accessible without claiming a trained baseline checkpoint or result. Set `--num_envs 4096` when running the baseline to match the canonical budget (its shared environment default is 2048). Stage 1 cannot yet quantify the benefit of HeightScan. The stock framework `Isaac-Ant-v0` has a different 60-D interface and is not substituted as a matched baseline.
+
+
 | Experiment | Observation interface | Envs × steps/env × iterations | Transitions | Selected iteration | Available artifacts |
 |---|---|---|---:|---:|---|
 | HeightScan + Stock Reward | 122-D = 59 proprio + 63 HeightScan | 4096 × 32 × 1000 | 131,072,000 | 804 | Full; runtime/config/checkpoint verified; 100-env reproduced |
 | HeightScan + Contact + Stock Reward | 126-D = 59 + 63 + 4 Contact | 4096 × 32 × 1000 | 131,072,000 | 972 | Full; runtime/config/checkpoint verified; 100-env reproduced |
 | HeightScan + Contact + Modified Reward | 126-D = 59 + 63 + 4 Contact | 4096 × 32 × 1000 | 131,072,000 | 788 | Full; runtime/config/checkpoint verified; 100-env reproduced |
-| DepthCam + Stock Reward | 123-D actor feature input; 48 × 64 depth image | 2048 × 32 × 2000 | 131,072,000 | 905 | Results/provenance only |
-| DepthCam + Modified Reward | Same DepthCam interface; no separate 4-D Contact | 2048 × 32 × 2000 | 131,072,000 | 1974 | Results/provenance only |
-
-The original canonical DepthCam checkpoint binaries and training-run directories are not present in the validated source checkout and have not been fabricated or replaced.
 
 The comparison stages are:
 
-1. **Terrain perception:** HeightScan + Stock vs DepthCam + Stock.
+1. **Terrain perception:** Baseline + Stock vs HeightScan + Stock (matching-budget baseline result unavailable).
 2. **Contact feedback:** HeightScan + Stock vs HeightScan + Contact + Stock.
 3. **Reward shaping:** HeightScan + Contact + Stock vs HeightScan + Contact + Modified.
-
-DepthCam + Modified is a reference experiment rather than a controlled comparison against HeightScan + Contact + Modified. Stock and Modified returns use different objectives/scales and are not a direct performance delta. Equal transitions do not make the different parallel environment counts and PPO update counts identical.
 
 [heightscan/](experiments/observation_ablation/heightscan/) is a historical/exploratory reference, not a canonical experiment.
 
@@ -56,27 +62,24 @@ The copied [task registration](source/ant/__init__.py) declares:
 
 | Task ID | Role |
 |---|---|
-| `Ant-rl-v0` | Original project environment |
+| `Ant-rl-v0` | Legacy custom-reward environment with stock proprioception (59-D) |
+| `Ant-rl-Ablation-Baseline-v0` | Existing stock-reward foundation, now registered; no canonical baseline result |
 | `Ant-rl-Ablation-HeightScan-v0` | HeightScan + Stock |
 | `Ant-rl-Ablation-HeightScan-Contact-Stock-v0` | HeightScan + Contact + Stock |
 | `Ant-rl-Ablation-HeightScan-Contact-ModifiedReward-v0` | HeightScan + Contact + Modified |
-
-DepthCam stock/modified conditions are selected internally by the dedicated evaluator; no separate DepthCam task IDs are claimed. The HeightScan task registrations and config/checkpoint interfaces have passed runtime validation after AppLauncher initialization.
 
 ## 5. Training and evaluation settings
 
 | Setting | Recorded value |
 |---|---|
-| Training seed | 42 in all five training summaries |
+| Training seed | 42 in the three canonical training summaries |
 | HeightScan training/evaluation terrain seed | 42 in preserved manifests and evaluation configs |
-| Evaluation environment seed | 24 for all five recorded evaluations |
+| Evaluation environment seed | 24 for the three canonical evaluations |
 | Evaluation environments | 100 |
 | Inference | Deterministic mean action |
 | Episode accounting | First episode only; terminal reward included, post-reset reward excluded |
 | Maximum episode | 16 s / 960 control steps |
 | Evaluation reward | Stock for Stock conditions; Modified for Modified conditions |
-
-DepthCam terrain setup is described by the current source and evaluation evidence; its original training config snapshots are unavailable. Do not treat that configuration as reverified from an absent saved config.
 
 The environment does not terminate at map boundaries. Displacement can include movement beyond generated terrain bounds. Results use population standard deviation and a single training seed.
 
@@ -88,7 +91,7 @@ The environment does not terminate at map boundaries. Displacement can include m
 | HeightScan + Contact + Stock | [Checkpoints](experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/checkpoints/) | `ablation_heightscan_contact_stock_s42_e4096_n32_i1000/` |
 | HeightScan + Contact + Modified | [Checkpoints](experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/checkpoints/) | `ablation_heightscan_contact_modified_s42_e4096_n32_i1000/` |
 
-`best_model.pt` uses the predeclared highest logged training completed-episode mean-return selection rule, without evaluation-based selection. `final_model.pt` in each experiment directory is the preserved copy of that run's `model_999.pt`. Original `model_*.pt` names remain unchanged in the training runs. TensorBoard events and JSON agent/config snapshots are retained; no missing YAML params were invented.
+`best_model.pt` uses the predeclared highest logged training completed-episode mean-return selection rule, without evaluation-based selection. `final_model.pt` in each HeightScan experiment directory is the preserved copy of that run's `model_999.pt`. Original `model_*.pt` names remain unchanged in the training runs. TensorBoard events and JSON agent/config snapshots are retained; no missing YAML params were invented.
 
 ## 7. Verified runtime and setup
 
@@ -135,7 +138,7 @@ Use these dedicated evaluators; general `play.py` changes evaluation rewards and
   --output experiments/observation_ablation/validation/reproduction_contact_modified
 ```
 
-These evaluator entry points and arguments executed successfully in the final validation. Passive diagnostic launchers recorded runtime interfaces and lifecycle events without changing evaluator calculations. DepthCam's evaluator is preserved at [scripts/evaluate_depthcam_ablation.py](scripts/evaluate_depthcam_ablation.py), but final DepthCam execution remains unvalidated because canonical model binaries are unavailable.
+These evaluator entry points and arguments executed successfully in the preserved final validation. Passive diagnostic launchers recorded runtime interfaces and lifecycle events without changing evaluator calculations.
 
 The [provenance helper](scripts/submission_provenance.py) uses `git rev-parse HEAD` in a committed checkout. For evaluation in a snapshot without Git metadata, it reads the preserved original project HEAD and marks new manifests with `git_commit_source=preserved_submission_provenance` and `repository_snapshot=true`. Other Git errors are not hidden. Historical manifests remain unchanged.
 
@@ -168,7 +171,7 @@ All three HeightScan conditions have **FULL ARTIFACTS**, **RUNTIME/CONFIG/CHECKP
 | Out-of-terrain-X | 28/100 | 27/100 | 26/100 |
 | Reproduction | REPRODUCED | REPRODUCED | REPRODUCED |
 
-Stock and Modified returns have different definitions/scales; their difference is not a direct performance improvement. The map-boundary and single-training-seed limitations described above still apply. Original experiment tables were not edited.
+Stock and Modified returns have different definitions/scales; their difference is not a direct performance improvement. The map-boundary and single-training-seed limitations described above still apply. Canonical result files remain unchanged; this presentation includes the retained HeightScan conditions.
 
 New evidence is separate from historical outputs:
 
@@ -183,3 +186,5 @@ The evaluator runs completed and all three evaluation processes exited with code
 Historical commands, manifests, source mappings and diagnostic scripts retain original absolute paths as evidence. Archived supplementary evaluators and historical finalizers are not portable submission entry points and should not be executed without separate review. The root commands above select this repository through environment overrides; no file from the old unrelated repository was used.
 
 See the [final integrity summary](docs/submission_provenance/final_submission_integrity.json) and [final path audit](experiments/observation_ablation/validation/final_submission_check/final_cleanup/path_audit.md) for the submission checks. Final checks do not retrain or overwrite canonical results.
+
+The [cleanup audit](docs/submission_provenance/heightscan_cleanup/README.md) distinguishes current source from immutable historical manifests and saved configurations. Historical integrity assertions describe the snapshot when recorded; they do not certify the post-cleanup file set.

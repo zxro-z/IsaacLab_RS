@@ -109,12 +109,10 @@ def main():
     protocol = read(EXP / "protocol.json")
     protocol["team1_base_commit"] = protocol["git_commit"]
     protocol["implementation_commit"] = manifest["git_commit"]
-    protocol["status"] = "HeightScan complete; Base and DepthCam stock-reward experiments pending"
+    protocol["status"] = "HeightScan complete; Baseline stock-reward experiments pending"
     dump(EXP / "protocol.json", protocol)
 
-    # Verify independent terrain geometry and assignment against the existing
-    # 100-env seed24 Team1-host evaluation, without using its policy outcomes.
-    reference = ROOT / "cross_eval_team1_policy/teammate1/main/evaluation_seed24_n100.json"
+    # Retain terrain geometry and assignment diagnostics from this run.
     parity = dict(frozen_config=True, reward=True, ppo=True, controlled_sources=True,
                   driver_diagnostic_fix_only=True)
     rows = list(csv.DictReader((RESULT / "episode_metrics.csv").open()))
@@ -136,14 +134,6 @@ def main():
                 raw_missing_ray_fraction=rays["raw_missing_ray_samples"] / (sum(int(r["episode_steps"]) for r in rows) * 63),
                 bounds_method="Derived from frozen native centered terrain dimensions/border and row origins; native reset has no root X randomization.")
     dump(HEIGHT / "raycast_diagnostics.json", rays)
-    if reference.exists():
-        ref = read(reference)
-        parity["historical_team1_evaluation_mesh"] = evaluation["terrain_mesh_sha256"] == ref["terrain_mesh_sha256"]
-        parity["historical_team1_terrain_assignment"] = (
-            [int(r["terrain_row"]) for r in rows] == ref["terrain_assignment"]["rows"]
-            and [int(r["terrain_column"]) for r in rows] == ref["terrain_assignment"]["columns"]
-        )
-        assert parity["historical_team1_evaluation_mesh"] and parity["historical_team1_terrain_assignment"]
     dump(EXP / "shared/evaluation_parity.json", parity)
 
     metrics = evaluation["metrics"]
@@ -154,20 +144,20 @@ def main():
         w.writerows(dict(metric=k, **v) for k,v in metrics.items())
     text = (EXP / "README.md").read_text()
     text = text.replace("Pending runtime validation, training and evaluation. TBD is not a measured zero.",
-                        "HeightScan training and 100-env first-episode evaluation are complete. Base and DepthCam remain TBD.")
+                        "HeightScan training and 100-env first-episode evaluation are complete. Baseline remains TBD.")
     def fmt(v):
         return f"{v['mean']:.6f} ± {v['std']:.6f}"
     for label, key in [("Return mean ± population std", "episode_return"),
                        ("Displacement mean ± population std", "forward_displacement")]:
-        text = text.replace(f"| {label} | TBD | TBD | TBD |", f"| {label} | TBD | {fmt(metrics[key])} | TBD |")
+        text = text.replace(f"| {label} | TBD | TBD |", f"| {label} | TBD | {fmt(metrics[key])} |")
     for label, key in [("Fall", "fall"), ("Timeout", "timeout")]:
         v = metrics[key]
-        text = text.replace(f"| {label} | TBD | TBD | TBD |", f"| {label} | TBD | {v['count']}/100 ({v['ratio']:.0%}) | TBD |")
+        text = text.replace(f"| {label} | TBD | TBD |", f"| {label} | TBD | {v['count']}/100 ({v['ratio']:.0%}) |")
     text = text.replace("episode residual tolerance=1e-3, per-step tolerance=1e-5. Component statistics are TBD.",
                         "episode residual tolerance=1e-3, per-step tolerance=1e-5.\n\n"
-                        + "| Component | Base | HeightScan mean ± population std | DepthCam |\n"
-                        + "|---|---:|---:|---:|\n"
-                        + "\n".join(f"| {k} | TBD | {fmt(v)} | TBD |" for k, v in reward.items())
+                        + "| Component | Baseline | HeightScan mean ± population std |\n"
+                        + "|---|---:|---:|\n"
+                        + "\n".join(f"| {k} | TBD | {fmt(v)} |" for k, v in reward.items())
                         + f"\n\nMax step residual={evaluation['max_step_reward_residual']:.3g}; "
                         + f"max episode residual={evaluation['max_episode_reward_residual']:.3g}.")
     if "Selected checkpoint:" not in text:

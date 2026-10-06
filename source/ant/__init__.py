@@ -54,3 +54,14 @@ gym.register(
         "rsl_rl_cfg_entry_point": f"{agents.__name__}.contact_stock_ppo_cfg:HeightScanContactStockPPORunnerCfg",
     },
 )
+
+# Stock observation and reward foundation for the first ablation stage.
+gym.register(
+    id="Ant-rl-Ablation-Baseline-v0",
+    entry_point="isaaclab.envs:ManagerBasedRLEnv",
+    disable_env_checker=True,
+    kwargs={
+        "env_cfg_entry_point": f"{__name__}.ablation_env_cfg:AblationBaseCfg",
+        "rsl_rl_cfg_entry_point": f"{agents.__name__}.ablation_budget_ppo_cfg:AblationBaselinePPORunnerCfg",
+    },
+)

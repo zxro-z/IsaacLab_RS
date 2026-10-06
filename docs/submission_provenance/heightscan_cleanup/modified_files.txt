@@ -1,0 +1,17 @@
+README.md
+docs/submission_provenance/README.md
+experiments/observation_ablation/README.md
+experiments/observation_ablation/protocol.json
+experiments/observation_ablation/shared/stage2_contact_modified_protocol.json
+scripts/evaluate_contact_teammate1.py
+scripts/finalize_observation_ablation.py
+scripts/finalize_observation_ablation_budget.py
+scripts/finalize_stage2_observation_ablation.py
+scripts/reinforcement_learning/rsl_rl/play.py
+scripts/reinforcement_learning/rsl_rl/train.py
+source/ant/__init__.py
+source/ant/ablation_env_cfg.py
+source/ant/agents/ablation_budget_ppo_cfg.py
+source/ant/agents/rsl_rl_ppo_cfg.py
+source/ant/ant_env_cfg.py
+source/ant/stage2_env_cfg.py

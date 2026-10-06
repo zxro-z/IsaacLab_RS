@@ -12,3 +12,10 @@ class AblationBudgetPPORunnerCfg(AblationHeightScanPPORunnerCfg):
     resume = False
     load_run = None
     load_checkpoint = None
+
+
+@configclass
+class AblationBaselinePPORunnerCfg(AblationBudgetPPORunnerCfg):
+    """Stock-observation baseline with a distinct output run name."""
+
+    run_name = "ablation_baseline_stock_s42_e4096_n32_i1000"

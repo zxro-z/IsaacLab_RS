@@ -1,0 +1,188 @@
+Loading user config located at: '/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim/kit/data/Kit/Isaac-Sim/5.1/user.config.json'
+[Info] [carb] Logging to file: /home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim/kit/logs/Kit/Isaac-Sim/5.1/kit_20261006_161521.log
+2026-10-06T07:15:21Z [2ms] [Warning] [omni.ext.plugin] [ext: ant] Extensions config 'extension.toml' doesn't exist '/home/zxro/ant_rl_submission/source/ant' or '/home/zxro/ant_rl_submission/source/ant/config'
+2026-10-06T07:15:21Z [43ms] [Error] [omni.datastore] Failed to acquire exclusive lock to data store (256>=256)
+2026-10-06T07:15:21Z [43ms] [Error] [omni.datastore] Failed to create local file data store at '/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim/kit/cache/DerivedDataCache'
+2026-10-06T07:15:21Z [54ms] [Warning] [omni.usd_config.extension] Enable omni.materialx.libs extension to use MaterialX
+2026-10-06T07:15:21Z [207ms] [Warning] [omni.platforminfo.plugin] failed to open the default display.  Can't verify X Server version.
+2026-10-06T07:15:22Z [314ms] [Warning] [carb] Acquiring non optional plugin interface which is not listed as dependency: [omni::physx::IPhysxBenchmarks v1.0] (plugin: <default plugin>), by client: omni.physics.physx.plugin. Add it to CARB_PLUGIN_IMPL_DEPS() macro of a client.
+2026-10-06T07:15:22Z [417ms] [Warning] [omni.isaac.dynamic_control] omni.isaac.dynamic_control is deprecated as of Isaac Sim 4.5. No action is needed from end-users.
+2026-10-06T07:15:22Z [423ms] [Error] [omni.physx.tensors.plugin] CUDA error: no CUDA-capable device is detected: ../../../extensions/runtime/source/omni.physx.tensors/plugins/gpu/CudaCommon.h: 111
+2026-10-06T07:15:22Z [423ms] [Error] [omni.physx.tensors.plugin] Failed to create primary CUDA context
+Warp CUDA error 100: no CUDA-capable device is detected (in function init_cuda_driver, /builds/omniverse/warp/warp/native/cuda_util.cpp:266)
+Warp CUDA error 3: initialization error (in function cuda_device_get_count, /builds/omniverse/warp/warp/native/warp.cu:1769)
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+2026-10-06T07:15:23Z [1,809ms] [Warning] [matplotlib] /home/zxro/.config/matplotlib is not a writable directory
+2026-10-06T07:15:23Z [1,809ms] [Warning] [matplotlib] Matplotlib created a temporary cache directory at /tmp/matplotlib-bg7zht99 because there was an issue with the default path (/home/zxro/.config/matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+2026-10-06T07:15:24Z [3,008ms] [Error] [omni.kit.app.plugin] failed to open file '/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim/kit/data/Kit/Isaac-Sim/5.1/user.config.json' - unable to save the dictionary
+2026-10-06T07:15:24Z [3,029ms] [Error] [omni.gpucompute-cuda.plugin] CUDA error in createContext: no CUDA-capable device is detected: ../../../source/plugins/omni.gpucompute-cuda/GpuCompute-Cuda.cpp: 179 (device 1555488336)
+2026-10-06T07:15:24Z [3,051ms] [Error] [carb.cudainterop.plugin] Could not initialize NVML: return code 9 (NVML_ERROR_DRIVER_NOT_LOADED: NVIDIA driver is not loaded.)
+2026-10-06T07:15:24Z [3,054ms] [Error] [carb.cudainterop.plugin] Could not initialize NVML: return code 9 (NVML_ERROR_DRIVER_NOT_LOADED: NVIDIA driver is not loaded.)
+
+|---------------------------------------------------------------------------------------------|
+| Driver Version: 0             | Graphics API: Vulkan
+|=============================================================================================|
+| GPU | Name                             | Active | LDA | GPU Memory | Vendor-ID | LUID       |
+|     |                                  |        |     |            | Device-ID | UUID       |
+|     |                                  |        |     |            | Bus-ID    |            |
+|=============================================================================================|
+| OS: 22.04.5 LTS (Jammy Jellyfish) ubuntu, Version: 22.04.5, Kernel: 6.8.0-138-generic
+| Processor: Intel(R) Core(TM) Ultra 7 265K
+| Cores: 20 | Logical Cores: 20
+|---------------------------------------------------------------------------------------------|
+| Total Memory (MB): 63562 | Free Memory: 46641
+| Total Page/Swap (MB): 2047 | Free Page/Swap: 2044
+|---------------------------------------------------------------------------------------------|
+2026-10-06T07:15:25Z [3,485ms] [Error] [gpu.foundation.plugin] No device could be created. Some known system issues:
+- The driver is not installed properly and requires a clean re-install.
+- Your GPUs do not support RayTracing: DXR or Vulkan ray_tracing, or hardware is excluded due to performance.
+- The driver cannot enumerate any GPU: driver, display, TCC mode or a docker issue. For Vulkan, test it with Vulkaninfo tool from Vulkan SDK, instead of nvidia-smi.
+- For Ubuntu, it requires server-xorg-core 1.20.7+ and a display to work without --no-window.
+- For Linux dockers, the setup is not complete. Install the latest driver, xServer and NVIDIA container runtime.
+
+2026-10-06T07:15:25Z [3,486ms] [Error] [gpu.foundation.plugin] Invalid getDeviceInfo parameters.
+2026-10-06T07:15:25Z [3,486ms] [Warning] [omni.physx.foundation.plugin] PhysXFoundation: Couldn't get driver version, failed to getDeviceInfo
+2026-10-06T07:15:25Z [3,486ms] [Warning] [omni.physx.foundation.plugin] PhysXFoundation: Unable to get IGpuFoundation, GpuDevices or Graphics!
+2026-10-06T07:15:25Z [3,487ms] [Error] [carb.cudainterop.plugin] CUDA error 100: cudaErrorNoDevice - no CUDA-capable device is detected)
+2026-10-06T07:15:25Z [3,487ms] [Error] [carb.cudainterop.plugin] Failed to get the CUDA device.
+2026-10-06T07:15:25Z [3,487ms] [Error] [carb.cudainterop.plugin] CUDA error 100: cudaErrorNoDevice - no CUDA-capable device is detected)
+2026-10-06T07:15:25Z [3,487ms] [Error] [carb.cudainterop.plugin] Failed to set the CUDA device: 0
+2026-10-06T07:15:25Z [3,487ms] [Error] [omni.physx.plugin] No CUDA devices found
+2026-10-06T07:15:25Z [3,488ms] [Error] [omni.physx.plugin] Unable to create PxCudaContextManager!
+2026-10-06T07:15:25Z [3,488ms] [Warning] [omni.kvdb.plugin] Disabling key-value database because another kit process is locking it
+2026-10-06T07:15:25Z [3,508ms] [Error] [omni.kit.app.plugin] failed to open file '/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim/kit/data/Kit/Isaac-Sim/5.1/user.config.json' - unable to save the dictionary
+[WARN][AppLauncher]: There are no arguments attached to the ArgumentParser object. If you have your own arguments, please load your own arguments before calling the `AppLauncher.add_app_launcher_args` method. This allows the method to check the validity of the arguments and perform checks for argument names.
+[INFO][AppLauncher]: Using device: cuda:0
+[INFO][AppLauncher]: Loading experience file: /home/zxro/ant_rl_submission/apps/isaaclab.python.headless.kit
+{
+  "environment_created": false,
+  "physics_steps": 0,
+  "tasks": [
+    {
+      "task": "Ant-rl-v0",
+      "config_import": "PASS",
+      "observation_terms": [
+        "base_lin_vel",
+        "base_ang_vel",
+        "base_yaw_roll",
+        "base_angle_to_target",
+        "base_up_proj",
+        "base_heading_proj",
+        "joint_pos_norm",
+        "joint_vel_rel",
+        "feet_body_forces",
+        "actions"
+      ],
+      "expected_input_dim_from_terms": 59,
+      "runner_class": "ActorCritic",
+      "default_num_envs": 256
+    },
+    {
+      "task": "Ant-rl-Ablation-Baseline-v0",
+      "config_import": "PASS",
+      "observation_terms": [
+        "base_lin_vel",
+        "base_ang_vel",
+        "base_yaw_roll",
+        "base_angle_to_target",
+        "base_up_proj",
+        "base_heading_proj",
+        "joint_pos_norm",
+        "joint_vel_rel",
+        "feet_body_forces",
+        "actions"
+      ],
+      "expected_input_dim_from_terms": 59,
+      "runner_class": "ActorCritic",
+      "default_num_envs": 2048
+    },
+    {
+      "task": "Ant-rl-Ablation-HeightScan-v0",
+      "config_import": "PASS",
+      "observation_terms": [
+        "base_lin_vel",
+        "base_ang_vel",
+        "base_yaw_roll",
+        "base_angle_to_target",
+        "base_up_proj",
+        "base_heading_proj",
+        "joint_pos_norm",
+        "joint_vel_rel",
+        "feet_body_forces",
+        "actions",
+        "height_scan"
+      ],
+      "expected_input_dim_from_terms": 122,
+      "runner_class": "ActorCritic",
+      "default_num_envs": 2048,
+      "checkpoint_sha256": "49a8a007f152ed9c63df616fbee12a866873be0ee0337ad83597d653ec9b3c06",
+      "checkpoint_input_dim": 122,
+      "saved_policy_and_scanner_parity": "PASS",
+      "saved_iteration": 804
+    },
+    {
+      "task": "Ant-rl-Ablation-HeightScan-Contact-Stock-v0",
+      "config_import": "PASS",
+      "observation_terms": [
+        "base_lin_vel",
+        "base_ang_vel",
+        "base_yaw_roll",
+        "base_angle_to_target",
+        "base_up_proj",
+        "base_heading_proj",
+        "joint_pos_norm",
+        "joint_vel_rel",
+        "feet_body_forces",
+        "actions",
+        "height_scan",
+        "foot_contacts"
+      ],
+      "expected_input_dim_from_terms": 126,
+      "runner_class": "ActorCritic",
+      "default_num_envs": 4096,
+      "checkpoint_sha256": "82c7d0f781c37e0620230ff4b401835d54ef0a18102cdbc8c22c28bb576f57b9",
+      "checkpoint_input_dim": 126,
+      "saved_policy_and_scanner_parity": "PASS",
+      "saved_iteration": 972
+    },
+    {
+      "task": "Ant-rl-Ablation-HeightScan-Contact-ModifiedReward-v0",
+      "config_import": "PASS",
+      "observation_terms": [
+        "base_lin_vel",
+        "base_ang_vel",
+        "base_yaw_roll",
+        "base_angle_to_target",
+        "base_up_proj",
+        "base_heading_proj",
+        "joint_pos_norm",
+        "joint_vel_rel",
+        "feet_body_forces",
+        "actions",
+        "height_scan",
+        "foot_contacts"
+      ],
+      "expected_input_dim_from_terms": 126,
+      "runner_class": "ActorCritic",
+      "default_num_envs": 4096,
+      "checkpoint_sha256": "0471caaadd646feac85cb7bbed0d2c3668279d2d65db9507030a649895ea11b4",
+      "checkpoint_input_dim": 126,
+      "saved_policy_and_scanner_parity": "PASS",
+      "saved_iteration": 788
+    }
+  ],
+  "policy_differences": [],
+  "status": "PASS"
+}

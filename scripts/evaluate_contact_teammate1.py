@@ -46,7 +46,6 @@ class ContactEvaluationCfg(TeammateHostCfg):
         self.observations=ObservationsCfg()
         # One feet sensor and one scanner: replace original perception without padding or slicing.
         self.scene.contact_forces=None
-        self.scene.depth_camera=None
         configure_height_scan(self,enabled=True)
         add_foot_contacts_for_evaluation(self)
 

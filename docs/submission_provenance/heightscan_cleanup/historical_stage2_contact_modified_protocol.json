@@ -113,7 +113,7 @@
     "max_steps": 960,
     "population_std": true
   },
-  "status": "HeightScan + Contact + Modified Reward evaluation complete",
+  "status": "HeightScan and DepthCam evaluations complete with documented observation and terrain-reset differences",
   "runtime_frozen_config": "heightscan_contact_modified_4096x32x1000/results/source_parity.json",
   "team1_base_commit": "dd35ebc11b01ea57e79cc6dfa03ac6ffcbfac557",
   "num_steps_per_env": 32,
@@ -121,7 +121,9 @@
   "canonical_heightscan": "heightscan_contact_modified_4096x32x1000",
   "resume": false,
   "runner_config": "ant.agents.stage2_ppo_cfg:Stage2HeightScanContactPPORunnerCfg",
-  "stage": 3,
+  "base_depthcam_compliance": "DepthCam matches budget, seeds, PPO, modified reward and evaluation protocol, but has no separate 4-D binary contact observation and used reset-time terrain reselection during training",
+  "depthcam_evaluation": "../depthcam_modified_2048x32x2000/results/evaluation_summary.json",
+  "stage": 2,
   "training_reward": {
     "progress": 2.5,
     "alive": 0.5,
@@ -192,7 +194,7 @@
     "threshold_N": 5.0,
     "condition": ">5N; foot_contact bonus if at least two feet; foot_slip sums contacted feet XY speeds"
   },
-  "intended_comparison_variable": "reward definition with HeightScan + Contact fixed",
+  "intended_comparison_variable": "terrain representation (HeightScan vs DepthCam)",
   "implementation_commit": "e74d3fe5f08b3f070ff314e6f0b6349985458b61",
   "heightscan_checkpoint": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/checkpoints/best_model.pt"
 }

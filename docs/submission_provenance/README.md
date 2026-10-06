@@ -13,7 +13,7 @@ All four custom files came from /home/zxro/arena/IsaacLab, not from the old /hom
 
 The current project namespace source/ant remains separate from the framework Ant namespace. The RL script group was copied to scripts/reinforcement_learning/rsl_rl without changing file contents. Dedicated evaluators remain under scripts/. Historical command logs and manifests retain their original paths unchanged.
 
-The two DepthCam experiments are results/provenance only: canonical checkpoints and training-run folders were unavailable and were not substituted. Cross-evaluation and validation_compare are supplementary validation, not canonical training experiments.
+The HeightScan transfer evaluation in validation_compare remains supplementary validation rather than a canonical training experiment.
 
 The old /home/zxro/IsaacLab_RS repository is EXCLUDED AS A SUBMISSION SOURCE. Its contents were not used or modified. New submission validation has reproduced all three canonical HeightScan evaluations; historical evidence remains unchanged.
 
@@ -26,3 +26,7 @@ The old /home/zxro/IsaacLab_RS repository is EXCLUDED AS A SUBMISSION SOURCE. It
 Historical source mappings still identify the original script hashes and paths. Compare approved patch records when verifying the current evaluator hashes; do not rewrite those historical records to hide layout changes.
 
 The upstream `.gitattributes` is preserved in [official_gitattributes](official_gitattributes). Submission LFS filter declarations were removed so required checkpoints/videos are staged as ordinary Git blobs; no LFS tooling or remote was configured.
+
+## HeightScan submission cleanup
+
+The current project is a progressive HeightScan ablation. See [cleanup audit](heightscan_cleanup/README.md). The original copy inventory, integrity manifests, protected-file lists, source mappings, original README snapshot, validation reports and saved training configurations remain byte-for-byte historical evidence. They can name intentionally removed files and contain obsolete sensor interfaces. Their recorded hashes and PASS statuses apply to the earlier snapshot, not the current repository. Saved `logs/rsl_rl/ant/modified/params/env.yaml` supplies reward provenance to the final HeightScan evaluator; its historical observation/sensor fields are not instantiated by that evaluator.

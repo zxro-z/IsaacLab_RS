@@ -132,23 +132,23 @@ def main():
     assert int(best['iteration']) == t['selected_iteration'] and float(best['mean_reward']) == t['selected_training_mean_reward']
     proto_path = EXP / 'shared/stage2_contact_modified_protocol.json'
     proto = read(proto_path)
-    proto.update(status='HeightScan complete; DepthCam Stage 2 arm TBD', implementation_commit=m['git_commit'],
+    proto.update(status='HeightScan + Contact + Modified Reward complete', implementation_commit=m['git_commit'],
                  heightscan_checkpoint=records['best_model.pt']['path'], runtime_frozen_config='heightscan_contact_modified_4096x32x1000/results/source_parity.json')
     dump(proto_path, proto)
-    prefix = (EXP / 'README.md').read_text().split('## Stage 2 — Contact + Modified Reward')[0].rstrip()
+    prefix = (EXP / 'README.md').read_text().split('## Stage 3 — Reward design')[0].rstrip()
     metrics = e['metrics']; rewards = e['reward_components']
     def fmt(v): return f"{v['mean']:.4f} ± {v['std']:.4f}"
     text = prefix + '\n\n' + documentation()
-    text += '\n| Metric | HeightScan + Contact + Modified | DepthCam + Contact + Modified |\n|---|---:|---:|\n'
+    text += '\n| Metric | HeightScan + Contact + Modified |\n|---|---:|\n'
     for label,key in [('Return','episode_return'),('Displacement (m)','forward_displacement'),('Duration (s)','episode_duration'),('Mean vx (m/s)','mean_forward_velocity')]:
-        text += f'| {label} | {fmt(metrics[key])} | TBD |\n'
+        text += f'| {label} | {fmt(metrics[key])} |\n'
     for label,key in [('Fall','fall'),('Timeout','timeout'),('Other','other'),('>=5m','>=5m'),('Out-of-terrain-X','out_of_terrain_x')]:
-        text += f"| {label} | {metrics[key]['count']}/100 | TBD |\n"
-    text += '\n### Stage 2 reward decomposition\n\n| Component | HeightScan+Contact mean ± population std | DepthCam+Contact |\n|---|---:|---:|\n'
-    for key,value in rewards.items(): text += f'| {key} | {fmt(value)} | TBD |\n'
+        text += f"| {label} | {metrics[key]['count']}/100 |\n"
+    text += '\n### Stage 3 reward decomposition\n\n| Component | HeightScan+Contact mean ± population std |\n|---|---:|\n'
+    for key,value in rewards.items(): text += f'| {key} | {fmt(value)} |\n'
     text += f"\nResiduals: step max={e['max_step_reward_residual']:.3g}, episode max={e['max_episode_reward_residual']:.3g}, episode mean={e['mean_episode_reward_residual']:.3g}.\n"
     text += f"\nBoundary diagnostic: {metrics['out_of_terrain_x']['count']}/100 terminal world-X positions outside [-102,102] m. Native Team1 has no boundary or torso-height termination, so displacement/return can include unsupported movement beyond the terrain mesh.\n"
-    text += '\nStage 1 and Stage 2 have different reward definitions. Do not subtract total returns to claim improvement. Physical metrics (displacement, duration, fall, timeout and reach ratios) may be inspected as descriptive diagnostics.\n'
+    text += '\nContact + Stock and Contact + Modified have different reward definitions. Do not subtract total returns to claim improvement. Physical metrics (displacement, duration, fall, timeout and reach ratios) may be inspected as descriptive diagnostics.\n'
     (EXP / 'README.md').write_text(text)
     for folder in [OUT / 'smoke', RESULT]:
         log = folder / 'run.log'
@@ -180,11 +180,11 @@ def main():
 
 
 def documentation():
-    return """## Stage 2 — Contact + Modified Reward
+    return """## Stage 3 — Reward design
 
-This is the HeightScan terrain-representation arm under the Contact + Modified Reward condition. DepthCam is TBD until the teammate arm is merged; this work trains only HeightScan.
+This is the final HeightScan + Contact configuration with modified reward. Compare it against HeightScan + Contact + Stock to study reward design.
 
-Both arms must use the same Team1 environment, explicit 4-D contact definition, Team1 v3_depth modified reward for both training and evaluation, PPO, post-feature [400,200,100] ELU actor/critic, 4096×32×1000 budget (131,072,000 transitions), training/terrain seed42, checkpoint-selection rule, and seed24/100-env deterministic first-episode evaluation. The intended comparison variable is HeightScan vs DepthCam terrain representation. Sensor-specific depth encoders and resulting input dimensions may differ.
+Keep the Team1 environment, explicit 4-D contact definition, HeightScan, PPO, [400,200,100] ELU actor/critic, 4096×32×1000 budget (131,072,000 transitions), training/terrain seed42, checkpoint-selection rule, and seed24/100-env deterministic first-episode evaluation fixed. Change the reward definition. Stock and Modified returns have different scales and cannot quantify a performance improvement by subtraction.
 
 Shared machine-readable protocol: [shared/stage2_contact_modified_protocol.json](shared/stage2_contact_modified_protocol.json). Contact spec: [shared/contact_observation.json](shared/contact_observation.json). Result manifest: [heightscan_contact_modified_4096x32x1000/manifest.json](heightscan_contact_modified_4096x32x1000/manifest.json).
 
@@ -194,7 +194,7 @@ Modified reward directly reuses Team1 v3_depth `ant.rewards.TotalReward`, manage
 
 Fresh initialization: resume=false, load_run/load_checkpoint=null. PPO and action/reset/termination/terrain are unchanged from Stage 1. Selection rule fixed before training: highest logged completed-episode mean training return under the modified reward. The best checkpoint and last-iteration checkpoint are retained. Single-seed results do not establish general statistical significance.
 
-Decomposition observes the actual TotalReward function's weighted components without copying its calculations or changing its implementation. Each contribution is weighted_component × manager_weight(1) × control_dt. TotalReward episode_sums already apply dt once; dt is not applied twice. Terminal contributions are included, reset episodes excluded. Direct Stage 2 total-return comparison requires the DepthCam arm to use the identical modified reward.
+Decomposition observes the actual TotalReward function's weighted components without copying its calculations or changing its implementation. Each contribution is weighted_component × manager_weight(1) × control_dt. TotalReward episode_sums already apply dt once; dt is not applied twice. Terminal contributions are included, reset episodes excluded. Compare displacement, duration and fall/timeout under the two reward definitions; do not subtract their total returns.
 """
 
 

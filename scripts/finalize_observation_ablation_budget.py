@@ -110,18 +110,18 @@ def main():
     dump(OUT / 'parity.json', dict(environment=True, reward=True, ppo=True, architecture=True,
          observation=True, terrain_mesh=True, evaluation_terrain_assignment=True, budget_only_change=True))
     p = read(EXP / 'protocol.json')
-    p.update(status='Canonical HeightScan complete; Base/DepthCam matching-budget results pending',
+    p.update(status='Canonical HeightScan complete; matching-budget baseline result unavailable',
              git_commit=m['git_commit'], implementation_commit=m['git_commit'], canonical_heightscan='heightscan_4096x32x1000',
              canonical_checkpoint=records['best_model.pt']['path'])
     dump(EXP / 'protocol.json', p)
     metrics = e['metrics']; rewards = e['reward_components']
     def fmt(v): return f"{v['mean']:.4f} ± {v['std']:.4f}"
     readme = documentation()
-    readme += '\n## Results\n\n| Metric | Base | HeightScan | DepthCam |\n|---|---:|---:|---:|\n'
+    readme += '\n## Results\n\n| Metric | Baseline | HeightScan |\n|---|---:|---:|\n'
     for label, key in [('Return','episode_return'),('Displacement (m)','forward_displacement'),('Duration (s)','episode_duration'),('Mean vx (m/s)','mean_forward_velocity')]:
-        readme += f'| {label} | TBD | {fmt(metrics[key])} | TBD |\n'
+        readme += f'| {label} | TBD | {fmt(metrics[key])} |\n'
     for label, key in [('Fall','fall'),('Timeout','timeout'),('Other','other'),('>=5m','>=5m'),('Out-of-terrain-X','out_of_terrain_x')]:
-        readme += f"| {label} | TBD | {metrics[key]['count']}/100 | TBD |\n"
+        readme += f"| {label} | TBD | {metrics[key]['count']}/100 |\n"
     readme += '\n## Stock reward decomposition\n\n| Component | HeightScan mean ± population std |\n|---|---:|\n'
     for k,v in rewards.items(): readme += f'| {k} | {fmt(v)} |\n'
     readme += '\n## Training-budget sensitivity (diagnostic only)\n\n| Metric | Previous: 2048×32×10000 | Canonical: 4096×32×1000 |\n|---|---:|---:|\n'
@@ -168,24 +168,11 @@ def documentation():
 
 ## Research question
 
-Compare Base / HeightScan / DepthCam terrain representation under identical Team1 training/evaluation environments, stock rewards, PPO, seeds and training budget.
+Does explicit local terrain-height information improve locomotion over uneven terrain? Compare the stock-observation baseline with HeightScan while keeping stock rewards and training conditions fixed. Matching-budget baseline results are unavailable; the HeightScan measurements alone do not establish improvement.
 
-## Canonical controlled protocol
+## Canonical protocol
 
-| Variable | Base | HeightScan | DepthCam |
-|---|---|---|---|
-| Num envs | 4096 required; pending | 4096 | 4096 required; pending |
-| Steps/env/iteration | 32 | 32 | 32 |
-| Iterations | 1000 | 1000 | 1000 |
-| Total transitions | 131,072,000 | 131,072,000 | 131,072,000 |
-| Training seed / terrain seed | 42 / 42 | 42 / 42 | 42 / 42 |
-| Reward | stock 7-term | stock 7-term | stock 7-term |
-| Environment / action / reset / termination | same required | Team1 | same required |
-| PPO / actor / critic | same required | [400,200,100] ELU | same required; sensor encoder permitted |
-| Evaluation seed / num envs | 24 / 100 | 24 / 100 | 24 / 100 |
-| Terrain observation | None | 63-D HeightScan | depth image → CNN embedding |
-
-Base/DepthCam measurements remain TBD until their manifests confirm every shared field and checkpoint-selection rule. Historical Team1 custom-reward/depth results are not controlled-comparison results.
+HeightScan uses 4096 environments, 32 steps per rollout, 1000 updates (131,072,000 transitions), training/terrain seed42, [400,200,100] ELU actor/critic, stock rewards and seed24/100-env deterministic evaluation. Baseline must match these settings before a controlled Stage 1 comparison is claimed.
 
 ## Stock reward
 
@@ -221,7 +208,7 @@ Team1 environment, seed24, 100 envs, deterministic mean action, first episode on
 
 Canonical HeightScan artifacts: [heightscan_4096x32x1000/manifest.json](heightscan_4096x32x1000/manifest.json). Previous exploratory run: [heightscan/manifest.json](heightscan/manifest.json), 2048×32×10000; preserved byte-for-byte. Large raw logs/intermediate checkpoints remain in ignored logs; compact JSON/CSV and selected/final checkpoints (<100 MiB each) are committed.
 
-HeightScan feature count differs from depth embedding dimensions and sensor extractors have different parameter counts. Single-seed results do not establish general statistical significance; PPO remains stochastic. All shared settings must match for direct comparison.
+Single-seed results do not establish general statistical significance; PPO remains stochastic. All shared settings must match for direct comparison.
 '''
 
 

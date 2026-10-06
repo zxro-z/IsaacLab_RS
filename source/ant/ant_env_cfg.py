@@ -15,7 +15,7 @@ from isaaclab.managers import RewardTermCfg as RewTerm
 from isaaclab.managers import SceneEntityCfg
 from isaaclab.managers import TerminationTermCfg as DoneTerm
 from isaaclab.scene import InteractiveSceneCfg
-from isaaclab.sensors import ContactSensorCfg, TiledCameraCfg
+from isaaclab.sensors import ContactSensorCfg
 from isaaclab.terrains import TerrainImporterCfg
 from isaaclab.terrains.config.rough import ROUGH_TERRAINS_CFG
 from isaaclab.utils import configclass
@@ -25,7 +25,7 @@ import isaaclab_tasks.manager_based.classic.humanoid.mdp as mdp
 # import isaaclab.terrains as terrain_gen
 import torch
 
-from . import depth_obs, rewards
+from . import rewards
 
 ##
 # Pre-defined configs
@@ -124,27 +124,6 @@ class MySceneCfg(InteractiveSceneCfg):
     robot.spawn.activate_contact_sensors = True
     robot.spawn.copy_from_source = True
 
-    # depth camera  64x48 / 15Hz / 0.1~5.0m
-    depth_camera = TiledCameraCfg(
-        prim_path="{ENV_REGEX_NS}/Robot/torso/DepthCamera",
-        update_period=1.0 / 15.0,
-        height=48,
-        width=64,
-        data_types=["distance_to_camera"],
-        depth_clipping_behavior="max",
-        spawn=sim_utils.PinholeCameraCfg(
-            focal_length=16.0,
-            focus_distance=5.0,
-            horizontal_aperture=20.955,
-            clipping_range=(0.1, 5.0),
-        ),
-        offset=TiledCameraCfg.OffsetCfg(
-            pos=(0.25, 0.0, 0.12),
-            rot=(0.9962, 0.0, 0.0872, 0.0),
-            convention="world",
-        ),
-    )
-
     # foot contacts
     contact_forces = ContactSensorCfg(
         prim_path="{ENV_REGEX_NS}/Robot/.*_foot",
@@ -204,26 +183,8 @@ class ObservationsCfg:
             self.enable_corruption = False
             self.concatenate_terms = True
 
-    @configclass
-    class DepthCfg(ObsGroup):
-        """Depth images for the CNN encoder."""
-
-        image = ObsTerm(
-            func=depth_obs.normalized_depth,
-            params={
-                "sensor_cfg": SceneEntityCfg("depth_camera"),
-                "near_distance": 0.1,
-                "far_distance": 5.0,
-            },
-        )
-
-        def __post_init__(self):
-            self.enable_corruption = False
-            self.concatenate_terms = True
-
     # observation groups
     policy: PolicyCfg = PolicyCfg()
-    depth: DepthCfg = DepthCfg()
 
 
 def randomize_robot_friction(env, env_ids, asset_cfg, min_fric, max_fric):

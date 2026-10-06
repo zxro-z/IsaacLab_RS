@@ -110,7 +110,7 @@
     "max_steps": 960,
     "population_std": true
   },
-  "status": "HeightScan evaluation complete; matching-budget baseline result unavailable",
+  "status": "HeightScan and DepthCam evaluations complete; DepthCam training used reset-time terrain reselection",
   "runtime_reward_terms": [
     {
       "term": "progress",
@@ -194,5 +194,7 @@
   },
   "runner_config": "ant.agents.ablation_budget_ppo_cfg:AblationBudgetPPORunnerCfg",
   "canonical_training_command": "python -u scripts/observation_ablation_budget.py train --headless --output logs/rsl_rl/observation_ablation/ablation_heightscan_stock_s42_e4096_n32_i1000",
+  "base_depthcam_compliance": "Budget, seeds, PPO, reward and evaluation protocol match; DepthCam training additionally used reset-time terrain reselection",
+  "depthcam_evaluation": "depthcam_2048x32x2000/results/evaluation_summary.json",
   "canonical_checkpoint": "experiments/observation_ablation/heightscan_4096x32x1000/checkpoints/best_model.pt"
 }

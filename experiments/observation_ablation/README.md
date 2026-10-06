@@ -1,4 +1,4 @@
-# Terrain Observation and Locomotion Ablation
+# Progressive improvement of HeightScan-based terrain-aware locomotion
 
 ## 프로젝트 개요
 
@@ -6,27 +6,26 @@
 
 Return뿐 아니라 displacement, episode duration, 평균 전진 속도, fall/timeout, reach rate, reward decomposition을 함께 기록한다. 각 Stage에서 가능한 한 하나의 핵심 변수만 바꾸도록 비교를 구성하되, 실제 학습 조건의 차이와 검증 범위도 함께 명시한다.
 
-## 연구 질문
+## 연구 질문 및 단계
 
-1. **Terrain perception:** HeightScan과 DepthCam 중 어떤 terrain representation이 locomotion에 더 효과적인가?
-2. **Contact feedback:** HeightScan policy에 explicit 4-D foot-contact observation을 추가하면 locomotion 특성이 어떻게 변하는가?
-3. **Reward shaping:** HeightScan + Contact observation을 고정한 상태에서 Modified Reward가 locomotion 특성에 어떤 영향을 주는가?
+**Baseline → HeightScan → HeightScan + Contact → HeightScan + Contact + Modified Reward**
 
-## 전체 실험 구성
-
-| 단계 | 비교 | 고정되는 것 | 확인하려는 효과 |
+| Variant | HeightScan | Contact Observation | Modified Reward |
 |---|---|---|---|
-| **Stage 1 — Terrain perception** | HeightScan + Stock vs DepthCam + Stock | Reward = Stock | Terrain representation 효과 |
-| **Stage 2 — Contact feedback** | HeightScan + Stock vs HeightScan + Contact + Stock | Terrain perception = HeightScan, Reward = Stock | 4-D Contact observation 효과 |
-| **Stage 3 — Reward shaping** | HeightScan + Contact + Stock vs HeightScan + Contact + Modified | Observation = HeightScan + Contact | Modified Reward 효과 |
+| Baseline (`Ant-rl-Ablation-Baseline-v0`) | No | No | No |
+| HeightScan (`Ant-rl-Ablation-HeightScan-v0`) | Yes | No | No |
+| HeightScan + Contact (`Ant-rl-Ablation-HeightScan-Contact-Stock-v0`) | Yes | Yes | No |
+| Final (`Ant-rl-Ablation-HeightScan-Contact-ModifiedReward-v0`) | Yes | Yes | Yes |
 
-Stage 1에서는 Stock Reward를 고정하고 HeightScan과 DepthCam을 비교한다. Stage 2에서는 HeightScan과 Stock Reward를 고정하고 4-D Contact observation 추가 효과를 본다. Stage 3에서는 HeightScan + Contact observation을 고정하고 reward만 Stock → Modified로 변경한다.
+1. **Terrain perception:** Does explicit local terrain-height information improve locomotion over uneven terrain? Compare the project stock-observation/stock-reward baseline with HeightScan. A matching-budget baseline result is unavailable; no quantitative Stage 1 conclusion is claimed.
+2. **Contact feedback:** Does direct contact-state feedback improve robustness beyond terrain geometry alone? Keep HeightScan and stock reward fixed, then add the explicit 4-D Contact observation.
+3. **Reward design:** Does reward shaping further improve robust forward locomotion once terrain and contact information are available? Keep HeightScan + Contact fixed, then replace the stock reward with the modified reward.
 
-> **실제 통제 범위:** Stage 2·3의 HeightScan 비교는 저장된 config로 환경·PPO·budget parity를 확인했다. Stage 1은 총 transitions를 맞췄지만 병렬 환경 수, update 횟수, sensor encoder뿐 아니라 학습 중 terrain 재선택 여부도 다르다. 따라서 현재 Stage 1 결과를 terrain representation만의 인과 효과로 단정하지 않는다.
+Baseline uses the existing `AblationBaseCfg` (set `--num_envs 4096` to match the canonical budget) (59-D native proprioception, including incoming foot wrench); cleanup registers this config without training it. The framework stock Ant's 60-D observation is a different interface. Stage 2·3 use preserved environment/PPO/budget parity evidence. These are single-seed descriptive comparisons, not proof that every stage improves performance.
 
 ## 공통 환경
 
-현재 [환경 source](../../source/ant/ant_env_cfg.py)와 HeightScan의 저장 config에서 확인한 terrain 구성 및 기본 dynamics는 다음과 같다. DepthCam 평가도 같은 환경 config와 terrain generator를 사용한다. 학습 중 terrain 재선택 차이는 아래 학습 설정에 별도로 기록한다.
+현재 [환경 source](../../source/ant/ant_env_cfg.py)와 HeightScan의 저장 config에서 확인한 terrain 구성 및 기본 dynamics는 다음과 같다.
 
 | 항목 | 설정 |
 |---|---|
@@ -60,24 +59,11 @@ Stage 1에서는 Stock Reward를 고정하고 HeightScan과 DepthCam을 비교�
 
 ### Training budget
 
-DepthCam은 image/CNN 처리에 따른 GPU memory 사용량을 고려해 병렬 환경 수를 2048로 줄이고 iterations를 2000으로 늘렸다. Rollout length는 32 steps로 유지했으며, training summary에 기록된 총 transitions는 두 representation 모두 **131,072,000**이다.
-
-| 항목 | HeightScan 계열 3개 실험 | DepthCam 계열 2개 실험 |
-|---|---:|---:|
-| 병렬 환경 수 | 4096 | 2048 |
-| 환경별 iteration당 rollout steps | 32 | 32 |
-| Iterations | 1000 | 2000 |
-| 총 transitions | 4096 × 32 × 1000 = 131,072,000 | 2048 × 32 × 2000 = 131,072,000 |
-| Training seed | 42 | 42 |
-| Terrain seed (공유 source) | 42 | 42 |
-| 학습 중 terrain patch | 초기 할당 유지 | Reset마다 재선택 (training summary 기록) |
-| Resume | False, load_run/load_checkpoint 없음 | 해당 run의 training summary에 미기록 |
-
-**총 transitions가 같아도 모든 학습 조건이 같은 것은 아니다.** DepthCam의 rollout batch는 HeightScan의 절반이고 PPO update 횟수는 두 배다. 또한 DepthCam summary의 `terrain_reselected_on_reset=true`는 HeightScan의 reset 설정과 다르다. 현재 source에는 이 재선택 event가 없고 해당 DepthCam run의 저장 env config도 포함되어 있지 않아, 학습 당시 구현의 세부사항까지는 직접 검증할 수 없다.
+The three canonical HeightScan runs use 4096 environments × 32 steps × 1000 PPO updates = **131,072,000 transitions**, training seed 42 and terrain seed 42, fresh initialization (`resume=false`). Terrain patches retain their initial assignment during training; curriculum is disabled. No matching-budget baseline run, seed, training duration, or evaluation result is available. The earlier exploratory run uses 2048 × 32 × 10000 = 655,360,000 transitions and cannot isolate HeightScan's effect from training-budget differences.
 
 ### 공통 PPO 및 network 설정
 
-아래 값은 현재 [PPO source](../../source/ant/agents/rsl_rl_ppo_cfg.py)와 HeightScan 3개 실험의 저장 agent config에서 대조했다. HeightScan은 이 공통 PPO를 상속하며 CNN 없이 feature를 concatenate한다. DepthCam의 run별 저장 agent config는 이 repository에 없어 실행 당시 전체 hyperparameter의 독립적인 재검증 범위에는 제한이 있다.
+아래 값은 현재 [PPO source](../../source/ant/agents/rsl_rl_ppo_cfg.py)와 HeightScan 3개 실험의 저장 agent config에서 대조했다. HeightScan은 이 공통 PPO를 상속하며 CNN 없이 feature를 concatenate한다.
 
 | 항목 | 설정 |
 |---|---|
@@ -94,15 +80,13 @@ DepthCam은 image/CNN 처리에 따른 GPU memory 사용량을 고려해 병렬 
 
 ### Checkpoint 선택
 
-선택 기준은 **highest logged training mean return**이며, 각 실험의 training reward 기준으로 `best_model.pt`를 사용한다. HeightScan의 selection 기록은 학습 전에 규칙을 고정했음을 명시한다. DepthCam은 [training runner](../../scripts/reinforcement_learning/rsl_rl/train.py)의 best-model 저장 규칙과 training/evaluation summary를 대조했다. 서로 다른 reward로 계산된 training mean return끼리는 직접 비교하지 않는다.
+선택 기준은 **highest logged training mean return**이며, 각 실험의 training reward 기준으로 `best_model.pt`를 사용한다. HeightScan의 selection 기록은 학습 전에 규칙을 고정했음을 명시한다. 서로 다른 reward로 계산된 training mean return끼리는 직접 비교하지 않는다.
 
 | 실험 | Selected iteration | Training mean return | Checkpoint |
 |---|---:|---:|---|
 | HeightScan + Stock | 804 | 53.0052 | `best_model.pt` |
-| DepthCam + Stock | 905 | 61.5568 | `best_model.pt` |
 | HeightScan + Contact + Stock | 972 | 53.8264 | `best_model.pt` |
 | HeightScan + Contact + Modified | 788 | 107.4448 | `best_model.pt` |
-| DepthCam + Modified | 1974 | 129.2691 | `best_model.pt` |
 
 Iteration은 저장된 checkpoint의 번호를 그대로 사용한다. HeightScan 3개 실험은 마지막 iteration 999의 `final_model.pt`도 별도로 보존한다.
 
@@ -125,22 +109,6 @@ Iteration은 저장된 checkpoint의 번호를 그대로 사용한다. HeightSca
 | CNN / empirical normalization | 없음 / 없음 |
 
 HeightScan 3개 실험은 동일한 preprocessing을 사용한다. HeightScan과 explicit Contact 통합은 기존 IsaacLab_RS HeightScan+Contact 구현을 참고했다. [HeightScan source](../../source/ant/ablation_env_cfg.py)를 따른다.
-
-### DepthCam
-
-[Camera config](../../source/ant/ant_env_cfg.py), [preprocessing](../../source/ant/depth_obs.py), [CNN source](../../source/ant/depth_actor_critic.py)를 기준으로 정리한 구성이다. 평가 script는 두 DepthCam checkpoint 모두 proprio `(100, 59)`, depth `(100, 48, 64, 1)`을 확인한다.
-
-| 항목 | 설정 |
-|---|---|
-| Depth image | 48 × 64, 1 channel, 15 Hz |
-| Distance range / preprocessing | 0.1–5.0 m clipping 후 [0, 1]로 정규화 |
-| CNN | Conv(1→16, k5/s2/p2) → Conv(16→32, k3/s2/p1) → Conv(32→32, k3/s2/p1) |
-| Feature projection | AdaptiveAvgPool(2×2) → Flatten → Linear(128→64), 각 conv·linear 뒤 ELU |
-| Depth feature | 64-D, actor/critic이 encoder 공유 |
-| Actor/Critic post-feature 입력 | 59-D proprio + 64-D feature = 123-D |
-| 별도 explicit Contact | 두 DepthCam 모델 모두 없음 |
-
-Image의 NaN/+Inf는 far distance, -Inf는 near distance로 치환한 뒤 clipping한다. Sensor마다 입력 형태가 다르므로 적합한 preprocessing과 feature encoder를 사용하며, 차원을 맞추는 dummy feature는 추가하지 않는다.
 
 ### Contact observation
 
@@ -173,7 +141,7 @@ Canonical Isaac-Ant의 7개 reward 함수와 weight를 사용하며 추가 shapi
 
 전진 중심 reward에서 반복적인 jumping/hopping 형태의 locomotion이 나타나는 경향을 완화하고, ground contact, foot slip, joint motion, control effort를 함께 고려하도록 reward objective를 확장하기 위해 사용했다. 이는 설계 목적이며, Modified Reward가 안정적인 gait나 성능 향상을 보장한다는 의미는 아니다.
 
-실제 구현은 v3_depth 학습에 사용한 [ant.rewards.TotalReward](../../source/ant/rewards.py)를 재사용한다. RewardManager에는 `total_reward` 하나가 weight 1.0으로 등록되고, 내부에 다음 weighted component가 있다. 학습과 평가 모두 해당 reward를 사용하며 play용 evaluation reward로 교체하지 않는다.
+실제 구현은 보존된 modified-reward 구현인 [ant.rewards.TotalReward](../../source/ant/rewards.py)를 재사용한다. RewardManager에는 `total_reward` 하나가 weight 1.0으로 등록되고, 내부에 다음 weighted component가 있다. 학습과 평가 모두 해당 reward를 사용하며 play용 evaluation reward로 교체하지 않는다.
 
 | Component | Weight |
 |---|---:|
@@ -194,46 +162,7 @@ Stock 대비 progress와 target-direction weight를 높이고 energy·joint-limi
 
 ## Stage 1 — Terrain perception
 
-### 설정
-
-**HeightScan + Stock vs DepthCam + Stock.** Stock Reward를 고정하고 terrain representation을 비교한다. HeightScan은 63-D terrain heights를 MLP에 입력하고, DepthCam은 depth image를 CNN의 64-D feature로 변환한 뒤 MLP에 입력한다.
-
-공통 PPO source, seed, terrain seed, 총 training transitions 및 평가 절차를 맞췄다. 다만 병렬 환경 수·update 횟수·encoder와 학습 terrain 재선택 여부가 달라, 현재 비교는 완전히 통제된 단일 변수 실험이 아니다.
-
-### 결과
-
-| 지표 | HeightScan + Stock | DepthCam + Stock |
-|---|---:|---:|
-| Return 평균 ± 표준편차 | 61.3354 ± 31.2305 | 57.0139 ± 26.9578 |
-| Displacement 평균 ± 표준편차 | 60.5140 ± 29.1880 m | 53.1530 ± 25.3308 m |
-| Episode duration 평균 ± 표준편차 | 12.1947 ± 5.5930 s | 12.4178 ± 5.5163 s |
-| 평균 전진 속도 | 4.4506 m/s | 3.8172 m/s |
-| Fall | 41/100 | 41/100 |
-| Timeout | 59/100 | 59/100 |
-| Other | 0/100 | 0/100 |
-| ≥2 m | 87/100 | 89/100 |
-| ≥5 m | 87/100 | 89/100 |
-| ≥10 m | 86/100 | 88/100 |
-| Out-of-terrain-X | 28/100 | 23/100 |
-
-### Reward decomposition
-
-같은 Stock Reward contribution의 평균 ± population std이다.
-
-| Component | HeightScan + Stock | DepthCam + Stock |
-|---|---:|---:|
-| progress | 60.4711 ± 29.1633 | 53.1379 ± 25.2545 |
-| alive | 6.0939 ± 2.7998 | 6.2055 ± 2.7614 |
-| upright | 1.0924 ± 0.5508 | 1.1881 ± 0.5556 |
-| move_to_target | 5.3633 ± 2.6815 | 6.0237 ± 2.7660 |
-| action_l2 | -1.2979 ± 8.7617 | -0.1404 ± 0.0631 |
-| energy | -7.2101 ± 3.5063 | -6.4442 ± 3.0680 |
-| joint_pos_limits | -3.1773 ± 1.6496 | -2.9568 ± 1.3043 |
-| total | 61.3354 ± 31.2305 | 57.0139 ± 26.9578 |
-
-### 해석
-
-이 single-seed 평가에서는 HeightScan의 mean return, displacement, 평균 전진 속도가 더 높았고 fall/timeout 수는 동일했다. DepthCam은 ≥5 m 도달 episode가 더 많았다. 학습 terrain-reset과 update 조건 차이가 있으므로 이 결과만으로 HeightScan이 일반적으로 더 효과적이라고 결론내리지 않는다.
+Compare **Baseline + Stock vs HeightScan + Stock** with native proprioception, stock reward, dynamics, PPO, seeds, resets, terrain assignment, curriculum and training budget held fixed. The existing baseline configuration supports this design, but no matching-budget baseline measurement or checkpoint is present. HeightScan alone reports return **61.3354 ± 31.2305**, displacement **60.5140 ± 29.1880 m**, fall **41/100**, timeout **59/100**. These values describe HeightScan; they do not measure improvement over baseline. No missing baseline values are inferred.
 
 ## Stage 2 — Contact feedback
 
@@ -276,7 +205,7 @@ Stock 대비 progress와 target-direction weight를 높이고 energy·joint-limi
 
 이 single-seed evaluation에서 Contact observation을 추가한 policy는 fall count가 41→29, timeout count가 59→71로 변했고, mean displacement는 60.5140→61.8529 m로 소폭 증가했다. 다만 single training seed 결과이므로 일반적인 통계적 유의성이나 Contact가 항상 성능을 향상시킨다고 주장하지 않는다.
 
-## Stage 3 — Reward shaping
+## Stage 3 — Reward design
 
 ### 설정
 
@@ -322,27 +251,6 @@ Stock 대비 progress와 target-direction weight를 높이고 energy·joint-limi
 
 이 seed에서는 Modified 조건의 mean displacement와 duration이 낮고 fall count가 29→43으로 증가했다. Total return이 높다는 사실을 성능 향상으로 해석하지 않는다. Jumping/hopping 완화 여부나 더 안정적인 gait를 이 집계 지표만으로 확정할 수 없으며, 개별 reward term의 효과도 분리할 수 없다.
 
-## 참고: DepthCam + Modified Reward
-
-이 실험은 **59-D proprio + depth CNN 64-D feature = 123-D** 입력을 사용하고, 별도의 4-D explicit Contact observation은 없다. `contact_depth`라는 run 이름은 Contact observation 추가를 뜻하지 않는다. Modified Reward에는 reward-side contact/slip term이 포함되지만 observation-side Contact와는 구분한다.
-
-HeightScan + Contact + Modified와 observation 구성이 일치하지 않고 학습 terrain-reset 조건도 달라, 본 3-stage ablation의 controlled terrain-perception 직접 비교에는 포함하지 않는다. 확보된 결과는 참고용으로 기록한다.
-
-| 지표 | DepthCam + Modified |
-|---|---:|
-| Return (Modified Reward) | 120.4836 ± 63.8864 |
-| Displacement | 48.6275 ± 25.8809 m |
-| Episode duration | 12.0768 ± 5.8787 s |
-| 평균 전진 속도 | 3.4589 m/s |
-| Fall | 41/100 |
-| Timeout | 59/100 |
-| ≥2 m | 86/100 |
-| ≥5 m | 85/100 |
-| ≥10 m | 82/100 |
-| Out-of-terrain-X | 19/100 |
-
-[평가 요약](depthcam_modified_2048x32x2000/results/evaluation_summary.json)과 [reward decomposition](depthcam_modified_2048x32x2000/results/reward_components.csv)에 전체 수치를 보존한다.
-
 ## 평가 protocol
 
 | 항목 | 설정 |
@@ -357,17 +265,15 @@ HeightScan + Contact + Modified와 observation 구성이 일치하지 않고 학
 | Mean vx | 각 episode의 step별 world-X velocity 평균을 100 episode에 대해 평균 |
 | 표준편차 | Population std (`ddof=0`) |
 
-HeightScan의 평가 manifest와 [DepthCam 평가 script](../../scripts/evaluate_depthcam_ablation.py), evaluation summary 및 episode CSV를 대조했다. 다섯 결과의 terrain mesh SHA256과 환경별 initial world-X는 일치한다. HeightScan 3개 결과의 terrain row/column 배정도 일치한다. DepthCam CSV에는 row/column이 없어 해당 배정의 전체 직접 비교는 할 수 없다.
+HeightScan 3개 결과의 terrain mesh SHA256, 환경별 initial world-X 및 terrain row/column 배정이 일치한다. 원본 evaluation manifest와 episode CSV를 보존한다.
 
 Reward decomposition은 실제 RewardManager contribution을 누적한다. Stock은 `raw × weight × control_dt`, Modified는 `TotalReward`의 실제 internal weighted component × manager weight 1 × control dt이며 dt를 중복 적용하지 않는다. 각 실험의 component sum과 공식 episode return residual은 평가 요약에 기록되어 있다.
 
 ## 한계 및 해석 시 주의점
 
-- **Stage 1 통제의 한계:** 동일 transitions에도 env count, rollout batch, PPO update 횟수와 terrain 재선택 여부가 다르다. Encoder와 feature 차원도 63-D HeightScan과 64-D depth feature로 다르다.
 - **Stage 3 reward scale:** Stock과 Modified total return을 차감하거나 배수로 비교해 성능 향상량을 주장하지 않는다. Reward component도 서로 다른 weight·objective 기준이다.
 - **Terrain 경계:** Map-boundary termination이 없어 displacement와 progress에 generated terrain X bounds `[-102, 102]` m 밖의 이동이 포함될 수 있다. 보고된 displacement 전체를 rough-terrain locomotion 거리로 해석하지 않는다.
 - **단일 seed:** 모든 학습 summary의 training seed는 42다. PPO의 확률적 변동이 있으므로 일반적인 통계적 유의성이나 항상 성립하는 개선을 주장하지 않는다.
-- **DepthCam 검증 범위:** 이 checkout에는 두 DepthCam run의 원본 checkpoint와 저장 agent/env config가 없다. Training/evaluation summary의 checkpoint SHA는 일치하지만 tensor·학습 당시 전체 config 수준의 재검증은 수행할 수 없다. 현재 source와 summary에 근거한 구성과, 직접 확인 가능한 HeightScan artifact의 검증 범위를 구분한다.
 
 ## Artifact / checkpoint 위치
 
@@ -376,8 +282,6 @@ Reward decomposition은 실제 RewardManager contribution을 누적한다. Stock
 | HeightScan + Stock | [Summary](heightscan_4096x32x1000/training_summary.json) | [Summary](heightscan_4096x32x1000/evaluation_summary.json) | [Best](heightscan_4096x32x1000/checkpoints/best_model.pt), [마지막 iteration](heightscan_4096x32x1000/checkpoints/final_model.pt) |
 | HeightScan + Contact + Stock | [Summary](heightscan_contact_stock_4096x32x1000/training_summary.json) | [Summary](heightscan_contact_stock_4096x32x1000/evaluation_summary.json) | [Best](heightscan_contact_stock_4096x32x1000/checkpoints/best_model.pt), [마지막 iteration](heightscan_contact_stock_4096x32x1000/checkpoints/final_model.pt) |
 | HeightScan + Contact + Modified | [Summary](heightscan_contact_modified_4096x32x1000/training_summary.json) | [Summary](heightscan_contact_modified_4096x32x1000/evaluation_summary.json) | [Best](heightscan_contact_modified_4096x32x1000/checkpoints/best_model.pt), [마지막 iteration](heightscan_contact_modified_4096x32x1000/checkpoints/final_model.pt) |
-| DepthCam + Stock | [Summary](depthcam_2048x32x2000/training_summary.json) | [Summary](depthcam_2048x32x2000/results/evaluation_summary.json) | Summary에 기록된 `logs/rsl_rl/ant/base_depth/best_model.pt` (미포함) |
-| DepthCam + Modified | [Summary](depthcam_modified_2048x32x2000/training_summary.json) | [Summary](depthcam_modified_2048x32x2000/results/evaluation_summary.json) | Summary에 기록된 `logs/rsl_rl/ant/contact_depth/best_model.pt` (미포함) |
 
 <details>
 <summary>Selected checkpoint SHA256</summary>
@@ -385,14 +289,12 @@ Reward decomposition은 실제 RewardManager contribution을 누적한다. Stock
 | 실험 | SHA256 |
 |---|---|
 | HeightScan + Stock | `49a8a007f152ed9c63df616fbee12a866873be0ee0337ad83597d653ec9b3c06` |
-| DepthCam + Stock | `25ee324c7eeb932f15fbe69515d4593afde06c9c87d78e0ccde02f754e117928` |
 | HeightScan + Contact + Stock | `82c7d0f781c37e0620230ff4b401835d54ef0a18102cdbc8c22c28bb576f57b9` |
 | HeightScan + Contact + Modified | `0471caaadd646feac85cb7bbed0d2c3668279d2d65db9507030a649895ea11b4` |
-| DepthCam + Modified | `2ea3326e502cc1b79d1af3e4bd2abd723f5f3da3abe59504c5f5d5be198e3d45` |
 
 </details>
 
-[기존 Stock protocol](protocol.json), [Contact spec](shared/contact_observation.json), [기존 Contact + Modified protocol](shared/stage2_contact_modified_protocol.json)을 함께 보존한다. 기존 `stage2_*` 파일명과 JSON의 Stage 번호는 이전 비교 구조의 기록이다. 이 README에서는 해당 HeightScan Contact + Modified 결과를 **Stage 3**에 배치했으며, 원본 source·protocol·결과 파일은 변경하지 않았다.
+[기존 Stock protocol](protocol.json), [Contact spec](shared/contact_observation.json), [기존 Contact + Modified protocol](shared/stage2_contact_modified_protocol.json)을 함께 보존한다. 기존 `stage2_*` 파일명은 historical implementation naming이며, source names는 재현성을 위해 유지한다. 이 README에서는 해당 HeightScan Contact + Modified 결과를 **Stage 3**에 배치했으며, Reward, HeightScan behavior 및 결과 파일은 변경하지 않았다. Submission-facing protocol의 비교 metadata만 정리했고, 원본 protocol은 cleanup provenance에 보존했다.
 
 [이전 exploratory HeightScan run](heightscan/manifest.json)은 2048 × 32 × 10000 조건의 참고 자료로 보존한다. 위의 131,072,000-transition 비교에는 포함하지 않는다.
 
@@ -401,11 +303,12 @@ Reward decomposition은 실제 RewardManager contribution을 누적한다. Stock
 | 실험 | 상태 | 본 문서의 배치 |
 |---|---|---|
 | HeightScan + Stock | 학습·평가 완료 | Stage 1, Stage 2 |
-| DepthCam + Stock | 학습 summary·평가 결과 확보 | Stage 1 (학습 조건 차이 명시) |
 | HeightScan + Contact + Stock | 학습·평가 완료 | Stage 2, Stage 3 |
 | HeightScan + Contact + Modified | 학습·평가 완료 | Stage 3 |
-| DepthCam + Modified | 학습 summary·평가 결과 확보 | 참고 실험 (별도 Contact observation 없음) |
 
 ## Submission copy 실행 경로
 
-이 문서는 기존 결과·해석·Stage 구조를 유지한다. Submission의 RL entry point는 `scripts/reinforcement_learning/rsl_rl/`에 있으며, canonical 평가는 기존 전용 evaluator를 사용한다. [Submission README](../../README.md)의 환경 설정과 [별도 path audit](validation/final_submission_check/path_audit.md)을 확인한다. `ISAACLAB_RS`와 `ISAACLAB_ROOT`는 submission root를 지정하며, historical command log와 manifest의 원래 경로는 수정하지 않았다. Runtime import 및 checkpoint 호환성 검증이 완료되기 전에는 새 평가를 실행하지 않는다.
+이 문서는 HeightScan 중심의 staged ablation을 설명하며 기존 HeightScan 결과를 보존한다. Submission의 RL entry point는 `scripts/reinforcement_learning/rsl_rl/`에 있으며, canonical 평가는 기존 전용 evaluator를 사용한다. [Submission README](../../README.md)의 환경 설정과 [별도 path audit](validation/final_submission_check/path_audit.md)을 확인한다. `ISAACLAB_RS`와 `ISAACLAB_ROOT`는 submission root를 지정하며, historical command log와 manifest의 원래 경로는 수정하지 않았다. 기존 runtime 및 checkpoint interface 검증 기록을 보존하며 cleanup 검증은 별도로 기록한다.
+
+
+Historical saved configs, source mappings and integrity records are immutable pre-cleanup evidence. See [cleanup audit](../../docs/submission_provenance/heightscan_cleanup/README.md) for intentional removals and current validation.

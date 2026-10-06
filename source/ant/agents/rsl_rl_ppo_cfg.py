@@ -9,26 +9,16 @@ from isaaclab_rl.rsl_rl import RslRlOnPolicyRunnerCfg, RslRlPpoActorCriticCfg, R
 
 
 @configclass
-class DepthActorCriticCfg(RslRlPpoActorCriticCfg):
-    """Configuration for the proprioception and depth CNN policy."""
-
-    class_name: str = "DepthActorCritic"
-    depth_embedding_dim: int = 64
-    proprioception_group: str = "policy"
-    depth_group: str = "depth"
-
-
-@configclass
 class AntPPORunnerCfg(RslRlOnPolicyRunnerCfg):
     num_steps_per_env = 32
     max_iterations = 1000
     save_interval = 50
     experiment_name = "ant"
     obs_groups = {
-        "policy": ["policy", "depth"],
-        "critic": ["policy", "depth"],
+        "policy": ["policy"],
+        "critic": ["policy"],
     }
-    policy = DepthActorCriticCfg(
+    policy = RslRlPpoActorCriticCfg(
         init_noise_std=1.0,
         actor_obs_normalization=False,
         critic_obs_normalization=False,

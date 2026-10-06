@@ -1,8 +1,8 @@
-"""Stage 2 HeightScan arm; original Team1 and Stage 1 configs stay intact.
+"""Final HeightScan + Contact configuration with modified reward.
 
 HeightScan and explicit contact observation are adapted from the existing
 IsaacLab_RS Assignment 1 HeightScan+Contact implementation. Training and
-inference both reuse Team1 v3_depth TotalReward without changing its code.
+inference both reuse the preserved Team1 TotalReward without changing its code.
 """
 from isaaclab.utils import configclass
 from isaaclab_tasks.manager_based.classic.ant.ant_contact_observations import (
