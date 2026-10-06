@@ -1,0 +1,199 @@
+{
+  "timestamp_utc": "2026-10-06T08:37:10.466123+00:00",
+  "pass_": true,
+  "pass": true,
+  "base_git_head": "09ccc66d44b1304147a37c18fa07223210964abe",
+  "branch": "main",
+  "working_tree_clean": false,
+  "working_tree_status": "M README.md\n M experiments/observation_ablation/README.md\n M experiments/observation_ablation/protocol.json\n?? experiments/observation_ablation/baseline_4096x32x1000/\n?? experiments/observation_ablation/common_stock_reward_evaluation/\n?? logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000/\n?? scripts/analyze_common_stock_reward.py\n?? scripts/baseline_observation_ablation_budget.py\n?? scripts/evaluate_common_stock_reward.py\n?? scripts/finalize_baseline_ablation.py\n?? scripts/finalize_baseline_training.py\n?? scripts/run_baseline_ablation.py\n?? scripts/run_common_stock_reward_evaluation.py",
+  "protected_before_count": 2395,
+  "byte_identical_count": 2390,
+  "intentional_changes": {
+    "README.md": {
+      "before_sha256": "b0ba849eefe9d1ebe7a224cdcc87579caccdf7e2e64f8bad83cf171cc93e499f",
+      "after_sha256": "9b61aef3ebf9fd883b57ec48d834853c54f06cba86eec7b84849db0b2e33c90f",
+      "original_snapshot_path": "experiments/observation_ablation/baseline_4096x32x1000/source_snapshots/root_README_before_baseline.md",
+      "reason": "Add measured matching-budget Baseline and four-policy evaluation; retain historical three-policy outputs"
+    },
+    "experiments/observation_ablation/README.md": {
+      "before_sha256": "41d7d838c37019d7d367318913b924cae8172c1f4efa41778068535f1d93fabb",
+      "after_sha256": "f10ba26c5a4286c972ddd4c69469506c1c105a8149270e05defabd9cd0991d99",
+      "original_snapshot_path": "experiments/observation_ablation/baseline_4096x32x1000/source_snapshots/experiment_README_before_baseline.md",
+      "reason": "Add measured matching-budget Baseline and four-policy evaluation; retain historical three-policy outputs"
+    },
+    "experiments/observation_ablation/protocol.json": {
+      "before_sha256": "ef44859805b74070c11fad974d0285d668ba70f6dd59dce0df9c015d76e59bdf",
+      "after_sha256": "b80fd769803ccccee2f333195a3c99623a9782c4bf8dafbd89a3bd1b3e3e78bc",
+      "original_snapshot_path": "experiments/observation_ablation/baseline_4096x32x1000/source_snapshots/protocol_before_baseline.json",
+      "reason": "Add measured matching-budget Baseline and four-policy evaluation; retain historical three-policy outputs"
+    },
+    "scripts/analyze_common_stock_reward.py": {
+      "before_sha256": "c37436bb51784c49dfba63a8762a545c3c9c044f46daae15f27555ba5dadd8dc",
+      "after_sha256": "62bb7bb5606a304703d88ef2da69d13e60ee94c23af82ad211428969ef054298",
+      "original_snapshot_path": "experiments/observation_ablation/baseline_4096x32x1000/source_snapshots/analyze_common_stock_reward.py",
+      "reason": "Add measured matching-budget Baseline and four-policy evaluation; retain historical three-policy outputs"
+    },
+    "scripts/evaluate_common_stock_reward.py": {
+      "before_sha256": "8656244d58485b4f57604f8dae1f9c53d6f672af1ce848ee38e88ab10d1fdfe2",
+      "after_sha256": "eb7dc9a4c19077a57961ea864a144ad1da113cdb23fc283df8aeb5aa83b082f1",
+      "original_snapshot_path": "experiments/observation_ablation/baseline_4096x32x1000/source_snapshots/evaluate_common_stock_reward.py",
+      "reason": "Add measured matching-budget Baseline and four-policy evaluation; retain historical three-policy outputs"
+    }
+  },
+  "previous_common_stock_files_unchanged": 50,
+  "checkpoint_hashes": {
+    "baseline": {
+      "path": "experiments/observation_ablation/baseline_4096x32x1000/checkpoints/best_model.pt",
+      "sha256": "673ce3492e979ad99c12f0becd7bf223bbdd8075cbbc54a33139a8f2faf65a1a"
+    },
+    "heightscan_stock": {
+      "path": "experiments/observation_ablation/heightscan_4096x32x1000/checkpoints/best_model.pt",
+      "sha256": "49a8a007f152ed9c63df616fbee12a866873be0ee0337ad83597d653ec9b3c06"
+    },
+    "heightscan_contact_stock": {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/checkpoints/best_model.pt",
+      "sha256": "82c7d0f781c37e0620230ff4b401835d54ef0a18102cdbc8c22c28bb576f57b9"
+    },
+    "heightscan_contact_modified_trained": {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/checkpoints/best_model.pt",
+      "sha256": "0471caaadd646feac85cb7bbed0d2c3668279d2d65db9507030a649895ea11b4"
+    }
+  },
+  "python_compilation": {
+    "pass_": true,
+    "files": [
+      "experiments/observation_ablation/baseline_4096x32x1000/source_snapshots/analyze_common_stock_reward.py",
+      "experiments/observation_ablation/baseline_4096x32x1000/source_snapshots/baseline_trainer_after_path_fix.py",
+      "experiments/observation_ablation/baseline_4096x32x1000/source_snapshots/baseline_trainer_used_for_training.py",
+      "experiments/observation_ablation/baseline_4096x32x1000/source_snapshots/evaluate_common_stock_reward.py",
+      "experiments/observation_ablation/baseline_4096x32x1000/source_snapshots/run_common_stock_reward_evaluation.py",
+      "scripts/analyze_common_stock_reward.py",
+      "scripts/baseline_observation_ablation_budget.py",
+      "scripts/evaluate_common_stock_reward.py",
+      "scripts/finalize_baseline_ablation.py",
+      "scripts/finalize_baseline_training.py",
+      "scripts/run_baseline_ablation.py",
+      "scripts/run_common_stock_reward_evaluation.py"
+    ],
+    "count": 12
+  },
+  "relative_documentation_links": {
+    "pass_": true,
+    "checked": 133
+  },
+  "four_policy_validation": {
+    "pass_": true,
+    "first_episodes_per_policy": 100,
+    "unique_environment_ids": true,
+    "finite": true,
+    "summary_and_components_recomputed": true,
+    "observation_dimensions": [
+      59,
+      122,
+      126,
+      126
+    ],
+    "exact_initial_conditions_pairing": false,
+    "pairing_details_vs_baseline": {
+      "heightscan_stock": {
+        "root_state_w": true,
+        "joint_pos": false,
+        "joint_vel": true,
+        "env_origins": true,
+        "terrain_rows": true,
+        "terrain_columns": true,
+        "material_properties": true
+      },
+      "heightscan_contact_stock": {
+        "root_state_w": true,
+        "joint_pos": false,
+        "joint_vel": true,
+        "env_origins": true,
+        "terrain_rows": true,
+        "terrain_columns": true,
+        "material_properties": true
+      },
+      "heightscan_contact_modified_trained": {
+        "root_state_w": true,
+        "joint_pos": false,
+        "joint_vel": true,
+        "env_origins": true,
+        "terrain_rows": true,
+        "terrain_columns": true,
+        "material_properties": true
+      }
+    },
+    "retained_three_policies_paired": true,
+    "reward_termination_reset_parity": true,
+    "training_budget_verified": true,
+    "training_selection_verified": true,
+    "finite_training_checkpoints": [
+      "logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000/best_model.pt",
+      "logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000/model_0.pt",
+      "logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000/model_100.pt",
+      "logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000/model_150.pt",
+      "logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000/model_200.pt",
+      "logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000/model_250.pt",
+      "logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000/model_300.pt",
+      "logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000/model_350.pt",
+      "logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000/model_400.pt",
+      "logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000/model_450.pt",
+      "logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000/model_50.pt",
+      "logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000/model_500.pt",
+      "logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000/model_550.pt",
+      "logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000/model_600.pt",
+      "logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000/model_650.pt",
+      "logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000/model_700.pt",
+      "logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000/model_750.pt",
+      "logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000/model_800.pt",
+      "logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000/model_850.pt",
+      "logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000/model_900.pt",
+      "logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000/model_950.pt",
+      "logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000/model_999.pt"
+    ],
+    "checkpoint_hashes_unchanged": true
+  },
+  "config_smoke_record": "experiments/observation_ablation/baseline_4096x32x1000/evaluation_config_verification/reward_config_verification.json",
+  "native_baseline_smoke_record": "experiments/observation_ablation/baseline_4096x32x1000/smoke",
+  "tensorboard_verification": {
+    "mean_reward_points": 1000,
+    "first_iteration": 0,
+    "last_iteration": 999,
+    "tensorboard_mean_reward_complete": true
+  },
+  "training_summary": {
+    "completed": true,
+    "iterations": 1000,
+    "num_steps_per_env": 32,
+    "total_transitions": 131072000,
+    "actual_total_transitions": 131072000,
+    "actual_completed_iterations": 1000,
+    "resume": false,
+    "training_seed": 42,
+    "terrain_seed": 42,
+    "launch_timestamp": "2026-10-06T08:09:51.575718+00:00",
+    "end_timestamp": "2026-10-06T08:17:54.136270+00:00",
+    "end_timestamp_source": "model_999.pt mtime after completed training",
+    "wall_time_seconds": 471,
+    "wall_time_source": "rounded runner elapsed display; exact perf_counter duration unavailable after post-training exception",
+    "run_path": "logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000",
+    "selected_iteration": 875,
+    "selected_training_mean_reward": 42.83538151267916,
+    "selected_checkpoint": "experiments/observation_ablation/baseline_4096x32x1000/checkpoints/best_model.pt",
+    "checkpoint_sha256": "673ce3492e979ad99c12f0becd7bf223bbdd8075cbbc54a33139a8f2faf65a1a",
+    "final_checkpoint": "experiments/observation_ablation/baseline_4096x32x1000/checkpoints/final_model.pt",
+    "final_checkpoint_sha256": "c232bea24cd7cf335f8e3bb76848a46cc8fc14b7747a7cbe9e74f941e47ce616",
+    "training_process_exit_code": 1,
+    "post_training_metadata_recovered": true,
+    "recovery_record": "training_finalization_recovery.json"
+  },
+  "historical_records_rewritten": false,
+  "git_diff_check": "PASS",
+  "note": "1000 updates completed; training process exited 1 during post-training metadata path handling. Metadata recovered without retraining or changing checkpoints. Stage 1 joint positions differ: no full pairing claim.",
+  "config_smoke_pass": true,
+  "source_phase_hashes_verified": true,
+  "result_recomputation_checks": {
+    "four_policy": "PASS",
+    "preserved_three_policy": "PASS"
+  }
+}

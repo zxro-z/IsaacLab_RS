@@ -1,0 +1,56 @@
+unset LD_PRELOAD ISAAC_SIM_SITE_PACKAGES ISAAC_PATH CARB_APP_PATH EXP_PATH
+export ISAACLAB_RS=/home/zxro/ant_rl_submission
+export ISAACLAB_ROOT=/home/zxro/ant_rl_submission
+export PYTHONDONTWRITEBYTECODE=1
+export PYTHONPATH=/home/zxro/ant_rl_submission/source:/home/zxro/ant_rl_submission/source/isaaclab:/home/zxro/ant_rl_submission/source/isaaclab_assets:/home/zxro/ant_rl_submission/source/isaaclab_tasks:/home/zxro/ant_rl_submission/source/isaaclab_rl:/home/zxro/ant_rl_submission/source/isaaclab_mimic
+export MPLCONFIGDIR=/tmp/ant_baseline_matplotlib
+export XDG_CACHE_HOME=/tmp/ant_baseline_cache
+/home/zxro/miniforge3/envs/lerobot-arena/bin/python -u scripts/baseline_observation_ablation_budget.py verify --output experiments/observation_ablation/baseline_4096x32x1000 --headless --kit_args '--portable-root=/tmp/ant_baseline_kit --/app/settings/persistent=false'
+unset LD_PRELOAD ISAAC_SIM_SITE_PACKAGES ISAAC_PATH CARB_APP_PATH EXP_PATH
+export ISAACLAB_RS=/home/zxro/ant_rl_submission
+export ISAACLAB_ROOT=/home/zxro/ant_rl_submission
+export PYTHONDONTWRITEBYTECODE=1
+export PYTHONPATH=/home/zxro/ant_rl_submission/source:/home/zxro/ant_rl_submission/source/isaaclab:/home/zxro/ant_rl_submission/source/isaaclab_assets:/home/zxro/ant_rl_submission/source/isaaclab_tasks:/home/zxro/ant_rl_submission/source/isaaclab_rl:/home/zxro/ant_rl_submission/source/isaaclab_mimic
+export MPLCONFIGDIR=/tmp/ant_baseline_matplotlib
+export XDG_CACHE_HOME=/tmp/ant_baseline_cache
+/home/zxro/miniforge3/envs/lerobot-arena/bin/python -u scripts/baseline_observation_ablation_budget.py smoke --output experiments/observation_ablation/baseline_4096x32x1000/smoke --headless --kit_args '--portable-root=/tmp/ant_baseline_kit --/app/settings/persistent=false'
+unset LD_PRELOAD ISAAC_SIM_SITE_PACKAGES ISAAC_PATH CARB_APP_PATH EXP_PATH
+export ISAACLAB_RS=/home/zxro/ant_rl_submission
+export ISAACLAB_ROOT=/home/zxro/ant_rl_submission
+export PYTHONDONTWRITEBYTECODE=1
+export PYTHONPATH=/home/zxro/ant_rl_submission/source:/home/zxro/ant_rl_submission/source/isaaclab:/home/zxro/ant_rl_submission/source/isaaclab_assets:/home/zxro/ant_rl_submission/source/isaaclab_tasks:/home/zxro/ant_rl_submission/source/isaaclab_rl:/home/zxro/ant_rl_submission/source/isaaclab_mimic
+export MPLCONFIGDIR=/tmp/ant_baseline_matplotlib
+export XDG_CACHE_HOME=/tmp/ant_baseline_cache
+/home/zxro/miniforge3/envs/lerobot-arena/bin/python -u scripts/baseline_observation_ablation_budget.py train --output logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000 --headless --kit_args '--portable-root=/tmp/ant_baseline_kit --/app/settings/persistent=false'
+unset LD_PRELOAD ISAAC_SIM_SITE_PACKAGES ISAAC_PATH CARB_APP_PATH EXP_PATH
+export ISAACLAB_RS=/home/zxro/ant_rl_submission
+export ISAACLAB_ROOT=/home/zxro/ant_rl_submission
+export PYTHONDONTWRITEBYTECODE=1
+export PYTHONPATH=/home/zxro/ant_rl_submission/source:/home/zxro/ant_rl_submission/source/isaaclab:/home/zxro/ant_rl_submission/source/isaaclab_assets:/home/zxro/ant_rl_submission/source/isaaclab_tasks:/home/zxro/ant_rl_submission/source/isaaclab_rl:/home/zxro/ant_rl_submission/source/isaaclab_mimic
+export MPLCONFIGDIR=/tmp/ant_baseline_matplotlib
+export XDG_CACHE_HOME=/tmp/ant_baseline_cache
+/home/zxro/miniforge3/envs/lerobot-arena/bin/python -u scripts/evaluate_common_stock_reward.py verify --output experiments/observation_ablation/baseline_4096x32x1000/evaluation_config_verification --verification-record experiments/observation_ablation/baseline_4096x32x1000/evaluation_config_verification/reward_config_verification.json --headless --kit_args '--portable-root=/tmp/ant_baseline_kit --/app/settings/persistent=false'
+unset LD_PRELOAD ISAAC_SIM_SITE_PACKAGES ISAAC_PATH CARB_APP_PATH EXP_PATH
+export ISAACLAB_RS=/home/zxro/ant_rl_submission
+export ISAACLAB_ROOT=/home/zxro/ant_rl_submission
+export PYTHONDONTWRITEBYTECODE=1
+export PYTHONPATH=/home/zxro/ant_rl_submission/source:/home/zxro/ant_rl_submission/source/isaaclab:/home/zxro/ant_rl_submission/source/isaaclab_assets:/home/zxro/ant_rl_submission/source/isaaclab_tasks:/home/zxro/ant_rl_submission/source/isaaclab_rl:/home/zxro/ant_rl_submission/source/isaaclab_mimic
+export MPLCONFIGDIR=/tmp/ant_baseline_matplotlib
+export XDG_CACHE_HOME=/tmp/ant_baseline_cache
+/home/zxro/miniforge3/envs/lerobot-arena/bin/python -u scripts/evaluate_common_stock_reward.py smoke --output experiments/observation_ablation/common_stock_reward_evaluation/smoke/baseline --verification-record experiments/observation_ablation/baseline_4096x32x1000/evaluation_config_verification/reward_config_verification.json --policy baseline --headless --kit_args '--portable-root=/tmp/ant_baseline_kit --/app/settings/persistent=false'
+unset LD_PRELOAD ISAAC_SIM_SITE_PACKAGES ISAAC_PATH CARB_APP_PATH EXP_PATH
+export ISAACLAB_RS=/home/zxro/ant_rl_submission
+export ISAACLAB_ROOT=/home/zxro/ant_rl_submission
+export PYTHONDONTWRITEBYTECODE=1
+export PYTHONPATH=/home/zxro/ant_rl_submission/source:/home/zxro/ant_rl_submission/source/isaaclab:/home/zxro/ant_rl_submission/source/isaaclab_assets:/home/zxro/ant_rl_submission/source/isaaclab_tasks:/home/zxro/ant_rl_submission/source/isaaclab_rl:/home/zxro/ant_rl_submission/source/isaaclab_mimic
+export MPLCONFIGDIR=/tmp/ant_baseline_matplotlib
+export XDG_CACHE_HOME=/tmp/ant_baseline_cache
+/home/zxro/miniforge3/envs/lerobot-arena/bin/python -u scripts/evaluate_common_stock_reward.py evaluate --output experiments/observation_ablation/common_stock_reward_evaluation/baseline --verification-record experiments/observation_ablation/baseline_4096x32x1000/evaluation_config_verification/reward_config_verification.json --policy baseline --headless --kit_args '--portable-root=/tmp/ant_baseline_kit --/app/settings/persistent=false'
+/home/zxro/miniforge3/envs/lerobot-arena/bin/python scripts/finalize_baseline_training.py
+/home/zxro/miniforge3/envs/lerobot-arena/bin/python scripts/finalize_baseline_ablation.py
+
+# Final verification 2026-10-06T08:37:55.387795+00:00
+/home/zxro/miniforge3/envs/lerobot-arena/bin/python scripts/finalize_baseline_ablation.py --check-only
+
+# Final verification 2026-10-06T08:37:55.534526+00:00
+python scripts/analyze_common_stock_reward.py --check-only

@@ -1,0 +1,21 @@
+{
+  "timestamp_utc": "2026-10-06T08:20:10.648211+00:00",
+  "failure": "After training completed, relative output Path.relative_to(absolute ROOT) raised ValueError while saving checkpoint_selection.json",
+  "fix": "Resolve output path before launcher/config processing",
+  "training_completed": true,
+  "updates_verified": 1000,
+  "transitions_verified": 131072000,
+  "evidence": [
+    "training_curve.csv",
+    "train_stdout.log",
+    "model_999.pt",
+    "best_model.pt"
+  ],
+  "source_used_for_training": "source_snapshots/baseline_trainer_used_for_training.py",
+  "source_used_sha256": "7fdae7785ed1a86d72c77888085d2f3398d32028c92c60accb728fcd992bd33c",
+  "corrected_source_sha256": "1ebefef07ef9cb858f9d5ef29e1621a463502779b33dab0e46454f06fa6cf403",
+  "retrained": false,
+  "checkpoint_bytes_changed": false,
+  "evaluation_used_for_selection": false,
+  "raw_failure_log_preserved": true
+}

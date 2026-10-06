@@ -1,0 +1,82 @@
+{
+  "pass": true,
+  "policy": "heightscan_contact_modified_trained",
+  "checkpoint_loaded": true,
+  "actor_forward": true,
+  "deterministic": true,
+  "observation_dimension": 126,
+  "finite": true,
+  "num_envs": 4,
+  "steps": 32,
+  "evaluation_reward": "Stock",
+  "runtime_reward_terms": [
+    {
+      "term": "progress",
+      "weight": 1.0,
+      "function": "isaaclab_tasks.manager_based.classic.humanoid.mdp.rewards.progress_reward",
+      "params": {
+        "target_pos": [
+          1000.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "term": "alive",
+      "weight": 0.5,
+      "function": "isaaclab.envs.mdp.rewards.is_alive",
+      "params": {}
+    },
+    {
+      "term": "upright",
+      "weight": 0.1,
+      "function": "isaaclab_tasks.manager_based.classic.humanoid.mdp.rewards.upright_posture_bonus",
+      "params": {
+        "threshold": 0.93
+      }
+    },
+    {
+      "term": "move_to_target",
+      "weight": 0.5,
+      "function": "isaaclab_tasks.manager_based.classic.humanoid.mdp.rewards.move_to_target_bonus",
+      "params": {
+        "threshold": 0.8,
+        "target_pos": [
+          1000.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "term": "action_l2",
+      "weight": -0.005,
+      "function": "isaaclab.envs.mdp.rewards.action_l2",
+      "params": {}
+    },
+    {
+      "term": "energy",
+      "weight": -0.05,
+      "function": "isaaclab_tasks.manager_based.classic.humanoid.mdp.rewards.power_consumption",
+      "params": {
+        "gear_ratio": {
+          ".*": 15.0
+        }
+      }
+    },
+    {
+      "term": "joint_pos_limits",
+      "weight": -0.1,
+      "function": "isaaclab_tasks.manager_based.classic.humanoid.mdp.rewards.joint_pos_limits_penalty_ratio",
+      "params": {
+        "threshold": 0.99,
+        "gear_ratio": {
+          ".*": 15.0
+        }
+      }
+    }
+  ],
+  "max_step_reward_residual": 8.01560418040026e-09,
+  "metrics_are_experiment_results": false
+}

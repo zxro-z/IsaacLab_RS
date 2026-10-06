@@ -1,0 +1,71 @@
+diff --git a/README.md b/README.md
+index 6e6d20c..9f10163 100644
+--- a/README.md
++++ b/README.md
+@@ -51,7 +51,23 @@ Baseline은 기존 24-D incoming foot wrench를 포함한 프로젝트의 **59-D
+ 
+ 설계 목적은 반복적인 jumping/hopping을 완화하고, 지면 접촉, foot slip, 관절 운동, 제어 부담를 함께 고려하는 것이다. 기존 weight를 변경하고 contact, joint-velocity, slip term을 추가한다. 개별 term의 효과를 분리하는 실험은 아니며 reward objective 전체의 변경을 비교한다. Reward-side contact는 observation과 다른 정의를 사용한다. 세 프레임의 최대 vertical force > 5 N으로 접촉을 판정하고, 최소 두 발이 접촉할 때 bonus를 부여한다. 집계 결과만으로 hopping 감소나 더 안정적인 gait를 확인할 수는 없다.
+ 
+-## 주요 결과
++## 공통 Stock Reward 기준 과제 평가
++
++**세 policy 모두 동일한 Stock Reward로 평가했다.** HeightScan + Stock은 학습 당시의 **122-D**, 두 Contact policy는 **126-D** observation을 그대로 받는다. Modified-trained policy도 학습에는 Modified Reward를 사용했지만, 여기서는 Stock Reward로 점수를 계산한다. 아래 표가 과제의 공통 objective에 따른 직접적인 policy 점수 비교다.
++
++Evaluation seed 24, terrain seed 42, **100개 환경**, deterministic mean action, 각 환경의 첫 episode, 최대 16 s / 960 control steps를 사용했다. Termination과 reset은 기존 설정을 유지하며 terminal reward를 포함하고 post-reset reward를 제외한다. Terrain mesh와 환경별 초기 root/joint 상태, friction, terrain 배정이 일치하는 paired evaluation이다. 각 조건은 100/100 episode를 완료했다. ±는 100개 평가 환경에 대한 population standard deviation이며 training seed 간 변동이 아니다.
++
++| 학습 조건 | 평가 Reward | Stock Return | Displacement (m) | Duration (s) | 평균 전진 속도 (m/s) | Fall | Timeout | ≥5 m |
++|---|---|---:|---:|---:|---:|---:|---:|---:|
++| HeightScan + Stock | Stock | 61.3354 ± 31.2305 | 60.5140 ± 29.1880 | 12.1947 ± 5.5930 | 4.4506 ± 1.5331 | 41/100 | 59/100 | 87/100 |
++| HeightScan + Contact + Stock | Stock | 63.5682 ± 28.5777 | 61.8529 ± 27.8017 | 12.9088 ± 5.3955 | 4.3692 ± 1.3281 | 29/100 | 71/100 | 89/100 |
++| HeightScan + Contact + Modified | Stock | 60.9104 ± 30.3957 | 56.5627 ± 28.3639 | 12.1187 ± 5.6815 | 4.0718 ± 1.5654 | 43/100 | 57/100 | 86/100 |
++
++Contact 추가 후 평균 Stock Return은 **2.2328** 높고 fall은 41→29로 감소했다. 동일한 126-D interface를 사용하는 Modified-trained policy는 Contact + Stock-trained policy보다 평균 Stock Return이 **2.6578 낮으며**, displacement·duration·속도가 낮고 fall은 29→43으로 증가했다. 따라서 이 single-seed 평가에서 Modified Reward 학습은 공통 Stock Reward 과제 objective의 성능을 개선하지 못했다. 두 Stock-trained policy의 return과 세 policy의 episode별 보행 지표는 기존 canonical 기록과 동일하다.
++
++이 평가는 새 checkpoint 선택이나 재학습 없이 수행한 별도 평가다. 기존 Modified objective의 **134.8413** return과 새 Stock Return을 직접 비교하지 않는다. Baseline 결과 부재, single-seed 범위, 맵 경계의 영향은 그대로 적용된다. [평가 기록과 재현 방법](experiments/observation_ablation/common_stock_reward_evaluation/README.md), [비교 CSV](experiments/observation_ablation/common_stock_reward_evaluation/comparison.csv), [검증 기록](experiments/observation_ablation/common_stock_reward_evaluation/integrity_validation.json)을 함께 제공한다.
++
++## 주요 결과 — 학습 objective 기준 진단
+ 
+ 아래 표는 보존된 세 policy의 canonical evaluation 결과다. **Seed 24, 100개 환경, deterministic mean action, 각 환경의 첫 episode만 사용**했으며, 조건별 100개 episode가 모두 완료되었다. 평가 길이는 최대 16 s / 960 control steps이고, terminal reward는 포함하되 reset 이후 reward는 제외한다. 각 policy는 학습 당시의 reward로 평가한다. 연속형 지표는 평균이며, ±는 population standard deviation을 나타낸다.
+ 
+@@ -145,7 +161,7 @@ export PYTHONPATH="$PWD/source:$PWD/source/isaaclab:$PWD/source/isaaclab_assets:
+ 
+ 기록된 submission validation에서 세 조건의 canonical evaluation을 100개 환경에서 재현했으며, summary와 episode CSV가 기존 결과와 일치했다. [최종 평가 검증 자료](experiments/observation_ablation/validation/final_submission_check/final_100env_evaluation/)는 원본 실험 결과와 별도로 보존되어 있다.
+ 
+-[최종 검증 기록](docs/submission_provenance/heightscan_cleanup/final_verification/README.md)에는 프로젝트의 다섯 Ant task에 대한 import/config 검사, Python compile, checkpoint/config input의 일치 여부, **473개 보호 artifact의 byte 단위 동일성 유지**가 기록되어 있다. Rendering과 video 기능도 유지되어 있다. 이는 기존 검증 결과이며, README를 정리하면서 시뮬레이션을 다시 실행하거나 결과를 재생성하지 않았다.
++[최종 검증 기록](docs/submission_provenance/heightscan_cleanup/final_verification/README.md)에는 프로젝트의 다섯 Ant task에 대한 import/config 검사, Python compile, checkpoint/config input의 일치 여부, **473개 보호 artifact의 byte 단위 동일성 유지**가 기록되어 있다. Rendering과 video 기능도 유지되어 있다. 이 cleanup 검증은 기존 기록이며, 새 공통 Stock Reward 평가의 검증은 [별도 기록](experiments/observation_ablation/common_stock_reward_evaluation/integrity_validation.json)으로 보존한다. 기존 canonical 결과와 checkpoint는 변경하지 않았다.
+ 
+ Checkpoint는 학습 전에 정한 기준인 완료 episode의 최고 logged training mean return으로 선택하며, evaluation 결과를 이용해 선택하지 않는다. Selected iteration은 결과 표의 조건 순서대로 804, 972, 788이다. 각 `final_model.pt`에는 iteration 999가 보존되어 있다. Hash, source mapping, checkpoint selection 기록은 상세 실험 README에서 확인할 수 있다. Historical manifest는 작성 당시 snapshot과 원래 경로를 기록한 자료이므로, 현재 파일 목록이나 다른 환경에서 그대로 실행할 수 있는 명령 목록으로 해석하지 않는다.
+ 
+diff --git a/experiments/observation_ablation/README.md b/experiments/observation_ablation/README.md
+index ba4f429..90af37f 100644
+--- a/experiments/observation_ablation/README.md
++++ b/experiments/observation_ablation/README.md
+@@ -251,7 +251,27 @@ Compare **Baseline + Stock vs HeightScan + Stock** with native proprioception, s
+ 
+ 이 seed에서는 Modified 조건의 mean displacement와 duration이 낮고 fall count가 29→43으로 증가했다. Total return이 높다는 사실을 성능 향상으로 해석하지 않는다. Jumping/hopping 완화 여부나 더 안정적인 gait를 이 집계 지표만으로 확정할 수 없으며, 개별 reward term의 효과도 분리할 수 없다.
+ 
+-## 평가 protocol
++## 공통 Stock Reward 기준 과제 평가
++
++기존 canonical 결과는 각 policy를 **학습 objective로 평가한 진단**으로 보존한다. 이와 별도로, 선택된 `best_model.pt` 세 개를 **모두 동일한 Stock Reward**로 평가했다. Modified-trained policy의 training reward는 Modified이고 evaluation reward는 Stock이다. Policy observation과 checkpoint는 각각 **122-D / 126-D / 126-D**로 유지하며 재학습이나 checkpoint 재선택은 하지 않는다.
++
++Evaluation seed 24, terrain seed 42, 100개 환경, deterministic mean action, 첫 episode만 집계, 최대 16 s / 960 steps / 60 Hz를 사용한다. 환경 설정을 비교한 결과 reward 교체 외에는 기존 dynamics·action·termination·reset·terrain·curriculum을 변경하지 않았다. 두 Contact 평가 config는 reward 교체 후 완전히 동일하며, HeightScan-only는 추가 observation용 `feet_contacts` sensor와 4-D term만 다르다. Runtime reward 함수·parameter·weight의 일치를 확인했고 terminal reward를 포함하며 post-reset reward를 제외한다.
++
++Terrain mesh와 환경별 초기 root state, joint position/velocity, origin, terrain row/column, material property가 동일하므로 환경 ID별 paired evaluation이다. 모든 조건은 100/100 첫 episode를 완료했다. 연속형 지표는 평균 ± population std (`ddof=0`)다.
++
++| 학습 조건 | 평가 Reward | Stock Return | Displacement (m) | Duration (s) | Mean vx (m/s) | Fall | Timeout | ≥5 m |
++|---|---|---:|---:|---:|---:|---:|---:|---:|
++| HeightScan + Stock | Stock | 61.3354 ± 31.2305 | 60.5140 ± 29.1880 | 12.1947 ± 5.5930 | 4.4506 ± 1.5331 | 41/100 | 59/100 | 87/100 |
++| HeightScan + Contact + Stock | Stock | 63.5682 ± 28.5777 | 61.8529 ± 27.8017 | 12.9088 ± 5.3955 | 4.3692 ± 1.3281 | 29/100 | 71/100 | 89/100 |
++| HeightScan + Contact + Modified | Stock | 60.9104 ± 30.3957 | 56.5627 ± 28.3639 | 12.1187 ± 5.6815 | 4.0718 ± 1.5654 | 43/100 | 57/100 | 86/100 |
++
++Stage 2에서 Contact + Stock − HeightScan + Stock의 평균 return 차이는 **+2.2328**, displacement 차이는 **+1.3389 m**, duration 차이는 **+0.7142 s**이며 fall은 12개 적다. Stage 3에서 Modified-trained − Stock-trained Contact policy의 평균 return 차이는 **−2.6578**, displacement 차이는 **−5.2902 m**, duration 차이는 **−0.7902 s**이며 fall은 14개 많다. Modified Reward 학습은 이 공통 Stock Reward objective에서 Stock-trained Contact policy를 능가하지 못했다. 이는 single training seed의 기술적 비교이며 training seed 간 통계적 유의성을 주장하지 않는다.
++
++같은 Stock Reward decomposition에서는 Modified-trained policy의 energy·action·joint-limit penalty가 덜 음수였지만 progress contribution도 낮았다. 제어 penalty 감소가 낮은 전진 성과를 상쇄하지 못했다. Aggregate 결과로 hopping 감소나 gait의 일반적 우월성을 주장하지 않는다. 기존 Modified objective return **134.8413 ± 68.0187**은 위 Stock Return과 직접 비교하지 않는다. 맵 밖 이동은 여전히 displacement와 progress에 포함될 수 있다.
++
++두 Stock policy의 return과 세 policy의 episode별 보행 지표가 기존 canonical CSV와 동일함을 확인했다. 원본 summary·CSV·checkpoint·historical manifest는 보존한다. [별도 평가 기록](common_stock_reward_evaluation/README.md)에는 재현 명령, 공통 reward 명세, decomposition, pairing 및 integrity 검증과 artifact 목록이 있다.
++
++## Canonical 평가 protocol — 학습 objective 기준 진단
+ 
+ | 항목 | 설정 |
+ |---|---|

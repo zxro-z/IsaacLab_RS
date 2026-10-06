@@ -1,0 +1,407 @@
+{
+  "evaluation_reward": "Stock for all policies",
+  "summaries": {
+    "heightscan_stock": {
+      "metrics": {
+        "episode_return": {
+          "mean": 61.3353775697478,
+          "std": 31.23054870280697,
+          "min": -18.08592062292155,
+          "max": 98.28984913649037
+        },
+        "forward_displacement": {
+          "mean": 60.514010734558106,
+          "std": 29.188002298239002,
+          "min": -0.09758853912353516,
+          "max": 95.82622528076172
+        },
+        "episode_duration": {
+          "mean": 12.194666666666667,
+          "std": 5.592997049883005,
+          "min": 0.21666666666666667,
+          "max": 16.0
+        },
+        "mean_forward_velocity": {
+          "mean": 4.45055399709225,
+          "std": 1.5330584921646118,
+          "min": -0.3734110909012648,
+          "max": 6.21959255762678
+        },
+        "fall": {
+          "count": 41,
+          "ratio": 0.41
+        },
+        "timeout": {
+          "count": 59,
+          "ratio": 0.59
+        },
+        "other": {
+          "count": 0,
+          "ratio": 0.0
+        },
+        "out_of_terrain_x": {
+          "count": 28,
+          "ratio": 0.28
+        },
+        ">=2m": {
+          "count": 87,
+          "ratio": 0.87
+        },
+        ">=5m": {
+          "count": 87,
+          "ratio": 0.87
+        },
+        ">=10m": {
+          "count": 86,
+          "ratio": 0.86
+        }
+      },
+      "reward_components": {
+        "progress": {
+          "mean": 60.47109057776659,
+          "std": 29.163338983706055,
+          "min": -0.09661458875052631,
+          "max": 95.61152760480763
+        },
+        "alive": {
+          "mean": 6.093916984489187,
+          "std": 2.799844847817768,
+          "min": 0.10000000521540642,
+          "max": 8.000000417232513
+        },
+        "upright": {
+          "mean": 1.0923834360868205,
+          "std": 0.550844315699881,
+          "min": 0.0033333336468786,
+          "max": 1.5900001495610923
+        },
+        "move_to_target": {
+          "mean": 5.363287124348598,
+          "std": 2.6815125553082515,
+          "min": 0.10017135040834546,
+          "max": 7.753352689091116
+        },
+        "action_l2": {
+          "mean": -1.2979035459602115,
+          "std": 8.761687572031967,
+          "min": -87.13721266567612,
+          "max": -0.0010772049445222365
+        },
+        "energy": {
+          "mean": -7.210097043052442,
+          "std": 3.5063318385012585,
+          "min": -13.492138836780214,
+          "max": -0.0607399694272317
+        },
+        "joint_pos_limits": {
+          "mean": -3.1772990457351575,
+          "std": 1.6495578764050227,
+          "min": -10.762123673703172,
+          "max": -0.01994772767648101
+        }
+      },
+      "completed_first_episodes": 100,
+      "finite": true,
+      "first_episode_only": true,
+      "terminal_step_included": true,
+      "post_reset_rewards_excluded": true,
+      "max_step_reward_residual": 3.8708094507455826e-08,
+      "max_episode_reward_residual": 2.181574359383376e-06,
+      "evaluation_reward": "Stock"
+    },
+    "heightscan_contact_stock": {
+      "metrics": {
+        "episode_return": {
+          "mean": 63.56817330943188,
+          "std": 28.577748402663342,
+          "min": -0.002331134397536516,
+          "max": 93.92395073641092
+        },
+        "forward_displacement": {
+          "mean": 61.85288869857788,
+          "std": 27.801679399227,
+          "min": -0.0009393692016601562,
+          "max": 93.23307800292969
+        },
+        "episode_duration": {
+          "mean": 12.908833333333334,
+          "std": 5.395549325859024,
+          "min": 0.2833333333333333,
+          "max": 16.0
+        },
+        "mean_forward_velocity": {
+          "mean": 4.369179286250989,
+          "std": 1.3281156308002393,
+          "min": 0.0018322814209386707,
+          "max": 5.816541960117562
+        },
+        "fall": {
+          "count": 29,
+          "ratio": 0.29
+        },
+        "timeout": {
+          "count": 71,
+          "ratio": 0.71
+        },
+        "other": {
+          "count": 0,
+          "ratio": 0.0
+        },
+        "out_of_terrain_x": {
+          "count": 27,
+          "ratio": 0.27
+        },
+        ">=2m": {
+          "count": 90,
+          "ratio": 0.9
+        },
+        ">=5m": {
+          "count": 89,
+          "ratio": 0.89
+        },
+        ">=10m": {
+          "count": 88,
+          "ratio": 0.88
+        }
+      },
+      "reward_components": {
+        "progress": {
+          "mean": 61.83394285013514,
+          "std": 27.80947539390851,
+          "min": -0.015494792925892398,
+          "max": 92.80866425401473
+        },
+        "alive": {
+          "mean": 6.452000336498022,
+          "std": 2.701165043901594,
+          "min": 0.13333334028720856,
+          "max": 8.000000417232513
+        },
+        "upright": {
+          "mean": 1.187566778373439,
+          "std": 0.5510764944061769,
+          "min": 0.0033333336468786,
+          "max": 1.600000150501728
+        },
+        "move_to_target": {
+          "mean": 5.874515277088856,
+          "std": 2.6762768090210907,
+          "min": 0.08414114896004321,
+          "max": 7.996782931499183
+        },
+        "action_l2": {
+          "mean": -0.5343304171016741,
+          "std": 1.3955375953986078,
+          "min": -9.063868505655137,
+          "max": -0.0036988016581744887
+        },
+        "energy": {
+          "mean": -7.62403633275409,
+          "std": 3.3849033634113477,
+          "min": -11.414612994567506,
+          "max": -0.1250392688671127
+        },
+        "joint_pos_limits": {
+          "mean": -3.621483971780867,
+          "std": 1.698804952204708,
+          "min": -8.846909651241731,
+          "max": -0.07674755982588977
+        }
+      },
+      "completed_first_episodes": 100,
+      "finite": true,
+      "first_episode_only": true,
+      "terminal_step_included": true,
+      "post_reset_rewards_excluded": true,
+      "max_step_reward_residual": 3.14321368932724e-08,
+      "max_episode_reward_residual": 2.3497427719121333e-06,
+      "evaluation_reward": "Stock"
+    },
+    "heightscan_contact_modified_trained": {
+      "metrics": {
+        "episode_return": {
+          "mean": 60.91039331558044,
+          "std": 30.39569423582235,
+          "min": -0.03575412486679852,
+          "max": 97.58453300362453
+        },
+        "forward_displacement": {
+          "mean": 56.562676486968996,
+          "std": 28.363852967095763,
+          "min": -0.2662334442138672,
+          "max": 91.76393127441406
+        },
+        "episode_duration": {
+          "mean": 12.118666666666668,
+          "std": 5.681519886634405,
+          "min": 0.23333333333333334,
+          "max": 16.0
+        },
+        "mean_forward_velocity": {
+          "mean": 4.071815782239149,
+          "std": 1.5654030958855099,
+          "min": -0.7707883176349458,
+          "max": 5.743081742556654
+        },
+        "fall": {
+          "count": 43,
+          "ratio": 0.43
+        },
+        "timeout": {
+          "count": 57,
+          "ratio": 0.57
+        },
+        "other": {
+          "count": 0,
+          "ratio": 0.0
+        },
+        "out_of_terrain_x": {
+          "count": 26,
+          "ratio": 0.26
+        },
+        ">=2m": {
+          "count": 86,
+          "ratio": 0.86
+        },
+        ">=5m": {
+          "count": 86,
+          "ratio": 0.86
+        },
+        ">=10m": {
+          "count": 84,
+          "ratio": 0.84
+        }
+      },
+      "reward_components": {
+        "progress": {
+          "mean": 56.54874533881288,
+          "std": 28.373704032256587,
+          "min": -0.2650390728376806,
+          "max": 91.78516004350968
+        },
+        "alive": {
+          "mean": 6.0557503158319745,
+          "std": 2.8440061978492635,
+          "min": 0.10833333898335695,
+          "max": 8.000000417232513
+        },
+        "upright": {
+          "mean": 1.1439667742722668,
+          "std": 0.5749224536738092,
+          "min": 0.0033333336468786,
+          "max": 1.600000150501728
+        },
+        "move_to_target": {
+          "mean": 5.483207406841498,
+          "std": 2.6862742014042817,
+          "min": 0.09128545667044818,
+          "max": 7.89451820962131
+        },
+        "action_l2": {
+          "mean": -0.18913759665356056,
+          "std": 0.3819827915702273,
+          "min": -2.6015039889862237,
+          "max": -0.0006306775724169711
+        },
+        "energy": {
+          "mean": -6.42503657501673,
+          "std": 3.225631952797856,
+          "min": -9.729147713864222,
+          "max": -0.03851300128735602
+        },
+        "joint_pos_limits": {
+          "mean": -1.7071012502664415,
+          "std": 1.0048086390819662,
+          "min": -5.790937340966593,
+          "max": -0.007486522197723389
+        }
+      },
+      "completed_first_episodes": 100,
+      "finite": true,
+      "first_episode_only": true,
+      "terminal_step_included": true,
+      "post_reset_rewards_excluded": true,
+      "max_step_reward_residual": 3.416789695620537e-08,
+      "max_episode_reward_residual": 2.2215350554688484e-06,
+      "evaluation_reward": "Stock"
+    }
+  },
+  "paired": true,
+  "pairing_basis": "Identical full initial root state, joint position/velocity, origins, terrain rows/columns, material properties and terrain mesh hash",
+  "paired_descriptive_differences": {
+    "heightscan_contact_stock_minus_heightscan_stock": {
+      "episode_return": {
+        "mean": 2.232795739684079,
+        "std": 16.789213043838433
+      },
+      "forward_displacement": {
+        "mean": 1.3388779640197754,
+        "std": 17.77136121105949
+      },
+      "episode_duration": {
+        "mean": 0.7141666666666667,
+        "std": 3.479194810265412
+      },
+      "mean_forward_velocity": {
+        "mean": -0.08137471084126105,
+        "std": 0.5990647063932464
+      },
+      "fall_count_change": -12,
+      "timeout_count_change": 12
+    },
+    "heightscan_contact_modified_trained_minus_heightscan_contact_stock": {
+      "episode_return": {
+        "mean": -2.6577799938514364,
+        "std": 21.504768711122708
+      },
+      "forward_displacement": {
+        "mean": -5.290212211608886,
+        "std": 21.85580645850018
+      },
+      "episode_duration": {
+        "mean": -0.7901666666666667,
+        "std": 4.210907196396836
+      },
+      "mean_forward_velocity": {
+        "mean": -0.2973635040118409,
+        "std": 0.9082941266805054
+      },
+      "fall_count_change": 14,
+      "timeout_count_change": -14
+    }
+  },
+  "canonical_behavior_parity": {
+    "heightscan_stock": [
+      {
+        "path": "experiments/observation_ablation/heightscan_4096x32x1000/episode_metrics.csv",
+        "physical_metrics_and_initial_assignment_identical": true
+      },
+      {
+        "path": "experiments/observation_ablation/heightscan_4096x32x1000/results/episode_metrics.csv",
+        "physical_metrics_and_initial_assignment_identical": true
+      }
+    ],
+    "heightscan_contact_stock": [
+      {
+        "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/episode_metrics.csv",
+        "physical_metrics_and_initial_assignment_identical": true
+      },
+      {
+        "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/results/episode_metrics.csv",
+        "physical_metrics_and_initial_assignment_identical": true
+      }
+    ],
+    "heightscan_contact_modified_trained": [
+      {
+        "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/episode_metrics.csv",
+        "physical_metrics_and_initial_assignment_identical": true
+      },
+      {
+        "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/results/episode_metrics.csv",
+        "physical_metrics_and_initial_assignment_identical": true
+      }
+    ]
+  },
+  "single_training_seed": true,
+  "statistical_significance_claimed": false
+}

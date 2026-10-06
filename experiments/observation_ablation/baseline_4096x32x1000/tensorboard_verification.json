@@ -1,0 +1,6 @@
+{
+  "mean_reward_points": 1000,
+  "first_iteration": 0,
+  "last_iteration": 999,
+  "tensorboard_mean_reward_complete": true
+}

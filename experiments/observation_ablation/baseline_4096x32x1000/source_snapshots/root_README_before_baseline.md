@@ -1,16 +1,16 @@
 # HeightScan 기반 지형 인식 Ant 보행
 
-로봇 시뮬레이션 과제 1 제출 자료. 본 프로젝트는 불규칙 지형에서 Ant의 보행을 분석하기 위해 **HeightScan을 통한 지형 인식**, **접촉 상태 관측**, **reward training objective**를 단계적으로 변경한다. 학습에는 Isaac Lab과 PPO를 사용한다.
+로봇 시뮬레이션 과제 1 제출 자료. 본 프로젝트는 불규칙 지형에서 Ant의 보행 성능을 개선하기 위해 **HeightScan을 통한 지형 인식**, **접촉 상태 관측**, **reward shaping**을 단계적으로 적용하고 그 영향을 분석한다. 학습에는 Isaac Lab과 PPO를 사용한다.
 
-**Baseline → HeightScan → HeightScan + Contact → HeightScan + Contact + Modified-trained**
+**Baseline → HeightScan → HeightScan + Contact → HeightScan + Contact + Modified Reward**
 
-동일 학습 예산의 네 policy를 **공통 Stock Reward**로 비교하는 staged ablation이다. 이 single-seed 평가에서 HeightScan은 Baseline보다 전진 성과가 높았지만 fall도 많았다. Contact 추가 후 fall은 줄었고, Modified Reward로 학습한 policy는 Stock-trained Contact policy를 능가하지 못했다. 단계마다 성능이 일관되게 개선됐다는 의미는 아니다.
+각 요소의 영향을 staged ablation으로 비교한다. 기록된 single-seed 평가에서는 Contact 추가 후 fall 수가 감소했지만, Modified Reward는 보고된 보행 안정성 지표를 개선하지 못했다. 동일 학습 예산의 정량적 baseline 결과는 확보되어 있지 않다.
 
 ## 프로젝트 개요
 
 Ant는 여덟 개의 joint-effort action으로 계단, 역계단, 박스, 경사면, 역경사면을 전진한다. 각 지형의 생성 비율은 20%이며, 맵은 10 × 10 m 크기의 패치 20 × 10개로 구성된다. 물리 시뮬레이션은 120 Hz, 제어는 60 Hz로 동작하며 episode 길이는 최대 16초다.
 
-HeightScan은 기존 로봇 observation에 주변 지형의 높이 정보를 추가한다. 이를 바탕으로 지형 형상 정보와 발의 접촉 상태 정보가 native observation을 사용하는 Baseline에 비해 어떤 영향을 주는지 살펴본다. 마지막 단계에서는 observation을 고정하고 학습 reward를 바꿔, 동일한 과제 objective에서 평가한다.
+HeightScan은 기존 로봇 observation에 주변 지형의 높이 정보를 추가한다. 이를 바탕으로 지형 형상 정보와 발의 접촉 상태 정보가 proprioception만 사용하는 구성에 비해 어떤 영향을 주는지 살펴본다. 단계적 개선은 개발 목표이며, 모든 단계에서 실제 성능이 향상되었다는 의미는 아니다.
 
 ## 연구 질문
 
@@ -27,15 +27,15 @@ HeightScan은 기존 로봇 observation에 주변 지형의 높이 정보를 추
 | HeightScan + Contact | 사용 | 사용 | Stock |
 | 최종 구성: HeightScan + Contact + Modified Reward | 사용 | 사용 | Modified |
 
-Baseline은 기존 24-D incoming foot wrench를 포함한 프로젝트의 **59-D native observation**과 Stock Reward를 사용하는 시작 구성이다. Contact observation은 이 wrench를 유지하면서 별도의 4-D binary 접촉 신호를 추가한다. **동일 학습 예산의 Baseline run과 checkpoint를 새로 확보했다.** Framework stock Ant의 60-D interface를 대신 사용하지 않는다.
+Baseline은 기존 24-D incoming foot wrench를 포함한 프로젝트의 **59-D native observation**과 Stock Reward를 사용하는 시작 구성이다. Contact observation은 이 wrench를 유지하면서 별도의 4-D binary 접촉 신호를 추가한다. 다만 **동일 학습 예산의 정량적 baseline run과 checkpoint는 없다**. Framework stock Ant의 60-D interface도 동일 조건의 baseline으로 대체하지 않는다.
 
-네 policy 모두 **4096개 환경 × 32 rollout steps × 1000 PPO updates = 131,072,000 transitions**, training seed 42, terrain seed 42를 사용하며, 이전 checkpoint를 이어서 학습하지 않고 새로 초기화한다. 학습 중 terrain patch는 최초 배정을 유지하고 curriculum은 사용하지 않는다. Baseline을 포함한 환경·PPO·학습 예산의 동등성을 저장 설정과 대조했으며, actor/critic은 [400, 200, 100] ELU network를 사용한다. 비교 결과는 single-seed 실험 범위에 한정된다.
+보존된 세 policy는 **4096개 환경 × 32 rollout steps × 1000 PPO updates = 131,072,000 transitions**, training seed 42, terrain seed 42를 사용하며, 이전 checkpoint를 이어서 학습하지 않고 새로 초기화한다. 학습 중 terrain patch는 최초 배정을 유지하고 curriculum은 사용하지 않는다. Stage 2와 Stage 3은 환경·PPO·학습 예산의 동등성을 기록으로 확인했으며, actor/critic은 [400, 200, 100] ELU network를 사용한다. 비교 결과는 single-seed 실험 범위에 한정된다.
 
 ## Ablation 단계
 
 ### Stage 1 — 지형 인식
 
-**동일 학습 예산에서 local terrain height observation은 성능에 어떤 영향을 주는가?** 59-D Baseline + Stock과 122-D HeightScan + Stock을 비교한다. 이 seed에서 HeightScan의 평균 Stock Return은 **10.0972**, displacement는 **12.8205 m**, 속도는 **1.0407 m/s** 높았지만 fall은 **36→41**, duration은 **12.4010→12.1947 s**로 변했다. 전진 성과와 안정성 지표가 모두 개선된 결과는 아니다. 두 조건의 reset 분포는 같지만 초기 joint position sample은 달라 완전한 paired 비교는 아니다.
+**명시적인 local terrain height 정보가 불규칙 지형 보행을 개선하는가?** Stock observation과 Stock Reward를 사용하는 baseline에 HeightScan을 추가하는 비교를 설계했다. 동일 조건의 baseline 결과가 없으므로, 기록된 HeightScan 성능을 baseline 대비 개선량으로 해석할 수 없다.
 
 [HeightScan 설정](source/ant/ablation_env_cfg.py)은 torso에 부착된 yaw-aligned RayCaster를 사용한다. **9 × 7개의 하향 ray**를 0.2 m 간격으로 배치하며 offset은 `(0.8, 0, 20)`이다. 63개 높이 값은 `sensor_z - hit_z - 0.5`로 계산하고, scale 1과 `[-1, 1]` clipping을 적용한다. 이를 기존 59개 feature 뒤에 concatenate하여 actor/critic에 **122-D** observation을 입력한다. Empirical observation normalization은 사용하지 않는다.
 
@@ -47,26 +47,25 @@ Baseline은 기존 24-D incoming foot wrench를 포함한 프로젝트의 **59-D
 
 ### Stage 3 — Reward 설계
 
-**Modified Reward로 학습하면 공통 Stock Reward 과제 objective의 성능이 개선되는가?** **126-D HeightScan + Contact observation**과 학습 조건을 유지하고, training reward를 [Modified Reward](source/ant/rewards.py)로 교체한다. 과제 평가는 두 policy 모두 Stock Reward로 수행한다.
+**지형과 접촉 정보가 주어진 상태에서 reward shaping이 안정적인 보행을 추가로 개선하는가?** **126-D HeightScan + Contact observation**과 학습 조건을 유지하고, Stock Reward를 [Modified Reward](source/ant/rewards.py)로 교체한다.
 
 설계 목적은 반복적인 jumping/hopping을 완화하고, 지면 접촉, foot slip, 관절 운동, 제어 부담를 함께 고려하는 것이다. 기존 weight를 변경하고 contact, joint-velocity, slip term을 추가한다. 개별 term의 효과를 분리하는 실험은 아니며 reward objective 전체의 변경을 비교한다. Reward-side contact는 observation과 다른 정의를 사용한다. 세 프레임의 최대 vertical force > 5 N으로 접촉을 판정하고, 최소 두 발이 접촉할 때 bonus를 부여한다. 집계 결과만으로 hopping 감소나 더 안정적인 gait를 확인할 수는 없다.
 
 ## 공통 Stock Reward 기준 과제 평가
 
-**과제 평가 기준: 네 policy 모두 동일한 Stock Reward, num_envs=100, evaluation seed=24.** Baseline은 학습 당시의 **59-D**, HeightScan + Stock은 **122-D**, 두 Contact policy는 **126-D** observation을 그대로 받는다. Modified-trained policy도 학습에는 Modified Reward를 사용했지만, 여기서는 Stock Reward로 점수를 계산한다. 아래 표가 제출의 primary quantitative comparison이다.
+**세 policy 모두 동일한 Stock Reward로 평가했다.** HeightScan + Stock은 학습 당시의 **122-D**, 두 Contact policy는 **126-D** observation을 그대로 받는다. Modified-trained policy도 학습에는 Modified Reward를 사용했지만, 여기서는 Stock Reward로 점수를 계산한다. 아래 표가 과제의 공통 objective에 따른 직접적인 policy 점수 비교다.
 
-Evaluation seed 24, terrain seed 42, **100개 환경**, deterministic mean action, 각 환경의 첫 episode, 최대 16 s / 960 control steps를 사용했다. Termination과 reset은 기존 설정을 유지하며 terminal reward를 포함하고 post-reset reward를 제외한다. 네 조건의 terrain mesh·배정, root state, joint velocity, friction은 일치한다. **Baseline의 초기 joint position은 달라 Stage 1은 완전한 paired 비교가 아니다.** 나머지 세 조건은 full initial state가 일치해 Stage 2·3의 pairing을 확인했다. 각 조건은 100/100 episode를 완료했다. ±는 100개 평가 환경에 대한 population standard deviation이며 training seed 간 변동이 아니다.
+Evaluation seed 24, terrain seed 42, **100개 환경**, deterministic mean action, 각 환경의 첫 episode, 최대 16 s / 960 control steps를 사용했다. Termination과 reset은 기존 설정을 유지하며 terminal reward를 포함하고 post-reset reward를 제외한다. Terrain mesh와 환경별 초기 root/joint 상태, friction, terrain 배정이 일치하는 paired evaluation이다. 각 조건은 100/100 episode를 완료했다. ±는 100개 평가 환경에 대한 population standard deviation이며 training seed 간 변동이 아니다.
 
-| 학습 조건 | Input | Stock Return | Displacement (m) | Duration (s) | 평균 전진 속도 (m/s) | Fall | Timeout | ≥5 m |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|
-| Baseline + Stock | 59-D | 51.2382 ± 26.5191 | 47.6936 ± 24.7009 | 12.4010 ± 5.8321 | 3.4099 ± 1.2702 | 36/100 | 64/100 | 85/100 |
-| HeightScan + Stock | 122-D | 61.3354 ± 31.2305 | 60.5140 ± 29.1880 | 12.1947 ± 5.5930 | 4.4506 ± 1.5331 | 41/100 | 59/100 | 87/100 |
-| HeightScan + Contact + Stock | 126-D | 63.5682 ± 28.5777 | 61.8529 ± 27.8017 | 12.9088 ± 5.3955 | 4.3692 ± 1.3281 | 29/100 | 71/100 | 89/100 |
-| HeightScan + Contact + Modified-trained | 126-D | 60.9104 ± 30.3957 | 56.5627 ± 28.3639 | 12.1187 ± 5.6815 | 4.0718 ± 1.5654 | 43/100 | 57/100 | 86/100 |
+| 학습 조건 | 평가 Reward | Stock Return | Displacement (m) | Duration (s) | 평균 전진 속도 (m/s) | Fall | Timeout | ≥5 m |
+|---|---|---:|---:|---:|---:|---:|---:|---:|
+| HeightScan + Stock | Stock | 61.3354 ± 31.2305 | 60.5140 ± 29.1880 | 12.1947 ± 5.5930 | 4.4506 ± 1.5331 | 41/100 | 59/100 | 87/100 |
+| HeightScan + Contact + Stock | Stock | 63.5682 ± 28.5777 | 61.8529 ± 27.8017 | 12.9088 ± 5.3955 | 4.3692 ± 1.3281 | 29/100 | 71/100 | 89/100 |
+| HeightScan + Contact + Modified | Stock | 60.9104 ± 30.3957 | 56.5627 ± 28.3639 | 12.1187 ± 5.6815 | 4.0718 ± 1.5654 | 43/100 | 57/100 | 86/100 |
 
 Contact 추가 후 평균 Stock Return은 **2.2328** 높고 fall은 41→29로 감소했다. 동일한 126-D interface를 사용하는 Modified-trained policy는 Contact + Stock-trained policy보다 평균 Stock Return이 **2.6578 낮으며**, displacement·duration·속도가 낮고 fall은 29→43으로 증가했다. 따라서 이 single-seed 평가에서 Modified Reward 학습은 공통 Stock Reward 과제 objective의 성능을 개선하지 못했다. 두 Stock-trained policy의 return과 세 policy의 episode별 보행 지표는 기존 canonical 기록과 동일하다.
 
-Baseline만 동일 예산으로 새로 학습했고, 기존 세 policy의 checkpoint와 평가 결과는 그대로 사용했다. 네 checkpoint 모두 evaluation과 독립적인 training 로그로 선택했다. 기존 Modified objective return은 아래 diagnostic에서 별도로 보고하며 Stock Return과 직접 비교하지 않는다. [4-policy 평가 기록](experiments/observation_ablation/common_stock_reward_evaluation/four_policy_comparison/README.md), [비교 CSV](experiments/observation_ablation/common_stock_reward_evaluation/four_policy_comparison/comparison.csv), [검증 기록](experiments/observation_ablation/common_stock_reward_evaluation/four_policy_comparison/validation.json)을 제공하며, [Baseline 추가 전 3-policy 평가 기록](experiments/observation_ablation/common_stock_reward_evaluation/README.md)도 당시 상태 그대로 보존한다.
+이 평가는 새 checkpoint 선택이나 재학습 없이 수행한 별도 평가다. 기존 Modified objective의 **134.8413** return과 새 Stock Return을 직접 비교하지 않는다. Baseline 결과 부재, single-seed 범위, 맵 경계의 영향은 그대로 적용된다. [평가 기록과 재현 방법](experiments/observation_ablation/common_stock_reward_evaluation/README.md), [비교 CSV](experiments/observation_ablation/common_stock_reward_evaluation/comparison.csv), [검증 기록](experiments/observation_ablation/common_stock_reward_evaluation/integrity_validation.json)을 함께 제공한다.
 
 ## 주요 결과 — 학습 objective 기준 진단
 
@@ -86,11 +85,9 @@ Baseline만 동일 예산으로 새로 학습했고, 기존 세 policy의 checkp
 
 ## 결과 해석
 
-Baseline 대비 HeightScan은 평균 return·displacement·speed가 높았지만 fall도 많았다. 이 single-seed 결과는 지형 관측의 전진 성과와 fall 사이의 trade-off를 보여주며, 모든 robustness 지표가 개선됐다는 근거는 아니다. Stage 1의 초기 joint sample 차이도 해석에 반영한다.
-
 Stock Reward를 유지하고 Contact를 추가한 조건에서는 fall이 감소하고(41 → 29), timeout이 증가했으며(59 → 71), 평균 displacement는 소폭 증가했다. 평균 전진 속도는 다소 낮아졌다. 이 결과는 접촉 상태 정보의 효과를 추가로 검토할 근거가 되지만, 통계적 유의성이나 여러 seed에서의 일관된 개선을 입증하지는 않는다.
 
-Observation interface를 126-D로 유지한 Modified-trained 조건에서는 Contact + Stock보다 공통 Stock Return이 낮고 fall이 증가했으며(29 → 43), displacement, episode duration, 전진 속도도 낮았다. 위 diagnostic의 더 큰 Modified return은 서로 다른 objective에 따른 값이다. 마지막 단계는 reward-training ablation이며 최고 성능의 policy를 뜻하지 않는다.
+Observation interface를 126-D로 유지한 Modified Reward 조건에서는 Contact + Stock보다 fall이 증가했고(29 → 43), displacement, episode duration, 전진 속도가 모두 낮았다. 더 큰 return은 서로 다른 objective에 따른 값이다. 최종 구성은 설계 순서상 마지막 단계이며 최고 성능의 policy를 뜻하지 않는다. HeightScan의 baseline 대비 추가 효과를 입증하는 정량적 비교는 없다.
 
 ## Task 및 Observation 구성
 
@@ -98,12 +95,12 @@ Task ID는 [source/ant/__init__.py](source/ant/__init__.py)에 등록되어 있�
 
 | Task | 설정 | Actor/critic input |
 |---|---|---:|
-| `Ant-rl-Ablation-Baseline-v0` | [AblationBaseCfg](source/ant/ablation_env_cfg.py) | **59-D**; 동일 예산 학습·평가 완료 |
+| `Ant-rl-Ablation-Baseline-v0` | [AblationBaseCfg](source/ant/ablation_env_cfg.py) | 59-D; 기준 설정, 동일 조건 결과 없음 |
 | `Ant-rl-Ablation-HeightScan-v0` | [AblationHeightScanCfg](source/ant/ablation_env_cfg.py) | 59 + 63 = **122-D** |
 | `Ant-rl-Ablation-HeightScan-Contact-Stock-v0` | [HeightScanContactStockCfg](source/ant/contact_stock_env_cfg.py) | 59 + 63 + 4 = **126-D** |
 | `Ant-rl-Ablation-HeightScan-Contact-ModifiedReward-v0` | [Stage2HeightScanContactCfg](source/ant/stage2_env_cfg.py) | 59 + 63 + 4 = **126-D** |
 
-두 Contact policy는 동일한 126-D observation 구성을 사용한다. 따라서 Stage 3에서는 policy input dimension이 아니라 training reward를 변경한다. `stage2_*` 구현 이름은 이전 명명 방식을 유지한 것으로, 이 문서에서는 Modified Reward 결과를 Stage 3에 배치한다. 기존 custom-reward task인 `Ant-rl-v0`도 남아 있다. Baseline task의 기본 환경 수는 2048이며, 이번 전용 trainer는 4096으로 지정한다.
+두 Contact policy는 동일한 126-D observation 구성을 사용한다. 따라서 Stage 3에서는 policy input dimension이 아니라 reward 설계를 변경한다. `stage2_*` 구현 이름은 이전 명명 방식을 유지한 것으로, 이 문서에서는 Modified Reward 결과를 Stage 3에 배치한다. 기존 custom-reward task인 `Ant-rl-v0`도 남아 있다. Baseline의 공통 환경 설정은 기본 2048개 환경이므로 canonical 학습 예산에 맞추려면 `--num_envs 4096`을 지정해야 한다.
 
 ## Repository 구조
 
@@ -125,7 +122,6 @@ Task ID는 [source/ant/__init__.py](source/ant/__init__.py)에 등록되어 있�
 
 실행 전에 보존된 결과를 먼저 확인한다. 각 실험 디렉터리에는 evaluation summary, episode CSV, source mapping과 `checkpoints/best_model.pt`, `final_model.pt`가 있다.
 
-- [Baseline + Stock 자료](experiments/observation_ablation/baseline_4096x32x1000/README.md)
 - [HeightScan + Stock 자료](experiments/observation_ablation/heightscan_4096x32x1000/)
 - [HeightScan + Contact + Stock 자료](experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/)
 - [HeightScan + Contact + Modified 자료](experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/)
@@ -161,21 +157,19 @@ export PYTHONPATH="$PWD/source:$PWD/source/isaaclab:$PWD/source/isaaclab_assets:
 
 학습 명령과 설정은 각 실험의 command log와 manifest에 보존되어 있다. 실험 조건은 [Stock protocol](experiments/observation_ablation/protocol.json)과 [Modified Reward protocol](experiments/observation_ablation/shared/stage2_contact_modified_protocol.json)에 정리되어 있다. Modified evaluator는 [logs/rsl_rl/ant/modified/params/](logs/rsl_rl/ant/modified/params/)의 reward provenance를 읽으며, [config mapping](docs/submission_provenance/modified_config_mapping.json)에 source hash가 기록되어 있다.
 
-Baseline은 [전용 budget trainer](scripts/baseline_observation_ablation_budget.py)로 학습했다. 공통 Stock Reward 과제 평가는 [evaluate_common_stock_reward.py](scripts/evaluate_common_stock_reward.py)를 사용하며, Baseline 및 네 조건의 실행 명령과 새 output 경로 지정 방법은 [4-policy 평가 문서](experiments/observation_ablation/common_stock_reward_evaluation/four_policy_comparison/README.md)에 있다. 위 세 canonical 명령은 학습 objective 기준 diagnostic 재현용이다.
-
 ## 검증 및 재현성
 
 기록된 submission validation에서 세 조건의 canonical evaluation을 100개 환경에서 재현했으며, summary와 episode CSV가 기존 결과와 일치했다. [최종 평가 검증 자료](experiments/observation_ablation/validation/final_submission_check/final_100env_evaluation/)는 원본 실험 결과와 별도로 보존되어 있다.
 
 [최종 검증 기록](docs/submission_provenance/heightscan_cleanup/final_verification/README.md)에는 프로젝트의 다섯 Ant task에 대한 import/config 검사, Python compile, checkpoint/config input의 일치 여부, **473개 보호 artifact의 byte 단위 동일성 유지**가 기록되어 있다. Rendering과 video 기능도 유지되어 있다. 이 cleanup 검증은 기존 기록이며, 새 공통 Stock Reward 평가의 검증은 [별도 기록](experiments/observation_ablation/common_stock_reward_evaluation/integrity_validation.json)으로 보존한다. 기존 canonical 결과와 checkpoint는 변경하지 않았다.
 
-Checkpoint는 완료 episode의 최고 logged training mean return으로 선택하며, evaluation 결과를 이용해 선택하지 않는다. Selected iteration은 primary 표 순서대로 **875, 804, 972, 788**이다. 각 `final_model.pt`에는 iteration 999가 보존되어 있다. Baseline의 1000-update curve, TensorBoard mean-return 기록, checkpoint 선택과 100-env 결과를 [별도 검증](experiments/observation_ablation/baseline_4096x32x1000/final_integrity.json)한다. Baseline training은 완료됐지만 summary 저장 시 상대 경로 오류로 process가 exit 1로 종료돼, 학습이나 checkpoint 변경 없이 metadata를 복구했다. 원본 오류 log와 [복구 기록](experiments/observation_ablation/baseline_4096x32x1000/training_finalization_recovery.json)을 보존한다. Historical manifest는 작성 당시 snapshot과 원래 경로를 기록한 자료다.
+Checkpoint는 학습 전에 정한 기준인 완료 episode의 최고 logged training mean return으로 선택하며, evaluation 결과를 이용해 선택하지 않는다. Selected iteration은 결과 표의 조건 순서대로 804, 972, 788이다. 각 `final_model.pt`에는 iteration 999가 보존되어 있다. Hash, source mapping, checkpoint selection 기록은 상세 실험 README에서 확인할 수 있다. Historical manifest는 작성 당시 snapshot과 원래 경로를 기록한 자료이므로, 현재 파일 목록이나 다른 환경에서 그대로 실행할 수 있는 명령 목록으로 해석하지 않는다.
 
 ## 한계
 
-- **Stage 1 pairing:** Baseline과 HeightScan의 seed·reset 분포는 같지만 초기 joint position sample은 다르다. RayCaster의 zero-drift sampling도 RNG를 소비하는 구조이며, 이를 맞추려고 Baseline에 sensor를 추가하거나 reset을 변경하지 않았다. Stage 1은 완전한 paired 비교가 아니며, 관측 차원 변경에 따른 first-layer parameter 수도 달라진다.
+- **Baseline 결과 부재:** 동일 학습 예산의 baseline 측정값과 checkpoint가 없다. Stage 1은 연구 질문과 비교 설계를 제시하지만 baseline 대비 개선을 입증하지 않는다.
 - **Single-seed 평가:** Canonical training은 seed 42, evaluation은 seed 24를 사용하며, 기록된 하나의 terrain realization에 대한 결과다. Terrain mesh hash, 초기 world-X 위치, row/column 배정의 일치는 조건 비교를 뒷받침하지만 일반적인 통계적 유의성이나 임의의 지형으로의 전이를 입증하지는 않는다.
-- **학습 조건과 exploratory run:** 네 run은 1000 updates, 학습 예산, seed, 초기 terrain 배정 유지, curriculum 미사용, native reset 설정을 공유한다. Wall-clock 학습 시간은 observation 계산 비용 등에 따라 다르다. 이전 exploratory HeightScan run은 2048 × 32 × 10000 = 655,360,000 transitions를 사용했다. 동일 예산 비교에 포함하지 않는다.
+- **학습 조건과 exploratory run:** 보존된 세 run은 1000 updates, 학습 예산, seed, 초기 terrain 배정 유지, curriculum 미사용, native reset 설정을 공유한다. 이전 exploratory HeightScan run은 2048 × 32 × 10000 = 655,360,000 transitions를 사용했다. 동일 조건의 baseline이 아니며, 환경 수나 observation의 효과를 분리하는 비교도 아니다.
 - **맵 경계:** Map-boundary 및 torso-height termination이 없다. 생성 지형의 X 범위 `[-102, 102]` m를 벗어난 이동도 displacement와 progress에 포함될 수 있으므로, 보고된 거리 전체를 불규칙 지형 위의 보행 거리로 해석하지 않는다.
 - **Reward 해석:** Stock Reward와 Modified Reward의 return scale은 다르다. 이 seed에서는 Modified Reward의 fall/displacement 결과가 더 나빴다. 집계 지표만으로 hopping 감소, 더 안정적인 gait, 개별 reward term의 효과를 확인할 수 없다.
 - **평가 범위:** Canonical 표는 native termination 규칙에서 deterministic 첫 episode를 평가한 결과다. 보충적인 terrain-transfer/video 평가는 별도 맥락을 가지며, 추가적인 통제 학습 실험으로 간주하지 않는다.

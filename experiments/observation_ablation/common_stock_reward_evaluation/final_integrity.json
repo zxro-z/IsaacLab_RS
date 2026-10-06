@@ -1,0 +1,341 @@
+{
+  "timestamp_utc": "2026-10-06T07:59:02.457721+00:00",
+  "pass": true,
+  "protected_before_count": 521,
+  "byte_identical_existing_artifacts": 520,
+  "intentional_documentation_changes": {
+    "experiments/observation_ablation/README.md": {
+      "before_sha256": "1b3dd968db593e0dea8de8b9e50b3ccc22db9e7645ad198cf25baa5782144108",
+      "after_sha256": "41d7d838c37019d7d367318913b924cae8172c1f4efa41778068535f1d93fabb"
+    }
+  },
+  "checkpoint_sha256": {
+    "experiments/observation_ablation/heightscan_4096x32x1000/checkpoints/best_model.pt": "49a8a007f152ed9c63df616fbee12a866873be0ee0337ad83597d653ec9b3c06",
+    "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/checkpoints/best_model.pt": "82c7d0f781c37e0620230ff4b401835d54ef0a18102cdbc8c22c28bb576f57b9",
+    "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/checkpoints/best_model.pt": "0471caaadd646feac85cb7bbed0d2c3668279d2d65db9507030a649895ea11b4"
+  },
+  "canonical_evaluation_mesh_parity": {
+    "experiments/observation_ablation/heightscan_4096x32x1000/results/manifest.json": true,
+    "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/results/manifest.json": true,
+    "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/results/manifest.json": true
+  },
+  "python_compile": [
+    "scripts/evaluate_common_stock_reward.py",
+    "scripts/run_common_stock_reward_evaluation.py",
+    "scripts/analyze_common_stock_reward.py"
+  ],
+  "python_compile_runtime": "Python 3.11.16 (lerobot-arena)",
+  "git_diff_check": true,
+  "relative_link_checks": [
+    {
+      "document": "README.md",
+      "target": "source/ant/ablation_env_cfg.py"
+    },
+    {
+      "document": "README.md",
+      "target": "experiments/observation_ablation/shared/contact_observation.json"
+    },
+    {
+      "document": "README.md",
+      "target": "source/ant/rewards.py"
+    },
+    {
+      "document": "README.md",
+      "target": "experiments/observation_ablation/common_stock_reward_evaluation/README.md"
+    },
+    {
+      "document": "README.md",
+      "target": "experiments/observation_ablation/common_stock_reward_evaluation/comparison.csv"
+    },
+    {
+      "document": "README.md",
+      "target": "experiments/observation_ablation/common_stock_reward_evaluation/integrity_validation.json"
+    },
+    {
+      "document": "README.md",
+      "target": "experiments/observation_ablation/README.md"
+    },
+    {
+      "document": "README.md",
+      "target": "source/ant/__init__.py"
+    },
+    {
+      "document": "README.md",
+      "target": "source/ant/ablation_env_cfg.py"
+    },
+    {
+      "document": "README.md",
+      "target": "source/ant/ablation_env_cfg.py"
+    },
+    {
+      "document": "README.md",
+      "target": "source/ant/contact_stock_env_cfg.py"
+    },
+    {
+      "document": "README.md",
+      "target": "source/ant/stage2_env_cfg.py"
+    },
+    {
+      "document": "README.md",
+      "target": "source/ant/"
+    },
+    {
+      "document": "README.md",
+      "target": "experiments/observation_ablation/"
+    },
+    {
+      "document": "README.md",
+      "target": "logs/rsl_rl/observation_ablation/"
+    },
+    {
+      "document": "README.md",
+      "target": "validation_compare/environment_provenance.md"
+    },
+    {
+      "document": "README.md",
+      "target": "experiments/observation_ablation/heightscan_4096x32x1000/"
+    },
+    {
+      "document": "README.md",
+      "target": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/"
+    },
+    {
+      "document": "README.md",
+      "target": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/submission_provenance/README.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/submission_provenance/official_README.md"
+    },
+    {
+      "document": "README.md",
+      "target": "experiments/observation_ablation/protocol.json"
+    },
+    {
+      "document": "README.md",
+      "target": "experiments/observation_ablation/shared/stage2_contact_modified_protocol.json"
+    },
+    {
+      "document": "README.md",
+      "target": "logs/rsl_rl/ant/modified/params/"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/submission_provenance/modified_config_mapping.json"
+    },
+    {
+      "document": "README.md",
+      "target": "experiments/observation_ablation/validation/final_submission_check/final_100env_evaluation/"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/submission_provenance/heightscan_cleanup/final_verification/README.md"
+    },
+    {
+      "document": "README.md",
+      "target": "experiments/observation_ablation/common_stock_reward_evaluation/integrity_validation.json"
+    },
+    {
+      "document": "README.md",
+      "target": "experiments/observation_ablation/validation/final_submission_check/"
+    },
+    {
+      "document": "README.md",
+      "target": "experiments/observation_ablation/README.md"
+    },
+    {
+      "document": "experiments/observation_ablation/README.md",
+      "target": "../../source/ant/ant_env_cfg.py"
+    },
+    {
+      "document": "experiments/observation_ablation/README.md",
+      "target": "../../source/ant/agents/rsl_rl_ppo_cfg.py"
+    },
+    {
+      "document": "experiments/observation_ablation/README.md",
+      "target": "../../source/ant/ablation_env_cfg.py"
+    },
+    {
+      "document": "experiments/observation_ablation/README.md",
+      "target": "shared/contact_observation.json"
+    },
+    {
+      "document": "experiments/observation_ablation/README.md",
+      "target": "../../source/ant/ablation_env_cfg.py"
+    },
+    {
+      "document": "experiments/observation_ablation/README.md",
+      "target": "../../source/ant/contact_stock_env_cfg.py"
+    },
+    {
+      "document": "experiments/observation_ablation/README.md",
+      "target": "../../source/ant/rewards.py"
+    },
+    {
+      "document": "experiments/observation_ablation/README.md",
+      "target": "common_stock_reward_evaluation/README.md"
+    },
+    {
+      "document": "experiments/observation_ablation/README.md",
+      "target": "heightscan_4096x32x1000/training_summary.json"
+    },
+    {
+      "document": "experiments/observation_ablation/README.md",
+      "target": "heightscan_4096x32x1000/evaluation_summary.json"
+    },
+    {
+      "document": "experiments/observation_ablation/README.md",
+      "target": "heightscan_4096x32x1000/checkpoints/best_model.pt"
+    },
+    {
+      "document": "experiments/observation_ablation/README.md",
+      "target": "heightscan_4096x32x1000/checkpoints/final_model.pt"
+    },
+    {
+      "document": "experiments/observation_ablation/README.md",
+      "target": "heightscan_contact_stock_4096x32x1000/training_summary.json"
+    },
+    {
+      "document": "experiments/observation_ablation/README.md",
+      "target": "heightscan_contact_stock_4096x32x1000/evaluation_summary.json"
+    },
+    {
+      "document": "experiments/observation_ablation/README.md",
+      "target": "heightscan_contact_stock_4096x32x1000/checkpoints/best_model.pt"
+    },
+    {
+      "document": "experiments/observation_ablation/README.md",
+      "target": "heightscan_contact_stock_4096x32x1000/checkpoints/final_model.pt"
+    },
+    {
+      "document": "experiments/observation_ablation/README.md",
+      "target": "heightscan_contact_modified_4096x32x1000/training_summary.json"
+    },
+    {
+      "document": "experiments/observation_ablation/README.md",
+      "target": "heightscan_contact_modified_4096x32x1000/evaluation_summary.json"
+    },
+    {
+      "document": "experiments/observation_ablation/README.md",
+      "target": "heightscan_contact_modified_4096x32x1000/checkpoints/best_model.pt"
+    },
+    {
+      "document": "experiments/observation_ablation/README.md",
+      "target": "heightscan_contact_modified_4096x32x1000/checkpoints/final_model.pt"
+    },
+    {
+      "document": "experiments/observation_ablation/README.md",
+      "target": "protocol.json"
+    },
+    {
+      "document": "experiments/observation_ablation/README.md",
+      "target": "shared/contact_observation.json"
+    },
+    {
+      "document": "experiments/observation_ablation/README.md",
+      "target": "shared/stage2_contact_modified_protocol.json"
+    },
+    {
+      "document": "experiments/observation_ablation/README.md",
+      "target": "heightscan/manifest.json"
+    },
+    {
+      "document": "experiments/observation_ablation/README.md",
+      "target": "../../README.md"
+    },
+    {
+      "document": "experiments/observation_ablation/README.md",
+      "target": "validation/final_submission_check/path_audit.md"
+    },
+    {
+      "document": "experiments/observation_ablation/README.md",
+      "target": "../../docs/submission_provenance/heightscan_cleanup/README.md"
+    },
+    {
+      "document": "experiments/observation_ablation/common_stock_reward_evaluation/README.md",
+      "target": "../../../scripts/evaluate_common_stock_reward.py"
+    },
+    {
+      "document": "experiments/observation_ablation/common_stock_reward_evaluation/README.md",
+      "target": "reward_config_verification.json"
+    },
+    {
+      "document": "experiments/observation_ablation/common_stock_reward_evaluation/README.md",
+      "target": "heightscan_stock/initial_conditions.json"
+    },
+    {
+      "document": "experiments/observation_ablation/common_stock_reward_evaluation/README.md",
+      "target": "comparison.json"
+    },
+    {
+      "document": "experiments/observation_ablation/common_stock_reward_evaluation/README.md",
+      "target": "comparison.json"
+    },
+    {
+      "document": "experiments/observation_ablation/common_stock_reward_evaluation/README.md",
+      "target": "../README.md"
+    },
+    {
+      "document": "experiments/observation_ablation/common_stock_reward_evaluation/README.md",
+      "target": "../heightscan_4096x32x1000/checkpoints/best_model.pt"
+    },
+    {
+      "document": "experiments/observation_ablation/common_stock_reward_evaluation/README.md",
+      "target": "../heightscan_contact_stock_4096x32x1000/checkpoints/best_model.pt"
+    },
+    {
+      "document": "experiments/observation_ablation/common_stock_reward_evaluation/README.md",
+      "target": "../heightscan_contact_modified_4096x32x1000/checkpoints/best_model.pt"
+    },
+    {
+      "document": "experiments/observation_ablation/common_stock_reward_evaluation/README.md",
+      "target": "heightscan_stock/"
+    },
+    {
+      "document": "experiments/observation_ablation/common_stock_reward_evaluation/README.md",
+      "target": "heightscan_contact_stock/"
+    },
+    {
+      "document": "experiments/observation_ablation/common_stock_reward_evaluation/README.md",
+      "target": "heightscan_contact_modified_trained/"
+    },
+    {
+      "document": "experiments/observation_ablation/common_stock_reward_evaluation/README.md",
+      "target": "comparison.csv"
+    },
+    {
+      "document": "experiments/observation_ablation/common_stock_reward_evaluation/README.md",
+      "target": "comparison.json"
+    },
+    {
+      "document": "experiments/observation_ablation/common_stock_reward_evaluation/README.md",
+      "target": "smoke/"
+    },
+    {
+      "document": "experiments/observation_ablation/common_stock_reward_evaluation/README.md",
+      "target": "commands.log"
+    },
+    {
+      "document": "experiments/observation_ablation/common_stock_reward_evaluation/README.md",
+      "target": "integrity_before.json"
+    },
+    {
+      "document": "experiments/observation_ablation/common_stock_reward_evaluation/README.md",
+      "target": "integrity_validation.json"
+    },
+    {
+      "document": "experiments/observation_ablation/common_stock_reward_evaluation/README.md",
+      "target": "final_integrity.json"
+    },
+    {
+      "document": "experiments/observation_ablation/common_stock_reward_evaluation/README.md",
+      "target": "../../../README.md"
+    }
+  ],
+  "result_table_values_verified": true,
+  "source_used_for_rollout_matches_current_evaluator": true
+}

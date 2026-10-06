@@ -1,0 +1,121 @@
+{
+  "baseline": {
+    "episode_return": {
+      "mean": 51.23820595001802,
+      "std": 26.519149642829934,
+      "min": -5.260969860944897,
+      "max": 81.54936446622014
+    },
+    "forward_displacement": {
+      "mean": 47.69355954170227,
+      "std": 24.700920629519022,
+      "min": -0.08631038665771484,
+      "max": 76.2606201171875
+    },
+    "episode_duration": {
+      "mean": 12.401000000000002,
+      "std": 5.832068824849187,
+      "min": 0.21666666666666667,
+      "max": 16.0
+    },
+    "mean_forward_velocity": {
+      "mean": 3.409870036467949,
+      "std": 1.2702077689758862,
+      "min": -0.06704426336694848,
+      "max": 5.022869197351882
+    },
+    "fall": {
+      "count": 36,
+      "ratio": 0.36
+    },
+    "timeout": {
+      "count": 64,
+      "ratio": 0.64
+    },
+    "other": {
+      "count": 0,
+      "ratio": 0.0
+    },
+    "out_of_terrain_x": {
+      "count": 20,
+      "ratio": 0.2
+    },
+    ">=2m": {
+      "count": 85,
+      "ratio": 0.85
+    },
+    ">=5m": {
+      "count": 85,
+      "ratio": 0.85
+    },
+    ">=10m": {
+      "count": 83,
+      "ratio": 0.83
+    }
+  },
+  "stage_deltas": {
+    "heightscan_stock_minus_baseline": {
+      "episode_return": {
+        "mean": 10.097171619729778
+      },
+      "forward_displacement": {
+        "mean": 12.820451192855835
+      },
+      "episode_duration": {
+        "mean": -0.20633333333333503
+      },
+      "mean_forward_velocity": {
+        "mean": 1.040683960624301
+      },
+      "paired_conditions_verified": false,
+      "fall_count_change": 5,
+      "timeout_count_change": -5,
+      ">=5m_count_change": 2
+    },
+    "heightscan_contact_stock_minus_heightscan_stock": {
+      "episode_return": {
+        "mean": 2.232795739684079,
+        "std": 16.789213043838433
+      },
+      "forward_displacement": {
+        "mean": 1.3388779640197754,
+        "std": 17.77136121105949
+      },
+      "episode_duration": {
+        "mean": 0.7141666666666667,
+        "std": 3.479194810265412
+      },
+      "mean_forward_velocity": {
+        "mean": -0.08137471084126105,
+        "std": 0.5990647063932464
+      },
+      "paired_conditions_verified": true,
+      "fall_count_change": -12,
+      "timeout_count_change": 12,
+      ">=5m_count_change": 2
+    },
+    "heightscan_contact_modified_trained_minus_heightscan_contact_stock": {
+      "episode_return": {
+        "mean": -2.6577799938514364,
+        "std": 21.504768711122708
+      },
+      "forward_displacement": {
+        "mean": -5.290212211608886,
+        "std": 21.85580645850018
+      },
+      "episode_duration": {
+        "mean": -0.7901666666666667,
+        "std": 4.210907196396836
+      },
+      "mean_forward_velocity": {
+        "mean": -0.2973635040118409,
+        "std": 0.9082941266805054
+      },
+      "paired_conditions_verified": true,
+      "fall_count_change": 14,
+      "timeout_count_change": -14,
+      ">=5m_count_change": -3
+    }
+  }
+}
+PASS: four policies; 100 first episodes each; 59/122/126/126; full pairing: False ; checkpoint selection/budget verified

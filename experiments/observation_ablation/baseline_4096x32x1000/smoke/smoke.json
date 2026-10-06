@@ -1,0 +1,12 @@
+{
+  "pass": true,
+  "task": "Ant-rl-Ablation-Baseline-v0",
+  "observation_dimension": 59,
+  "action_dimension": 8,
+  "steps": 32,
+  "finite": true,
+  "stock_reward": true,
+  "heightscan": false,
+  "binary_contact": false,
+  "metrics_are_experiment_results": false
+}

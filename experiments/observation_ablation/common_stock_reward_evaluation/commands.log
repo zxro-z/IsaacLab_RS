@@ -1,0 +1,30 @@
+unset LD_PRELOAD ISAAC_SIM_SITE_PACKAGES ISAAC_PATH CARB_APP_PATH EXP_PATH
+export ISAACLAB_RS=/home/zxro/ant_rl_submission
+export ISAACLAB_ROOT=/home/zxro/ant_rl_submission
+export PYTHONDONTWRITEBYTECODE=1
+export PYTHONPATH=/home/zxro/ant_rl_submission/source/:/home/zxro/ant_rl_submission/source/isaaclab:/home/zxro/ant_rl_submission/source/isaaclab_assets:/home/zxro/ant_rl_submission/source/isaaclab_tasks:/home/zxro/ant_rl_submission/source/isaaclab_rl:/home/zxro/ant_rl_submission/source/isaaclab_mimic
+/home/zxro/miniforge3/envs/lerobot-arena/bin/python -u scripts/evaluate_common_stock_reward.py verify --headless --output experiments/observation_ablation/common_stock_reward_evaluation
+unset LD_PRELOAD ISAAC_SIM_SITE_PACKAGES ISAAC_PATH CARB_APP_PATH EXP_PATH
+export ISAACLAB_RS=/home/zxro/ant_rl_submission
+export ISAACLAB_ROOT=/home/zxro/ant_rl_submission
+export PYTHONDONTWRITEBYTECODE=1
+export PYTHONPATH=/home/zxro/ant_rl_submission/source:/home/zxro/ant_rl_submission/source/isaaclab:/home/zxro/ant_rl_submission/source/isaaclab_assets:/home/zxro/ant_rl_submission/source/isaaclab_tasks:/home/zxro/ant_rl_submission/source/isaaclab_rl:/home/zxro/ant_rl_submission/source/isaaclab_mimic
+export MPLCONFIGDIR=/tmp/ant_common_stock_matplotlib
+export XDG_CACHE_HOME=/tmp/ant_common_stock_cache
+/home/zxro/miniforge3/envs/lerobot-arena/bin/python -u scripts/evaluate_common_stock_reward.py smoke --policy heightscan_stock --headless --output experiments/observation_ablation/common_stock_reward_evaluation/smoke/heightscan_stock --kit_args '--portable-root=/tmp/ant_common_stock_kit --/app/settings/persistent=false'
+/home/zxro/miniforge3/envs/lerobot-arena/bin/python -u scripts/evaluate_common_stock_reward.py smoke --policy heightscan_contact_stock --headless --output experiments/observation_ablation/common_stock_reward_evaluation/smoke/heightscan_contact_stock --kit_args '--portable-root=/tmp/ant_common_stock_kit --/app/settings/persistent=false'
+/home/zxro/miniforge3/envs/lerobot-arena/bin/python -u scripts/evaluate_common_stock_reward.py smoke --policy heightscan_contact_modified_trained --headless --output experiments/observation_ablation/common_stock_reward_evaluation/smoke/heightscan_contact_modified_trained --kit_args '--portable-root=/tmp/ant_common_stock_kit --/app/settings/persistent=false'
+unset LD_PRELOAD ISAAC_SIM_SITE_PACKAGES ISAAC_PATH CARB_APP_PATH EXP_PATH
+export ISAACLAB_RS=/home/zxro/ant_rl_submission
+export ISAACLAB_ROOT=/home/zxro/ant_rl_submission
+export PYTHONDONTWRITEBYTECODE=1
+export PYTHONPATH=/home/zxro/ant_rl_submission/source:/home/zxro/ant_rl_submission/source/isaaclab:/home/zxro/ant_rl_submission/source/isaaclab_assets:/home/zxro/ant_rl_submission/source/isaaclab_tasks:/home/zxro/ant_rl_submission/source/isaaclab_rl:/home/zxro/ant_rl_submission/source/isaaclab_mimic
+export MPLCONFIGDIR=/tmp/ant_common_stock_matplotlib
+export XDG_CACHE_HOME=/tmp/ant_common_stock_cache
+/home/zxro/miniforge3/envs/lerobot-arena/bin/python -u scripts/evaluate_common_stock_reward.py evaluate --policy heightscan_stock --headless --output experiments/observation_ablation/common_stock_reward_evaluation/heightscan_stock --kit_args '--portable-root=/tmp/ant_common_stock_kit --/app/settings/persistent=false'
+/home/zxro/miniforge3/envs/lerobot-arena/bin/python -u scripts/evaluate_common_stock_reward.py evaluate --policy heightscan_contact_stock --headless --output experiments/observation_ablation/common_stock_reward_evaluation/heightscan_contact_stock --kit_args '--portable-root=/tmp/ant_common_stock_kit --/app/settings/persistent=false'
+/home/zxro/miniforge3/envs/lerobot-arena/bin/python -u scripts/evaluate_common_stock_reward.py evaluate --policy heightscan_contact_modified_trained --headless --output experiments/observation_ablation/common_stock_reward_evaluation/heightscan_contact_modified_trained --kit_args '--portable-root=/tmp/ant_common_stock_kit --/app/settings/persistent=false'
+python scripts/analyze_common_stock_reward.py
+PYTHONPYCACHEPREFIX=/tmp/ant_common_stock_pycache /home/zxro/miniforge3/envs/lerobot-arena/bin/python -m py_compile scripts/evaluate_common_stock_reward.py scripts/run_common_stock_reward_evaluation.py scripts/analyze_common_stock_reward.py
+git diff --check
+python scripts/analyze_common_stock_reward.py --check-only

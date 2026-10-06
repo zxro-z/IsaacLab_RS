@@ -1,0 +1,165 @@
+{
+  "heightscan_stock": {
+    "episode_return": {
+      "mean": 61.3353775697478,
+      "std": 31.23054870280697,
+      "min": -18.08592062292155,
+      "max": 98.28984913649037
+    },
+    "forward_displacement": {
+      "mean": 60.514010734558106,
+      "std": 29.188002298239002,
+      "min": -0.09758853912353516,
+      "max": 95.82622528076172
+    },
+    "episode_duration": {
+      "mean": 12.194666666666667,
+      "std": 5.592997049883005,
+      "min": 0.21666666666666667,
+      "max": 16.0
+    },
+    "mean_forward_velocity": {
+      "mean": 4.45055399709225,
+      "std": 1.5330584921646118,
+      "min": -0.3734110909012648,
+      "max": 6.21959255762678
+    },
+    "fall": {
+      "count": 41,
+      "ratio": 0.41
+    },
+    "timeout": {
+      "count": 59,
+      "ratio": 0.59
+    },
+    "other": {
+      "count": 0,
+      "ratio": 0.0
+    },
+    "out_of_terrain_x": {
+      "count": 28,
+      "ratio": 0.28
+    },
+    ">=2m": {
+      "count": 87,
+      "ratio": 0.87
+    },
+    ">=5m": {
+      "count": 87,
+      "ratio": 0.87
+    },
+    ">=10m": {
+      "count": 86,
+      "ratio": 0.86
+    }
+  },
+  "heightscan_contact_stock": {
+    "episode_return": {
+      "mean": 63.56817330943188,
+      "std": 28.577748402663342,
+      "min": -0.002331134397536516,
+      "max": 93.92395073641092
+    },
+    "forward_displacement": {
+      "mean": 61.85288869857788,
+      "std": 27.801679399227,
+      "min": -0.0009393692016601562,
+      "max": 93.23307800292969
+    },
+    "episode_duration": {
+      "mean": 12.908833333333334,
+      "std": 5.395549325859024,
+      "min": 0.2833333333333333,
+      "max": 16.0
+    },
+    "mean_forward_velocity": {
+      "mean": 4.369179286250989,
+      "std": 1.3281156308002393,
+      "min": 0.0018322814209386707,
+      "max": 5.816541960117562
+    },
+    "fall": {
+      "count": 29,
+      "ratio": 0.29
+    },
+    "timeout": {
+      "count": 71,
+      "ratio": 0.71
+    },
+    "other": {
+      "count": 0,
+      "ratio": 0.0
+    },
+    "out_of_terrain_x": {
+      "count": 27,
+      "ratio": 0.27
+    },
+    ">=2m": {
+      "count": 90,
+      "ratio": 0.9
+    },
+    ">=5m": {
+      "count": 89,
+      "ratio": 0.89
+    },
+    ">=10m": {
+      "count": 88,
+      "ratio": 0.88
+    }
+  },
+  "heightscan_contact_modified_trained": {
+    "episode_return": {
+      "mean": 60.91039331558044,
+      "std": 30.39569423582235,
+      "min": -0.03575412486679852,
+      "max": 97.58453300362453
+    },
+    "forward_displacement": {
+      "mean": 56.562676486968996,
+      "std": 28.363852967095763,
+      "min": -0.2662334442138672,
+      "max": 91.76393127441406
+    },
+    "episode_duration": {
+      "mean": 12.118666666666668,
+      "std": 5.681519886634405,
+      "min": 0.23333333333333334,
+      "max": 16.0
+    },
+    "mean_forward_velocity": {
+      "mean": 4.071815782239149,
+      "std": 1.5654030958855099,
+      "min": -0.7707883176349458,
+      "max": 5.743081742556654
+    },
+    "fall": {
+      "count": 43,
+      "ratio": 0.43
+    },
+    "timeout": {
+      "count": 57,
+      "ratio": 0.57
+    },
+    "other": {
+      "count": 0,
+      "ratio": 0.0
+    },
+    "out_of_terrain_x": {
+      "count": 26,
+      "ratio": 0.26
+    },
+    ">=2m": {
+      "count": 86,
+      "ratio": 0.86
+    },
+    ">=5m": {
+      "count": 86,
+      "ratio": 0.86
+    },
+    ">=10m": {
+      "count": 84,
+      "ratio": 0.84
+    }
+  }
+}
+Validation PASS: 519 existing files unchanged; intentional documentation additions: 2 ; 100/100 episodes each; full pairing verified

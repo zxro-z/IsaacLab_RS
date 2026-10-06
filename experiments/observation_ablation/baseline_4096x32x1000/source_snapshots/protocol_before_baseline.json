@@ -110,7 +110,7 @@
     "max_steps": 960,
     "population_std": true
   },
-  "status": "HeightScan evaluation complete; matching-budget 59-D Baseline training and common Stock evaluation now complete",
+  "status": "HeightScan evaluation complete; matching-budget baseline result unavailable",
   "runtime_reward_terms": [
     {
       "term": "progress",
@@ -194,18 +194,5 @@
   },
   "runner_config": "ant.agents.ablation_budget_ppo_cfg:AblationBudgetPPORunnerCfg",
   "canonical_training_command": "python -u scripts/observation_ablation_budget.py train --headless --output logs/rsl_rl/observation_ablation/ablation_heightscan_stock_s42_e4096_n32_i1000",
-  "canonical_checkpoint": "experiments/observation_ablation/heightscan_4096x32x1000/checkpoints/best_model.pt",
-  "matching_budget_baseline": {
-    "task": "Ant-rl-Ablation-Baseline-v0",
-    "observation_dimension": 59,
-    "artifact_directory": "baseline_4096x32x1000",
-    "protocol": "baseline_4096x32x1000/protocol.json",
-    "common_evaluation": "common_stock_reward_evaluation/baseline",
-    "four_policy_comparison": "common_stock_reward_evaluation/four_policy_comparison",
-    "training_seed": 42,
-    "terrain_seed": 42,
-    "evaluation_seed": 24,
-    "total_transitions": 131072000,
-    "full_initial_state_paired_with_heightscan": false
-  }
+  "canonical_checkpoint": "experiments/observation_ablation/heightscan_4096x32x1000/checkpoints/best_model.pt"
 }

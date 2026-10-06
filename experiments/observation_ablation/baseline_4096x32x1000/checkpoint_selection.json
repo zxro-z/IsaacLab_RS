@@ -1,0 +1,8 @@
+{
+  "rule": "best_model: highest logged completed-episode training mean return (last 100 completed episodes); no evaluation-based selection",
+  "selected_iteration": 875,
+  "selected_training_mean_reward": 42.83538151267916,
+  "curve": "logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000/training_curve.csv",
+  "evaluation_not_used": true,
+  "checkpoint_sha256": "673ce3492e979ad99c12f0becd7bf223bbdd8075cbbc54a33139a8f2faf65a1a"
+}

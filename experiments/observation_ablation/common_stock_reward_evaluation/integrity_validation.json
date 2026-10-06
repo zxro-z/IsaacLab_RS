@@ -1,0 +1,13 @@
+{
+  "pass_": true,
+  "protected_existing_files": 521,
+  "protected_existing_files_unchanged": true,
+  "checkpoint_hashes_unchanged": true,
+  "first_episodes_per_policy": 100,
+  "unique_complete_environment_ids": true,
+  "finite": true,
+  "summary_recomputed_from_csv": true,
+  "common_reward_verified": true,
+  "full_initial_conditions_paired": true,
+  "note": "Before README additions; final preservation record distinguishes the intentional experiment README addition."
+}

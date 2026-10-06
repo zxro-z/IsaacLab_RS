@@ -1,0 +1,72 @@
+{
+  "pass_": true,
+  "first_episodes_per_policy": 100,
+  "unique_environment_ids": true,
+  "finite": true,
+  "summary_and_components_recomputed": true,
+  "observation_dimensions": [
+    59,
+    122,
+    126,
+    126
+  ],
+  "exact_initial_conditions_pairing": false,
+  "pairing_details_vs_baseline": {
+    "heightscan_stock": {
+      "root_state_w": true,
+      "joint_pos": false,
+      "joint_vel": true,
+      "env_origins": true,
+      "terrain_rows": true,
+      "terrain_columns": true,
+      "material_properties": true
+    },
+    "heightscan_contact_stock": {
+      "root_state_w": true,
+      "joint_pos": false,
+      "joint_vel": true,
+      "env_origins": true,
+      "terrain_rows": true,
+      "terrain_columns": true,
+      "material_properties": true
+    },
+    "heightscan_contact_modified_trained": {
+      "root_state_w": true,
+      "joint_pos": false,
+      "joint_vel": true,
+      "env_origins": true,
+      "terrain_rows": true,
+      "terrain_columns": true,
+      "material_properties": true
+    }
+  },
+  "retained_three_policies_paired": true,
+  "reward_termination_reset_parity": true,
+  "training_budget_verified": true,
+  "training_selection_verified": true,
+  "finite_training_checkpoints": [
+    "logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000/best_model.pt",
+    "logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000/model_0.pt",
+    "logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000/model_100.pt",
+    "logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000/model_150.pt",
+    "logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000/model_200.pt",
+    "logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000/model_250.pt",
+    "logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000/model_300.pt",
+    "logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000/model_350.pt",
+    "logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000/model_400.pt",
+    "logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000/model_450.pt",
+    "logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000/model_50.pt",
+    "logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000/model_500.pt",
+    "logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000/model_550.pt",
+    "logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000/model_600.pt",
+    "logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000/model_650.pt",
+    "logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000/model_700.pt",
+    "logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000/model_750.pt",
+    "logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000/model_800.pt",
+    "logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000/model_850.pt",
+    "logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000/model_900.pt",
+    "logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000/model_950.pt",
+    "logs/rsl_rl/observation_ablation/ablation_baseline_stock_s42_e4096_n32_i1000/model_999.pt"
+  ],
+  "checkpoint_hashes_unchanged": true
+}
