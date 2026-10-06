@@ -1,0 +1,73 @@
+{
+  "probe": "b",
+  "command": [
+    "./isaaclab.sh",
+    "-p",
+    "/home/zxro/ant_rl_submission/experiments/observation_ablation/validation/final_submission_check/shutdown_probe_b.py"
+  ],
+  "cwd": "/home/zxro/ant_rl_submission",
+  "python": "/home/zxro/miniforge3/envs/lerobot-arena/bin/python",
+  "conda_environment": "lerobot-arena",
+  "LD_PRELOAD": null,
+  "PYTHONPATH": "/home/zxro/ant_rl_submission/source:/home/zxro/ant_rl_submission/source/isaaclab:/home/zxro/ant_rl_submission/source/isaaclab_assets:/home/zxro/ant_rl_submission/source/isaaclab_tasks:/home/zxro/ant_rl_submission/source/isaaclab_rl:/home/zxro/ant_rl_submission/source/isaaclab_mimic",
+  "imports_requested": [
+    "isaaclab"
+  ],
+  "initialization_completed_timestamp": "2026-10-06T04:51:08.911986+00:00",
+  "close_invoked_timestamp": "2026-10-06T04:51:08.914271+00:00",
+  "close_returned_timestamp": null,
+  "timeout_after_close_seconds": 30,
+  "timeout_reason": "close timeout after 30 seconds",
+  "exit_code": -9,
+  "termination_signal": "SIGKILL",
+  "clean_shutdown": false,
+  "events": [
+    {
+      "event": "process_started",
+      "timestamp": "2026-10-06T04:51:04.717675+00:00",
+      "monotonic": 677389.80014246,
+      "python": "/home/zxro/miniforge3/envs/lerobot-arena/bin/python",
+      "cwd": "/home/zxro/ant_rl_submission",
+      "conda_prefix": "/home/zxro/miniforge3/envs/lerobot-arena",
+      "LD_PRELOAD": null
+    },
+    {
+      "event": "initialization_completed",
+      "timestamp": "2026-10-06T04:51:08.911986+00:00",
+      "monotonic": 677393.994453335,
+      "experience": "/home/zxro/ant_rl_submission/apps/isaaclab.python.headless.kit",
+      "launcher_source": "/home/zxro/ant_rl_submission/source/isaaclab/isaaclab/app/__init__.py",
+      "isaac_sim_location": "/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim",
+      "kit_location": "/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim/kit"
+    },
+    {
+      "event": "import_pass",
+      "timestamp": "2026-10-06T04:51:08.913461+00:00",
+      "monotonic": 677393.995925548,
+      "module": "isaaclab",
+      "file": "/home/zxro/ant_rl_submission/source/isaaclab/isaaclab/__init__.py"
+    },
+    {
+      "event": "close_invoked",
+      "timestamp": "2026-10-06T04:51:08.914271+00:00",
+      "monotonic": 677393.996730936
+    }
+  ],
+  "wall_seconds": 34.26381052297074,
+  "last_console_lines": [
+    "\u001b[3g",
+    "\u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH   ",
+    "[INFO] Using python from: /home/zxro/miniforge3/envs/lerobot-arena/bin/python",
+    "{\"event\": \"process_started\", \"timestamp\": \"2026-10-06T04:51:04.717675+00:00\", \"monotonic\": 677389.80014246, \"python\": \"/home/zxro/miniforge3/envs/lerobot-arena/bin/python\", \"cwd\": \"/home/zxro/ant_rl_submission\", \"conda_prefix\": \"/home/zxro/miniforge3/envs/lerobot-arena\", \"LD_PRELOAD\": null}",
+    "MESA: warning: Driver does not support the 0x7d67 PCI ID.",
+    "MESA: warning: Driver does not support the 0x7d67 PCI ID.",
+    "[INFO][AppLauncher]: Using device: cuda:0",
+    "[INFO][AppLauncher]: Loading experience file: /home/zxro/ant_rl_submission/apps/isaaclab.python.headless.kit",
+    "{\"event\": \"initialization_completed\", \"timestamp\": \"2026-10-06T04:51:08.911986+00:00\", \"monotonic\": 677393.994453335, \"experience\": \"/home/zxro/ant_rl_submission/apps/isaaclab.python.headless.kit\", \"launcher_source\": \"/home/zxro/ant_rl_submission/source/isaaclab/isaaclab/app/__init__.py\", \"isaac_sim_location\": \"/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim\", \"kit_location\": \"/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim/kit\"}",
+    "{\"event\": \"import_pass\", \"timestamp\": \"2026-10-06T04:51:08.913461+00:00\", \"monotonic\": 677393.995925548, \"module\": \"isaaclab\", \"file\": \"/home/zxro/ant_rl_submission/source/isaaclab/isaaclab/__init__.py\"}",
+    "{\"event\": \"close_invoked\", \"timestamp\": \"2026-10-06T04:51:08.914271+00:00\", \"monotonic\": 677393.996730936}"
+  ],
+  "forced_kill_is_clean_shutdown": false,
+  "environment_created": false,
+  "explicit_physics_steps": 0
+}

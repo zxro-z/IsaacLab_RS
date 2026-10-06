@@ -1,0 +1,21 @@
+{
+  "completed": true,
+  "iterations": 1000,
+  "num_steps_per_env": 32,
+  "total_transitions": 131072000,
+  "resume": false,
+  "load_run": null,
+  "load_checkpoint": null,
+  "selected_checkpoint": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/best_model.pt",
+  "start_timestamp": "2026-10-05T10:52:27.176637+00:00",
+  "end_timestamp": "2026-10-05T11:01:54.110847+00:00",
+  "actual_total_transitions": 131072000,
+  "wall_time_seconds": 566.9312880900688,
+  "final_checkpoint": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_999.pt",
+  "final_checkpoint_sha256": "7b67b9115ecfa67909bdaf27232099bd1f2b1ccf14fe10b6737139568fe2a362",
+  "checkpoint_bytes": 3657781,
+  "checkpoint_sha256": "0471caaadd646feac85cb7bbed0d2c3668279d2d65db9507030a649895ea11b4",
+  "selected_iteration": 788,
+  "selection": "best_model: highest training logged completed-episode mean return; no evaluation-based selection",
+  "selected_training_mean_reward": 107.44476940799504
+}

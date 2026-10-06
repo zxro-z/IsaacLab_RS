@@ -1,0 +1,430 @@
+"""Frozen HeightScan smoke, training and first-episode evaluation.
+
+Run with the existing IsaacLab_RS Python environment; see experiment README.
+Each output directory must be new. No historical artifacts are written.
+"""
+import argparse
+import csv
+import hashlib
+import json
+import os
+from pathlib import Path
+import statistics
+import subprocess
+from submission_provenance import manifest_git_provenance
+import sys
+import types
+import time
+from datetime import datetime, timezone
+import yaml
+
+class SavedConfigLoader(yaml.SafeLoader):
+    """Allow only the inert tuple/slice tags emitted by IsaacLab configs."""
+
+SavedConfigLoader.add_constructor("tag:yaml.org,2002:python/tuple", lambda loader,node: tuple(loader.construct_sequence(node)))
+SavedConfigLoader.add_constructor("tag:yaml.org,2002:python/object/apply:builtins.slice", lambda loader,node: slice(*loader.construct_sequence(node)))
+
+ROOT = Path(__file__).resolve().parents[1]
+RS = Path(os.environ.get("ISAACLAB_RS", "/home/zxro/IsaacLab_RS"))
+sys.path.insert(0, str(ROOT / "source"))
+if os.environ.get("ISAAC_SIM_SITE_PACKAGES"):
+    sys.path.append(os.environ["ISAAC_SIM_SITE_PACKAGES"])
+for package in ("isaaclab", "isaaclab_assets", "isaaclab_tasks", "isaaclab_rl"):
+    sys.path.insert(0, str(RS / "source" / package))
+
+from isaaclab.app import AppLauncher
+
+parser = argparse.ArgumentParser()
+parser.add_argument("mode", choices=["smoke", "train", "evaluate"])
+parser.add_argument("--output", type=Path, required=True)
+parser.add_argument("--checkpoint", type=Path)
+AppLauncher.add_app_launcher_args(parser)
+args = parser.parse_args()
+if args.output.exists():
+    raise FileExistsError(args.output)
+args.output.mkdir(parents=True)
+app = AppLauncher(args).app
+
+import gymnasium as gym
+import numpy as np
+import torch
+from pxr import UsdGeom
+from rsl_rl.runners import OnPolicyRunner
+from isaaclab_rl.rsl_rl import RslRlVecEnvWrapper
+import ant
+from ant.ant_env_cfg import AntEnvCfg
+from ant.ablation_env_cfg import AblationHeightScanCfg
+from ant.stage2_env_cfg import Stage2HeightScanContactCfg
+from ant.agents.stage2_ppo_cfg import Stage2HeightScanContactPPORunnerCfg
+from ant import rewards as team_rewards
+from ant.ant_env_cfg import RewardsCfg as TeamRewardsCfg
+from isaaclab_tasks.manager_based.classic.ant.ant_contact_observations import FOOT_BODY_NAMES, foot_contact_term
+from ant.agents.ablation_ppo_cfg import AblationHeightScanPPORunnerCfg
+from ant.agents.ablation_budget_ppo_cfg import AblationBudgetPPORunnerCfg
+from isaaclab_tasks.manager_based.classic.ant.ant_env_cfg import RewardsCfg
+from isaaclab_tasks.manager_based.classic.ant.ant_terrain_heightscan_env_cfg import height_scanner_cfg
+
+TASK = "Ant-rl-Ablation-HeightScan-Contact-ModifiedReward-v0"
+TERMS = ["progress", "alive", "upright", "move_to_target", "foot_contact", "action_l2", "energy", "joint_velocity", "joint_pos_limits", "foot_slip"]
+WEIGHTS = [2.5, 0.5, 0.05, 1.5, 1.0, -0.005, -0.15, -0.001, -0.5, -0.07]
+CONSTANTS = ["PROGRESS_WEIGHT", "ALIVE_WEIGHT", "UPRIGHT_WEIGHT", "HEADING_WEIGHT", "CONTACT_WEIGHT", "ACTION_WEIGHT", "ENERGY_WEIGHT", "JOINT_VEL_WEIGHT", "JOINT_LIMIT_WEIGHT", "FOOT_SLIP_WEIGHT"]
+SELECTION = "best_model: highest training logged completed-episode mean return; no evaluation-based selection"
+
+
+def sha(path):
+    h = hashlib.sha256()
+    with Path(path).open("rb") as f:
+        for chunk in iter(lambda: f.read(8 * 1024 * 1024), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def serialize(value):
+    if isinstance(value, slice):
+        return {"slice": [value.start, value.stop, value.step]}
+    if isinstance(value, Path):
+        return str(value)
+    if isinstance(value, np.generic):
+        return value.item()
+    if callable(value):
+        return value.__module__ + "." + value.__qualname__
+    raise TypeError(type(value))
+
+
+def dump(name, value):
+    (args.output / name).write_text(json.dumps(value, indent=2, default=serialize, allow_nan=False) + "\n")
+
+
+def digest(value):
+    return hashlib.sha256(json.dumps(value, sort_keys=True, default=serialize).encode()).hexdigest()
+
+
+def stats(value):
+    a = np.asarray(value, dtype=np.float64)
+    assert np.isfinite(a).all()
+    return dict(mean=float(a.mean()), std=float(a.std(ddof=0)), min=float(a.min()), max=float(a.max()))
+
+
+def write_csv(name, rows):
+    with (args.output / name).open("w", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator="\n")
+        w.writeheader()
+        w.writerows(rows)
+
+
+class BestModelRunner(OnPolicyRunner):
+    """Same preregistered selection statistic as historical Team1 training."""
+    def __init__(self, *a, **kw):
+        super().__init__(*a, **kw)
+        self.best_mean_reward = float("-inf")
+
+    def log(self, locs, width=80, pad=35):
+        super().log(locs, width, pad)
+        with (Path(self.log_dir) / "training_curve.csv").open("a", newline="") as f:
+            writer = csv.writer(f, lineterminator="\n")
+            if f.tell() == 0:
+                writer.writerow(["iteration", "mean_reward"])
+            writer.writerow([locs["it"], statistics.mean(locs["rewbuffer"]) if locs["rewbuffer"] else ""])
+        if locs["rewbuffer"]:
+            mean = statistics.mean(locs["rewbuffer"])
+            if mean > self.best_mean_reward:
+                self.best_mean_reward = mean
+                self.save(str(Path(self.log_dir) / "best_model.pt"), infos={"mean_reward": mean})
+
+
+def main():
+    cfg = Stage2HeightScanContactCfg()
+    agent = Stage2HeightScanContactPPORunnerCfg()
+    historical = AblationHeightScanPPORunnerCfg()
+    assert agent.policy.to_dict() == historical.policy.to_dict()
+    assert agent.algorithm.to_dict() == historical.algorithm.to_dict()
+    assert agent.num_steps_per_env == 32 and agent.max_iterations == 1000
+    assert not agent.resume and agent.load_run is None and agent.load_checkpoint is None
+    original = AntEnvCfg()
+    frozen = {"terrain": cfg.scene.terrain.to_dict(), "robot": cfg.scene.robot.to_dict(),
+              "sim": cfg.sim.to_dict(), "actions": cfg.actions.to_dict(),
+              "events": cfg.events.to_dict(), "terminations": cfg.terminations.to_dict(),
+              "episode_length_s": cfg.episode_length_s, "decimation": cfg.decimation}
+    for key in ("terrain", "robot"):
+        assert frozen[key] == getattr(original.scene, key).to_dict(), key
+    for key in ("sim", "actions", "events", "terminations"):
+        assert frozen[key] == getattr(original, key).to_dict(), key
+    assert cfg.episode_length_s == original.episode_length_s and cfg.decimation == original.decimation
+    assert cfg.rewards.to_dict() == TeamRewardsCfg().to_dict()
+    saved_weights = yaml.safe_load((ROOT / "logs/rsl_rl/ant/modified/params/reward_weights.yaml").read_text())
+    saved_env = yaml.load((ROOT / "logs/rsl_rl/ant/modified/params/env.yaml").read_text(), Loader=SavedConfigLoader)
+    assert saved_env["rewards"]["total_reward"]["func"] == "ant.rewards:TotalReward"
+    assert saved_env["rewards"]["total_reward"]["weight"] == 1.0
+    for constant, expected in zip(CONSTANTS, WEIGHTS):
+        assert getattr(team_rewards, constant) == expected == saved_weights[constant]
+    assert cfg.scene.height_scanner.to_dict() == height_scanner_cfg().to_dict()
+    assert agent.algorithm.to_dict() == ant.agents.rsl_rl_ppo_cfg.AntPPORunnerCfg().algorithm.to_dict()
+    # Preserve every native proprio term, including existing incoming wrench.
+    policy = cfg.observations.policy.to_dict()
+    scan_term = policy.pop("height_scan")
+    contact_term = policy.pop("foot_contacts")
+    assert cfg.observations.policy.foot_contacts.to_dict() == foot_contact_term().to_dict()
+    assert cfg.scene.contact_forces.to_dict() == original.scene.contact_forces.to_dict()
+    assert policy == original.observations.policy.to_dict()
+    assert not any("contact" in name.lower() for name in policy)
+    cfg.seed = 42 if args.mode == "train" else 24
+    cfg.scene.num_envs = {"smoke": 4, "train": 4096, "evaluate": 100}[args.mode]
+    if args.device:
+        cfg.sim.device = args.device
+        agent.device = args.device
+    cfg.log_dir = str(args.output)
+    dump("source_parity.json", {"frozen": frozen, "hashes": {k: digest(v) for k, v in frozen.items()},
+                              "reward": cfg.rewards.to_dict(), "reward_hash": digest(cfg.rewards.to_dict()),
+                              "ppo": agent.algorithm.to_dict(), "ppo_hash": digest(agent.algorithm.to_dict()),
+                              "native_proprio_preserved": True, "canonical_scan_preserved": True})
+    dump("config.json", cfg.to_dict())
+    dump("agent.json", agent.to_dict())
+    sources = [Path(__file__), ROOT / "source/ant/ablation_env_cfg.py", ROOT / "source/ant/stage2_env_cfg.py", ROOT / "source/ant/rewards.py", ROOT / "source/ant/agents/stage2_ppo_cfg.py",
+               ROOT / "logs/rsl_rl/ant/modified/params/reward_weights.yaml", ROOT / "logs/rsl_rl/ant/modified/params/env.yaml",
+               RS / "source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_contact_observations.py",
+               ROOT / "source/ant/agents/ablation_ppo_cfg.py", ROOT / "source/ant/agents/ablation_budget_ppo_cfg.py", ROOT / "source/ant/ant_env_cfg.py",
+               ROOT / "source/ant/agents/rsl_rl_ppo_cfg.py", ROOT / "source/ant/__init__.py",
+               RS / "source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_env_cfg.py",
+               RS / "source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_terrain_heightscan_env_cfg.py",
+               RS / "source/isaaclab/isaaclab/managers/reward_manager.py",
+               RS / "source/isaaclab/isaaclab/envs/mdp/observations.py",
+               RS / "source/isaaclab/isaaclab/sensors/ray_caster/ray_caster.py",
+               RS / "source/isaaclab/isaaclab/sensors/ray_caster/patterns/patterns.py"]
+    dump("source_mapping.json", {str(p): sha(p) for p in sources})
+    env = gym.make(TASK, cfg=cfg)
+    base = env.unwrapped
+    env = RslRlVecEnvWrapper(env, clip_actions=agent.clip_actions)
+    obs = env.get_observations()
+    n = env.num_envs
+    dt = base.step_dt
+    robot = base.scene["robot"]
+    assert obs["policy"].shape == (n, 126)
+    assert list(obs.keys()) == ["policy"]
+    assert env.num_actions == 8 and abs(dt - 1 / 60) < 1e-12
+    assert base.reward_manager.active_terms == ["total_reward"]
+    manager_term = base.reward_manager.get_term_cfg("total_reward")
+    assert manager_term.weight == 1.0 and type(manager_term.func) is team_rewards.TotalReward
+    print(base.reward_manager, flush=True)
+    runtime = [dict(term=t, weight=w, constant=c) for t,w,c in zip(TERMS,WEIGHTS,CONSTANTS)]
+    assert set(manager_term.func.episode_sums) == set(TERMS)
+    contact_sensor = base.scene["feet_contacts"]
+    contact_index = base.observation_manager.active_terms["policy"].index("foot_contacts")
+    contact_entity = base.observation_manager._group_obs_term_cfgs["policy"][contact_index].params["sensor_cfg"]
+    ordered_names = contact_sensor.body_names[contact_entity.body_ids] if isinstance(contact_entity.body_ids, slice) else [contact_sensor.body_names[i] for i in contact_entity.body_ids]
+    assert ordered_names == FOOT_BODY_NAMES
+    captured = {}
+    reward_code = team_rewards.TotalReward.__call__.__code__
+    def observe_reward(frame, event, value):
+        if event == "return" and frame.f_code is reward_code:
+            captured["weighted"] = frame.f_locals["weighted_rewards"]
+    # Observe the actual canonical function's return frame; no duplicated
+    # calculation, changed reward class or training-time instrumentation.
+    sensor = base.scene["height_scanner"]
+    assert sensor.num_rays == 63
+    scan = obs["policy"][:, 59:122]
+    assert torch.isfinite(obs["policy"]).all()
+    assert torch.isfinite(sensor.data.ray_hits_w).all()
+    # Remove per-robot mean to show terrain geometry rather than only torso height.
+    centered = scan - scan.mean(-1, keepdim=True)
+    variation = float(centered.std(dim=0).max())
+    assert variation > 1e-5, "No geometric scan variation across terrain locations"
+    samples = [dict(env_id=i, terrain_row=int(base.scene.terrain.terrain_levels[i]),
+                    terrain_column=int(base.scene.terrain.terrain_types[i]),
+                    origin=base.scene.env_origins[i].cpu().tolist(),
+                    scan_min=float(scan[i].min()), scan_max=float(scan[i].max()), scan_mean=float(scan[i].mean()))
+               for i in range(min(n, 8))]
+    print(json.dumps(samples), flush=True)
+    mesh = UsdGeom.Mesh(base.scene.stage.GetPrimAtPath("/World/ground/terrain/mesh"))
+    mesh_points = np.asarray(mesh.GetPointsAttr().Get(), dtype=np.float32)
+    terrain_x_bounds = [float(mesh_points[:, 0].min()), float(mesh_points[:, 0].max())]
+    mesh_sha = hashlib.sha256(np.asarray(mesh.GetPointsAttr().Get(), dtype=np.float32).tobytes()
+                             + np.asarray(mesh.GetFaceVertexIndicesAttr().Get(), dtype=np.int32).tobytes()).hexdigest()
+    manifest = dict(task=TASK, **manifest_git_provenance(ROOT, allow_snapshot=args.mode == "evaluate"),
+                    training_environment="Team1 AntEnvCfg", evaluation_environment="Team1 AntEnvCfg (same dynamics/terrain)",
+                    training_seed=42, evaluation_seed=24, terrain_seed=42,
+                    num_envs=cfg.scene.num_envs, training_num_envs=4096, evaluation_num_envs=100,
+                    iterations=1000, num_steps_per_env=32, total_transitions=131072000, resume=False, load_run=None, load_checkpoint=None, checkpoint_interval=50, checkpoint_selection=SELECTION,
+                    control_dt=dt, physics_dt=cfg.sim.dt, episode_length_s=16.0,
+                    observation=dict(proprio=59, heightscan=63, contact=4, actor=126, critic=126,
+                                     order=list(base.observation_manager.active_terms["policy"]),
+                                     scan_formula="sensor.data.pos_w[:,2] - ray_hits_w[...,2] - 0.5",
+                                     clip=[-1, 1], scale=1.0, empirical_normalization=False,
+                                     grid=[9, 7], ordering="xy (x varies fastest)",
+                                     offset=[0.8, 0, 20], direction=[0, 0, -1], max_distance=1e6,
+                                     added_contact_observation=True, cnn=False,
+                                     native_foot_wrench_preserved=True),
+                    architecture=agent.policy.to_dict(), ppo=agent.algorithm.to_dict(), training_reward=runtime, evaluation_reward=runtime,
+                    reward_manager_terms=["total_reward"], manager_weight=1.0,
+                    contact_observation_spec=json.loads((ROOT / "experiments/observation_ablation/shared/contact_observation.json").read_text()),
+                    terrain_mesh_sha256=mesh_sha, terrain_x_bounds=terrain_x_bounds, terrain_samples=samples,
+                    evaluation_protocol="100 envs, seed24, deterministic mean actions, first episode only, terminal step included",
+                    fall_semantics="body_z_down: bad_orientation(pi/2), no torso height termination",
+                    reward_contribution="TotalReward actual weighted_rewards * manager weight(1) * step_dt; episode_sums already apply dt once")
+    dump("manifest.json", manifest)
+    if args.mode == "train":
+        smoke = ROOT / "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/smoke/smoke.json"
+        assert json.loads(smoke.read_text())["pass"], "Smoke must PASS before training"
+        # Training has exactly the same core source hashes as the validated smoke.
+        assert json.loads((smoke.parent / "source_mapping.json").read_text()) == json.loads((args.output / "source_mapping.json").read_text())
+        torch.backends.cuda.matmul.allow_tf32 = True
+        torch.backends.cudnn.allow_tf32 = True
+        torch.backends.cudnn.deterministic = False
+        torch.backends.cudnn.benchmark = False
+        runner = BestModelRunner(env, agent.to_dict(), log_dir=str(args.output), device=agent.device)
+        start_timestamp = datetime.now(timezone.utc).isoformat()
+        started = time.perf_counter()
+        print("FRESH TRAINING: resume=False, 4096 envs, 32 steps, 1000 iterations", flush=True)
+        runner.learn(num_learning_iterations=1000, init_at_random_ep_len=True)
+        wall_time = time.perf_counter() - started
+        assert runner.current_learning_iteration == 999 and runner.tot_timesteps == 131072000
+        assert (args.output / "model_999.pt").is_file()
+        selected = args.output / "best_model.pt"
+        checkpoint = torch.load(selected, map_location="cpu", weights_only=False)
+        dump("training_summary.json", dict(completed=True, iterations=1000, num_steps_per_env=32, total_transitions=131072000, resume=False, load_run=None, load_checkpoint=None, selected_checkpoint=str(selected),
+             start_timestamp=start_timestamp, end_timestamp=datetime.now(timezone.utc).isoformat(), actual_total_transitions=runner.tot_timesteps, wall_time_seconds=wall_time, final_checkpoint=str(args.output / "model_999.pt"), final_checkpoint_sha256=sha(args.output / "model_999.pt"), checkpoint_bytes=selected.stat().st_size, checkpoint_sha256=sha(selected), selected_iteration=checkpoint["iter"], selection=SELECTION,
+             selected_training_mean_reward=checkpoint.get("infos", {}).get("mean_reward")))
+        env.close()
+        return
+
+    model = None
+    if args.mode == "evaluate":
+        assert args.checkpoint is not None
+        runner = OnPolicyRunner(env, agent.to_dict(), log_dir=None, device=agent.device)
+        runner.load(str(args.checkpoint))
+        model = runner.get_inference_policy(device=base.device)
+        manifest["checkpoint"] = str(args.checkpoint)
+        manifest["checkpoint_sha256"] = sha(args.checkpoint)
+        dump("manifest.json", manifest)
+    done = torch.zeros(n, dtype=torch.bool, device=base.device)
+    returns = torch.zeros(n, dtype=torch.float64, device=base.device)
+    components = torch.zeros((n, 10), dtype=torch.float64, device=base.device)
+    steps = torch.zeros(n, dtype=torch.long, device=base.device)
+    velocity = returns.clone()
+    start = robot.data.root_pos_w[:, 0].clone()
+    end = returns.clone()
+    terminal_x = returns.clone()
+    terminal_v = returns.clone()
+    fall = done.clone()
+    timeout = done.clone()
+    original_reset = base._reset_idx
+
+    def capture_terminal(self, ids):
+        terminal_x[ids] = (robot.data.root_pos_w[ids, 0] - start[ids]).double()
+        terminal_v[ids] = robot.data.root_lin_vel_w[ids, 0].double()
+        return original_reset(ids)
+
+    base._reset_idx = types.MethodType(capture_terminal, base)
+    max_error = 0.0
+    previous_scan = scan.clone()
+    changed = False
+    missing_hit_samples = 0
+    contact_samples = []
+    contact_changed = False
+    initial_contact = obs["policy"][:, 122:].clone()
+    limit = 120 if args.mode == "smoke" else base.max_episode_length
+    for step in range(limit):
+        assert app.is_running()
+        with torch.inference_mode():
+            assert obs["policy"].shape == (n, 126) and torch.isfinite(obs["policy"]).all()
+            missing_hit_samples += int(torch.isinf(sensor.data.ray_hits_w[~done]).any(-1).sum())
+            action = model(obs) if model else torch.zeros((n, 8), device=base.device)
+            assert action.shape == (n, 8) and torch.isfinite(action).all()
+            previous_profile = sys.getprofile()
+            sys.setprofile(observe_reward)
+            try:
+                obs, reward, dones, _ = env.step(action)
+            finally:
+                sys.setprofile(previous_profile)
+            assert list(captured["weighted"]) == TERMS
+            contact = obs["policy"][:, 122:]
+            assert contact.shape == (n,4) and ((contact == 0) | (contact == 1)).all()
+            contact_changed |= bool((contact != initial_contact).any())
+            if args.mode == "smoke":
+                raw = contact_sensor.data.net_forces_w[:, contact_entity.body_ids]
+                norm = torch.linalg.vector_norm(raw, dim=-1)
+                assert torch.isfinite(raw).all()
+                assert torch.equal(contact, (norm > 1.0).to(norm.dtype))
+                contact_samples.append(dict(step=step+1, force_norm_N=norm.cpu().tolist(), encoded=contact.cpu().tolist()))
+            assert torch.isfinite(reward).all() and torch.isfinite(obs["policy"]).all()
+            if args.mode == "smoke":
+                assert torch.isfinite(sensor.data.ray_hits_w).all()
+            else:
+                # Native RayCaster uses Inf for a missed static-mesh ray. The
+                # canonical height_scan clip maps it to -1; do not change the
+                # terrain or the representation to satisfy a raw-data check.
+                assert not torch.isnan(sensor.data.ray_hits_w).any()
+            contribution = torch.stack([captured["weighted"][name] for name in TERMS], dim=-1) * dt * manager_term.weight
+            assert torch.isfinite(contribution).all()
+            active = ~done
+            new = active & dones.bool()
+            if active.any():
+                max_error = max(max_error, float((contribution.double().sum(-1) - reward.double())[active].abs().max()))
+            returns[active] += reward[active].double()
+            components[active] += contribution[active].double()
+            steps[active] += 1
+            velocity[active] += torch.where(dones.bool(), terminal_v, robot.data.root_lin_vel_w[:, 0])[active].double()
+            end[new] = terminal_x[new]
+            fall[new] = base.termination_manager.get_term("body_z_down")[new]
+            timeout[new] = base.termination_manager.get_term("time_out")[new]
+            changed |= bool((obs["policy"][:, 59:122] - previous_scan).abs().max() > 1e-5)
+            done |= dones.bool()
+        if done.all():
+            break
+        if (step + 1) % 120 == 0:
+            print(f"[PROGRESS] {step+1}: {int(done.sum())}/{n} first episodes complete", flush=True)
+    residual = (components.sum(-1) - returns).abs()
+    assert max_error < 1e-5 and float(residual.max()) < 1e-3
+    if args.mode == "smoke":
+        assert changed and contact_changed
+        dump("contact_observation_validation.json", dict(pass_=True, dynamic=True, shape=[n,4], samples=contact_samples))
+        dump("heightscan_validation.json", dict(pass_=True, dynamic=changed, geometric_variation=variation, min=float(obs["policy"][:,59:122].min()), max=float(obs["policy"][:,59:122].max()), mean=float(obs["policy"][:,59:122].mean()), finite_count=int(torch.isfinite(obs["policy"][:,59:122]).sum()), clipped_count=int((obs["policy"][:,59:122].abs()==1).sum()), ray_miss_samples=missing_hit_samples))
+        dump("smoke.json", dict(pass_=True, **{"pass": True}, registration=True, terrain=True, robot=True,
+             raycaster=True, proprio=59, heightscan=63, contact=4, actor=126, critic=126, contact_dynamic=contact_changed, actions=8, finite=True,
+             reward_terms=runtime, custom_reward_active=True, reward_manager_terms=["total_reward"], modified_reward_parity=True, added_contact_observation=True,
+             geometric_scan_variation=variation, scan_changed_during_steps=changed, steps=step+1,
+             max_step_reward_residual=max_error, samples=samples))
+    else:
+        assert done.all(), "All first episodes must finish"
+        other = ~(fall | timeout)
+        rows = []
+        for i in range(n):
+            row = dict(env_id=i, episode_return=float(returns[i]), episode_steps=int(steps[i]),
+                       episode_duration=int(steps[i])*dt, forward_displacement=float(end[i]),
+                       mean_forward_velocity=float(velocity[i]/steps[i]), fall=bool(fall[i]), timeout=bool(timeout[i]),
+                       other=bool(other[i]), initial_world_x=float(start[i]), terminal_world_x=float(start[i]+end[i]), out_of_terrain_x=bool(start[i]+end[i] < terrain_x_bounds[0] or start[i]+end[i] > terrain_x_bounds[1]), reward_identity_residual=float(residual[i]),
+                       terrain_row=int(base.scene.terrain.terrain_levels[i]), terrain_column=int(base.scene.terrain.terrain_types[i]))
+            row.update({"reward_"+name:float(components[i,j]) for j,name in enumerate(TERMS)})
+            rows.append(row)
+        write_csv("episode_metrics.csv", rows)
+        metrics = {key:stats([r[key] for r in rows]) for key in
+                   ["episode_return", "episode_steps", "episode_duration", "forward_displacement", "mean_forward_velocity"]}
+        metrics.update({key:dict(count=int(value.sum()), ratio=int(value.sum()) / n)
+                        for key,value in [("fall",fall),("timeout",timeout),("other",other)]})
+        for distance in [2, 5, 10]:
+            metrics[f">={distance}m"] = dict(count=int((end>=distance).sum()), ratio=int((end>=distance).sum()) / n)
+        metrics["out_of_terrain_x"] = dict(count=sum(r["out_of_terrain_x"] for r in rows), ratio=sum(r["out_of_terrain_x"] for r in rows)/n)
+        decomposition = {name:stats(components[:,j].cpu().numpy()) for j,name in enumerate(TERMS)}
+        decomposition["total"] = stats(returns.cpu().numpy())
+        write_csv("main_metrics.csv", [dict(metric=k, **v) for k,v in metrics.items() if "mean" in v])
+        write_csv("reward_components.csv", [dict(component=k, **v) for k,v in decomposition.items()])
+        dump("evaluation_summary.json", dict(metrics=metrics, reward_components=decomposition,
+             max_step_reward_residual=max_error, max_episode_reward_residual=float(residual.max()), mean_episode_reward_residual=float(residual.mean()), terrain_x_bounds=terrain_x_bounds,
+             finite=True, first_episode_only=True, terminal_step_included=True, post_reset_rewards_excluded=True,
+             terrain_mesh_sha256=mesh_sha, simultaneous_fall_timeout_count=int((fall&timeout).sum())))
+        dump("raycast_diagnostics.json", dict(raw_missing_ray_samples=missing_hit_samples,
+             interpretation="Inf raw hit = no mesh intersection; canonical height_scan clip maps to -1",
+             processed_observations_finite=True, raw_nan=False))
+    env.close()
+
+
+try:
+    main()
+except BaseException:
+    import traceback
+    traceback.print_exc()
+    sys.stdout.flush()
+    sys.stderr.flush()
+    # Kit shutdown can hang after initialization/config exceptions; fail visibly.
+    os._exit(1)
+finally:
+    app.close()

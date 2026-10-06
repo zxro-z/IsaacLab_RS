@@ -1,0 +1,9 @@
+{
+  "initial_head": "386b90e0aad990b24baf0a46f522db053fe7d7e7",
+  "source_commit": "4c03906f2a422b3e1aa8158df0b73cdbd738412f",
+  "branch": "observation-ablation",
+  "origin_observation_ablation": "639b677623641a3cd08d42585edc1fb0569261aa",
+  "remote_change": "DepthCam result/documentation commit; no source changes; not merged",
+  "push_performed": false,
+  "protected_artifacts_inventory": "protected_artifacts_before.json"
+}

@@ -1,0 +1,42 @@
+{
+  "raw_missing_ray_samples": 427089,
+  "interpretation": "Inf raw hit = no mesh intersection; canonical height_scan clip maps to -1",
+  "processed_observations_finite": true,
+  "raw_nan": false,
+  "terminal_x_outside_map_count": 27,
+  "terminal_x_outside_map_env_ids": [
+    8,
+    15,
+    17,
+    22,
+    28,
+    31,
+    33,
+    34,
+    35,
+    42,
+    46,
+    49,
+    53,
+    54,
+    55,
+    56,
+    57,
+    62,
+    63,
+    72,
+    76,
+    77,
+    78,
+    84,
+    94,
+    96,
+    97
+  ],
+  "terrain_x_bounds": [
+    -102.0,
+    102.0
+  ],
+  "raw_missing_ray_fraction": 0.08832591302103497,
+  "bounds_method": "Derived from frozen native centered terrain dimensions/border and row origins; native reset has no root X randomization."
+}

@@ -1,0 +1,18 @@
+{
+  "command": [
+    "./isaaclab.sh",
+    "-p",
+    "experiments/observation_ablation/validation/final_submission_check/runtime_app_launcher_probe.py",
+    "--headless"
+  ],
+  "cwd": "/home/zxro/ant_rl_submission",
+  "python": "/home/zxro/anaconda3/envs/env_isaaclab_231/bin/python",
+  "environment": {
+    "CONDA_PREFIX": "/home/zxro/anaconda3/envs/env_isaaclab_231",
+    "PYTHONPATH": "/home/zxro/ant_rl_submission/source:/home/zxro/ant_rl_submission/source/isaaclab:/home/zxro/ant_rl_submission/source/isaaclab_assets:/home/zxro/ant_rl_submission/source/isaaclab_tasks:/home/zxro/ant_rl_submission/source/isaaclab_rl:/home/zxro/anaconda3/envs/env_isaaclab/lib/python3.11/site-packages",
+    "ISAAC_SIM_SITE_PACKAGES": "/home/zxro/anaconda3/envs/env_isaaclab/lib/python3.11/site-packages",
+    "ISAACLAB_RS": "/home/zxro/ant_rl_submission",
+    "ISAACLAB_ROOT": "/home/zxro/ant_rl_submission",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  }
+}

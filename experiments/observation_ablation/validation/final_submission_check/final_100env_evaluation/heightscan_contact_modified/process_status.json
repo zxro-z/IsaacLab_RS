@@ -1,0 +1,8 @@
+{
+  "exit_code": 1,
+  "termination_signal": null,
+  "timeout_reason": null,
+  "wall_seconds": 4.255090143997222,
+  "complete_summary_exists": false,
+  "normal_close_return_marker_required_for_clean_shutdown": true
+}

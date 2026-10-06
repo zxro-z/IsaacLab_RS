@@ -1,0 +1,54 @@
+{
+  "original_task": "Ant-rl-v0",
+  "local_task": "Isaac-Ant-Teammate1-RewardEnv-v0",
+  "teammate_git_commit": "dd35ebc11b01ea57e79cc6dfa03ac6ffcbfac557",
+  "original_registration": "source/ant/__init__.py:18-26",
+  "original_environment": "source/ant/ant_env_cfg.py:AntEnvCfg (298-323)",
+  "terrain": "source/ant/ant_env_cfg.py:59-96",
+  "original_current_play_reward": "scripts/rsl_rl/play.py:85-122 EvalRewardsCfg; assignment at152 before gym.make at155",
+  "original_training_reward": "source/ant/ant_env_cfg.py:282 -> rewards.TotalReward; excluded",
+  "original_command": "command.txt PLAY section: python scripts/rsl_rl/play.py --task Ant-rl-v0 --num_envs 4 --checkpoint logs/rsl_rl/ant/RUN_FOLDER/best_model.pt",
+  "original_command_status": "Documented template, not a recovered historical executed command. Final reward output artifact, exact evaluation seed and num_envs were not found.",
+  "saved_configs": {
+    "v3": "logs/rsl_rl/ant/v3_depth/params/env.yaml",
+    "v2": "logs/rsl_rl/ant/v2/params/env.yaml"
+  },
+  "environment_selection": "Current registered Ant-rl-v0 plus current play.py and project.md; current terrain parameters match saved v3 config. v2 random-grid is a different historical config.",
+  "local_registration": "scripts/evaluate_contact_teammate1.py:ContactEvaluationCfg and gym.register",
+  "host_geometry_asset_actions_events_terminations_sim_config_equality_passed": true,
+  "observation_change": "Remove unused depth camera/group and original feet diagnostic sensor; add one RS 63-ray scanner and one RS four-foot sensor; stock60+63+4=127; no padding, slicing, or checkpoint conversion",
+  "reward_source": "/home/zxro/IsaacLab_RS/source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_env_cfg.py:124-152",
+  "reward_manager_source": "/home/zxro/IsaacLab_RS/source/isaaclab/isaaclab/managers/reward_manager.py:149-156",
+  "main_source_hashes": {
+    "/home/zxro/teammate_ant_rl/source/ant/ant_env_cfg.py": "c349db1e97f31bcb5317184e68cfd8638262b3bae644b0b4826220075ef9de57",
+    "/home/zxro/teammate_ant_rl/scripts/rsl_rl/play.py": "d8acc9c0641885155ad8cc5f447494bc1eb033f9dc0a81a31850dc944befaa4d",
+    "/home/zxro/teammate_ant_rl/source/ant/__init__.py": "46e04cd45d4eed5d11b607d2533cf2280016d8d2915d4163f32b9c5d8edf84c0",
+    "/home/zxro/teammate_ant_rl/logs/rsl_rl/ant/v3_depth/params/env.yaml": "2a1d81c4824d8fb6aaac56d920bdd7c8df31e3f09b827344fb409d666fbb9d8e",
+    "/home/zxro/IsaacLab_RS/source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_env_cfg.py": "fd17a386c8482f0d22fa2f0b5959514e0ba6aff5dcefd59a46c87ce749e59c44",
+    "/home/zxro/IsaacLab_RS/source/isaaclab/isaaclab/managers/reward_manager.py": "5d41d6a376cfb456849d861c3232694ea5662cc38970e2e2c7e5152f156d88d7",
+    "/home/zxro/teammate_ant_rl/scripts/evaluate_contact_teammate1.py": "d10b2b0b0b83a1436a603531346c728e5fbbbadb32303844e19e8d1dec4a2368"
+  },
+  "config_sha256": "9fe4088313b7bddce50844915e7dd02fd1f9d2c6399c6007d31d4119c21abcf2",
+  "terrain_mesh_sha256": "5ec492e2ca8e38ee00a8bc59a82b4a580f4015c733d2b2579846f2ba62b9f6a8",
+  "env_origins_sha256": "7cd788f81a1004fa4fc1ee168aec47e952ef433850592dd20b2cf9980eb743dc",
+  "checkpoint": "/home/zxro/IsaacLab_RS/logs/rsl_rl/ant/2026-10-03_01-10-01_ablation_heightscan_contact_obs127_s42/model_999.pt",
+  "checkpoint_sha256": "8fa361827664fce1a42a2f4d42152853c81a6a8cf63deb3174aca5b9d80d937a",
+  "runtime": {
+    "isaac_sim_package": "5.0.0.0",
+    "isaac_sim_build": "5.0.0-rc.45+release.23960.184afb15.gl",
+    "isaaclab_source": "/home/zxro/IsaacLab_RS",
+    "rsl_rl": "3.0.1",
+    "torch": "2.7.0+cu128",
+    "gpu": "NVIDIA GeForce RTX 5070 Ti"
+  },
+  "caveats": [
+    "Historical final reward execution provenance is incomplete; this is the verified current native evaluation environment, not a proven replay of an unknown historical final run.",
+    "Teammate depth perception is replaced with checkpoint-required RS HeightScan/Contact. Geometry and physics definitions are retained; observation/camera differences are intentional.",
+    "Host noninstanceable ant.usd is retained; RS checkpoint trained with stock instanceable Ant. Runtime joint order and effort action scale7.5 are saved.",
+    "No terrain-relative height fall check: fall is body_z_down (>90deg). Different from FinalUnseen clearance<0.31m.",
+    "Startup robot friction is random static[0.3,1.0], dynamic0.8*static; kept unchanged. Teammate2 uses different material/reset/map-boundary definitions.",
+    "World-X displacement is terminal-inclusive here; original Final uses preterminal pose. The matching legacy metric is retained.",
+    "No map-boundary termination is configured; travel can leave the initial 10m tile and cross other terrain tiles/border.",
+    "Generator seed alone does not guarantee identical historical meshes across runtime/Torch RNG differences; per-run mesh/origin/material data is saved."
+  ]
+}

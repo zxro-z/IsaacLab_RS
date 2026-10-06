@@ -1,0 +1,20 @@
+{
+  "pass_": true,
+  "py_compile": true,
+  "git_diff_check": true,
+  "json_parse": true,
+  "csv_parse": true,
+  "nan_inf_check": true,
+  "json_files": 27,
+  "csv_files": 6,
+  "checkpoint_tensors_finite": true,
+  "checkpoint_tensor_count": 136,
+  "protected_files": 559,
+  "protected_sha256_unchanged": true,
+  "existing_checkpoints_unchanged": true,
+  "source_parity": true,
+  "terrain_mesh_assignment_parity": true,
+  "max_step_residual": 3.8708094507455826e-08,
+  "max_episode_residual": 2.181574359383376e-06,
+  "mean_episode_residual": 9.441843926083494e-07
+}

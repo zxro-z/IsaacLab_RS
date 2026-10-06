@@ -1,0 +1,200 @@
+{
+  "git_commit": "e7a001cf3f68381665efe65ebbcebcf05a3c045c",
+  "branch": "observation-ablation",
+  "task": "Ant-rl-Ablation-HeightScan-v0",
+  "training_env": "Team1 AntEnvCfg",
+  "evaluation_env": "Team1 AntEnvCfg",
+  "terrain_config_source": "source/ant/ant_env_cfg.py:TERRAIN_CFG",
+  "terrain_seed": 42,
+  "training_seed": 42,
+  "evaluation_seed": 24,
+  "num_envs": 4096,
+  "evaluation_num_envs": 100,
+  "iterations": 1000,
+  "checkpoint_interval": 50,
+  "checkpoint_selection": "best_model: highest logged completed-episode training mean return; fixed before training",
+  "control_dt": 0.016666666666666666,
+  "physics_dt": 0.008333333333333333,
+  "decimation": 2,
+  "episode_length_s": 16,
+  "terrain": {
+    "size": [
+      10,
+      10
+    ],
+    "rows": 20,
+    "columns": 10,
+    "curriculum": false,
+    "difficulty_range": [
+      0,
+      1
+    ],
+    "proportions": {
+      "pyramid_stairs": 0.2,
+      "pyramid_stairs_inv": 0.2,
+      "hf_pyramid_slope": 0.2,
+      "hf_pyramid_slope_inv": 0.2,
+      "boxes": 0.2
+    },
+    "stairs_height": [
+      0.03,
+      0.07
+    ],
+    "box_height": [
+      0.02,
+      0.1
+    ],
+    "slope": [
+      0,
+      0.2
+    ],
+    "platform_width": 1
+  },
+  "ppo": {
+    "rollout_steps": 32,
+    "value_loss_coef": 1,
+    "use_clipped_value_loss": true,
+    "clip_param": 0.2,
+    "entropy_coef": 0,
+    "num_learning_epochs": 5,
+    "num_mini_batches": 4,
+    "learning_rate": 0.0005,
+    "schedule": "adaptive",
+    "gamma": 0.99,
+    "lam": 0.95,
+    "desired_kl": 0.01,
+    "max_grad_norm": 1,
+    "normalize_advantage_per_mini_batch": false
+  },
+  "network": {
+    "actor_hidden_dims": [
+      400,
+      200,
+      100
+    ],
+    "critic_hidden_dims": [
+      400,
+      200,
+      100
+    ],
+    "activation": "elu",
+    "init_noise_std": 1,
+    "noise_std_type": "scalar",
+    "actor_obs_normalization": false,
+    "critic_obs_normalization": false
+  },
+  "reward_weights": {
+    "progress": 1,
+    "alive": 0.5,
+    "upright": 0.1,
+    "move_to_target": 0.5,
+    "action_l2": -0.005,
+    "energy": -0.05,
+    "joint_pos_limits": -0.1
+  },
+  "reward_source": "IsaacLab_RS manager_based.classic.ant.ant_env_cfg:RewardsCfg",
+  "observation": {
+    "proprio": 59,
+    "heightscan": 63,
+    "actor": 122,
+    "critic": 122,
+    "cnn": false,
+    "added_contact": false,
+    "native_incoming_foot_wrench_preserved": true
+  },
+  "evaluation_protocol": {
+    "first_episode_only": true,
+    "deterministic_mean_actions": true,
+    "terminal_reward_included": true,
+    "post_reset_rewards_excluded": true,
+    "max_steps": 960,
+    "population_std": true
+  },
+  "status": "HeightScan and DepthCam evaluations complete; DepthCam training used reset-time terrain reselection",
+  "runtime_reward_terms": [
+    {
+      "term": "progress",
+      "weight": 1.0,
+      "function": "isaaclab_tasks.manager_based.classic.humanoid.mdp.rewards.progress_reward",
+      "params": {
+        "target_pos": [
+          1000.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "term": "alive",
+      "weight": 0.5,
+      "function": "isaaclab.envs.mdp.rewards.is_alive",
+      "params": {}
+    },
+    {
+      "term": "upright",
+      "weight": 0.1,
+      "function": "isaaclab_tasks.manager_based.classic.humanoid.mdp.rewards.upright_posture_bonus",
+      "params": {
+        "threshold": 0.93
+      }
+    },
+    {
+      "term": "move_to_target",
+      "weight": 0.5,
+      "function": "isaaclab_tasks.manager_based.classic.humanoid.mdp.rewards.move_to_target_bonus",
+      "params": {
+        "threshold": 0.8,
+        "target_pos": [
+          1000.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "term": "action_l2",
+      "weight": -0.005,
+      "function": "isaaclab.envs.mdp.rewards.action_l2",
+      "params": {}
+    },
+    {
+      "term": "energy",
+      "weight": -0.05,
+      "function": "isaaclab_tasks.manager_based.classic.humanoid.mdp.rewards.power_consumption",
+      "params": {
+        "gear_ratio": {
+          ".*": 15.0
+        }
+      }
+    },
+    {
+      "term": "joint_pos_limits",
+      "weight": -0.1,
+      "function": "isaaclab_tasks.manager_based.classic.humanoid.mdp.rewards.joint_pos_limits_penalty_ratio",
+      "params": {
+        "threshold": 0.99,
+        "gear_ratio": {
+          ".*": 15.0
+        }
+      }
+    }
+  ],
+  "runtime_frozen_config": "shared/source_parity.json",
+  "team1_base_commit": "dd35ebc11b01ea57e79cc6dfa03ac6ffcbfac557",
+  "implementation_commit": "e7a001cf3f68381665efe65ebbcebcf05a3c045c",
+  "num_steps_per_env": 32,
+  "total_transitions": 131072000,
+  "canonical_heightscan": "heightscan_4096x32x1000",
+  "resume": false,
+  "previous_exploratory_run": {
+    "directory": "heightscan",
+    "num_envs": 2048,
+    "iterations": 10000,
+    "total_transitions": 655360000
+  },
+  "runner_config": "ant.agents.ablation_budget_ppo_cfg:AblationBudgetPPORunnerCfg",
+  "canonical_training_command": "python -u scripts/observation_ablation_budget.py train --headless --output logs/rsl_rl/observation_ablation/ablation_heightscan_stock_s42_e4096_n32_i1000",
+  "base_depthcam_compliance": "Budget, seeds, PPO, reward and evaluation protocol match; DepthCam training additionally used reset-time terrain reselection",
+  "depthcam_evaluation": "depthcam_2048x32x2000/results/evaluation_summary.json",
+  "canonical_checkpoint": "experiments/observation_ablation/heightscan_4096x32x1000/checkpoints/best_model.pt"
+}

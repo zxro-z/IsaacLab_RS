@@ -1,0 +1,108 @@
+--- a/scripts/observation_ablation.py
++++ b/scripts/observation_ablation.py
+@@ -11,6 +11,7 @@
+ from pathlib import Path
+ import statistics
+ import subprocess
++from submission_provenance import manifest_git_provenance
+ import sys
+ import types
+ 
+@@ -189,7 +190,7 @@
+     mesh = UsdGeom.Mesh(base.scene.stage.GetPrimAtPath("/World/ground/terrain/mesh"))
+     mesh_sha = hashlib.sha256(np.asarray(mesh.GetPointsAttr().Get(), dtype=np.float32).tobytes()
+                              + np.asarray(mesh.GetFaceVertexIndicesAttr().Get(), dtype=np.int32).tobytes()).hexdigest()
+-    manifest = dict(task=TASK, git_commit=subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(),
++    manifest = dict(task=TASK, **manifest_git_provenance(ROOT, allow_snapshot=args.mode == "evaluate"),
+                     training_environment="Team1 AntEnvCfg", evaluation_environment="Team1 AntEnvCfg (same dynamics/terrain)",
+                     training_seed=42, evaluation_seed=24, terrain_seed=42,
+                     num_envs=cfg.scene.num_envs, training_num_envs=2048, evaluation_num_envs=100,
+--- a/scripts/observation_ablation_budget.py
++++ b/scripts/observation_ablation_budget.py
+@@ -11,6 +11,7 @@
+ from pathlib import Path
+ import statistics
+ import subprocess
++from submission_provenance import manifest_git_provenance
+ import sys
+ import types
+ import time
+@@ -198,7 +199,7 @@
+     terrain_x_bounds = [float(mesh_points[:, 0].min()), float(mesh_points[:, 0].max())]
+     mesh_sha = hashlib.sha256(np.asarray(mesh.GetPointsAttr().Get(), dtype=np.float32).tobytes()
+                              + np.asarray(mesh.GetFaceVertexIndicesAttr().Get(), dtype=np.int32).tobytes()).hexdigest()
+-    manifest = dict(task=TASK, git_commit=subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(),
++    manifest = dict(task=TASK, **manifest_git_provenance(ROOT, allow_snapshot=args.mode == "evaluate"),
+                     training_environment="Team1 AntEnvCfg", evaluation_environment="Team1 AntEnvCfg (same dynamics/terrain)",
+                     training_seed=42, evaluation_seed=24, terrain_seed=42,
+                     num_envs=cfg.scene.num_envs, training_num_envs=4096, evaluation_num_envs=100,
+--- a/scripts/contact_stock_observation_ablation.py
++++ b/scripts/contact_stock_observation_ablation.py
+@@ -11,6 +11,7 @@
+ from pathlib import Path
+ import statistics
+ import subprocess
++from submission_provenance import manifest_git_provenance
+ import sys
+ import types
+ import time
+@@ -225,7 +226,7 @@
+     terrain_x_bounds = [float(mesh_points[:, 0].min()), float(mesh_points[:, 0].max())]
+     mesh_sha = hashlib.sha256(np.asarray(mesh.GetPointsAttr().Get(), dtype=np.float32).tobytes()
+                              + np.asarray(mesh.GetFaceVertexIndicesAttr().Get(), dtype=np.int32).tobytes()).hexdigest()
+-    manifest = dict(task=TASK, git_commit=subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(),
++    manifest = dict(task=TASK, **manifest_git_provenance(ROOT, allow_snapshot=args.mode == "evaluate"),
+                     training_environment="Team1 AntEnvCfg", evaluation_environment="Team1 AntEnvCfg (same dynamics/terrain)",
+                     training_seed=42, evaluation_seed=24, terrain_seed=42,
+                     num_envs=cfg.scene.num_envs, training_num_envs=4096, evaluation_num_envs=100,
+--- a/scripts/stage2_observation_ablation.py
++++ b/scripts/stage2_observation_ablation.py
+@@ -11,6 +11,7 @@
+ from pathlib import Path
+ import statistics
+ import subprocess
++from submission_provenance import manifest_git_provenance
+ import sys
+ import types
+ import time
+@@ -238,7 +239,7 @@
+     terrain_x_bounds = [float(mesh_points[:, 0].min()), float(mesh_points[:, 0].max())]
+     mesh_sha = hashlib.sha256(np.asarray(mesh.GetPointsAttr().Get(), dtype=np.float32).tobytes()
+                              + np.asarray(mesh.GetFaceVertexIndicesAttr().Get(), dtype=np.int32).tobytes()).hexdigest()
+-    manifest = dict(task=TASK, git_commit=subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(),
++    manifest = dict(task=TASK, **manifest_git_provenance(ROOT, allow_snapshot=args.mode == "evaluate"),
+                     training_environment="Team1 AntEnvCfg", evaluation_environment="Team1 AntEnvCfg (same dynamics/terrain)",
+                     training_seed=42, evaluation_seed=24, terrain_seed=42,
+                     num_envs=cfg.scene.num_envs, training_num_envs=4096, evaluation_num_envs=100,
+--- /dev/null
++++ b/scripts/submission_provenance.py
+@@ -0,0 +1,29 @@
++"""Manifest-only provenance for Git checkouts and preserved submission snapshots."""
++import json
++import os
++from pathlib import Path
++import re
++import subprocess
++
++
++def manifest_git_provenance(root, *, allow_snapshot=False):
++    """Keep Git HEAD when available; use recorded provenance for evaluation snapshots."""
++    root = Path(root)
++    result = subprocess.run(
++        ["git", "rev-parse", "HEAD"], cwd=root, text=True, capture_output=True,
++        env={**os.environ, "LC_ALL": "C"},
++    )
++    if result.returncode == 0:
++        return dict(git_commit=result.stdout.strip(),
++                    git_commit_source="git_rev_parse_HEAD", repository_snapshot=False)
++    unavailable = "not a git repository" in result.stderr and not (root / ".git").exists()
++    if not allow_snapshot or not unavailable:
++        raise subprocess.CalledProcessError(result.returncode, result.args,
++                                            output=result.stdout, stderr=result.stderr)
++    record = json.loads((root / "docs/submission_provenance/copy_manifest.json").read_text())
++    state = record["original_states_before"]["/home/zxro/teammate_ant_rl"]
++    commit = state["head"].strip()
++    if not re.fullmatch(r"[0-9a-f]{40}", commit):
++        raise ValueError("Invalid preserved project HEAD in submission provenance")
++    return dict(git_commit=commit, git_commit_source="preserved_submission_provenance",
++                repository_snapshot=True)

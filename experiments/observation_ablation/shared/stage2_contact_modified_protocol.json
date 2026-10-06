@@ -1,0 +1,200 @@
+{
+  "git_commit": "e738cd42dd0cd270b4fc71e04e3b4fcc66518468",
+  "branch": "observation-ablation",
+  "task": "Ant-rl-Ablation-HeightScan-Contact-ModifiedReward-v0",
+  "training_env": "Team1 AntEnvCfg",
+  "evaluation_env": "Team1 AntEnvCfg",
+  "terrain_config_source": "source/ant/ant_env_cfg.py:TERRAIN_CFG",
+  "terrain_seed": 42,
+  "training_seed": 42,
+  "evaluation_seed": 24,
+  "num_envs": 4096,
+  "evaluation_num_envs": 100,
+  "iterations": 1000,
+  "checkpoint_interval": 50,
+  "checkpoint_selection": "best_model: highest logged completed-episode training mean return; fixed before training",
+  "control_dt": 0.016666666666666666,
+  "physics_dt": 0.008333333333333333,
+  "decimation": 2,
+  "episode_length_s": 16,
+  "terrain": {
+    "size": [
+      10,
+      10
+    ],
+    "rows": 20,
+    "columns": 10,
+    "curriculum": false,
+    "difficulty_range": [
+      0,
+      1
+    ],
+    "proportions": {
+      "pyramid_stairs": 0.2,
+      "pyramid_stairs_inv": 0.2,
+      "hf_pyramid_slope": 0.2,
+      "hf_pyramid_slope_inv": 0.2,
+      "boxes": 0.2
+    },
+    "stairs_height": [
+      0.03,
+      0.07
+    ],
+    "box_height": [
+      0.02,
+      0.1
+    ],
+    "slope": [
+      0,
+      0.2
+    ],
+    "platform_width": 1
+  },
+  "ppo": {
+    "rollout_steps": 32,
+    "value_loss_coef": 1,
+    "use_clipped_value_loss": true,
+    "clip_param": 0.2,
+    "entropy_coef": 0,
+    "num_learning_epochs": 5,
+    "num_mini_batches": 4,
+    "learning_rate": 0.0005,
+    "schedule": "adaptive",
+    "gamma": 0.99,
+    "lam": 0.95,
+    "desired_kl": 0.01,
+    "max_grad_norm": 1,
+    "normalize_advantage_per_mini_batch": false
+  },
+  "network": {
+    "actor_hidden_dims": [
+      400,
+      200,
+      100
+    ],
+    "critic_hidden_dims": [
+      400,
+      200,
+      100
+    ],
+    "activation": "elu",
+    "init_noise_std": 1,
+    "noise_std_type": "scalar",
+    "actor_obs_normalization": false,
+    "critic_obs_normalization": false
+  },
+  "reward_weights": {
+    "progress": 2.5,
+    "alive": 0.5,
+    "upright": 0.05,
+    "move_to_target": 1.5,
+    "foot_contact": 1.0,
+    "action_l2": -0.005,
+    "energy": -0.15,
+    "joint_velocity": -0.001,
+    "joint_pos_limits": -0.5,
+    "foot_slip": -0.07
+  },
+  "reward_source": "ant.rewards.TotalReward; saved logs/rsl_rl/ant/v3_depth/params/reward_weights.yaml and env.yaml",
+  "observation": {
+    "proprio": 59,
+    "heightscan": 63,
+    "explicit_contact": 4,
+    "actor": 126,
+    "critic": 126,
+    "cnn": false,
+    "normalization": false
+  },
+  "evaluation_protocol": {
+    "first_episode_only": true,
+    "deterministic_mean_actions": true,
+    "terminal_reward_included": true,
+    "post_reset_rewards_excluded": true,
+    "max_steps": 960,
+    "population_std": true
+  },
+  "status": "HeightScan and DepthCam evaluations complete with documented observation and terrain-reset differences",
+  "runtime_frozen_config": "heightscan_contact_modified_4096x32x1000/results/source_parity.json",
+  "team1_base_commit": "dd35ebc11b01ea57e79cc6dfa03ac6ffcbfac557",
+  "num_steps_per_env": 32,
+  "total_transitions": 131072000,
+  "canonical_heightscan": "heightscan_contact_modified_4096x32x1000",
+  "resume": false,
+  "runner_config": "ant.agents.stage2_ppo_cfg:Stage2HeightScanContactPPORunnerCfg",
+  "base_depthcam_compliance": "DepthCam matches budget, seeds, PPO, modified reward and evaluation protocol, but has no separate 4-D binary contact observation and used reset-time terrain reselection during training",
+  "depthcam_evaluation": "../depthcam_modified_2048x32x2000/results/evaluation_summary.json",
+  "stage": 2,
+  "training_reward": {
+    "progress": 2.5,
+    "alive": 0.5,
+    "upright": 0.05,
+    "move_to_target": 1.5,
+    "foot_contact": 1.0,
+    "action_l2": -0.005,
+    "energy": -0.15,
+    "joint_velocity": -0.001,
+    "joint_pos_limits": -0.5,
+    "foot_slip": -0.07
+  },
+  "evaluation_reward": {
+    "progress": 2.5,
+    "alive": 0.5,
+    "upright": 0.05,
+    "move_to_target": 1.5,
+    "foot_contact": 1.0,
+    "action_l2": -0.005,
+    "energy": -0.15,
+    "joint_velocity": -0.001,
+    "joint_pos_limits": -0.5,
+    "foot_slip": -0.07
+  },
+  "reward_manager_terms": {
+    "total_reward": {
+      "weight": 1.0,
+      "function": "ant.rewards.TotalReward"
+    }
+  },
+  "contact_observation": {
+    "canonical_source": "IsaacLab_RS/manager_based/classic/ant/ant_contact_observations.py",
+    "source_sha256": "e463d5bf8866b2d6b05caab9a651112e13053c7972ad0cb63853f747e977a132",
+    "sensor": "feet_contacts",
+    "foot_body_names": [
+      "front_left_foot",
+      "front_right_foot",
+      "left_back_foot",
+      "right_back_foot"
+    ],
+    "preserve_order": true,
+    "force_source": "ContactSensor.data.net_forces_w (world-frame current net force)",
+    "force_reduction": "L2 norm over xyz",
+    "threshold_N": 1.0,
+    "binary_condition": "force_norm > threshold (strict)",
+    "history_length": 0,
+    "history_semantics": "current sample only; no temporal max",
+    "update_period": 0.0,
+    "dtype": "force tensor dtype (runtime float32)",
+    "encoding": [
+      0.0,
+      1.0
+    ],
+    "scale": 1.0,
+    "clip": null,
+    "normalization": false,
+    "output_dim": 4,
+    "concatenation": "after proprio and terrain representation",
+    "heightscan_indices": [
+      122,
+      126
+    ]
+  },
+  "reward_side_contact": {
+    "sensor": "contact_forces",
+    "force_source": "net_forces_w_history[...,2].amax(dim=1)",
+    "history_length": 3,
+    "threshold_N": 5.0,
+    "condition": ">5N; foot_contact bonus if at least two feet; foot_slip sums contacted feet XY speeds"
+  },
+  "intended_comparison_variable": "terrain representation (HeightScan vs DepthCam)",
+  "implementation_commit": "e74d3fe5f08b3f070ff314e6f0b6349985458b61",
+  "heightscan_checkpoint": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/checkpoints/best_model.pt"
+}

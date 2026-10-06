@@ -1,0 +1,22 @@
+--- a/scripts/stage2_observation_ablation.py
++++ b/scripts/stage2_observation_ablation.py
+@@ -151,8 +151,8 @@
+         assert frozen[key] == getattr(original, key).to_dict(), key
+     assert cfg.episode_length_s == original.episode_length_s and cfg.decimation == original.decimation
+     assert cfg.rewards.to_dict() == TeamRewardsCfg().to_dict()
+-    saved_weights = yaml.safe_load((ROOT / "logs/rsl_rl/ant/v3_depth/params/reward_weights.yaml").read_text())
+-    saved_env = yaml.load((ROOT / "logs/rsl_rl/ant/v3_depth/params/env.yaml").read_text(), Loader=SavedConfigLoader)
++    saved_weights = yaml.safe_load((ROOT / "logs/rsl_rl/ant/modified/params/reward_weights.yaml").read_text())
++    saved_env = yaml.load((ROOT / "logs/rsl_rl/ant/modified/params/env.yaml").read_text(), Loader=SavedConfigLoader)
+     assert saved_env["rewards"]["total_reward"]["func"] == "ant.rewards:TotalReward"
+     assert saved_env["rewards"]["total_reward"]["weight"] == 1.0
+     for constant, expected in zip(CONSTANTS, WEIGHTS):
+@@ -180,7 +180,7 @@
+     dump("config.json", cfg.to_dict())
+     dump("agent.json", agent.to_dict())
+     sources = [Path(__file__), ROOT / "source/ant/ablation_env_cfg.py", ROOT / "source/ant/stage2_env_cfg.py", ROOT / "source/ant/rewards.py", ROOT / "source/ant/agents/stage2_ppo_cfg.py",
+-               ROOT / "logs/rsl_rl/ant/v3_depth/params/reward_weights.yaml", ROOT / "logs/rsl_rl/ant/v3_depth/params/env.yaml",
++               ROOT / "logs/rsl_rl/ant/modified/params/reward_weights.yaml", ROOT / "logs/rsl_rl/ant/modified/params/env.yaml",
+                RS / "source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_contact_observations.py",
+                ROOT / "source/ant/agents/ablation_ppo_cfg.py", ROOT / "source/ant/agents/ablation_budget_ppo_cfg.py", ROOT / "source/ant/ant_env_cfg.py",
+                ROOT / "source/ant/agents/rsl_rl_ppo_cfg.py", ROOT / "source/ant/__init__.py",

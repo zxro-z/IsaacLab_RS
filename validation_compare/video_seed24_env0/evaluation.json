@@ -1,0 +1,376 @@
+{
+  "task": "Isaac-Ant-Teammate1-RewardEnv-v0",
+  "original_task": "Ant-rl-v0",
+  "num_envs": 1,
+  "completed": 1,
+  "seed": 24,
+  "terrain_seed": 42,
+  "control_dt": 0.016666666666666666,
+  "episode_limit_seconds": 16.0,
+  "checkpoint": "/home/zxro/IsaacLab_RS/logs/rsl_rl/ant/2026-10-03_01-10-01_ablation_heightscan_contact_obs127_s42/model_999.pt",
+  "checkpoint_sha256": "8fa361827664fce1a42a2f4d42152853c81a6a8cf63deb3174aca5b9d80d937a",
+  "dimensions": {
+    "actor_input_dim": 127,
+    "critic_input_dim": 127,
+    "observation_dim": 127
+  },
+  "action_dimension": 8,
+  "joint_names": [
+    "front_left_leg",
+    "front_right_leg",
+    "left_back_leg",
+    "right_back_leg",
+    "front_left_foot",
+    "front_right_foot",
+    "left_back_foot",
+    "right_back_foot"
+  ],
+  "action_joint_names": [
+    "front_left_leg",
+    "front_right_leg",
+    "left_back_leg",
+    "right_back_leg",
+    "front_left_foot",
+    "front_right_foot",
+    "left_back_foot",
+    "right_back_foot"
+  ],
+  "action_scale": 7.5,
+  "scan": {
+    "height_scan_enabled": true,
+    "height_scan_pattern": "original",
+    "scan_dim": 63
+  },
+  "runtime_validation": {
+    "observations_finite": true,
+    "height_scan_finite": true,
+    "contacts_finite_binary": true,
+    "actions_finite": true,
+    "rewards_finite": true
+  },
+  "summary": {
+    "episode_return": {
+      "mean": 58.04483903408982,
+      "std": 0.0,
+      "min": 58.04483903408982,
+      "max": 58.04483903408982,
+      "median": 58.04483903408982
+    },
+    "episode_steps": {
+      "mean": 901.0,
+      "std": 0.0,
+      "min": 901.0,
+      "max": 901.0,
+      "median": 901.0
+    },
+    "episode_seconds": {
+      "mean": 15.016666666666666,
+      "std": 0.0,
+      "min": 15.016666666666666,
+      "max": 15.016666666666666,
+      "median": 15.016666666666666
+    },
+    "forward_displacement": {
+      "mean": 52.10516357421875,
+      "std": 0.0,
+      "min": 52.10516357421875,
+      "max": 52.10516357421875,
+      "median": 52.10516357421875
+    },
+    "mean_forward_velocity": {
+      "mean": 3.4575179814651493,
+      "std": 0.0,
+      "min": 3.4575179814651493,
+      "max": 3.4575179814651493,
+      "median": 3.4575179814651493
+    }
+  },
+  "fall_count": 1,
+  "fall_ratio": 1.0,
+  "timeout_count": 0,
+  "timeout_ratio": 0.0,
+  "boundary_exit_count": 0,
+  "boundary_exit_ratio": 0.0,
+  "reached_5m_count": 1,
+  "reached_40m_count": 1,
+  "reward_definitions": [
+    {
+      "name": "progress",
+      "weight": 1.0,
+      "function": "isaaclab_tasks.manager_based.classic.humanoid.mdp.rewards.progress_reward",
+      "params": {
+        "target_pos": [
+          1000.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "alive",
+      "weight": 0.5,
+      "function": "isaaclab.envs.mdp.rewards.is_alive",
+      "params": {}
+    },
+    {
+      "name": "upright",
+      "weight": 0.1,
+      "function": "isaaclab_tasks.manager_based.classic.humanoid.mdp.rewards.upright_posture_bonus",
+      "params": {
+        "threshold": 0.93
+      }
+    },
+    {
+      "name": "move_to_target",
+      "weight": 0.5,
+      "function": "isaaclab_tasks.manager_based.classic.humanoid.mdp.rewards.move_to_target_bonus",
+      "params": {
+        "threshold": 0.8,
+        "target_pos": [
+          1000.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "action_l2",
+      "weight": -0.005,
+      "function": "isaaclab.envs.mdp.rewards.action_l2",
+      "params": {}
+    },
+    {
+      "name": "energy",
+      "weight": -0.05,
+      "function": "isaaclab_tasks.manager_based.classic.humanoid.mdp.rewards.power_consumption",
+      "params": {
+        "gear_ratio": {
+          ".*": 15.0
+        }
+      }
+    },
+    {
+      "name": "joint_pos_limits",
+      "weight": -0.1,
+      "function": "isaaclab_tasks.manager_based.classic.humanoid.mdp.rewards.joint_pos_limits_penalty_ratio",
+      "params": {
+        "threshold": 0.99,
+        "gear_ratio": {
+          ".*": 15.0
+        }
+      }
+    }
+  ],
+  "reward_components": {
+    "progress": {
+      "mean": 52.053387673106045,
+      "std": 0.0,
+      "min": 52.053387673106045,
+      "max": 52.053387673106045,
+      "median": 52.053387673106045
+    },
+    "alive": {
+      "mean": 7.500000391155481,
+      "std": 0.0,
+      "min": 7.500000391155481,
+      "max": 7.500000391155481,
+      "median": 7.500000391155481
+    },
+    "upright": {
+      "mean": 1.2600001185201108,
+      "std": 0.0,
+      "min": 1.2600001185201108,
+      "max": 1.2600001185201108,
+      "median": 1.2600001185201108
+    },
+    "move_to_target": {
+      "mean": 7.18369745509699,
+      "std": 0.0,
+      "min": 7.18369745509699,
+      "max": 7.18369745509699,
+      "median": 7.18369745509699
+    },
+    "action_l2": {
+      "mean": -0.1376512278889095,
+      "std": 0.0,
+      "min": -0.1376512278889095,
+      "max": -0.1376512278889095,
+      "median": -0.1376512278889095
+    },
+    "energy": {
+      "mean": -6.180376322037773,
+      "std": 0.0,
+      "min": -6.180376322037773,
+      "max": -6.180376322037773,
+      "median": -6.180376322037773
+    },
+    "joint_pos_limits": {
+      "mean": -3.6342172047370696,
+      "std": 0.0,
+      "min": -3.6342172047370696,
+      "max": -3.6342172047370696,
+      "median": -3.6342172047370696
+    }
+  },
+  "identity": {
+    "max_absolute_step_residual": 1.3940734788775444e-08,
+    "mean_absolute_step_residual": 3.4193735286817224e-09,
+    "max_absolute_episode_residual": 1.8491250557417516e-06,
+    "mean_absolute_episode_residual": 1.8491250557417516e-06,
+    "max_float32_accumulation_difference": 1.252652145922184e-05,
+    "all_finite": true
+  },
+  "terrain_mesh_sha256": "5ec492e2ca8e38ee00a8bc59a82b4a580f4015c733d2b2579846f2ba62b9f6a8",
+  "env_origins_sha256": "f576cbc958f73bb478d2be00e0e0ccbd993751274e9d1b88a333c56ec12dc5a5",
+  "terrain_assignment": {
+    "rows": [
+      14
+    ],
+    "columns": [
+      0
+    ],
+    "origins": [
+      [
+        45.0,
+        -45.0,
+        0.6334189176559448
+      ]
+    ]
+  },
+  "initial_root_states": [
+    [
+      45.0,
+      -45.0,
+      1.1334189176559448,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "robot_material_properties": [
+    [
+      [
+        0.8351004719734192,
+        0.6680803894996643,
+        0.0
+      ],
+      [
+        0.8351004719734192,
+        0.6680803894996643,
+        0.0
+      ],
+      [
+        0.8351004719734192,
+        0.6680803894996643,
+        0.0
+      ],
+      [
+        0.8351004719734192,
+        0.6680803894996643,
+        0.0
+      ],
+      [
+        0.8351004719734192,
+        0.6680803894996643,
+        0.0
+      ],
+      [
+        0.8351004719734192,
+        0.6680803894996643,
+        0.0
+      ],
+      [
+        0.8351004719734192,
+        0.6680803894996643,
+        0.0
+      ],
+      [
+        0.8351004719734192,
+        0.6680803894996643,
+        0.0
+      ],
+      [
+        0.8351004719734192,
+        0.6680803894996643,
+        0.0
+      ],
+      [
+        0.8351004719734192,
+        0.6680803894996643,
+        0.0
+      ],
+      [
+        0.8351004719734192,
+        0.6680803894996643,
+        0.0
+      ],
+      [
+        0.8351004719734192,
+        0.6680803894996643,
+        0.0
+      ],
+      [
+        0.8351004719734192,
+        0.6680803894996643,
+        0.0
+      ]
+    ]
+  ],
+  "accounting": "active = ~finished; include env.step terminal reward and step; finished |= done; post-reset excluded",
+  "displacement_definition": "Terminal-inclusive signed world-X displacement, read before original host auto-reset. Legacy preterminal values also retained.",
+  "termination_definition": "fall=body_z_down (>pi/2), timeout=time_out; no map-boundary termination configured",
+  "per_env": [
+    {
+      "env_id": 0,
+      "episode_return": 58.04483903408982,
+      "official_float32_episode_return": 58.04482650756836,
+      "episode_steps": 901,
+      "episode_seconds": 15.016666666666666,
+      "forward_displacement": 52.10516357421875,
+      "legacy_preterminal_displacement": 52.08879089355469,
+      "maximum_forward_displacement": 52.10516357421875,
+      "mean_forward_velocity": 3.4575179814651493,
+      "fall": true,
+      "timeout": false,
+      "map_boundary_exit": false,
+      "reward_identity_residual": 1.8491250557417516e-06,
+      "terrain_row": 14,
+      "terrain_column": 0,
+      "reward_progress": 52.053387673106045,
+      "reward_alive": 7.500000391155481,
+      "reward_upright": 1.2600001185201108,
+      "reward_move_to_target": 7.18369745509699,
+      "reward_action_l2": -0.1376512278889095,
+      "reward_energy": -6.180376322037773,
+      "reward_joint_pos_limits": -3.6342172047370696
+    }
+  ],
+  "command": [
+    "scripts/evaluate_contact_teammate1.py",
+    "--task",
+    "Isaac-Ant-Teammate1-RewardEnv-v0",
+    "--checkpoint",
+    "/home/zxro/IsaacLab_RS/logs/rsl_rl/ant/2026-10-03_01-10-01_ablation_heightscan_contact_obs127_s42/model_999.pt",
+    "--seed",
+    "24",
+    "--num_envs",
+    "1",
+    "--height_scan",
+    "--foot_contacts",
+    "--headless",
+    "--video",
+    "--output",
+    "validation_compare/video_seed24_env0"
+  ],
+  "versions": {
+    "torch": "2.7.0+cu128",
+    "isaaclab_source_root": "/home/zxro/IsaacLab_RS"
+  }
+}

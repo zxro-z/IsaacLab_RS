@@ -1,0 +1,16 @@
+# cwd: /home/zxro/teammate_ant_rl
+# Runtime: /home/zxro/anaconda3/envs/env_isaaclab_231/bin/python
+# Environment variables:
+# PYTHONDONTWRITEBYTECODE=1
+# ISAAC_SIM_SITE_PACKAGES=/home/zxro/anaconda3/envs/env_isaaclab/lib/python3.11/site-packages
+# CONDA_PREFIX=/home/zxro/anaconda3/envs/env_isaaclab_231
+# GPU execution requires the host runtime; stdout/stderr *_run.log stays local.
+# First non-training smoke attempt exposed slice handling in the validation code.
+# It is preserved in smoke_mapping_attempt/; source fixed before passing smoke.
+git fetch origin
+git rev-list --left-right --count HEAD...origin/observation-ablation
+# Remote commit 639b677 contains DepthCam documentation/results; not merged.
+python -u scripts/contact_stock_observation_ablation.py smoke --headless --output experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/smoke
+python -u scripts/contact_stock_observation_ablation.py train --headless --output logs/rsl_rl/observation_ablation/ablation_heightscan_contact_stock_s42_e4096_n32_i1000
+python -u scripts/contact_stock_observation_ablation.py evaluate --headless --output experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/results --checkpoint logs/rsl_rl/observation_ablation/ablation_heightscan_contact_stock_s42_e4096_n32_i1000/best_model.pt
+python scripts/finalize_contact_stock_observation_ablation.py

@@ -1,0 +1,207 @@
+{
+  "timestamp": "2026-10-06T04:56:57.276670+00:00",
+  "python": "/home/zxro/miniforge3/envs/lerobot-arena/bin/python",
+  "conda_environment": "lerobot-arena",
+  "isaac_lab_version": "2.3.0",
+  "task_id": "Ant-rl-Ablation-HeightScan-Contact-ModifiedReward-v0",
+  "num_envs": 1,
+  "checkpoint_path": "/home/zxro/ant_rl_submission/experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/checkpoints/best_model.pt",
+  "checkpoint_selected_iteration": 788,
+  "expected_config_dimension": 126,
+  "actual_runtime_observation_shape": [
+    1,
+    126
+  ],
+  "result": "PASS",
+  "reset_occurred": true,
+  "rollout_steps": 0,
+  "shutdown_result": "PROCESS EXIT 0 / SimulationApp.close return not observed",
+  "process_exit_code": 0,
+  "isaac_sim_version": "5.1.0.0",
+  "import_paths": {
+    "isaaclab": "/home/zxro/ant_rl_submission/source/isaaclab/isaaclab/__init__.py",
+    "ant": "/home/zxro/ant_rl_submission/source/ant/__init__.py"
+  },
+  "config_class": "ant.stage2_env_cfg:Stage2HeightScanContactCfg",
+  "preserved_manifest_observation": {
+    "proprio": 59,
+    "heightscan": 63,
+    "contact": 4,
+    "actor": 126,
+    "critic": 126,
+    "order": [
+      "base_lin_vel",
+      "base_ang_vel",
+      "base_yaw_roll",
+      "base_angle_to_target",
+      "base_up_proj",
+      "base_heading_proj",
+      "joint_pos_norm",
+      "joint_vel_rel",
+      "feet_body_forces",
+      "actions",
+      "height_scan",
+      "foot_contacts"
+    ],
+    "scan_formula": "sensor.data.pos_w[:,2] - ray_hits_w[...,2] - 0.5",
+    "clip": [
+      -1,
+      1
+    ],
+    "scale": 1.0,
+    "empirical_normalization": false,
+    "grid": [
+      9,
+      7
+    ],
+    "ordering": "xy (x varies fastest)",
+    "offset": [
+      0.8,
+      0,
+      20
+    ],
+    "direction": [
+      0,
+      0,
+      -1
+    ],
+    "max_distance": 1000000.0,
+    "added_contact_observation": true,
+    "cnn": false,
+    "native_foot_wrench_preserved": true
+  },
+  "environment_seed": 42,
+  "terrain_seed": 42,
+  "checkpoint_actor_input_dimension": 126,
+  "checkpoint_actor_first_layer_shape": [
+    400,
+    126
+  ],
+  "checkpoint_critic_input_dimension": 126,
+  "checkpoint_saved_iteration": 788,
+  "checkpoint_tensors_finite": true,
+  "dtype": "torch.float32",
+  "device": "cuda:0",
+  "finite": true,
+  "nan_count": 0,
+  "inf_count": 0,
+  "observation_term_order": [
+    "base_lin_vel",
+    "base_ang_vel",
+    "base_yaw_roll",
+    "base_angle_to_target",
+    "base_up_proj",
+    "base_heading_proj",
+    "joint_pos_norm",
+    "joint_vel_rel",
+    "feet_body_forces",
+    "actions",
+    "height_scan",
+    "foot_contacts"
+  ],
+  "observation_term_dimensions": [
+    [
+      3
+    ],
+    [
+      3
+    ],
+    [
+      2
+    ],
+    [
+      1
+    ],
+    [
+      1
+    ],
+    [
+      1
+    ],
+    [
+      8
+    ],
+    [
+      8
+    ],
+    [
+      24
+    ],
+    [
+      8
+    ],
+    [
+      63
+    ],
+    [
+      4
+    ]
+  ],
+  "manager_group_observation_shape": [
+    126
+  ],
+  "simulation_python_call_counts": {
+    "/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim/exts/isaacsim.core.api/isaacsim/core/api/simulation_context/simulation_context.py:render": 1,
+    "/home/zxro/ant_rl_submission/source/isaaclab/isaaclab/sim/simulation_context.py:reset": 1,
+    "/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim/exts/isaacsim.core.api/isaacsim/core/api/simulation_context/simulation_context.py:reset": 1,
+    "/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim/exts/isaacsim.core.simulation_manager/isaacsim/core/simulation_manager/impl/simulation_manager.py:_warm_start": 1,
+    "/home/zxro/ant_rl_submission/source/isaaclab/isaaclab/sim/simulation_context.py:render": 2,
+    "/home/zxro/ant_rl_submission/source/isaaclab/isaaclab/sim/simulation_context.py:forward": 1
+  },
+  "environment_control_step_counter": 0,
+  "simulation_step_occurred": true,
+  "simulation_step_count_scope": "Python simulation_context step calls, including initialization internals; native physics calls are not separately counted",
+  "reward_terms": [
+    "total_reward"
+  ],
+  "triple_matches": true,
+  "source_manifest_order_matches_runtime": true,
+  "evidence_timestamp": "2026-10-06T04:57:05.919971+00:00",
+  "command": [
+    "./isaaclab.sh",
+    "-p",
+    "/home/zxro/ant_rl_submission/experiments/observation_ablation/validation/final_submission_check/limited_one_env_observation_probe.py",
+    "contact_modified",
+    "Ant-rl-Ablation-HeightScan-Contact-ModifiedReward-v0",
+    "heightscan_contact_modified_4096x32x1000",
+    "126",
+    "788"
+  ],
+  "external_timeout_reason": null,
+  "shutdown_clean": false,
+  "shutdown_events": [
+    {
+      "event": "env_close_invoked",
+      "timestamp": "2026-10-06T04:57:05.921658+00:00",
+      "monotonic": 677751.00411743
+    },
+    {
+      "event": "env_close_returned",
+      "timestamp": "2026-10-06T04:57:06.223412+00:00",
+      "monotonic": 677751.305884769
+    },
+    {
+      "event": "app_close_invoked",
+      "timestamp": "2026-10-06T04:57:06.224899+00:00",
+      "monotonic": 677751.307362237
+    }
+  ],
+  "wall_seconds": 9.410588012076914,
+  "timeout_after_close_seconds": 30,
+  "initialization_timeout_seconds": 300,
+  "LD_PRELOAD": null,
+  "checkpoint_sha256": "0471caaadd646feac85cb7bbed0d2c3668279d2d65db9507030a649895ea11b4",
+  "checkpoint_recorded_sha256": "0471caaadd646feac85cb7bbed0d2c3668279d2d65db9507030a649895ea11b4",
+  "checkpoint_hash_matches_record": true,
+  "simulation_python_step_occurred": false,
+  "initialization_physics_warmup": {
+    "observed_warm_start_callback_calls": 1,
+    "native_update_simulation_present_in_runtime_initialization_source": true,
+    "source": "isaacsim.core.simulation_manager/impl/simulation_manager.py:235-242",
+    "explanation": "Fresh-context physics initialization uses start_simulation/update_simulation(dt,0)/fetch_results. Required initialization updates occurred; no rollout or explicit SimulationContext.step was called. Native update count was not instrumented.",
+    "exact_native_physics_update_count": null
+  },
+  "shutdown_forced_termination": false,
+  "env_close_returned": true,
+  "app_close_returned": false
+}

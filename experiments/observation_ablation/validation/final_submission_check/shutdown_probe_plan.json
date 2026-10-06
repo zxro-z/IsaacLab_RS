@@ -1,0 +1,67 @@
+{
+  "runtime": "lerobot-arena / Isaac Sim 5.1.0",
+  "close_timeout_seconds": 30,
+  "startup_timeout_seconds": 120,
+  "probes": [
+    {
+      "name": "a",
+      "root": "submission",
+      "mechanism": "applauncher",
+      "imports": []
+    },
+    {
+      "name": "b",
+      "root": "submission",
+      "mechanism": "applauncher",
+      "imports": [
+        "isaaclab"
+      ]
+    },
+    {
+      "name": "c",
+      "root": "submission",
+      "mechanism": "applauncher",
+      "imports": [
+        "isaaclab",
+        "isaaclab_tasks"
+      ]
+    },
+    {
+      "name": "d",
+      "root": "submission",
+      "mechanism": "applauncher",
+      "imports": [
+        "isaaclab",
+        "isaaclab_tasks",
+        "ant"
+      ]
+    },
+    {
+      "name": "e",
+      "root": "submission",
+      "mechanism": "applauncher",
+      "imports": [
+        "isaaclab",
+        "isaaclab_tasks",
+        "ant",
+        "isaaclab_tasks.manager_based.classic.ant.ant_contact_observations",
+        "isaaclab_tasks.manager_based.classic.ant.ant_terrain_heightscan_env_cfg"
+      ]
+    },
+    {
+      "name": "control_framework",
+      "root": "framework",
+      "mechanism": "applauncher",
+      "imports": []
+    },
+    {
+      "name": "control_pure_isaacsim",
+      "root": "pure",
+      "mechanism": "simulationapp",
+      "imports": []
+    }
+  ],
+  "environment_creation": false,
+  "explicit_simulation_steps": 0,
+  "workarounds_applied": false
+}

@@ -1,0 +1,51 @@
+{
+  "status": "PARTIAL PASS; blocked by native shutdown segmentation fault",
+  "record_type": "post-process recovery from persisted successful reports and console logs; original final runtime report was not written because SimulationApp.close crashed",
+  "runtime_environment": {
+    "python": "/home/zxro/anaconda3/envs/env_isaaclab_231/bin/python",
+    "conda_environment": "env_isaaclab_231",
+    "isaaclab_root": "/home/zxro/ant_rl_submission",
+    "isaaclab_version": "2.3.0",
+    "isaac_sim_bindings": "/home/zxro/anaconda3/envs/env_isaaclab/lib/python3.11/site-packages/isaacsim",
+    "isaac_sim_version": "5.0.0-rc.45+release.23960.184afb15.gl",
+    "process_only_LD_PRELOAD": "/home/zxro/anaconda3/envs/env_isaaclab_231/lib/libstdc++.so.6"
+  },
+  "app_launcher_initialization": "PASS, subsequent config/checkpoint tests executed",
+  "imports": {
+    "omni.log": "PASS, evidenced by successful sequential probe progression to checkpoint report",
+    "isaaclab": "PASS, evidenced by successful sequential probe progression to checkpoint report",
+    "isaaclab_tasks": "PASS, evidenced by successful sequential probe progression to checkpoint report",
+    "ant": "PASS, evidenced by successful sequential probe progression to checkpoint report",
+    "ant task registration module": "PASS, evidenced by successful sequential probe progression to checkpoint report",
+    "ant_contact_observations": "PASS, evidenced by successful sequential probe progression to checkpoint report",
+    "ant_terrain_heightscan_env_cfg": "PASS, evidenced by successful sequential probe progression to checkpoint report"
+  },
+  "canonical_evaluator_imports": "NOT RUN: module-level AppLauncher and unconditional main() would create environments",
+  "previous_omni_log_failure": "Consistent with importing task modules before Kit initialization; omni.log imported successfully after AppLauncher startup",
+  "first_attempt": {
+    "task_import": "FAIL: SciPy extension requires CXXABI_1.3.15 unavailable in system libstdc++",
+    "shutdown": "hung; only failed probe process was terminated; exit 137"
+  },
+  "retry": {
+    "task_config_checkpoint_checks": "PASS",
+    "shutdown": "FAIL: segmentation fault in SimulationApp.close, exit 139"
+  },
+  "environment_created": false,
+  "physics_steps": 0,
+  "policy_inference": false,
+  "training": false,
+  "application_closed_cleanly": false,
+  "actual_actor_input_dimensions": [
+    122,
+    126,
+    126
+  ],
+  "full_evaluation_ready": false,
+  "source_logic_changes": false,
+  "remaining_blockers": [
+    "Native simulator shutdown crash with the process-local libstdc++ preload",
+    "Canonical evaluator cannot be passively imported under no-environment-creation restriction",
+    "Actual environment-generated observation tensors not measured",
+    "Root editable-package namespace discovery remains unvalidated"
+  ]
+}

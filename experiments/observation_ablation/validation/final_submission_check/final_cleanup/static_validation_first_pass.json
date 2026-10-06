@@ -1,0 +1,3369 @@
+{
+  "PASS": false,
+  "errors": [
+    "Broken README link README.md: experiments/observation_ablation/validation/final_submission_check/final_cleanup/path_audit.md",
+    "Unexpected copied-source/artifact mismatch .gitignore"
+  ],
+  "py_compile_count": 52,
+  "JSON_count": 287,
+  "YAML_count": 2,
+  "CSV_count": 74,
+  "numeric_NaN_Inf_issues": [],
+  "README_links": [
+    {
+      "README": "README.md",
+      "target": "experiments/observation_ablation/README.md",
+      "exists": true
+    },
+    {
+      "README": "README.md",
+      "target": "docs/submission_provenance/README.md",
+      "exists": true
+    },
+    {
+      "README": "README.md",
+      "target": "docs/submission_provenance/official_README.md",
+      "exists": true
+    },
+    {
+      "README": "README.md",
+      "target": "source/ant/",
+      "exists": true
+    },
+    {
+      "README": "README.md",
+      "target": "source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/",
+      "exists": true
+    },
+    {
+      "README": "README.md",
+      "target": "scripts/reinforcement_learning/rsl_rl/",
+      "exists": true
+    },
+    {
+      "README": "README.md",
+      "target": "scripts/",
+      "exists": true
+    },
+    {
+      "README": "README.md",
+      "target": "logs/rsl_rl/observation_ablation/",
+      "exists": true
+    },
+    {
+      "README": "README.md",
+      "target": "experiments/observation_ablation/",
+      "exists": true
+    },
+    {
+      "README": "README.md",
+      "target": "cross_eval_team1_policy/",
+      "exists": true
+    },
+    {
+      "README": "README.md",
+      "target": "validation_compare/",
+      "exists": true
+    },
+    {
+      "README": "README.md",
+      "target": "docs/submission_provenance/",
+      "exists": true
+    },
+    {
+      "README": "README.md",
+      "target": "experiments/observation_ablation/validation/final_submission_check/",
+      "exists": true
+    },
+    {
+      "README": "README.md",
+      "target": "experiments/observation_ablation/heightscan/",
+      "exists": true
+    },
+    {
+      "README": "README.md",
+      "target": "source/ant/__init__.py",
+      "exists": true
+    },
+    {
+      "README": "README.md",
+      "target": "experiments/observation_ablation/heightscan_4096x32x1000/checkpoints/",
+      "exists": true
+    },
+    {
+      "README": "README.md",
+      "target": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/checkpoints/",
+      "exists": true
+    },
+    {
+      "README": "README.md",
+      "target": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/checkpoints/",
+      "exists": true
+    },
+    {
+      "README": "README.md",
+      "target": "scripts/evaluate_depthcam_ablation.py",
+      "exists": true
+    },
+    {
+      "README": "README.md",
+      "target": "scripts/submission_provenance.py",
+      "exists": true
+    },
+    {
+      "README": "README.md",
+      "target": "logs/rsl_rl/ant/modified/params/",
+      "exists": true
+    },
+    {
+      "README": "README.md",
+      "target": "docs/submission_provenance/modified_config_mapping.json",
+      "exists": true
+    },
+    {
+      "README": "README.md",
+      "target": "experiments/observation_ablation/validation/final_submission_check/final_100env_evaluation/heightscan_stock/canonical_evaluator_output/",
+      "exists": true
+    },
+    {
+      "README": "README.md",
+      "target": "experiments/observation_ablation/validation/final_submission_check/final_100env_evaluation/heightscan_contact_stock/canonical_evaluator_output/",
+      "exists": true
+    },
+    {
+      "README": "README.md",
+      "target": "experiments/observation_ablation/validation/final_submission_check/final_100env_evaluation/heightscan_contact_modified/relocated_params_attempt/canonical_evaluator_output/",
+      "exists": true
+    },
+    {
+      "README": "README.md",
+      "target": "experiments/observation_ablation/validation/final_submission_check/",
+      "exists": true
+    },
+    {
+      "README": "README.md",
+      "target": "docs/submission_provenance/final_submission_integrity.json",
+      "exists": true
+    },
+    {
+      "README": "README.md",
+      "target": "experiments/observation_ablation/validation/final_submission_check/final_cleanup/path_audit.md",
+      "exists": false
+    },
+    {
+      "README": "experiments/observation_ablation/README.md",
+      "target": "../../source/ant/ant_env_cfg.py",
+      "exists": true
+    },
+    {
+      "README": "experiments/observation_ablation/README.md",
+      "target": "../../source/ant/agents/rsl_rl_ppo_cfg.py",
+      "exists": true
+    },
+    {
+      "README": "experiments/observation_ablation/README.md",
+      "target": "../../scripts/reinforcement_learning/rsl_rl/train.py",
+      "exists": true
+    },
+    {
+      "README": "experiments/observation_ablation/README.md",
+      "target": "../../source/ant/ablation_env_cfg.py",
+      "exists": true
+    },
+    {
+      "README": "experiments/observation_ablation/README.md",
+      "target": "../../source/ant/ant_env_cfg.py",
+      "exists": true
+    },
+    {
+      "README": "experiments/observation_ablation/README.md",
+      "target": "../../source/ant/depth_obs.py",
+      "exists": true
+    },
+    {
+      "README": "experiments/observation_ablation/README.md",
+      "target": "../../source/ant/depth_actor_critic.py",
+      "exists": true
+    },
+    {
+      "README": "experiments/observation_ablation/README.md",
+      "target": "shared/contact_observation.json",
+      "exists": true
+    },
+    {
+      "README": "experiments/observation_ablation/README.md",
+      "target": "../../source/ant/ablation_env_cfg.py",
+      "exists": true
+    },
+    {
+      "README": "experiments/observation_ablation/README.md",
+      "target": "../../source/ant/contact_stock_env_cfg.py",
+      "exists": true
+    },
+    {
+      "README": "experiments/observation_ablation/README.md",
+      "target": "../../source/ant/rewards.py",
+      "exists": true
+    },
+    {
+      "README": "experiments/observation_ablation/README.md",
+      "target": "depthcam_modified_2048x32x2000/results/evaluation_summary.json",
+      "exists": true
+    },
+    {
+      "README": "experiments/observation_ablation/README.md",
+      "target": "depthcam_modified_2048x32x2000/results/reward_components.csv",
+      "exists": true
+    },
+    {
+      "README": "experiments/observation_ablation/README.md",
+      "target": "../../scripts/evaluate_depthcam_ablation.py",
+      "exists": true
+    },
+    {
+      "README": "experiments/observation_ablation/README.md",
+      "target": "heightscan_4096x32x1000/training_summary.json",
+      "exists": true
+    },
+    {
+      "README": "experiments/observation_ablation/README.md",
+      "target": "heightscan_4096x32x1000/evaluation_summary.json",
+      "exists": true
+    },
+    {
+      "README": "experiments/observation_ablation/README.md",
+      "target": "heightscan_4096x32x1000/checkpoints/best_model.pt",
+      "exists": true
+    },
+    {
+      "README": "experiments/observation_ablation/README.md",
+      "target": "heightscan_4096x32x1000/checkpoints/final_model.pt",
+      "exists": true
+    },
+    {
+      "README": "experiments/observation_ablation/README.md",
+      "target": "heightscan_contact_stock_4096x32x1000/training_summary.json",
+      "exists": true
+    },
+    {
+      "README": "experiments/observation_ablation/README.md",
+      "target": "heightscan_contact_stock_4096x32x1000/evaluation_summary.json",
+      "exists": true
+    },
+    {
+      "README": "experiments/observation_ablation/README.md",
+      "target": "heightscan_contact_stock_4096x32x1000/checkpoints/best_model.pt",
+      "exists": true
+    },
+    {
+      "README": "experiments/observation_ablation/README.md",
+      "target": "heightscan_contact_stock_4096x32x1000/checkpoints/final_model.pt",
+      "exists": true
+    },
+    {
+      "README": "experiments/observation_ablation/README.md",
+      "target": "heightscan_contact_modified_4096x32x1000/training_summary.json",
+      "exists": true
+    },
+    {
+      "README": "experiments/observation_ablation/README.md",
+      "target": "heightscan_contact_modified_4096x32x1000/evaluation_summary.json",
+      "exists": true
+    },
+    {
+      "README": "experiments/observation_ablation/README.md",
+      "target": "heightscan_contact_modified_4096x32x1000/checkpoints/best_model.pt",
+      "exists": true
+    },
+    {
+      "README": "experiments/observation_ablation/README.md",
+      "target": "heightscan_contact_modified_4096x32x1000/checkpoints/final_model.pt",
+      "exists": true
+    },
+    {
+      "README": "experiments/observation_ablation/README.md",
+      "target": "depthcam_2048x32x2000/training_summary.json",
+      "exists": true
+    },
+    {
+      "README": "experiments/observation_ablation/README.md",
+      "target": "depthcam_2048x32x2000/results/evaluation_summary.json",
+      "exists": true
+    },
+    {
+      "README": "experiments/observation_ablation/README.md",
+      "target": "depthcam_modified_2048x32x2000/training_summary.json",
+      "exists": true
+    },
+    {
+      "README": "experiments/observation_ablation/README.md",
+      "target": "depthcam_modified_2048x32x2000/results/evaluation_summary.json",
+      "exists": true
+    },
+    {
+      "README": "experiments/observation_ablation/README.md",
+      "target": "protocol.json",
+      "exists": true
+    },
+    {
+      "README": "experiments/observation_ablation/README.md",
+      "target": "shared/contact_observation.json",
+      "exists": true
+    },
+    {
+      "README": "experiments/observation_ablation/README.md",
+      "target": "shared/stage2_contact_modified_protocol.json",
+      "exists": true
+    },
+    {
+      "README": "experiments/observation_ablation/README.md",
+      "target": "heightscan/manifest.json",
+      "exists": true
+    },
+    {
+      "README": "experiments/observation_ablation/README.md",
+      "target": "../../README.md",
+      "exists": true
+    },
+    {
+      "README": "experiments/observation_ablation/README.md",
+      "target": "validation/final_submission_check/path_audit.md",
+      "exists": true
+    },
+    {
+      "README": "docs/submission_provenance/README.md",
+      "target": "modified_config_mapping.json",
+      "exists": true
+    },
+    {
+      "README": "docs/submission_provenance/README.md",
+      "target": "official_gitattributes",
+      "exists": true
+    }
+  ],
+  "Markdown_table_errors": [],
+  "source_copy_verification": [
+    {
+      "path": "source/ant/ant_env_cfg.py",
+      "original_sha256": "c349db1e97f31bcb5317184e68cfd8638262b3bae644b0b4826220075ef9de57",
+      "current_sha256": "c349db1e97f31bcb5317184e68cfd8638262b3bae644b0b4826220075ef9de57",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "source/ant/depth_obs.py",
+      "original_sha256": "37f244a1e674a6fc34f42a115d006018d7cad4b93382c64428684a24b2a0b6e0",
+      "current_sha256": "37f244a1e674a6fc34f42a115d006018d7cad4b93382c64428684a24b2a0b6e0",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "source/ant/depth_actor_critic.py",
+      "original_sha256": "bf40cc3ff0c5d14828fb09103282303bb1edcc4d56fed4fb1e075149bcc09fdb",
+      "current_sha256": "bf40cc3ff0c5d14828fb09103282303bb1edcc4d56fed4fb1e075149bcc09fdb",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "source/ant/ablation_env_cfg.py",
+      "original_sha256": "2ed6d2322c456892eeb2da2b8d96d18f189808499e5eb22319ff3092e7baa074",
+      "current_sha256": "2ed6d2322c456892eeb2da2b8d96d18f189808499e5eb22319ff3092e7baa074",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "source/ant/__init__.py",
+      "original_sha256": "74df0bd407cdd992e95bc1bab70d633b3044d1caf4124197f2e68b04e73cfaa9",
+      "current_sha256": "74df0bd407cdd992e95bc1bab70d633b3044d1caf4124197f2e68b04e73cfaa9",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "source/ant/stage2_env_cfg.py",
+      "original_sha256": "b4a4a62b77ef4e6e2b719302e7ee539a3bfb6599b59b104b5a03c8bd8b7e6e9c",
+      "current_sha256": "b4a4a62b77ef4e6e2b719302e7ee539a3bfb6599b59b104b5a03c8bd8b7e6e9c",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "source/ant/rewards.py",
+      "original_sha256": "f7b2fd5e741f7334630c1f57c0de110d3ca7734ee161dcd640cc71635850dd9a",
+      "current_sha256": "f7b2fd5e741f7334630c1f57c0de110d3ca7734ee161dcd640cc71635850dd9a",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "source/ant/contact_stock_env_cfg.py",
+      "original_sha256": "b33b47b03621a7db515506a0bd48ef7e2d50515f75f3bc56d3af153ab9ae0fd5",
+      "current_sha256": "b33b47b03621a7db515506a0bd48ef7e2d50515f75f3bc56d3af153ab9ae0fd5",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "source/ant/agents/ablation_ppo_cfg.py",
+      "original_sha256": "f130e6459d137d840583f0936306ac7d7e732140d9ab244eb8bc11dd7a808507",
+      "current_sha256": "f130e6459d137d840583f0936306ac7d7e732140d9ab244eb8bc11dd7a808507",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "source/ant/agents/rsl_rl_ppo_cfg.py",
+      "original_sha256": "17d7b6c1dbc595e997136641f9466707027ec2e4c9a6ee5ec0339ae007c1e7c0",
+      "current_sha256": "17d7b6c1dbc595e997136641f9466707027ec2e4c9a6ee5ec0339ae007c1e7c0",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "source/ant/agents/ablation_budget_ppo_cfg.py",
+      "original_sha256": "e5d36e855709383eb339efbae7a99c065d966a6fd33218a6e06b765b52bfb01d",
+      "current_sha256": "e5d36e855709383eb339efbae7a99c065d966a6fd33218a6e06b765b52bfb01d",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "source/ant/agents/__init__.py",
+      "original_sha256": "3be19bd191a2d8780967a91b0d6e6fe4c6d74ad8b54efef94c33f6c2ebd6078b",
+      "current_sha256": "3be19bd191a2d8780967a91b0d6e6fe4c6d74ad8b54efef94c33f6c2ebd6078b",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "source/ant/agents/stage2_ppo_cfg.py",
+      "original_sha256": "c3f068daacb4a7cee34606ca4c66f668d4a86970e5e1dbc7c44b8de31809c29b",
+      "current_sha256": "c3f068daacb4a7cee34606ca4c66f668d4a86970e5e1dbc7c44b8de31809c29b",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "source/ant/agents/contact_stock_ppo_cfg.py",
+      "original_sha256": "e5fbed32400860d1666c2928bd4dc6034b61e0b592ba810e0c9daa8531243483",
+      "current_sha256": "e5fbed32400860d1666c2928bd4dc6034b61e0b592ba810e0c9daa8531243483",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "scripts/reinforcement_learning/rsl_rl/play_one_episode.py",
+      "original_sha256": "70dd6d6674ca211f335b57fea5d8dca417fe670753adedf2d002a638b2b089d0",
+      "current_sha256": "70dd6d6674ca211f335b57fea5d8dca417fe670753adedf2d002a638b2b089d0",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "scripts/reinforcement_learning/rsl_rl/play.py",
+      "original_sha256": "d8acc9c0641885155ad8cc5f447494bc1eb033f9dc0a81a31850dc944befaa4d",
+      "current_sha256": "d8acc9c0641885155ad8cc5f447494bc1eb033f9dc0a81a31850dc944befaa4d",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "scripts/reinforcement_learning/rsl_rl/train.py",
+      "original_sha256": "0f8f0161d1ef8c733e9c14397eb991e2b9bb60809bf9fc42c2baafa3923d6e3d",
+      "current_sha256": "0f8f0161d1ef8c733e9c14397eb991e2b9bb60809bf9fc42c2baafa3923d6e3d",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "scripts/reinforcement_learning/rsl_rl/cli_args.py",
+      "original_sha256": "b0807f37f2d137b3b3fb51487690e422913faf766fdbb04b480deeb611fc12d7",
+      "current_sha256": "b0807f37f2d137b3b3fb51487690e422913faf766fdbb04b480deeb611fc12d7",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "scripts/contact_stock_observation_ablation.py",
+      "original_sha256": "f48973ce62a892d25570445cdfa51ecfc9019977f35f10292b8b002baadf2cfc",
+      "current_sha256": "30875b81e442dadec0ef7e162c9fee244a242a833b022ef54b29a9a94525e91c",
+      "unchanged": false,
+      "approved_change": true
+    },
+    {
+      "path": "scripts/evaluate_contact_teammate1.py",
+      "original_sha256": "d10b2b0b0b83a1436a603531346c728e5fbbbadb32303844e19e8d1dec4a2368",
+      "current_sha256": "d10b2b0b0b83a1436a603531346c728e5fbbbadb32303844e19e8d1dec4a2368",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "scripts/evaluate_depthcam_ablation.py",
+      "original_sha256": "a26c9a90c9eaf977ab9461b089ba176a5e3d7b7238bff87f3beda931296ad499",
+      "current_sha256": "a26c9a90c9eaf977ab9461b089ba176a5e3d7b7238bff87f3beda931296ad499",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "scripts/finalize_contact_stock_observation_ablation.py",
+      "original_sha256": "7f2ac442ac1eb16ebd26ec977f886f8fdc3b2477bc1d006ca1241191da150b8d",
+      "current_sha256": "7f2ac442ac1eb16ebd26ec977f886f8fdc3b2477bc1d006ca1241191da150b8d",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "scripts/finalize_observation_ablation.py",
+      "original_sha256": "aa7decd4ddd548b27ad07c52af488ab41410a01166dcc9be9d8b7a7a3ca5a0f4",
+      "current_sha256": "aa7decd4ddd548b27ad07c52af488ab41410a01166dcc9be9d8b7a7a3ca5a0f4",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "scripts/finalize_observation_ablation_budget.py",
+      "original_sha256": "2073a8904548f2ddf833f5d42a3ad9d149262c74299b7e5961937f9a51bdfaf8",
+      "current_sha256": "2073a8904548f2ddf833f5d42a3ad9d149262c74299b7e5961937f9a51bdfaf8",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "scripts/finalize_stage2_observation_ablation.py",
+      "original_sha256": "4419b6c2b4c7658e1add53e591f2da0424f9309624051e458a811ba0088d4a5d",
+      "current_sha256": "4419b6c2b4c7658e1add53e591f2da0424f9309624051e458a811ba0088d4a5d",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "scripts/observation_ablation.py",
+      "original_sha256": "c4c48d82f0f0957f302815c9ad05ad7f70470696cb32121524842a6b4d2b9752",
+      "current_sha256": "0d582a7a9de18d1ab4bd5995fe04d56301195459f49a631d9c80ed0632a6acdb",
+      "unchanged": false,
+      "approved_change": true
+    },
+    {
+      "path": "scripts/observation_ablation_budget.py",
+      "original_sha256": "520e831ae703b139011ca78ecf7825dcd5aa3a4260ec50f93a556c3d2716c12f",
+      "current_sha256": "4e2d8416526957c513e0da3e56558d093fa5b7581c67a7d3b692fe12be09b137",
+      "unchanged": false,
+      "approved_change": true
+    },
+    {
+      "path": "scripts/stage2_observation_ablation.py",
+      "original_sha256": "c39cb7da740ef0493767d313a49488b85d101ba15dd245ca036a49b151d1eb49",
+      "current_sha256": "ca8ae87dd763a1fe85b18338dca74f19e2c149736673d356bc1bb2c85b6a6b52",
+      "unchanged": false,
+      "approved_change": true
+    },
+    {
+      "path": "pyproject.toml",
+      "original_sha256": "908242b6ebb0db47b9dee7de69c66abc1d05708d9a38d1f5654ff573586fd990",
+      "current_sha256": "908242b6ebb0db47b9dee7de69c66abc1d05708d9a38d1f5654ff573586fd990",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": ".gitignore",
+      "original_sha256": "346726975cdae8a85e1b64ed5fa9e178d3c286429cbf9013f86c4b936a4e6dbb",
+      "current_sha256": "69e9bb3a7898a5da81e19f71248ed4551fa04ff534c05e6ce0f6d21a03c21f90",
+      "unchanged": false,
+      "approved_change": false
+    },
+    {
+      "path": "docs/submission_provenance/current_project_README.md",
+      "original_sha256": "4493027d4b3973b1a1827096e7581174a7c948e760b6d5a8319aadea932a9dae",
+      "current_sha256": "4493027d4b3973b1a1827096e7581174a7c948e760b6d5a8319aadea932a9dae",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_contact_observations.py",
+      "original_sha256": "e463d5bf8866b2d6b05caab9a651112e13053c7972ad0cb63853f747e977a132",
+      "current_sha256": "e463d5bf8866b2d6b05caab9a651112e13053c7972ad0cb63853f747e977a132",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_terrain_heightscan_env_cfg.py",
+      "original_sha256": "e93ca45ac82d7687a1cee28c4d2178d7daf193544a0beb44911feac578f910e7",
+      "current_sha256": "e93ca45ac82d7687a1cee28c4d2178d7daf193544a0beb44911feac578f910e7",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_friction_random_env_cfg.py",
+      "original_sha256": "15b6a2807aa3c71bc052a3cfc741ec760a80ac41c8bc2496112163fbe4b9fa0a",
+      "current_sha256": "15b6a2807aa3c71bc052a3cfc741ec760a80ac41c8bc2496112163fbe4b9fa0a",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_ood_terrain_env_cfg.py",
+      "original_sha256": "efe5cc160fc3a82244d7c7c18382d194c74e61476177a4113d1da9aa33630d0a",
+      "current_sha256": "efe5cc160fc3a82244d7c7c18382d194c74e61476177a4113d1da9aa33630d0a",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/protocol.json",
+      "original_sha256": "b6af928ccee92be42ab567e5737a3442b8cabeda5a1732af269f8c4bd8f33ad0",
+      "current_sha256": "b6af928ccee92be42ab567e5737a3442b8cabeda5a1732af269f8c4bd8f33ad0",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/README.md",
+      "original_sha256": "8f640e1fa6e8de1c400956cb87b7d8ab8c4affb160e67d9dc997db3de1eca83d",
+      "current_sha256": "88ab78ed891cba2e1143a6e4e7caf8dabeea32e4619c7feaded896a87a24fe5b",
+      "unchanged": false,
+      "approved_change": true
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/files_added.txt",
+      "original_sha256": "0533f136c04607a6941b2e9b6606b8b677f230795247be164e10e68bcdfc8fea",
+      "current_sha256": "0533f136c04607a6941b2e9b6606b8b677f230795247be164e10e68bcdfc8fea",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/protected_artifacts_before.json",
+      "original_sha256": "0c89f91db85c62a6940df71ee416ee0ea95d5aa0490e5c7d60b9f5d2c25a369b",
+      "current_sha256": "0c89f91db85c62a6940df71ee416ee0ea95d5aa0490e5c7d60b9f5d2c25a369b",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/training_curve.csv",
+      "original_sha256": "a9396d6c947068f000e13fef2db96138dac69909d68e67e18b6d0fc0bd4f4399",
+      "current_sha256": "a9396d6c947068f000e13fef2db96138dac69909d68e67e18b6d0fc0bd4f4399",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/evaluation_summary.json",
+      "original_sha256": "00e1f586aa982391f2c7d4bb4c63d07d08cc11095dbd61e74209bdc99054c989",
+      "current_sha256": "00e1f586aa982391f2c7d4bb4c63d07d08cc11095dbd61e74209bdc99054c989",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/.gitignore",
+      "original_sha256": "f181c25d39b22fb7d82d7582a1382cc3c618d34d633269df40308763f119ffc3",
+      "current_sha256": "f181c25d39b22fb7d82d7582a1382cc3c618d34d633269df40308763f119ffc3",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/commands.log",
+      "original_sha256": "365b13d826ff8105fa56a0e1c50cf7101db0b0f88bb97e7e681f9184de51b474",
+      "current_sha256": "365b13d826ff8105fa56a0e1c50cf7101db0b0f88bb97e7e681f9184de51b474",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/manifest.json",
+      "original_sha256": "ab27b4028a6014f4ba601b8186904f29ee7782101e84d3fd6179ddf406feadf8",
+      "current_sha256": "ab27b4028a6014f4ba601b8186904f29ee7782101e84d3fd6179ddf406feadf8",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/reward_verification.json",
+      "original_sha256": "e77e90ec1e57458235a9665d1f2707cb94d4031d2a50bd5f87b0ec507a290a54",
+      "current_sha256": "e77e90ec1e57458235a9665d1f2707cb94d4031d2a50bd5f87b0ec507a290a54",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/parity.json",
+      "original_sha256": "6621f24f0f43680186d42df18ae4cd1351d65998fa66c3233ad23fc9dda6f9ac",
+      "current_sha256": "6621f24f0f43680186d42df18ae4cd1351d65998fa66c3233ad23fc9dda6f9ac",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/source_mapping.json",
+      "original_sha256": "df27bfe63f99c3362e0444dcb89016ea71ba186d48a08678d5e99a33db10bbdf",
+      "current_sha256": "df27bfe63f99c3362e0444dcb89016ea71ba186d48a08678d5e99a33db10bbdf",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/contact_observation_validation.json",
+      "original_sha256": "eea5cda9062f71f616065837f62e1b4660b2615c66d5e1723c604d88bb8e9dab",
+      "current_sha256": "eea5cda9062f71f616065837f62e1b4660b2615c66d5e1723c604d88bb8e9dab",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/reward_components.csv",
+      "original_sha256": "6b83c9060e608269c7d0a4afa9dda4432c144e2a8c5da04366bef332c02ebf3c",
+      "current_sha256": "6b83c9060e608269c7d0a4afa9dda4432c144e2a8c5da04366bef332c02ebf3c",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/training_summary.json",
+      "original_sha256": "5bb0ac7adc0f17f868c0a2e54c26dfc9247af1b8357f9264148430a4736073f7",
+      "current_sha256": "5bb0ac7adc0f17f868c0a2e54c26dfc9247af1b8357f9264148430a4736073f7",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/integrity.json",
+      "original_sha256": "978c92184db979a0c1bc3b3111ed6d02c0d28d58e96b2acc3faef9e6755f3257",
+      "current_sha256": "978c92184db979a0c1bc3b3111ed6d02c0d28d58e96b2acc3faef9e6755f3257",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/heightscan_validation.json",
+      "original_sha256": "4b8efef223ae37cdba7e20b2b2dcba73aabc3a0c1fceb769db49e4b1798c02a2",
+      "current_sha256": "4b8efef223ae37cdba7e20b2b2dcba73aabc3a0c1fceb769db49e4b1798c02a2",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/episode_metrics.csv",
+      "original_sha256": "b0e4e275a22991e37c2d52a3ac278299eb637dfd21d88105f401cf47f8540f0b",
+      "current_sha256": "b0e4e275a22991e37c2d52a3ac278299eb637dfd21d88105f401cf47f8540f0b",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/checkpoint_selection.json",
+      "original_sha256": "b542a146eb067b7159cf7ea149c5b075b393e71d977cc6ef7fa732e2a44de536",
+      "current_sha256": "b542a146eb067b7159cf7ea149c5b075b393e71d977cc6ef7fa732e2a44de536",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/main_metrics.csv",
+      "original_sha256": "c306bca3db4480000289242feccae83bee606cbf3c196c7de9d410c00cf25cf1",
+      "current_sha256": "c306bca3db4480000289242feccae83bee606cbf3c196c7de9d410c00cf25cf1",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/raycast_diagnostics.json",
+      "original_sha256": "3a58a2eadb93384968d98fa9be620769cc597a44fc9cf1b42cc5847680299759",
+      "current_sha256": "3a58a2eadb93384968d98fa9be620769cc597a44fc9cf1b42cc5847680299759",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/results/evaluation_summary.json",
+      "original_sha256": "00e1f586aa982391f2c7d4bb4c63d07d08cc11095dbd61e74209bdc99054c989",
+      "current_sha256": "00e1f586aa982391f2c7d4bb4c63d07d08cc11095dbd61e74209bdc99054c989",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/results/source_parity.json",
+      "original_sha256": "ccad4d0a4f474cb46ebf17c423b79cc7bbfa3a893be51b8f451f7bcc16fa17b8",
+      "current_sha256": "ccad4d0a4f474cb46ebf17c423b79cc7bbfa3a893be51b8f451f7bcc16fa17b8",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/results/manifest.json",
+      "original_sha256": "c0df4a8ecf6dcec0b1b1eb3e96bc68cd7e1154c069e615dc75e483b6aafb28fb",
+      "current_sha256": "c0df4a8ecf6dcec0b1b1eb3e96bc68cd7e1154c069e615dc75e483b6aafb28fb",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/results/config.json",
+      "original_sha256": "030701603975490d1151a144eba63e024311cd2405b5c259cbab04bf51488e0a",
+      "current_sha256": "030701603975490d1151a144eba63e024311cd2405b5c259cbab04bf51488e0a",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/results/source_mapping.json",
+      "original_sha256": "48b3b86c0d0f74891b6c710a648a35c076afcb7760d3cf133ccb5b053abc9144",
+      "current_sha256": "48b3b86c0d0f74891b6c710a648a35c076afcb7760d3cf133ccb5b053abc9144",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/results/reward_components.csv",
+      "original_sha256": "6b83c9060e608269c7d0a4afa9dda4432c144e2a8c5da04366bef332c02ebf3c",
+      "current_sha256": "6b83c9060e608269c7d0a4afa9dda4432c144e2a8c5da04366bef332c02ebf3c",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/results/agent.json",
+      "original_sha256": "ed6610cb903cdef95e17906cba8f35026fd42ef176ef318f3eb51a842348854c",
+      "current_sha256": "ed6610cb903cdef95e17906cba8f35026fd42ef176ef318f3eb51a842348854c",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/results/episode_metrics.csv",
+      "original_sha256": "b0e4e275a22991e37c2d52a3ac278299eb637dfd21d88105f401cf47f8540f0b",
+      "current_sha256": "b0e4e275a22991e37c2d52a3ac278299eb637dfd21d88105f401cf47f8540f0b",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/results/main_metrics.csv",
+      "original_sha256": "b019131426b45571214e2c554f632bff51c0b89dee403715e36be5682cd793c3",
+      "current_sha256": "b019131426b45571214e2c554f632bff51c0b89dee403715e36be5682cd793c3",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/results/run.log",
+      "original_sha256": "598273121d5dc02254ca87fd87a5719b19ea1c3473fe1d272d90576fe750e911",
+      "current_sha256": "598273121d5dc02254ca87fd87a5719b19ea1c3473fe1d272d90576fe750e911",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/results/raycast_diagnostics.json",
+      "original_sha256": "3a58a2eadb93384968d98fa9be620769cc597a44fc9cf1b42cc5847680299759",
+      "current_sha256": "3a58a2eadb93384968d98fa9be620769cc597a44fc9cf1b42cc5847680299759",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/smoke/source_parity.json",
+      "original_sha256": "ccad4d0a4f474cb46ebf17c423b79cc7bbfa3a893be51b8f451f7bcc16fa17b8",
+      "current_sha256": "ccad4d0a4f474cb46ebf17c423b79cc7bbfa3a893be51b8f451f7bcc16fa17b8",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/smoke/manifest.json",
+      "original_sha256": "f535495998dc7f13a809701f30b823170984eed16f8e4c2292561c2ef26ccfe0",
+      "current_sha256": "f535495998dc7f13a809701f30b823170984eed16f8e4c2292561c2ef26ccfe0",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/smoke/config.json",
+      "original_sha256": "010401c230f5e441637fbc242205a1c5676582062878a0c354fb27178e920adc",
+      "current_sha256": "010401c230f5e441637fbc242205a1c5676582062878a0c354fb27178e920adc",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/smoke/source_mapping.json",
+      "original_sha256": "48b3b86c0d0f74891b6c710a648a35c076afcb7760d3cf133ccb5b053abc9144",
+      "current_sha256": "48b3b86c0d0f74891b6c710a648a35c076afcb7760d3cf133ccb5b053abc9144",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/smoke/contact_observation_validation.json",
+      "original_sha256": "eea5cda9062f71f616065837f62e1b4660b2615c66d5e1723c604d88bb8e9dab",
+      "current_sha256": "eea5cda9062f71f616065837f62e1b4660b2615c66d5e1723c604d88bb8e9dab",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/smoke/agent.json",
+      "original_sha256": "ed6610cb903cdef95e17906cba8f35026fd42ef176ef318f3eb51a842348854c",
+      "current_sha256": "ed6610cb903cdef95e17906cba8f35026fd42ef176ef318f3eb51a842348854c",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/smoke/heightscan_validation.json",
+      "original_sha256": "4b8efef223ae37cdba7e20b2b2dcba73aabc3a0c1fceb769db49e4b1798c02a2",
+      "current_sha256": "4b8efef223ae37cdba7e20b2b2dcba73aabc3a0c1fceb769db49e4b1798c02a2",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/smoke/smoke.json",
+      "original_sha256": "08b28215876c8d829b2a49380ef61ec6ee942e11d7ccfe23180cbcb05a19e5f8",
+      "current_sha256": "08b28215876c8d829b2a49380ef61ec6ee942e11d7ccfe23180cbcb05a19e5f8",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/smoke/run.log",
+      "original_sha256": "c637068f64025795339583170591c3b7320ff1553f8db6fc852544bb9cbac2a3",
+      "current_sha256": "c637068f64025795339583170591c3b7320ff1553f8db6fc852544bb9cbac2a3",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/smoke_mapping_attempt/source_parity.json",
+      "original_sha256": "ccad4d0a4f474cb46ebf17c423b79cc7bbfa3a893be51b8f451f7bcc16fa17b8",
+      "current_sha256": "ccad4d0a4f474cb46ebf17c423b79cc7bbfa3a893be51b8f451f7bcc16fa17b8",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/smoke_mapping_attempt/config.json",
+      "original_sha256": "010401c230f5e441637fbc242205a1c5676582062878a0c354fb27178e920adc",
+      "current_sha256": "010401c230f5e441637fbc242205a1c5676582062878a0c354fb27178e920adc",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/smoke_mapping_attempt/source_mapping.json",
+      "original_sha256": "03e292120ce8deece6cd8ecda4d9c22471da3a05e39ca5cfd0c57d9dfe05941c",
+      "current_sha256": "03e292120ce8deece6cd8ecda4d9c22471da3a05e39ca5cfd0c57d9dfe05941c",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/smoke_mapping_attempt/agent.json",
+      "original_sha256": "ed6610cb903cdef95e17906cba8f35026fd42ef176ef318f3eb51a842348854c",
+      "current_sha256": "ed6610cb903cdef95e17906cba8f35026fd42ef176ef318f3eb51a842348854c",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/smoke_slice_mapping_attempt/source_parity.json",
+      "original_sha256": "ccad4d0a4f474cb46ebf17c423b79cc7bbfa3a893be51b8f451f7bcc16fa17b8",
+      "current_sha256": "ccad4d0a4f474cb46ebf17c423b79cc7bbfa3a893be51b8f451f7bcc16fa17b8",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/smoke_slice_mapping_attempt/config.json",
+      "original_sha256": "010401c230f5e441637fbc242205a1c5676582062878a0c354fb27178e920adc",
+      "current_sha256": "010401c230f5e441637fbc242205a1c5676582062878a0c354fb27178e920adc",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/smoke_slice_mapping_attempt/source_mapping.json",
+      "original_sha256": "853927cb9030456c8794cfafe36e97e0da9e91741c14159b0d09c4cdbe8c753b",
+      "current_sha256": "853927cb9030456c8794cfafe36e97e0da9e91741c14159b0d09c4cdbe8c753b",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/smoke_slice_mapping_attempt/agent.json",
+      "original_sha256": "ed6610cb903cdef95e17906cba8f35026fd42ef176ef318f3eb51a842348854c",
+      "current_sha256": "ed6610cb903cdef95e17906cba8f35026fd42ef176ef318f3eb51a842348854c",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/checkpoints/final_model.pt",
+      "original_sha256": "7b67b9115ecfa67909bdaf27232099bd1f2b1ccf14fe10b6737139568fe2a362",
+      "current_sha256": "7b67b9115ecfa67909bdaf27232099bd1f2b1ccf14fe10b6737139568fe2a362",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/checkpoints/best_model.pt",
+      "original_sha256": "0471caaadd646feac85cb7bbed0d2c3668279d2d65db9507030a649895ea11b4",
+      "current_sha256": "0471caaadd646feac85cb7bbed0d2c3668279d2d65db9507030a649895ea11b4",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_4096x32x1000/files_added.txt",
+      "original_sha256": "1709595134d1f8ecf322ef12556c5f6042df02a39ebfb073280bdc698b5ed199",
+      "current_sha256": "1709595134d1f8ecf322ef12556c5f6042df02a39ebfb073280bdc698b5ed199",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_4096x32x1000/protected_artifacts_before.json",
+      "original_sha256": "854ccf6642ed84ec3f3e44575db9e379b7bb584343603f2952ba6645e1fef9be",
+      "current_sha256": "854ccf6642ed84ec3f3e44575db9e379b7bb584343603f2952ba6645e1fef9be",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_4096x32x1000/evaluation_summary.json",
+      "original_sha256": "6b0364099c8b409f81e62d527cf44dfe014c332ebcc6661b9338318ae0769616",
+      "current_sha256": "6b0364099c8b409f81e62d527cf44dfe014c332ebcc6661b9338318ae0769616",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_4096x32x1000/.gitignore",
+      "original_sha256": "71db755119c3c68e24ed78d22bdc19db6fa12c267472055ab654af639d529190",
+      "current_sha256": "71db755119c3c68e24ed78d22bdc19db6fa12c267472055ab654af639d529190",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_4096x32x1000/commands.log",
+      "original_sha256": "567a25f30c0c934cf4aacacd65f473b43c3a651ee2078af60e0f13a6d392b13e",
+      "current_sha256": "567a25f30c0c934cf4aacacd65f473b43c3a651ee2078af60e0f13a6d392b13e",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_4096x32x1000/manifest.json",
+      "original_sha256": "d087455e50f08cbcce9a7dd8550c8f88049b56c074637ed657dc23623c2c85e6",
+      "current_sha256": "d087455e50f08cbcce9a7dd8550c8f88049b56c074637ed657dc23623c2c85e6",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_4096x32x1000/parity.json",
+      "original_sha256": "7cfa46ff5bade106e5197eeb03817c58d363532b2ef2323e6170710a8a7b0e9d",
+      "current_sha256": "7cfa46ff5bade106e5197eeb03817c58d363532b2ef2323e6170710a8a7b0e9d",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_4096x32x1000/source_mapping.json",
+      "original_sha256": "196149fcab756eb727c87ba71f93298131dc111476e6c0bd06b71d90ecca76c0",
+      "current_sha256": "196149fcab756eb727c87ba71f93298131dc111476e6c0bd06b71d90ecca76c0",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_4096x32x1000/reward_components.csv",
+      "original_sha256": "b6a1e383f10fd9045f836923df3ea39068a15b821fd939619210156d0f40f738",
+      "current_sha256": "b6a1e383f10fd9045f836923df3ea39068a15b821fd939619210156d0f40f738",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_4096x32x1000/training_summary.json",
+      "original_sha256": "21f6d21dff5145dd986d6ea3b755c2f91ff782cdabd11ee4f8ca5a2ffa3ea500",
+      "current_sha256": "21f6d21dff5145dd986d6ea3b755c2f91ff782cdabd11ee4f8ca5a2ffa3ea500",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_4096x32x1000/integrity.json",
+      "original_sha256": "f59c5e12ea3871cce85e23313cadac57672034730fbc68f617b5e9bf81361cb8",
+      "current_sha256": "f59c5e12ea3871cce85e23313cadac57672034730fbc68f617b5e9bf81361cb8",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_4096x32x1000/episode_metrics.csv",
+      "original_sha256": "240e60a19bfb5b73d648785eea812ca239f289db7e9a39a637c81fe5d1445e54",
+      "current_sha256": "240e60a19bfb5b73d648785eea812ca239f289db7e9a39a637c81fe5d1445e54",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_4096x32x1000/checkpoint_selection.json",
+      "original_sha256": "afbdb47fd2a16b505e2e318e67a51d819dabfbbfd9b2f18c66fe97494958dd02",
+      "current_sha256": "afbdb47fd2a16b505e2e318e67a51d819dabfbbfd9b2f18c66fe97494958dd02",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_4096x32x1000/main_metrics.csv",
+      "original_sha256": "106faa7f4727b2742ca049bc73deb3f00b973a948eda6c26e52a7a1af6627b98",
+      "current_sha256": "106faa7f4727b2742ca049bc73deb3f00b973a948eda6c26e52a7a1af6627b98",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_4096x32x1000/raycast_diagnostics.json",
+      "original_sha256": "91d4c6aaa91a3809a4b13fc452684d39a618b00d02db0815a7d1be77293c03bb",
+      "current_sha256": "91d4c6aaa91a3809a4b13fc452684d39a618b00d02db0815a7d1be77293c03bb",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_4096x32x1000/results/evaluation_summary.json",
+      "original_sha256": "6b0364099c8b409f81e62d527cf44dfe014c332ebcc6661b9338318ae0769616",
+      "current_sha256": "6b0364099c8b409f81e62d527cf44dfe014c332ebcc6661b9338318ae0769616",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_4096x32x1000/results/source_parity.json",
+      "original_sha256": "9c3312e4fd7016bfd3fdf2d42609843bd0440ac16656b3a9cf4aec47dcb1c96b",
+      "current_sha256": "9c3312e4fd7016bfd3fdf2d42609843bd0440ac16656b3a9cf4aec47dcb1c96b",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_4096x32x1000/results/manifest.json",
+      "original_sha256": "40caad88c563e3e3823ec9c9bc90cef5923f257e35c922a27990bed25f6647ca",
+      "current_sha256": "40caad88c563e3e3823ec9c9bc90cef5923f257e35c922a27990bed25f6647ca",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_4096x32x1000/results/config.json",
+      "original_sha256": "3ec9661858962af7a8db1b9766885f14bc957c5ddcde77406305655fe1f335e6",
+      "current_sha256": "3ec9661858962af7a8db1b9766885f14bc957c5ddcde77406305655fe1f335e6",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_4096x32x1000/results/source_mapping.json",
+      "original_sha256": "df93b8d0a4a44e66f71b75b7eb861ed7ccf0f59493b3a23672fb457467418375",
+      "current_sha256": "df93b8d0a4a44e66f71b75b7eb861ed7ccf0f59493b3a23672fb457467418375",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_4096x32x1000/results/reward_components.csv",
+      "original_sha256": "b6a1e383f10fd9045f836923df3ea39068a15b821fd939619210156d0f40f738",
+      "current_sha256": "b6a1e383f10fd9045f836923df3ea39068a15b821fd939619210156d0f40f738",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_4096x32x1000/results/agent.json",
+      "original_sha256": "94967f95078a305548b941c6b488c82da94c14de5fd31c21fd03daa4d5708647",
+      "current_sha256": "94967f95078a305548b941c6b488c82da94c14de5fd31c21fd03daa4d5708647",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_4096x32x1000/results/episode_metrics.csv",
+      "original_sha256": "240e60a19bfb5b73d648785eea812ca239f289db7e9a39a637c81fe5d1445e54",
+      "current_sha256": "240e60a19bfb5b73d648785eea812ca239f289db7e9a39a637c81fe5d1445e54",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_4096x32x1000/results/main_metrics.csv",
+      "original_sha256": "33fb954c68dd737e38b00d9001973fab9d7ec7cbd9c9759765384fd246a25793",
+      "current_sha256": "33fb954c68dd737e38b00d9001973fab9d7ec7cbd9c9759765384fd246a25793",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_4096x32x1000/results/run.log",
+      "original_sha256": "dfb79b36198a4593a61b093e185cab534149aac42845d4811fa5316530a00adc",
+      "current_sha256": "dfb79b36198a4593a61b093e185cab534149aac42845d4811fa5316530a00adc",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_4096x32x1000/results/raycast_diagnostics.json",
+      "original_sha256": "91d4c6aaa91a3809a4b13fc452684d39a618b00d02db0815a7d1be77293c03bb",
+      "current_sha256": "91d4c6aaa91a3809a4b13fc452684d39a618b00d02db0815a7d1be77293c03bb",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_4096x32x1000/smoke/source_parity.json",
+      "original_sha256": "9c3312e4fd7016bfd3fdf2d42609843bd0440ac16656b3a9cf4aec47dcb1c96b",
+      "current_sha256": "9c3312e4fd7016bfd3fdf2d42609843bd0440ac16656b3a9cf4aec47dcb1c96b",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_4096x32x1000/smoke/manifest.json",
+      "original_sha256": "4dfb916f21f86e483925cd875f59777ea7261ca1a1eb86a03c82132c7ab793c7",
+      "current_sha256": "4dfb916f21f86e483925cd875f59777ea7261ca1a1eb86a03c82132c7ab793c7",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_4096x32x1000/smoke/config.json",
+      "original_sha256": "660c35c92a5d6bebda9593ddd44c80b84237ef1949ff1e98fa3a4e9e70ac72a1",
+      "current_sha256": "660c35c92a5d6bebda9593ddd44c80b84237ef1949ff1e98fa3a4e9e70ac72a1",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_4096x32x1000/smoke/source_mapping.json",
+      "original_sha256": "7156c6854d8b43028cd0ef9cc38ba505b68552e3f3fc32471d80faa678d510cc",
+      "current_sha256": "7156c6854d8b43028cd0ef9cc38ba505b68552e3f3fc32471d80faa678d510cc",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_4096x32x1000/smoke/agent.json",
+      "original_sha256": "94967f95078a305548b941c6b488c82da94c14de5fd31c21fd03daa4d5708647",
+      "current_sha256": "94967f95078a305548b941c6b488c82da94c14de5fd31c21fd03daa4d5708647",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_4096x32x1000/smoke/smoke.json",
+      "original_sha256": "9c9ba271ce43876d26cc9c12c28738875203d283ab8a74786e808fc27133524a",
+      "current_sha256": "9c9ba271ce43876d26cc9c12c28738875203d283ab8a74786e808fc27133524a",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_4096x32x1000/smoke_verified/source_parity.json",
+      "original_sha256": "9c3312e4fd7016bfd3fdf2d42609843bd0440ac16656b3a9cf4aec47dcb1c96b",
+      "current_sha256": "9c3312e4fd7016bfd3fdf2d42609843bd0440ac16656b3a9cf4aec47dcb1c96b",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_4096x32x1000/smoke_verified/manifest.json",
+      "original_sha256": "4dfb916f21f86e483925cd875f59777ea7261ca1a1eb86a03c82132c7ab793c7",
+      "current_sha256": "4dfb916f21f86e483925cd875f59777ea7261ca1a1eb86a03c82132c7ab793c7",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_4096x32x1000/smoke_verified/config.json",
+      "original_sha256": "1d8f296fb7d794014a08a805051b0225cc52f827e92e1dbf1ca8545ed7d33a46",
+      "current_sha256": "1d8f296fb7d794014a08a805051b0225cc52f827e92e1dbf1ca8545ed7d33a46",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_4096x32x1000/smoke_verified/source_mapping.json",
+      "original_sha256": "df93b8d0a4a44e66f71b75b7eb861ed7ccf0f59493b3a23672fb457467418375",
+      "current_sha256": "df93b8d0a4a44e66f71b75b7eb861ed7ccf0f59493b3a23672fb457467418375",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_4096x32x1000/smoke_verified/agent.json",
+      "original_sha256": "94967f95078a305548b941c6b488c82da94c14de5fd31c21fd03daa4d5708647",
+      "current_sha256": "94967f95078a305548b941c6b488c82da94c14de5fd31c21fd03daa4d5708647",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_4096x32x1000/smoke_verified/smoke.json",
+      "original_sha256": "9c9ba271ce43876d26cc9c12c28738875203d283ab8a74786e808fc27133524a",
+      "current_sha256": "9c9ba271ce43876d26cc9c12c28738875203d283ab8a74786e808fc27133524a",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_4096x32x1000/smoke_verified/run.log",
+      "original_sha256": "cee7a1a7a6e1f3646ad9332f85594047cd1fa479aba9b563b5045163bdc12c1f",
+      "current_sha256": "cee7a1a7a6e1f3646ad9332f85594047cd1fa479aba9b563b5045163bdc12c1f",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_4096x32x1000/checkpoints/final_model.pt",
+      "original_sha256": "ea9db8ebce1ef9acd0b7ef2e4efe2ef2964816d0a9959c30e193dcc8807e097b",
+      "current_sha256": "ea9db8ebce1ef9acd0b7ef2e4efe2ef2964816d0a9959c30e193dcc8807e097b",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_4096x32x1000/checkpoints/best_model.pt",
+      "original_sha256": "49a8a007f152ed9c63df616fbee12a866873be0ee0337ad83597d653ec9b3c06",
+      "current_sha256": "49a8a007f152ed9c63df616fbee12a866873be0ee0337ad83597d653ec9b3c06",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/depthcam_2048x32x2000/commands.log",
+      "original_sha256": "96b0c85c1acb245b95f70c1217a9cc6018712784eff63cb1afc3077a662b5547",
+      "current_sha256": "96b0c85c1acb245b95f70c1217a9cc6018712784eff63cb1afc3077a662b5547",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/depthcam_2048x32x2000/training_summary.json",
+      "original_sha256": "2af70ae86dad8c822ee1455833b4d1d70e5df7a5c246ccac71f40e72a32d37d6",
+      "current_sha256": "2af70ae86dad8c822ee1455833b4d1d70e5df7a5c246ccac71f40e72a32d37d6",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/depthcam_2048x32x2000/results/evaluation_summary.json",
+      "original_sha256": "227959e4c68c063ca84610fa5ee717f97eef756db3358ef05034cf8e86da194e",
+      "current_sha256": "227959e4c68c063ca84610fa5ee717f97eef756db3358ef05034cf8e86da194e",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/depthcam_2048x32x2000/results/reward_components.csv",
+      "original_sha256": "8a02778a101a94843b88efc54cbc9026e740e8832966e493f3e97c05e23c4170",
+      "current_sha256": "8a02778a101a94843b88efc54cbc9026e740e8832966e493f3e97c05e23c4170",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/depthcam_2048x32x2000/results/episode_metrics.csv",
+      "original_sha256": "a4b8bb0d7efc0dc7cdf64b036e0d4d0d90b8db50744fa7355840babafaf5924c",
+      "current_sha256": "a4b8bb0d7efc0dc7cdf64b036e0d4d0d90b8db50744fa7355840babafaf5924c",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/depthcam_2048x32x2000/results/main_metrics.csv",
+      "original_sha256": "ca85eb8cba5be4ed3a15e18dae2cc0d4225f60d9c85de9efb89e46f026ccafdd",
+      "current_sha256": "ca85eb8cba5be4ed3a15e18dae2cc0d4225f60d9c85de9efb89e46f026ccafdd",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/shared/dependency_sources.json",
+      "original_sha256": "70131bd07234eddc7a07b679186fe4837afa6c91ccbd59d8d4a33edfafc5942f",
+      "current_sha256": "70131bd07234eddc7a07b679186fe4837afa6c91ccbd59d8d4a33edfafc5942f",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/shared/protected_artifacts_before.json",
+      "original_sha256": "cc7ea36107ffe00948068eac3b15ed84808eb9e42fe1fe6c1d6473234aa62dd2",
+      "current_sha256": "cc7ea36107ffe00948068eac3b15ed84808eb9e42fe1fe6c1d6473234aa62dd2",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/shared/source_parity.json",
+      "original_sha256": "9c3312e4fd7016bfd3fdf2d42609843bd0440ac16656b3a9cf4aec47dcb1c96b",
+      "current_sha256": "9c3312e4fd7016bfd3fdf2d42609843bd0440ac16656b3a9cf4aec47dcb1c96b",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/shared/runtime_versions.json",
+      "original_sha256": "4f0e0f272a4919d37beeeb5e2e4aa9d2c03c3518e0edba0d3cfb6b03eb1b11a2",
+      "current_sha256": "4f0e0f272a4919d37beeeb5e2e4aa9d2c03c3518e0edba0d3cfb6b03eb1b11a2",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/shared/contact_observation.json",
+      "original_sha256": "8238adaaef102968fd690fbd5aaf6a3b0b7f2564bb6a968b8bb6e99d851c8bd7",
+      "current_sha256": "8238adaaef102968fd690fbd5aaf6a3b0b7f2564bb6a968b8bb6e99d851c8bd7",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/shared/evaluation_parity.json",
+      "original_sha256": "2c135eeb7f2039942a70e9b0716f5211ef622cccecdc671ee361c99154d55558",
+      "current_sha256": "2c135eeb7f2039942a70e9b0716f5211ef622cccecdc671ee361c99154d55558",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/shared/stage2_contact_modified_protocol.json",
+      "original_sha256": "571af1e8399c7e283b386badf6b213368ced0e1da93da78ec0c7be1f71bb8ac1",
+      "current_sha256": "571af1e8399c7e283b386badf6b213368ced0e1da93da78ec0c7be1f71bb8ac1",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/files_added.txt",
+      "original_sha256": "831bedc1bce6c65f1bcbdad16bc97a93de90162624675bee0b7ddf6f631cfebf",
+      "current_sha256": "831bedc1bce6c65f1bcbdad16bc97a93de90162624675bee0b7ddf6f631cfebf",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/smoke_mapping_attempt_run.log",
+      "original_sha256": "32ba66ada7146d8094e06594f4eba9ae7c301b31907001588377c999665b5b49",
+      "current_sha256": "32ba66ada7146d8094e06594f4eba9ae7c301b31907001588377c999665b5b49",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/training_run.log",
+      "original_sha256": "a0a9199ab635b8f32e153282f7adac24c80d6353965bb2fc657da43395b37d96",
+      "current_sha256": "a0a9199ab635b8f32e153282f7adac24c80d6353965bb2fc657da43395b37d96",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/protected_artifacts_before.json",
+      "original_sha256": "7849a2a8f25d6cb3972ccaf401e1e891c757eb065c7d5c3ca4fdde935d03758a",
+      "current_sha256": "7849a2a8f25d6cb3972ccaf401e1e891c757eb065c7d5c3ca4fdde935d03758a",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/comparison.md",
+      "original_sha256": "388cd97fd7fe28b43cf071e12c175a71185bce61a43fae3211216d9c0d3adc3e",
+      "current_sha256": "388cd97fd7fe28b43cf071e12c175a71185bce61a43fae3211216d9c0d3adc3e",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/smoke_run.log",
+      "original_sha256": "449a365a0615d6cca76d48726e993b542df8064b4967917aa4162fcf0ebd4acd",
+      "current_sha256": "449a365a0615d6cca76d48726e993b542df8064b4967917aa4162fcf0ebd4acd",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/training_curve.csv",
+      "original_sha256": "3db25af16f2ac8e59d989d61085452417af33d673d44ed7cff76691688d39cda",
+      "current_sha256": "3db25af16f2ac8e59d989d61085452417af33d673d44ed7cff76691688d39cda",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/evaluation_summary.json",
+      "original_sha256": "676954c61ba01bd7523138c79c2668bad2cb8988497c1ed1037deccbb31e6e5b",
+      "current_sha256": "676954c61ba01bd7523138c79c2668bad2cb8988497c1ed1037deccbb31e6e5b",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/.gitignore",
+      "original_sha256": "b4ac90f41fdde89c1cbe77caffe7081cba8ebb79f1ce1e00f56d739ffd2ae867",
+      "current_sha256": "b4ac90f41fdde89c1cbe77caffe7081cba8ebb79f1ce1e00f56d739ffd2ae867",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/commands.log",
+      "original_sha256": "d3a6631da1dbd13de0cf45cc7a85adeb324f5bad678a3892aff5604202e7efd4",
+      "current_sha256": "d3a6631da1dbd13de0cf45cc7a85adeb324f5bad678a3892aff5604202e7efd4",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/manifest.json",
+      "original_sha256": "3a86e369af97529d33c7f73644da9f64f3225e06d112cadbea2e0189bb7f79be",
+      "current_sha256": "3a86e369af97529d33c7f73644da9f64f3225e06d112cadbea2e0189bb7f79be",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/git_state.json",
+      "original_sha256": "288ae4239d7afd85fa048344f7d430ff4354f4ea9ed2c0009ed54b5b741bed04",
+      "current_sha256": "288ae4239d7afd85fa048344f7d430ff4354f4ea9ed2c0009ed54b5b741bed04",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/source_mapping.json",
+      "original_sha256": "95ca05b8425ecf671079d95bb36a645d5f3a9700ce8ec15c13f89e1ba5186c9f",
+      "current_sha256": "95ca05b8425ecf671079d95bb36a645d5f3a9700ce8ec15c13f89e1ba5186c9f",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/contact_observation_validation.json",
+      "original_sha256": "380bb6806600a343ea79c14c8b9d20654c6afd2dd54b29554c76fd79c3b51b16",
+      "current_sha256": "380bb6806600a343ea79c14c8b9d20654c6afd2dd54b29554c76fd79c3b51b16",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/reward_components.csv",
+      "original_sha256": "6aebc4f5281ef1fcf890e05ddbbae34c5fccaee5510f6ff34b1b24e16449991a",
+      "current_sha256": "6aebc4f5281ef1fcf890e05ddbbae34c5fccaee5510f6ff34b1b24e16449991a",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/training_summary.json",
+      "original_sha256": "ec79b0225c9a439ea103966ea3b243ffd3bcde6ac45e36a330fda5f0773b765b",
+      "current_sha256": "ec79b0225c9a439ea103966ea3b243ffd3bcde6ac45e36a330fda5f0773b765b",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/integrity.json",
+      "original_sha256": "89fdd2e540f8f711c1d4060c1e110366199283f8de670c9c9e258067317941e6",
+      "current_sha256": "89fdd2e540f8f711c1d4060c1e110366199283f8de670c9c9e258067317941e6",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/evaluation_run.log",
+      "original_sha256": "c12b3065b66fcc6681279b81d85218174633f073454ddd062bcb6d6ab9be959d",
+      "current_sha256": "c12b3065b66fcc6681279b81d85218174633f073454ddd062bcb6d6ab9be959d",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/episode_metrics.csv",
+      "original_sha256": "63552e5ef3ab7748194932413137b8a178359f263e33fea1c1f9ab8cb03f9899",
+      "current_sha256": "63552e5ef3ab7748194932413137b8a178359f263e33fea1c1f9ab8cb03f9899",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/checkpoint_selection.json",
+      "original_sha256": "c6d01e38489a2be1671c6eddab6721d02418e9f7c224cf093a5e2ae34bcb7cd5",
+      "current_sha256": "c6d01e38489a2be1671c6eddab6721d02418e9f7c224cf093a5e2ae34bcb7cd5",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/main_metrics.csv",
+      "original_sha256": "4e2fbf6cc1b1a7fac84dfc0d59c59a10bd3dd32aec0e36905dd33158b62dadb3",
+      "current_sha256": "4e2fbf6cc1b1a7fac84dfc0d59c59a10bd3dd32aec0e36905dd33158b62dadb3",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/raycast_diagnostics.json",
+      "original_sha256": "a4708549ec8ab40b03db67116e0e327f300da1aa69c56b3d0b4bad74bf50b6e9",
+      "current_sha256": "a4708549ec8ab40b03db67116e0e327f300da1aa69c56b3d0b4bad74bf50b6e9",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/results/evaluation_summary.json",
+      "original_sha256": "676954c61ba01bd7523138c79c2668bad2cb8988497c1ed1037deccbb31e6e5b",
+      "current_sha256": "676954c61ba01bd7523138c79c2668bad2cb8988497c1ed1037deccbb31e6e5b",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/results/source_parity.json",
+      "original_sha256": "9c3312e4fd7016bfd3fdf2d42609843bd0440ac16656b3a9cf4aec47dcb1c96b",
+      "current_sha256": "9c3312e4fd7016bfd3fdf2d42609843bd0440ac16656b3a9cf4aec47dcb1c96b",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/results/manifest.json",
+      "original_sha256": "03de316dc81f9bc86e505e56db7156ec00dd1e8a4ac09162175eecbbd90b0040",
+      "current_sha256": "03de316dc81f9bc86e505e56db7156ec00dd1e8a4ac09162175eecbbd90b0040",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/results/config.json",
+      "original_sha256": "f1728a0133821e99f082f47e79b8cdfa6c812096caac20da33f012799878f9ac",
+      "current_sha256": "f1728a0133821e99f082f47e79b8cdfa6c812096caac20da33f012799878f9ac",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/results/source_mapping.json",
+      "original_sha256": "bfa697307bb0a3317c44c1d3d863832c1967c704a84018cda45c88010f9dc0d1",
+      "current_sha256": "bfa697307bb0a3317c44c1d3d863832c1967c704a84018cda45c88010f9dc0d1",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/results/reward_components.csv",
+      "original_sha256": "6aebc4f5281ef1fcf890e05ddbbae34c5fccaee5510f6ff34b1b24e16449991a",
+      "current_sha256": "6aebc4f5281ef1fcf890e05ddbbae34c5fccaee5510f6ff34b1b24e16449991a",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/results/agent.json",
+      "original_sha256": "59689c81588841feb0235cda2be4d55624d479899bf11ba9e6ce1b499faa9c2d",
+      "current_sha256": "59689c81588841feb0235cda2be4d55624d479899bf11ba9e6ce1b499faa9c2d",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/results/episode_metrics.csv",
+      "original_sha256": "63552e5ef3ab7748194932413137b8a178359f263e33fea1c1f9ab8cb03f9899",
+      "current_sha256": "63552e5ef3ab7748194932413137b8a178359f263e33fea1c1f9ab8cb03f9899",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/results/main_metrics.csv",
+      "original_sha256": "7f8965bfde3a2baa4db2d6776eeb4a3eaf0a8369c863815b9ba8a0b4c622ed34",
+      "current_sha256": "7f8965bfde3a2baa4db2d6776eeb4a3eaf0a8369c863815b9ba8a0b4c622ed34",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/results/raycast_diagnostics.json",
+      "original_sha256": "a4708549ec8ab40b03db67116e0e327f300da1aa69c56b3d0b4bad74bf50b6e9",
+      "current_sha256": "a4708549ec8ab40b03db67116e0e327f300da1aa69c56b3d0b4bad74bf50b6e9",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/smoke/source_parity.json",
+      "original_sha256": "9c3312e4fd7016bfd3fdf2d42609843bd0440ac16656b3a9cf4aec47dcb1c96b",
+      "current_sha256": "9c3312e4fd7016bfd3fdf2d42609843bd0440ac16656b3a9cf4aec47dcb1c96b",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/smoke/manifest.json",
+      "original_sha256": "57a303cfa5ac47c6184f2aa7c9cb9840f0ff4eecbbb20ab5fc7b94af1cde9a04",
+      "current_sha256": "57a303cfa5ac47c6184f2aa7c9cb9840f0ff4eecbbb20ab5fc7b94af1cde9a04",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/smoke/config.json",
+      "original_sha256": "91dffce0d0d906ee550bf4c1b99ae8614ba0fde1d8ad9cb32ad5b07c31907aa3",
+      "current_sha256": "91dffce0d0d906ee550bf4c1b99ae8614ba0fde1d8ad9cb32ad5b07c31907aa3",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/smoke/source_mapping.json",
+      "original_sha256": "bfa697307bb0a3317c44c1d3d863832c1967c704a84018cda45c88010f9dc0d1",
+      "current_sha256": "bfa697307bb0a3317c44c1d3d863832c1967c704a84018cda45c88010f9dc0d1",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/smoke/contact_observation_validation.json",
+      "original_sha256": "380bb6806600a343ea79c14c8b9d20654c6afd2dd54b29554c76fd79c3b51b16",
+      "current_sha256": "380bb6806600a343ea79c14c8b9d20654c6afd2dd54b29554c76fd79c3b51b16",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/smoke/agent.json",
+      "original_sha256": "59689c81588841feb0235cda2be4d55624d479899bf11ba9e6ce1b499faa9c2d",
+      "current_sha256": "59689c81588841feb0235cda2be4d55624d479899bf11ba9e6ce1b499faa9c2d",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/smoke/smoke.json",
+      "original_sha256": "6dd837a9eac4c676bf4929c1623dca3a5a2e5bb8d6af0cdd47dd9d2cad37bf06",
+      "current_sha256": "6dd837a9eac4c676bf4929c1623dca3a5a2e5bb8d6af0cdd47dd9d2cad37bf06",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/smoke_mapping_attempt/source_parity.json",
+      "original_sha256": "9c3312e4fd7016bfd3fdf2d42609843bd0440ac16656b3a9cf4aec47dcb1c96b",
+      "current_sha256": "9c3312e4fd7016bfd3fdf2d42609843bd0440ac16656b3a9cf4aec47dcb1c96b",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/smoke_mapping_attempt/config.json",
+      "original_sha256": "91dffce0d0d906ee550bf4c1b99ae8614ba0fde1d8ad9cb32ad5b07c31907aa3",
+      "current_sha256": "91dffce0d0d906ee550bf4c1b99ae8614ba0fde1d8ad9cb32ad5b07c31907aa3",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/smoke_mapping_attempt/source_mapping.json",
+      "original_sha256": "c0d48a82d6f00402e775999a533f9ac47211184ea2f464c875f8008277429c39",
+      "current_sha256": "c0d48a82d6f00402e775999a533f9ac47211184ea2f464c875f8008277429c39",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/smoke_mapping_attempt/agent.json",
+      "original_sha256": "59689c81588841feb0235cda2be4d55624d479899bf11ba9e6ce1b499faa9c2d",
+      "current_sha256": "59689c81588841feb0235cda2be4d55624d479899bf11ba9e6ce1b499faa9c2d",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/checkpoints/final_model.pt",
+      "original_sha256": "a9a37bf6b677022b67b68a617e266aa713115bdd4a38613bbeffc860d64c13fc",
+      "current_sha256": "a9a37bf6b677022b67b68a617e266aa713115bdd4a38613bbeffc860d64c13fc",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/checkpoints/best_model.pt",
+      "original_sha256": "82c7d0f781c37e0620230ff4b401835d54ef0a18102cdbc8c22c28bb576f57b9",
+      "current_sha256": "82c7d0f781c37e0620230ff4b401835d54ef0a18102cdbc8c22c28bb576f57b9",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/depthcam_modified_2048x32x2000/commands.log",
+      "original_sha256": "46a1141cde78e295ec5cc9f75d26e5deafe824cd35ff05bbd171adc18063b16f",
+      "current_sha256": "46a1141cde78e295ec5cc9f75d26e5deafe824cd35ff05bbd171adc18063b16f",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/depthcam_modified_2048x32x2000/training_summary.json",
+      "original_sha256": "30a4ef3f0771065e8629b5f8af6f8b8d951ac36cc617da607d6a26da664d278a",
+      "current_sha256": "30a4ef3f0771065e8629b5f8af6f8b8d951ac36cc617da607d6a26da664d278a",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/depthcam_modified_2048x32x2000/results/evaluation_summary.json",
+      "original_sha256": "369c7e6bba7c2bf91a64d5e2499f9c3e840c3c4d9494c695b3c2828d361f5cf5",
+      "current_sha256": "369c7e6bba7c2bf91a64d5e2499f9c3e840c3c4d9494c695b3c2828d361f5cf5",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/depthcam_modified_2048x32x2000/results/reward_components.csv",
+      "original_sha256": "bab067227215db54e9160c82bbef67a2db136cc727a7636b0148ff0b06fb7a5f",
+      "current_sha256": "bab067227215db54e9160c82bbef67a2db136cc727a7636b0148ff0b06fb7a5f",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/depthcam_modified_2048x32x2000/results/episode_metrics.csv",
+      "original_sha256": "fb710f0f162c5be354f506f1bd94eb9a4ab35ff54213ae28149cb36ad330b9e6",
+      "current_sha256": "fb710f0f162c5be354f506f1bd94eb9a4ab35ff54213ae28149cb36ad330b9e6",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/depthcam_modified_2048x32x2000/results/main_metrics.csv",
+      "original_sha256": "9265ec8f0b313313e41461da71ec5b15ab7d65b165d1f742bad2872d559be45e",
+      "current_sha256": "9265ec8f0b313313e41461da71ec5b15ab7d65b165d1f742bad2872d559be45e",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/files_added.txt",
+      "original_sha256": "36b2dae11c7d58626ba0d30bbc2170711c8dc608dd02016798a82435eb65ecee",
+      "current_sha256": "36b2dae11c7d58626ba0d30bbc2170711c8dc608dd02016798a82435eb65ecee",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/evaluation_summary.json",
+      "original_sha256": "b51c619b9227ee3fe56a50e82f65849ed7fe7f598e47a437c0bc32bb0433fb57",
+      "current_sha256": "b51c619b9227ee3fe56a50e82f65849ed7fe7f598e47a437c0bc32bb0433fb57",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/.gitignore",
+      "original_sha256": "5f91cda036f9218153be6ddde4622e3e7a35431c47c461b08db37f201155638f",
+      "current_sha256": "5f91cda036f9218153be6ddde4622e3e7a35431c47c461b08db37f201155638f",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/commands.log",
+      "original_sha256": "ba315b7ab32cfc69c57f5763f0a6102050232642d5f9b8fee41ae198380aa95c",
+      "current_sha256": "ba315b7ab32cfc69c57f5763f0a6102050232642d5f9b8fee41ae198380aa95c",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/manifest.json",
+      "original_sha256": "1ebee30700736697978a476712104a32af5531f199d86784ed2eabbc000c5bbf",
+      "current_sha256": "1ebee30700736697978a476712104a32af5531f199d86784ed2eabbc000c5bbf",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/source_mapping.json",
+      "original_sha256": "3495ebecf36b6355275a9035a352f0f12c711cd657115a65acb2b7b2f963e1a6",
+      "current_sha256": "3495ebecf36b6355275a9035a352f0f12c711cd657115a65acb2b7b2f963e1a6",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/reward_components.csv",
+      "original_sha256": "8a549bddbb1ed834d0cd69cd3718284fff88f81b582d5e19a4efcca876e95f07",
+      "current_sha256": "8a549bddbb1ed834d0cd69cd3718284fff88f81b582d5e19a4efcca876e95f07",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/training_summary.json",
+      "original_sha256": "f9b6bf23fe3e7df3f4e4d3fe0105d05b0d69d66770d694b1bb70b4a8d8d42d43",
+      "current_sha256": "f9b6bf23fe3e7df3f4e4d3fe0105d05b0d69d66770d694b1bb70b4a8d8d42d43",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/integrity.json",
+      "original_sha256": "54e3b08d05e991899c3c23e3a93a83d13af62d1b8a03a026c1c447db6cdb1176",
+      "current_sha256": "54e3b08d05e991899c3c23e3a93a83d13af62d1b8a03a026c1c447db6cdb1176",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/episode_metrics.csv",
+      "original_sha256": "b3371ad5c3d97a1cfc77c70473c8855f91c5669e4ad5ceb03442022edc1b09de",
+      "current_sha256": "b3371ad5c3d97a1cfc77c70473c8855f91c5669e4ad5ceb03442022edc1b09de",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/main_metrics.csv",
+      "original_sha256": "8877db8660ecf5b4cfa5d8633e87f4eafa8478866db4c4416cfbde62c9ad1040",
+      "current_sha256": "8877db8660ecf5b4cfa5d8633e87f4eafa8478866db4c4416cfbde62c9ad1040",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/raycast_diagnostics.json",
+      "original_sha256": "d7706a40f558b365f1e4a5920cd31ffbfb2040ca9b83b6d1b22acf26f1cb687d",
+      "current_sha256": "d7706a40f558b365f1e4a5920cd31ffbfb2040ca9b83b6d1b22acf26f1cb687d",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/results/evaluation_summary.json",
+      "original_sha256": "b51c619b9227ee3fe56a50e82f65849ed7fe7f598e47a437c0bc32bb0433fb57",
+      "current_sha256": "b51c619b9227ee3fe56a50e82f65849ed7fe7f598e47a437c0bc32bb0433fb57",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/results/source_parity.json",
+      "original_sha256": "9c3312e4fd7016bfd3fdf2d42609843bd0440ac16656b3a9cf4aec47dcb1c96b",
+      "current_sha256": "9c3312e4fd7016bfd3fdf2d42609843bd0440ac16656b3a9cf4aec47dcb1c96b",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/results/manifest.json",
+      "original_sha256": "405fb0d64d03a2f18e570fd5a1c143c5cf4f79dbb265e2ccaf17adcb3ca9e2fc",
+      "current_sha256": "405fb0d64d03a2f18e570fd5a1c143c5cf4f79dbb265e2ccaf17adcb3ca9e2fc",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/results/config.json",
+      "original_sha256": "71609ca496893393d36f21bae487ba79503a6a9c79e5692c7264512a5586a6b8",
+      "current_sha256": "71609ca496893393d36f21bae487ba79503a6a9c79e5692c7264512a5586a6b8",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/results/source_mapping.json",
+      "original_sha256": "17f4bcffcff9b879a4f84f5878625d07ba8306f9d8136800594e2bab915aedc4",
+      "current_sha256": "17f4bcffcff9b879a4f84f5878625d07ba8306f9d8136800594e2bab915aedc4",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/results/reward_components.csv",
+      "original_sha256": "8a549bddbb1ed834d0cd69cd3718284fff88f81b582d5e19a4efcca876e95f07",
+      "current_sha256": "8a549bddbb1ed834d0cd69cd3718284fff88f81b582d5e19a4efcca876e95f07",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/results/agent.json",
+      "original_sha256": "258ba11d375f192fd0739f723d7a143f546c7348c409fbc644163a3e07cb0d8f",
+      "current_sha256": "258ba11d375f192fd0739f723d7a143f546c7348c409fbc644163a3e07cb0d8f",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/results/episode_metrics.csv",
+      "original_sha256": "b3371ad5c3d97a1cfc77c70473c8855f91c5669e4ad5ceb03442022edc1b09de",
+      "current_sha256": "b3371ad5c3d97a1cfc77c70473c8855f91c5669e4ad5ceb03442022edc1b09de",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/results/main_metrics.csv",
+      "original_sha256": "b330ab5f8de68e4da210974d7e14eeb5f6831fe7dfd3ee067c64c3949cecbce2",
+      "current_sha256": "b330ab5f8de68e4da210974d7e14eeb5f6831fe7dfd3ee067c64c3949cecbce2",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/results/run.log",
+      "original_sha256": "6fed15995f92fd64096708b1f6bc862388fafe3f35fc903893a214abeec0b8cb",
+      "current_sha256": "6fed15995f92fd64096708b1f6bc862388fafe3f35fc903893a214abeec0b8cb",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/results/raycast_diagnostics.json",
+      "original_sha256": "df467596ca30020e3ab2bfffd2b6387a8669fa1cc96afa4d1e14a3c3ccc16b58",
+      "current_sha256": "df467596ca30020e3ab2bfffd2b6387a8669fa1cc96afa4d1e14a3c3ccc16b58",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/smoke/source_parity.json",
+      "original_sha256": "9c3312e4fd7016bfd3fdf2d42609843bd0440ac16656b3a9cf4aec47dcb1c96b",
+      "current_sha256": "9c3312e4fd7016bfd3fdf2d42609843bd0440ac16656b3a9cf4aec47dcb1c96b",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/smoke/manifest.json",
+      "original_sha256": "51fe134b275d7a45a9371e2c4e7110bf314f4f8fef406f1261ab6cededd5f552",
+      "current_sha256": "51fe134b275d7a45a9371e2c4e7110bf314f4f8fef406f1261ab6cededd5f552",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/smoke/config.json",
+      "original_sha256": "3d49ff5f7769059e376c3a2b0aa78b9cab5675ded8c552f3a8d0ddd3a8886de1",
+      "current_sha256": "3d49ff5f7769059e376c3a2b0aa78b9cab5675ded8c552f3a8d0ddd3a8886de1",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/smoke/source_mapping.json",
+      "original_sha256": "17f4bcffcff9b879a4f84f5878625d07ba8306f9d8136800594e2bab915aedc4",
+      "current_sha256": "17f4bcffcff9b879a4f84f5878625d07ba8306f9d8136800594e2bab915aedc4",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/smoke/agent.json",
+      "original_sha256": "258ba11d375f192fd0739f723d7a143f546c7348c409fbc644163a3e07cb0d8f",
+      "current_sha256": "258ba11d375f192fd0739f723d7a143f546c7348c409fbc644163a3e07cb0d8f",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/smoke/smoke.json",
+      "original_sha256": "9c9ba271ce43876d26cc9c12c28738875203d283ab8a74786e808fc27133524a",
+      "current_sha256": "9c9ba271ce43876d26cc9c12c28738875203d283ab8a74786e808fc27133524a",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/smoke/run.log",
+      "original_sha256": "9c381deeea1b24bb2fe4829341ecdc260d4f2e0e3092d66e6ef99e6a9ebe12c6",
+      "current_sha256": "9c381deeea1b24bb2fe4829341ecdc260d4f2e0e3092d66e6ef99e6a9ebe12c6",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/smoke_attempt_03/source_parity.json",
+      "original_sha256": "9c3312e4fd7016bfd3fdf2d42609843bd0440ac16656b3a9cf4aec47dcb1c96b",
+      "current_sha256": "9c3312e4fd7016bfd3fdf2d42609843bd0440ac16656b3a9cf4aec47dcb1c96b",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/smoke_attempt_03/manifest.json",
+      "original_sha256": "cb0f6014eb63be91768478fa16ac84c6984c398ea32830775017d000a93b028f",
+      "current_sha256": "cb0f6014eb63be91768478fa16ac84c6984c398ea32830775017d000a93b028f",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/smoke_attempt_03/config.json",
+      "original_sha256": "3d49ff5f7769059e376c3a2b0aa78b9cab5675ded8c552f3a8d0ddd3a8886de1",
+      "current_sha256": "3d49ff5f7769059e376c3a2b0aa78b9cab5675ded8c552f3a8d0ddd3a8886de1",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/smoke_attempt_03/source_mapping.json",
+      "original_sha256": "6cd4bb58e163dc2d05487d8a28cd4b4b599be430ddbfc5ddc2cfada96e32b0e6",
+      "current_sha256": "6cd4bb58e163dc2d05487d8a28cd4b4b599be430ddbfc5ddc2cfada96e32b0e6",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/smoke_attempt_03/agent.json",
+      "original_sha256": "258ba11d375f192fd0739f723d7a143f546c7348c409fbc644163a3e07cb0d8f",
+      "current_sha256": "258ba11d375f192fd0739f723d7a143f546c7348c409fbc644163a3e07cb0d8f",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/evaluation_attempt_01/source_parity.json",
+      "original_sha256": "9c3312e4fd7016bfd3fdf2d42609843bd0440ac16656b3a9cf4aec47dcb1c96b",
+      "current_sha256": "9c3312e4fd7016bfd3fdf2d42609843bd0440ac16656b3a9cf4aec47dcb1c96b",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/evaluation_attempt_01/manifest.json",
+      "original_sha256": "405fb0d64d03a2f18e570fd5a1c143c5cf4f79dbb265e2ccaf17adcb3ca9e2fc",
+      "current_sha256": "405fb0d64d03a2f18e570fd5a1c143c5cf4f79dbb265e2ccaf17adcb3ca9e2fc",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/evaluation_attempt_01/config.json",
+      "original_sha256": "71609ca496893393d36f21bae487ba79503a6a9c79e5692c7264512a5586a6b8",
+      "current_sha256": "71609ca496893393d36f21bae487ba79503a6a9c79e5692c7264512a5586a6b8",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/evaluation_attempt_01/source_mapping.json",
+      "original_sha256": "36e4db2b2bd52a632da162844a1d167024de6d3682b3d4b74f5c2ee0578b9d53",
+      "current_sha256": "36e4db2b2bd52a632da162844a1d167024de6d3682b3d4b74f5c2ee0578b9d53",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/evaluation_attempt_01/agent.json",
+      "original_sha256": "258ba11d375f192fd0739f723d7a143f546c7348c409fbc644163a3e07cb0d8f",
+      "current_sha256": "258ba11d375f192fd0739f723d7a143f546c7348c409fbc644163a3e07cb0d8f",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/smoke_original/source_parity.json",
+      "original_sha256": "9c3312e4fd7016bfd3fdf2d42609843bd0440ac16656b3a9cf4aec47dcb1c96b",
+      "current_sha256": "9c3312e4fd7016bfd3fdf2d42609843bd0440ac16656b3a9cf4aec47dcb1c96b",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/smoke_original/manifest.json",
+      "original_sha256": "cb0f6014eb63be91768478fa16ac84c6984c398ea32830775017d000a93b028f",
+      "current_sha256": "cb0f6014eb63be91768478fa16ac84c6984c398ea32830775017d000a93b028f",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/smoke_original/config.json",
+      "original_sha256": "3d49ff5f7769059e376c3a2b0aa78b9cab5675ded8c552f3a8d0ddd3a8886de1",
+      "current_sha256": "3d49ff5f7769059e376c3a2b0aa78b9cab5675ded8c552f3a8d0ddd3a8886de1",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/smoke_original/source_mapping.json",
+      "original_sha256": "36e4db2b2bd52a632da162844a1d167024de6d3682b3d4b74f5c2ee0578b9d53",
+      "current_sha256": "36e4db2b2bd52a632da162844a1d167024de6d3682b3d4b74f5c2ee0578b9d53",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/smoke_original/agent.json",
+      "original_sha256": "258ba11d375f192fd0739f723d7a143f546c7348c409fbc644163a3e07cb0d8f",
+      "current_sha256": "258ba11d375f192fd0739f723d7a143f546c7348c409fbc644163a3e07cb0d8f",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/smoke_original/smoke.json",
+      "original_sha256": "9c9ba271ce43876d26cc9c12c28738875203d283ab8a74786e808fc27133524a",
+      "current_sha256": "9c9ba271ce43876d26cc9c12c28738875203d283ab8a74786e808fc27133524a",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/smoke_original/run.log",
+      "original_sha256": "8deed6e45d135e6b55c1a0b7318d8b57d4d9d742f5422d62bb1ea55ba381373d",
+      "current_sha256": "8deed6e45d135e6b55c1a0b7318d8b57d4d9d742f5422d62bb1ea55ba381373d",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan/checkpoints/best_model.pt",
+      "original_sha256": "ffd81a6826d674ba88f920c8a7f57464adbec96d140a5199e904b90c72beab7b",
+      "current_sha256": "ffd81a6826d674ba88f920c8a7f57464adbec96d140a5199e904b90c72beab7b",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_stock_s42_e4096_n32_i1000/model_999.pt",
+      "original_sha256": "ea9db8ebce1ef9acd0b7ef2e4efe2ef2964816d0a9959c30e193dcc8807e097b",
+      "current_sha256": "ea9db8ebce1ef9acd0b7ef2e4efe2ef2964816d0a9959c30e193dcc8807e097b",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_stock_s42_e4096_n32_i1000/model_550.pt",
+      "original_sha256": "4873a598143700dc7454c4a603fa6aff59db18ca7037e5ec6f6a672978dfd04f",
+      "current_sha256": "4873a598143700dc7454c4a603fa6aff59db18ca7037e5ec6f6a672978dfd04f",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_stock_s42_e4096_n32_i1000/model_950.pt",
+      "original_sha256": "6774115a8975141c0de4a1b2ff6aa927c116d02b8b61544b6549e3ebb8fadd4e",
+      "current_sha256": "6774115a8975141c0de4a1b2ff6aa927c116d02b8b61544b6549e3ebb8fadd4e",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_stock_s42_e4096_n32_i1000/model_150.pt",
+      "original_sha256": "9c9b332c406b6cf78d3791d3dfbcfa45f81b63e47f0dfe57395ac24630c22faa",
+      "current_sha256": "9c9b332c406b6cf78d3791d3dfbcfa45f81b63e47f0dfe57395ac24630c22faa",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_stock_s42_e4096_n32_i1000/model_800.pt",
+      "original_sha256": "7887d9646c02a469e2dfd6e7fdd3a2ca259a7b6012a3a642bd3df2c6f311ff2b",
+      "current_sha256": "7887d9646c02a469e2dfd6e7fdd3a2ca259a7b6012a3a642bd3df2c6f311ff2b",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_stock_s42_e4096_n32_i1000/model_400.pt",
+      "original_sha256": "b23785f8dad33b3aacf5fa390464f70870b09daa2e237761ed8bf0ddab65700f",
+      "current_sha256": "b23785f8dad33b3aacf5fa390464f70870b09daa2e237761ed8bf0ddab65700f",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_stock_s42_e4096_n32_i1000/model_200.pt",
+      "original_sha256": "979347820b0afa47f613610ec36f9b7fcdfd3bc755c2f1da49bc4aaaf7fffd97",
+      "current_sha256": "979347820b0afa47f613610ec36f9b7fcdfd3bc755c2f1da49bc4aaaf7fffd97",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_stock_s42_e4096_n32_i1000/model_50.pt",
+      "original_sha256": "b797dda9b3dd93542e69c3fe342c1a2c7466bb967f7e79d077cc037a40aebe9b",
+      "current_sha256": "b797dda9b3dd93542e69c3fe342c1a2c7466bb967f7e79d077cc037a40aebe9b",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_stock_s42_e4096_n32_i1000/source_parity.json",
+      "original_sha256": "9c3312e4fd7016bfd3fdf2d42609843bd0440ac16656b3a9cf4aec47dcb1c96b",
+      "current_sha256": "9c3312e4fd7016bfd3fdf2d42609843bd0440ac16656b3a9cf4aec47dcb1c96b",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_stock_s42_e4096_n32_i1000/model_450.pt",
+      "original_sha256": "803dd96b1c58882f9c4a4a3803d78e509608698e998308c2897c235c78ce4919",
+      "current_sha256": "803dd96b1c58882f9c4a4a3803d78e509608698e998308c2897c235c78ce4919",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_stock_s42_e4096_n32_i1000/manifest.json",
+      "original_sha256": "1ef0ff1fad5860a57f0108574cc246424d2175ecbb37226ef7069137ef104c9b",
+      "current_sha256": "1ef0ff1fad5860a57f0108574cc246424d2175ecbb37226ef7069137ef104c9b",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_stock_s42_e4096_n32_i1000/model_500.pt",
+      "original_sha256": "739b1a1c533adbb2cec61e0841b7ac44c4106035269d7da167441db216260f8d",
+      "current_sha256": "739b1a1c533adbb2cec61e0841b7ac44c4106035269d7da167441db216260f8d",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_stock_s42_e4096_n32_i1000/config.json",
+      "original_sha256": "56ab32cfc8fbd3e13758e9e33d12b86f74adc1553d86045cea5e0ca1371f30eb",
+      "current_sha256": "56ab32cfc8fbd3e13758e9e33d12b86f74adc1553d86045cea5e0ca1371f30eb",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_stock_s42_e4096_n32_i1000/events.out.tfevents.1791192987.zxro.368187.0",
+      "original_sha256": "3d5427f5702bc945c475437c0df9ea88721c80a155d1303fdbcd7332b4ebfa4f",
+      "current_sha256": "3d5427f5702bc945c475437c0df9ea88721c80a155d1303fdbcd7332b4ebfa4f",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_stock_s42_e4096_n32_i1000/model_850.pt",
+      "original_sha256": "899192b902e33ae3b74bcaa4051f825de924278e81786cca89bde3f9a236b976",
+      "current_sha256": "899192b902e33ae3b74bcaa4051f825de924278e81786cca89bde3f9a236b976",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_stock_s42_e4096_n32_i1000/source_mapping.json",
+      "original_sha256": "df93b8d0a4a44e66f71b75b7eb861ed7ccf0f59493b3a23672fb457467418375",
+      "current_sha256": "df93b8d0a4a44e66f71b75b7eb861ed7ccf0f59493b3a23672fb457467418375",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_stock_s42_e4096_n32_i1000/model_100.pt",
+      "original_sha256": "73bcd2c1479d17883f0a6b954186659844d25d45fec39ccd0fda5074fd623a2c",
+      "current_sha256": "73bcd2c1479d17883f0a6b954186659844d25d45fec39ccd0fda5074fd623a2c",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_stock_s42_e4096_n32_i1000/model_650.pt",
+      "original_sha256": "c98cc283d50db63f7118c5495309ce907c205810c015694d5bb634a4b2948de3",
+      "current_sha256": "c98cc283d50db63f7118c5495309ce907c205810c015694d5bb634a4b2948de3",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_stock_s42_e4096_n32_i1000/training_summary.json",
+      "original_sha256": "d76640001409b87d8c7042ad2a8f4177cc794561599f63e78f06687c39e66aba",
+      "current_sha256": "d76640001409b87d8c7042ad2a8f4177cc794561599f63e78f06687c39e66aba",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_stock_s42_e4096_n32_i1000/agent.json",
+      "original_sha256": "94967f95078a305548b941c6b488c82da94c14de5fd31c21fd03daa4d5708647",
+      "current_sha256": "94967f95078a305548b941c6b488c82da94c14de5fd31c21fd03daa4d5708647",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_stock_s42_e4096_n32_i1000/model_350.pt",
+      "original_sha256": "90130ea7cfa74c7e2b4b26528383d4a54d4e8d0f6bdd94a0df4201e1473d070d",
+      "current_sha256": "90130ea7cfa74c7e2b4b26528383d4a54d4e8d0f6bdd94a0df4201e1473d070d",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_stock_s42_e4096_n32_i1000/model_900.pt",
+      "original_sha256": "470017feb69570c999c0c2eca2ae9749f88019945472e639adcabd1d5d9872e0",
+      "current_sha256": "470017feb69570c999c0c2eca2ae9749f88019945472e639adcabd1d5d9872e0",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_stock_s42_e4096_n32_i1000/model_700.pt",
+      "original_sha256": "087968bf63b3f55a7f3aceb70182f7c194fcd0c847a4ef5fab01de6ca9cd8e0d",
+      "current_sha256": "087968bf63b3f55a7f3aceb70182f7c194fcd0c847a4ef5fab01de6ca9cd8e0d",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_stock_s42_e4096_n32_i1000/best_model.pt",
+      "original_sha256": "49a8a007f152ed9c63df616fbee12a866873be0ee0337ad83597d653ec9b3c06",
+      "current_sha256": "49a8a007f152ed9c63df616fbee12a866873be0ee0337ad83597d653ec9b3c06",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_stock_s42_e4096_n32_i1000/model_250.pt",
+      "original_sha256": "119bbfeac20aab78df03e6a509f16dcc795d26774d6db1dd4a70609cd54ee30d",
+      "current_sha256": "119bbfeac20aab78df03e6a509f16dcc795d26774d6db1dd4a70609cd54ee30d",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_stock_s42_e4096_n32_i1000/model_300.pt",
+      "original_sha256": "201252a21a03ca3ec94875c21688db8b5dea147efd07dae04f1ae989859ee450",
+      "current_sha256": "201252a21a03ca3ec94875c21688db8b5dea147efd07dae04f1ae989859ee450",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_stock_s42_e4096_n32_i1000/model_750.pt",
+      "original_sha256": "00d12cf8afe673d3833b20dc56f8e81af866563b2ae78e9df94ca2b1b6c3b799",
+      "current_sha256": "00d12cf8afe673d3833b20dc56f8e81af866563b2ae78e9df94ca2b1b6c3b799",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_stock_s42_e4096_n32_i1000/run.log",
+      "original_sha256": "8668993a5f650d7f6ab37b1c71a296f2e783d0ffaaea00507bbf0f9152428fac",
+      "current_sha256": "8668993a5f650d7f6ab37b1c71a296f2e783d0ffaaea00507bbf0f9152428fac",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_stock_s42_e4096_n32_i1000/model_0.pt",
+      "original_sha256": "3d9b84482880d0087cea5686fd279f3e979aec41ba971a0262e15d167196a29b",
+      "current_sha256": "3d9b84482880d0087cea5686fd279f3e979aec41ba971a0262e15d167196a29b",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_stock_s42_e4096_n32_i1000/model_600.pt",
+      "original_sha256": "91089ae8aca1fe0217e9f72c3e04d9c0a28ceb18c1bf7b09e8c09475e8f67019",
+      "current_sha256": "91089ae8aca1fe0217e9f72c3e04d9c0a28ceb18c1bf7b09e8c09475e8f67019",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_stock_s42_e4096_n32_i1000/model_999.pt",
+      "original_sha256": "a9a37bf6b677022b67b68a617e266aa713115bdd4a38613bbeffc860d64c13fc",
+      "current_sha256": "a9a37bf6b677022b67b68a617e266aa713115bdd4a38613bbeffc860d64c13fc",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_stock_s42_e4096_n32_i1000/model_550.pt",
+      "original_sha256": "d805b03a7f21dc7e137c85a63792275c0a1149769530fb48807136aab3204b4e",
+      "current_sha256": "d805b03a7f21dc7e137c85a63792275c0a1149769530fb48807136aab3204b4e",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_stock_s42_e4096_n32_i1000/model_950.pt",
+      "original_sha256": "1e2f2ae6132cd955f5ecfa775fe6d74fdedb45e04ea464cc2009fce21e98bb97",
+      "current_sha256": "1e2f2ae6132cd955f5ecfa775fe6d74fdedb45e04ea464cc2009fce21e98bb97",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_stock_s42_e4096_n32_i1000/model_150.pt",
+      "original_sha256": "38ef3038b87b5d1a6d8fdbef801ed9cad9bd7ccdc86e2bf56a9fd2c5863a966d",
+      "current_sha256": "38ef3038b87b5d1a6d8fdbef801ed9cad9bd7ccdc86e2bf56a9fd2c5863a966d",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_stock_s42_e4096_n32_i1000/model_800.pt",
+      "original_sha256": "782223949819864986873b480f82807ce01629ef8bf34b5bec9acc4b3f874ea1",
+      "current_sha256": "782223949819864986873b480f82807ce01629ef8bf34b5bec9acc4b3f874ea1",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_stock_s42_e4096_n32_i1000/model_400.pt",
+      "original_sha256": "fdee9e6a5ab9cce59d06a5b6058235c2e00139960601c11de1ed95ca6913bce7",
+      "current_sha256": "fdee9e6a5ab9cce59d06a5b6058235c2e00139960601c11de1ed95ca6913bce7",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_stock_s42_e4096_n32_i1000/model_200.pt",
+      "original_sha256": "3a86ae60084ecfbb7d998824f4f7dfd906112e52916cdd15885155d491f65da8",
+      "current_sha256": "3a86ae60084ecfbb7d998824f4f7dfd906112e52916cdd15885155d491f65da8",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_stock_s42_e4096_n32_i1000/model_50.pt",
+      "original_sha256": "cce7987bdf8a01142de1b50773f8526e805e38371e8b74d63dbf306cd5558923",
+      "current_sha256": "cce7987bdf8a01142de1b50773f8526e805e38371e8b74d63dbf306cd5558923",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_stock_s42_e4096_n32_i1000/training_curve.csv",
+      "original_sha256": "3db25af16f2ac8e59d989d61085452417af33d673d44ed7cff76691688d39cda",
+      "current_sha256": "3db25af16f2ac8e59d989d61085452417af33d673d44ed7cff76691688d39cda",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_stock_s42_e4096_n32_i1000/source_parity.json",
+      "original_sha256": "9c3312e4fd7016bfd3fdf2d42609843bd0440ac16656b3a9cf4aec47dcb1c96b",
+      "current_sha256": "9c3312e4fd7016bfd3fdf2d42609843bd0440ac16656b3a9cf4aec47dcb1c96b",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_stock_s42_e4096_n32_i1000/model_450.pt",
+      "original_sha256": "5f34b19ddbcf9bc63b24a75ee1cdd58d7dde9a86432fe2d1008ae3d7cd0e82aa",
+      "current_sha256": "5f34b19ddbcf9bc63b24a75ee1cdd58d7dde9a86432fe2d1008ae3d7cd0e82aa",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_stock_s42_e4096_n32_i1000/manifest.json",
+      "original_sha256": "2c3b72eb131c54273c4c7beae5a5175e94653cb0d592fa2a542ac0cf5cac82d9",
+      "current_sha256": "2c3b72eb131c54273c4c7beae5a5175e94653cb0d592fa2a542ac0cf5cac82d9",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_stock_s42_e4096_n32_i1000/model_500.pt",
+      "original_sha256": "34b5db9ab87e33132cf8d70c688e5f4b8b93ffaeaaf64e3d337a3b260ad8f76d",
+      "current_sha256": "34b5db9ab87e33132cf8d70c688e5f4b8b93ffaeaaf64e3d337a3b260ad8f76d",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_stock_s42_e4096_n32_i1000/config.json",
+      "original_sha256": "8bea539a103ceb8f23b702d8b16592626f96379d9de2aa77c7dba9db4d5a777c",
+      "current_sha256": "8bea539a103ceb8f23b702d8b16592626f96379d9de2aa77c7dba9db4d5a777c",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_stock_s42_e4096_n32_i1000/model_850.pt",
+      "original_sha256": "8bf29c20bb9141e488174a3dfafdbbbfe79ea099ae0b1d3bf2bf959a3a76d210",
+      "current_sha256": "8bf29c20bb9141e488174a3dfafdbbbfe79ea099ae0b1d3bf2bf959a3a76d210",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_stock_s42_e4096_n32_i1000/source_mapping.json",
+      "original_sha256": "bfa697307bb0a3317c44c1d3d863832c1967c704a84018cda45c88010f9dc0d1",
+      "current_sha256": "bfa697307bb0a3317c44c1d3d863832c1967c704a84018cda45c88010f9dc0d1",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_stock_s42_e4096_n32_i1000/model_100.pt",
+      "original_sha256": "1821a539aeeb0591112154445fcb54b54698a6fd4cb0026e512720cb7ea1e0bf",
+      "current_sha256": "1821a539aeeb0591112154445fcb54b54698a6fd4cb0026e512720cb7ea1e0bf",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_stock_s42_e4096_n32_i1000/model_650.pt",
+      "original_sha256": "e701249226f476602fd49bae7a676bb8fa25e5edadf8d3404b4f99893744bf13",
+      "current_sha256": "e701249226f476602fd49bae7a676bb8fa25e5edadf8d3404b4f99893744bf13",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_stock_s42_e4096_n32_i1000/training_summary.json",
+      "original_sha256": "84e61a17561b9de537f2a93efe85fc6cf690211f74d1d659104b84766a47ea70",
+      "current_sha256": "84e61a17561b9de537f2a93efe85fc6cf690211f74d1d659104b84766a47ea70",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_stock_s42_e4096_n32_i1000/agent.json",
+      "original_sha256": "59689c81588841feb0235cda2be4d55624d479899bf11ba9e6ce1b499faa9c2d",
+      "current_sha256": "59689c81588841feb0235cda2be4d55624d479899bf11ba9e6ce1b499faa9c2d",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_stock_s42_e4096_n32_i1000/model_350.pt",
+      "original_sha256": "ab3bd896c67e147bd0af758453c4026b23ba7f8f61d8d6077e7f326684b187e3",
+      "current_sha256": "ab3bd896c67e147bd0af758453c4026b23ba7f8f61d8d6077e7f326684b187e3",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_stock_s42_e4096_n32_i1000/model_900.pt",
+      "original_sha256": "b1f6761b9b95e3ed8c62810b2365af3228b70f4e331dcd43e3356408b67ed420",
+      "current_sha256": "b1f6761b9b95e3ed8c62810b2365af3228b70f4e331dcd43e3356408b67ed420",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_stock_s42_e4096_n32_i1000/model_700.pt",
+      "original_sha256": "e503a6258f4f9b511b6fc466e19643c1f585e35f1aa05a5d12a2533d4ed05232",
+      "current_sha256": "e503a6258f4f9b511b6fc466e19643c1f585e35f1aa05a5d12a2533d4ed05232",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_stock_s42_e4096_n32_i1000/best_model.pt",
+      "original_sha256": "82c7d0f781c37e0620230ff4b401835d54ef0a18102cdbc8c22c28bb576f57b9",
+      "current_sha256": "82c7d0f781c37e0620230ff4b401835d54ef0a18102cdbc8c22c28bb576f57b9",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_stock_s42_e4096_n32_i1000/model_250.pt",
+      "original_sha256": "d1adc1699d9cf1c11fc179f289aa23d17490ded5ad31ac8044a48631fdd90339",
+      "current_sha256": "d1adc1699d9cf1c11fc179f289aa23d17490ded5ad31ac8044a48631fdd90339",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_stock_s42_e4096_n32_i1000/model_300.pt",
+      "original_sha256": "69c35c6714a64c485396d083abb2b43f5ff89fec6d89bd8ff8f25be3859172f8",
+      "current_sha256": "69c35c6714a64c485396d083abb2b43f5ff89fec6d89bd8ff8f25be3859172f8",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_stock_s42_e4096_n32_i1000/model_750.pt",
+      "original_sha256": "b800af5a8c18c1802e568b5f3b0503a6cc47971a456ceeab3dce0995d98efa4e",
+      "current_sha256": "b800af5a8c18c1802e568b5f3b0503a6cc47971a456ceeab3dce0995d98efa4e",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_stock_s42_e4096_n32_i1000/model_0.pt",
+      "original_sha256": "4140e4b503a6024674c478de7588a6f96991a16c630f475da99490526516d691",
+      "current_sha256": "4140e4b503a6024674c478de7588a6f96991a16c630f475da99490526516d691",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_stock_s42_e4096_n32_i1000/events.out.tfevents.1791249612.zxro.382237.0",
+      "original_sha256": "0367d4a105da738ae7e0c45bfea2f8385664cfec577d4f35fa161a97ba316bca",
+      "current_sha256": "0367d4a105da738ae7e0c45bfea2f8385664cfec577d4f35fa161a97ba316bca",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_stock_s42_e4096_n32_i1000/model_600.pt",
+      "original_sha256": "6fd87e576e7f1f65b12340c46f73663c07b25a41af962c3d5c64332ebc4b5ee5",
+      "current_sha256": "6fd87e576e7f1f65b12340c46f73663c07b25a41af962c3d5c64332ebc4b5ee5",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_999.pt",
+      "original_sha256": "7b67b9115ecfa67909bdaf27232099bd1f2b1ccf14fe10b6737139568fe2a362",
+      "current_sha256": "7b67b9115ecfa67909bdaf27232099bd1f2b1ccf14fe10b6737139568fe2a362",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_550.pt",
+      "original_sha256": "d30b08554f72a789cbe76d4c3e93a593ed302d3a927f5ae331333155957c5f6d",
+      "current_sha256": "d30b08554f72a789cbe76d4c3e93a593ed302d3a927f5ae331333155957c5f6d",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_950.pt",
+      "original_sha256": "2056ade5e8fed899910eebe834987fb1d1342b5954d2c7635ded420e19973f54",
+      "current_sha256": "2056ade5e8fed899910eebe834987fb1d1342b5954d2c7635ded420e19973f54",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_150.pt",
+      "original_sha256": "c33daad543e77d4fc5e933fd436c6a3fe415ebeb715043f494ece4b3cfb203ce",
+      "current_sha256": "c33daad543e77d4fc5e933fd436c6a3fe415ebeb715043f494ece4b3cfb203ce",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_800.pt",
+      "original_sha256": "8157ee0b467f7a3c1190911adddc04df11400dd4bd110df8bed868cee0f187c8",
+      "current_sha256": "8157ee0b467f7a3c1190911adddc04df11400dd4bd110df8bed868cee0f187c8",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_400.pt",
+      "original_sha256": "2ecea25f75c4210bba689db9fe80a6e8e7c8885d13dad457e8370e63ba4bb3f7",
+      "current_sha256": "2ecea25f75c4210bba689db9fe80a6e8e7c8885d13dad457e8370e63ba4bb3f7",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_200.pt",
+      "original_sha256": "f53387efdd0b6a7b4c90d6dc2efb7844c6fcbc3cd42078d9fb737998538e4881",
+      "current_sha256": "f53387efdd0b6a7b4c90d6dc2efb7844c6fcbc3cd42078d9fb737998538e4881",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_50.pt",
+      "original_sha256": "d465425aab9b79fd67e11556ff22daf34d53e74e4e98eb080884db91a7332ead",
+      "current_sha256": "d465425aab9b79fd67e11556ff22daf34d53e74e4e98eb080884db91a7332ead",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/training_curve.csv",
+      "original_sha256": "a9396d6c947068f000e13fef2db96138dac69909d68e67e18b6d0fc0bd4f4399",
+      "current_sha256": "a9396d6c947068f000e13fef2db96138dac69909d68e67e18b6d0fc0bd4f4399",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/source_parity.json",
+      "original_sha256": "ccad4d0a4f474cb46ebf17c423b79cc7bbfa3a893be51b8f451f7bcc16fa17b8",
+      "current_sha256": "ccad4d0a4f474cb46ebf17c423b79cc7bbfa3a893be51b8f451f7bcc16fa17b8",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/events.out.tfevents.1791197547.zxro.371166.0",
+      "original_sha256": "8477cfee4113dacc7193103c894445db265a69421c99fea631455214a64c00e2",
+      "current_sha256": "8477cfee4113dacc7193103c894445db265a69421c99fea631455214a64c00e2",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_450.pt",
+      "original_sha256": "d7055e06dc574eafd01a8e07c5a3718de216cd806e625bc0b8bb924917259816",
+      "current_sha256": "d7055e06dc574eafd01a8e07c5a3718de216cd806e625bc0b8bb924917259816",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/manifest.json",
+      "original_sha256": "f111c738e9829bd13420841048b4e9ead43a17a4e197112cbd0bf8a80e05315e",
+      "current_sha256": "f111c738e9829bd13420841048b4e9ead43a17a4e197112cbd0bf8a80e05315e",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_500.pt",
+      "original_sha256": "fac2bb74ae4105434b5f5197493606a4ab0b0f19862580dd997a2bd3d5177e33",
+      "current_sha256": "fac2bb74ae4105434b5f5197493606a4ab0b0f19862580dd997a2bd3d5177e33",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/config.json",
+      "original_sha256": "e7d718267e6104465a80a34bc44895aa8503922693dc165b2e550337868cceac",
+      "current_sha256": "e7d718267e6104465a80a34bc44895aa8503922693dc165b2e550337868cceac",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_850.pt",
+      "original_sha256": "5fa04fc91d2daf0285617160e219165e2e6d7803b3c4ed67aed867c8a7af2571",
+      "current_sha256": "5fa04fc91d2daf0285617160e219165e2e6d7803b3c4ed67aed867c8a7af2571",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/source_mapping.json",
+      "original_sha256": "48b3b86c0d0f74891b6c710a648a35c076afcb7760d3cf133ccb5b053abc9144",
+      "current_sha256": "48b3b86c0d0f74891b6c710a648a35c076afcb7760d3cf133ccb5b053abc9144",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_100.pt",
+      "original_sha256": "14dc612cdea057451ae0c842c2c71a9f68b39cea00fbdcc61439154b0c806899",
+      "current_sha256": "14dc612cdea057451ae0c842c2c71a9f68b39cea00fbdcc61439154b0c806899",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_650.pt",
+      "original_sha256": "22bdd3620fb4f35f96a9ba169de1b5c72a70de0cfdfdbdbca50c5f590431647f",
+      "current_sha256": "22bdd3620fb4f35f96a9ba169de1b5c72a70de0cfdfdbdbca50c5f590431647f",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/training_summary.json",
+      "original_sha256": "21d46660ab4e522d306c6cca02f0cef412aa235d616a46e10b656ba2fa5bc95f",
+      "current_sha256": "21d46660ab4e522d306c6cca02f0cef412aa235d616a46e10b656ba2fa5bc95f",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/agent.json",
+      "original_sha256": "ed6610cb903cdef95e17906cba8f35026fd42ef176ef318f3eb51a842348854c",
+      "current_sha256": "ed6610cb903cdef95e17906cba8f35026fd42ef176ef318f3eb51a842348854c",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_350.pt",
+      "original_sha256": "ddc72e5866a430ce10e24c6cc717d9c83e2e3e8967ff4714e595c9ba5fa31a6c",
+      "current_sha256": "ddc72e5866a430ce10e24c6cc717d9c83e2e3e8967ff4714e595c9ba5fa31a6c",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_900.pt",
+      "original_sha256": "e8f716367d6088de93fdfac13521725cdd0dabe3ee1ba8e1475974049a87855f",
+      "current_sha256": "e8f716367d6088de93fdfac13521725cdd0dabe3ee1ba8e1475974049a87855f",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_700.pt",
+      "original_sha256": "4a49a0ba9b1f5e38f05e5a214a305db17b127995a2c49b8c08d841c454a2bd18",
+      "current_sha256": "4a49a0ba9b1f5e38f05e5a214a305db17b127995a2c49b8c08d841c454a2bd18",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/best_model.pt",
+      "original_sha256": "0471caaadd646feac85cb7bbed0d2c3668279d2d65db9507030a649895ea11b4",
+      "current_sha256": "0471caaadd646feac85cb7bbed0d2c3668279d2d65db9507030a649895ea11b4",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_250.pt",
+      "original_sha256": "138f2dd760fc7fb52f867abf273d7c556c1537a319606c9a021589b47bad33e9",
+      "current_sha256": "138f2dd760fc7fb52f867abf273d7c556c1537a319606c9a021589b47bad33e9",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_300.pt",
+      "original_sha256": "4bcdcf9a7bcccaaa28b2dfb6ff0047b985808c2cfe6475ac440c93451a838ee8",
+      "current_sha256": "4bcdcf9a7bcccaaa28b2dfb6ff0047b985808c2cfe6475ac440c93451a838ee8",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_750.pt",
+      "original_sha256": "deb539eddffd89b79a91617f69c70499f897789c99f1712fdf31aa292c64fa4d",
+      "current_sha256": "deb539eddffd89b79a91617f69c70499f897789c99f1712fdf31aa292c64fa4d",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/run.log",
+      "original_sha256": "b934db015c60395f5098e6115d39d613c891db7efd00ec7f03b90b91ce08c287",
+      "current_sha256": "b934db015c60395f5098e6115d39d613c891db7efd00ec7f03b90b91ce08c287",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_0.pt",
+      "original_sha256": "4b50c9cae25aa74a555fbdfe204e6a401832a0f2f7258df55fb95dd6255d4baa",
+      "current_sha256": "4b50c9cae25aa74a555fbdfe204e6a401832a0f2f7258df55fb95dd6255d4baa",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_600.pt",
+      "original_sha256": "0f561a8f9bbdb30c7dfe6349633bfb8832d981325b057c635cda2df28487c399",
+      "current_sha256": "0f561a8f9bbdb30c7dfe6349633bfb8832d981325b057c635cda2df28487c399",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/evaluate_depth_policy.py",
+      "original_sha256": "9d91be1f4835b5db2568f9c597f731959d784f976152648fa31e1ee85d647c7d",
+      "current_sha256": "9d91be1f4835b5db2568f9c597f731959d784f976152648fa31e1ee85d647c7d",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/run_sequence.py",
+      "original_sha256": "2a162dc4b3166d249af385681dd0a1f332e52e1ef9704380b0ba1fa7bef5ef56",
+      "current_sha256": "2a162dc4b3166d249af385681dd0a1f332e52e1ef9704380b0ba1fa7bef5ef56",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/comparison.md",
+      "original_sha256": "ded055ca3c769c58b8e6d320822db4685dd6e0e5d6594997716a3615fd9cc0d4",
+      "current_sha256": "ded055ca3c769c58b8e6d320822db4685dd6e0e5d6594997716a3615fd9cc0d4",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/finalize_results.py",
+      "original_sha256": "12542cc89859521a6288e1b5ae979ac18fe642bc455e69828a3797acc529727a",
+      "current_sha256": "12542cc89859521a6288e1b5ae979ac18fe642bc455e69828a3797acc529727a",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/commands.log",
+      "original_sha256": "8d87d04e4fa4872437e7018aa0b9a3da823bf760968ba178fb6a0c97d25908ae",
+      "current_sha256": "8d87d04e4fa4872437e7018aa0b9a3da823bf760968ba178fb6a0c97d25908ae",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/policy_manifest.json",
+      "original_sha256": "9333bf4c5e21ce52f6e214c68be07c82dbb14a94b42947709762429b889accfe",
+      "current_sha256": "9333bf4c5e21ce52f6e214c68be07c82dbb14a94b42947709762429b889accfe",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/comparison.csv",
+      "original_sha256": "216a4dd0af5adb899e1618a48119a2a8808a4d7130f2e37c91df3a86f9c19370",
+      "current_sha256": "216a4dd0af5adb899e1618a48119a2a8808a4d7130f2e37c91df3a86f9c19370",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/source_mapping.json",
+      "original_sha256": "db085a0f24dc988a6adec4344c10764e8f62e60316881783e3df7809607ef5e9",
+      "current_sha256": "db085a0f24dc988a6adec4344c10764e8f62e60316881783e3df7809607ef5e9",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/integrity.json",
+      "original_sha256": "c6aa979147b6e5df8094ab9b1a532416e3e1146c8e82e65eb7296d6796e26b9e",
+      "current_sha256": "c6aa979147b6e5df8094ab9b1a532416e3e1146c8e82e65eb7296d6796e26b9e",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/evaluate_depth_policy_initial.py",
+      "original_sha256": "1132b96d7860b9d2c23821cb721b81493b15fb6d6b3daf040ddd0db06933754b",
+      "current_sha256": "1132b96d7860b9d2c23821cb721b81493b15fb6d6b3daf040ddd0db06933754b",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/evaluate_depth_policy_smoke_version.py",
+      "original_sha256": "37f0d8a1a235bae7fd6bdf6b497c985f1a87489881035d98e9a41c0dafe59803",
+      "current_sha256": "37f0d8a1a235bae7fd6bdf6b497c985f1a87489881035d98e9a41c0dafe59803",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/main_metrics.csv",
+      "original_sha256": "bcd668c200c41d8350d3e0d6b5d4cef1fd7d7472b955e8e8ca5a142c63c3aae3",
+      "current_sha256": "bcd668c200c41d8350d3e0d6b5d4cef1fd7d7472b955e8e8ca5a142c63c3aae3",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/teammate2/main.log",
+      "original_sha256": "f2565ba62ef2587ffdde474159cd209dd4f050ea5f473319f3dd40ca6d966714",
+      "current_sha256": "f2565ba62ef2587ffdde474159cd209dd4f050ea5f473319f3dd40ca6d966714",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/teammate2/smoke.log",
+      "original_sha256": "82a320e6bd6cfb0a3660531908a2a20c2ae3a090c596d910adcacb3f04385d71",
+      "current_sha256": "82a320e6bd6cfb0a3660531908a2a20c2ae3a090c596d910adcacb3f04385d71",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/teammate2/smoke/source_hashes.json",
+      "original_sha256": "673ea20b6437404850001de82d4cb508ffe26e17c91aefd0363b63525c3e14a9",
+      "current_sha256": "673ea20b6437404850001de82d4cb508ffe26e17c91aefd0363b63525c3e14a9",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/teammate2/smoke/reward_components_step.csv",
+      "original_sha256": "cf27e8955d913b92839bdfc37dd79127e299641bf1a2d269e858344deafa63fa",
+      "current_sha256": "cf27e8955d913b92839bdfc37dd79127e299641bf1a2d269e858344deafa63fa",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/teammate2/smoke/config.json",
+      "original_sha256": "bbf7b59e5357e3e7a78056d59ecd85745e9e0cc1730b6e858421a8c9b5f3439d",
+      "current_sha256": "bbf7b59e5357e3e7a78056d59ecd85745e9e0cc1730b6e858421a8c9b5f3439d",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/teammate2/smoke/reward_components_summary.csv",
+      "original_sha256": "892647ae1753d4aeaba2ff049d149c968479b76d806d0f8bf198aa491034d533",
+      "current_sha256": "892647ae1753d4aeaba2ff049d149c968479b76d806d0f8bf198aa491034d533",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/teammate2/smoke/reward_components_episode.csv",
+      "original_sha256": "56986bd8a008d15601acbdf17411ff2e8ce7904d6f7a9b6ba718648b077fef91",
+      "current_sha256": "56986bd8a008d15601acbdf17411ff2e8ce7904d6f7a9b6ba718648b077fef91",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/teammate2/smoke/smoke.json",
+      "original_sha256": "9418d2fba31836424886a1c4d69701966bce4dc874c7970ba6b37381b70d39c4",
+      "current_sha256": "9418d2fba31836424886a1c4d69701966bce4dc874c7970ba6b37381b70d39c4",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/teammate2/main/source_hashes.json",
+      "original_sha256": "673ea20b6437404850001de82d4cb508ffe26e17c91aefd0363b63525c3e14a9",
+      "current_sha256": "673ea20b6437404850001de82d4cb508ffe26e17c91aefd0363b63525c3e14a9",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/teammate2/main/evaluation_seed24_n100.json",
+      "original_sha256": "2432281fe202e845ea87474919817f3ec160855f58bcc6e60a2111f49838f881",
+      "current_sha256": "2432281fe202e845ea87474919817f3ec160855f58bcc6e60a2111f49838f881",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/teammate2/main/reward_components_step.csv",
+      "original_sha256": "7edb548b6cf0c01197fefeeeec1b4b20bb9660145960804e831ae6da4048f009",
+      "current_sha256": "7edb548b6cf0c01197fefeeeec1b4b20bb9660145960804e831ae6da4048f009",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/teammate2/main/config.json",
+      "original_sha256": "4b7154d05fd61740d28dae4ab71e2f9ea4851e0dba869c3d653344ff3d812413",
+      "current_sha256": "4b7154d05fd61740d28dae4ab71e2f9ea4851e0dba869c3d653344ff3d812413",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/teammate2/main/reward_components_summary.csv",
+      "original_sha256": "1aa85ec391635f70e5f64fc1b224abc08ba8e3abdedd1250f930a87856b89299",
+      "current_sha256": "1aa85ec391635f70e5f64fc1b224abc08ba8e3abdedd1250f930a87856b89299",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/teammate2/main/reward_components_episode.csv",
+      "original_sha256": "2bfee3b6f26ee98bd43becc4e7df37b7b9d89ea39da5e9bf95eed0ed06424885",
+      "current_sha256": "2bfee3b6f26ee98bd43becc4e7df37b7b9d89ea39da5e9bf95eed0ed06424885",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/teammate1/main.log",
+      "original_sha256": "c5aeda92890d6adf011986e43ec892d4a1a1c2afd323da3a53e44022daad92ff",
+      "current_sha256": "c5aeda92890d6adf011986e43ec892d4a1a1c2afd323da3a53e44022daad92ff",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/teammate1/smoke/config.json",
+      "original_sha256": "375cb626ee41e48d6fa1f1ac9845c823d0d20137b356aa888e6fefb77ef58561",
+      "current_sha256": "375cb626ee41e48d6fa1f1ac9845c823d0d20137b356aa888e6fefb77ef58561",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/teammate1/smoke/initialization.log",
+      "original_sha256": "b1d10f38bf99cb282e0a8587cc7b1e87db4294985f3ff6ae99f5d48ce1d31b67",
+      "current_sha256": "b1d10f38bf99cb282e0a8587cc7b1e87db4294985f3ff6ae99f5d48ce1d31b67",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/teammate1/smoke_action_check/source_hashes.json",
+      "original_sha256": "7b87241aa044406ddeaf6c94d99f628b57e1579329375e1149bf836190128744",
+      "current_sha256": "7b87241aa044406ddeaf6c94d99f628b57e1579329375e1149bf836190128744",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/teammate1/smoke_action_check/reward_components_step.csv",
+      "original_sha256": "91b1991a31586439bd5bc95333c2c25b42bf7cccd0ea55f0dd1d3caf59dc40ce",
+      "current_sha256": "91b1991a31586439bd5bc95333c2c25b42bf7cccd0ea55f0dd1d3caf59dc40ce",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/teammate1/smoke_action_check/config.json",
+      "original_sha256": "d6574d85ffff2decdeaf7491dd35878f2c6bcf8420e130f34071352f6af443f0",
+      "current_sha256": "d6574d85ffff2decdeaf7491dd35878f2c6bcf8420e130f34071352f6af443f0",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/teammate1/smoke_action_check/reward_components_summary.csv",
+      "original_sha256": "d7b7aa50e56f495318c0cd34da2e129ea0927a3626df1f00d592fcec9c145089",
+      "current_sha256": "d7b7aa50e56f495318c0cd34da2e129ea0927a3626df1f00d592fcec9c145089",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/teammate1/smoke_action_check/reward_components_episode.csv",
+      "original_sha256": "fbe4dc088fed4debe92a6e6cf649c38c4ceef13460fa48bccb95795be3bb6b67",
+      "current_sha256": "fbe4dc088fed4debe92a6e6cf649c38c4ceef13460fa48bccb95795be3bb6b67",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/teammate1/smoke_action_check/evaluation.log",
+      "original_sha256": "6fedb4bb86012597255262d0bccf5841e21696b1e21e963e66fe0267431f1112",
+      "current_sha256": "6fedb4bb86012597255262d0bccf5841e21696b1e21e963e66fe0267431f1112",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/teammate1/smoke_action_check/smoke.json",
+      "original_sha256": "f3a67f72319ac2437ed27a7f2a177a3072f739282cd07f253b9b593b35e2f1bc",
+      "current_sha256": "f3a67f72319ac2437ed27a7f2a177a3072f739282cd07f253b9b593b35e2f1bc",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/teammate1/main/source_hashes.json",
+      "original_sha256": "673ea20b6437404850001de82d4cb508ffe26e17c91aefd0363b63525c3e14a9",
+      "current_sha256": "673ea20b6437404850001de82d4cb508ffe26e17c91aefd0363b63525c3e14a9",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/teammate1/main/evaluation_seed24_n100.json",
+      "original_sha256": "869563d2b7bf127c5108e6d8d4f80b8068733e4d5dcfb1a46f455294fb23ec31",
+      "current_sha256": "869563d2b7bf127c5108e6d8d4f80b8068733e4d5dcfb1a46f455294fb23ec31",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/teammate1/main/reward_components_step.csv",
+      "original_sha256": "96ee5b488393cb8df28bb513154e0d229c9d23f10add53fca9bc3f08f957fe6a",
+      "current_sha256": "96ee5b488393cb8df28bb513154e0d229c9d23f10add53fca9bc3f08f957fe6a",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/teammate1/main/config.json",
+      "original_sha256": "1f692bb4bf1b962d10beee5af63fb3e57d64c2d272e52ec3e2f997013e638646",
+      "current_sha256": "1f692bb4bf1b962d10beee5af63fb3e57d64c2d272e52ec3e2f997013e638646",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/teammate1/main/reward_components_summary.csv",
+      "original_sha256": "20003f35c5c31e9f59a7922626c9b9b7be1fba2d5566bd6e956568d9880f825e",
+      "current_sha256": "20003f35c5c31e9f59a7922626c9b9b7be1fba2d5566bd6e956568d9880f825e",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/teammate1/main/reward_components_episode.csv",
+      "original_sha256": "38ed19787f75752084d2994ed5878954eb409940bdf63795a54913778bbb221d",
+      "current_sha256": "38ed19787f75752084d2994ed5878954eb409940bdf63795a54913778bbb221d",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/teammate1/smoke_diagnostic/config.json",
+      "original_sha256": "13465025aa0a10546f995c8ecf1fe34c215e95c5709d49e5b40e236248736a3e",
+      "current_sha256": "13465025aa0a10546f995c8ecf1fe34c215e95c5709d49e5b40e236248736a3e",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/teammate1/smoke_diagnostic/initialization.log",
+      "original_sha256": "d59c6c15b2fa8b2f8fe3b3c8469717c180e1ef9830de767a29310fdd7c37ffae",
+      "current_sha256": "d59c6c15b2fa8b2f8fe3b3c8469717c180e1ef9830de767a29310fdd7c37ffae",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/final_unseen/main.log",
+      "original_sha256": "6a6505913b72822525bcb104be8523c42e6293cd32a8560b621cac2f50fa65c2",
+      "current_sha256": "6a6505913b72822525bcb104be8523c42e6293cd32a8560b621cac2f50fa65c2",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/final_unseen/smoke.log",
+      "original_sha256": "cbdd1c9b7977e83bfb06a3df5913e7b2eb9ea528f70939c9a65fd03d28925a03",
+      "current_sha256": "cbdd1c9b7977e83bfb06a3df5913e7b2eb9ea528f70939c9a65fd03d28925a03",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/final_unseen/smoke/source_hashes.json",
+      "original_sha256": "673ea20b6437404850001de82d4cb508ffe26e17c91aefd0363b63525c3e14a9",
+      "current_sha256": "673ea20b6437404850001de82d4cb508ffe26e17c91aefd0363b63525c3e14a9",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/final_unseen/smoke/reward_components_step.csv",
+      "original_sha256": "5a793117fe090a4fe9b5ad18b2179221d3981b6773c3b81bd59cb2644267d4c9",
+      "current_sha256": "5a793117fe090a4fe9b5ad18b2179221d3981b6773c3b81bd59cb2644267d4c9",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/final_unseen/smoke/config.json",
+      "original_sha256": "ea1076ee6d994ea2668773c8b52fe13604e283a7aa0fb418088b88c57749d717",
+      "current_sha256": "ea1076ee6d994ea2668773c8b52fe13604e283a7aa0fb418088b88c57749d717",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/final_unseen/smoke/reward_components_summary.csv",
+      "original_sha256": "666a9794c26771d81873f66a9fef5340b87ca4221a381cd6ac19b142fdf7961e",
+      "current_sha256": "666a9794c26771d81873f66a9fef5340b87ca4221a381cd6ac19b142fdf7961e",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/final_unseen/smoke/reward_components_episode.csv",
+      "original_sha256": "648aa54f9918824170b635819ec471db99b2a9aa837432f99972e15f68adab2d",
+      "current_sha256": "648aa54f9918824170b635819ec471db99b2a9aa837432f99972e15f68adab2d",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/final_unseen/smoke/smoke.json",
+      "original_sha256": "6bf2e260c1fb13d7f8742347d352a59cb0312d74afd217eb7ccc85a8d99ffb76",
+      "current_sha256": "6bf2e260c1fb13d7f8742347d352a59cb0312d74afd217eb7ccc85a8d99ffb76",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/final_unseen/main/source_hashes.json",
+      "original_sha256": "673ea20b6437404850001de82d4cb508ffe26e17c91aefd0363b63525c3e14a9",
+      "current_sha256": "673ea20b6437404850001de82d4cb508ffe26e17c91aefd0363b63525c3e14a9",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/final_unseen/main/evaluation_seed24_n100.json",
+      "original_sha256": "824321a300d05a739737024a2a4268c3117c1da5445c3b45076b06045ac430df",
+      "current_sha256": "824321a300d05a739737024a2a4268c3117c1da5445c3b45076b06045ac430df",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/final_unseen/main/reward_components_step.csv",
+      "original_sha256": "55ebca3b1b6e6b4a561a9b173c836daa91d8d84efb6b2e39085b3deef8f5d531",
+      "current_sha256": "55ebca3b1b6e6b4a561a9b173c836daa91d8d84efb6b2e39085b3deef8f5d531",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/final_unseen/main/config.json",
+      "original_sha256": "29b31efaf7459ef149514e6f66bb283074cecaf3fee3fbaa9c87ce04e739b291",
+      "current_sha256": "29b31efaf7459ef149514e6f66bb283074cecaf3fee3fbaa9c87ce04e739b291",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/final_unseen/main/reward_components_summary.csv",
+      "original_sha256": "a67b51aa2556c12582b4fa63514a874b8b9e04bd0b82b8289ad07c8f2d948eb8",
+      "current_sha256": "a67b51aa2556c12582b4fa63514a874b8b9e04bd0b82b8289ad07c8f2d948eb8",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "cross_eval_team1_policy/final_unseen/main/reward_components_episode.csv",
+      "original_sha256": "a4f07a04a888a512506d67041195f0cfb5278b8b18a91e29ef6c306cf036b344",
+      "current_sha256": "a4f07a04a888a512506d67041195f0cfb5278b8b18a91e29ef6c306cf036b344",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "validation_compare/postprocess_source.py",
+      "original_sha256": "bd50ebf5fa914621b84e9b7b5c0d6e7b8ed382cf026e7a3a4ba539fbe6e7828b",
+      "current_sha256": "bd50ebf5fa914621b84e9b7b5c0d6e7b8ed382cf026e7a3a4ba539fbe6e7828b",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "validation_compare/smoke_seed24.log",
+      "original_sha256": "14e219e1770101d4e6725e4be74923bb5b3e14647de607833d64bec46dc4bf0b",
+      "current_sha256": "14e219e1770101d4e6725e4be74923bb5b3e14647de607833d64bec46dc4bf0b",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "validation_compare/video_seed24_env0.log",
+      "original_sha256": "fc116556367a8271640721e3bc893c7c96f9a949eae478dcf57f9373443ba1ec",
+      "current_sha256": "fc116556367a8271640721e3bc893c7c96f9a949eae478dcf57f9373443ba1ec",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "validation_compare/evaluation_seed24_n100.json",
+      "original_sha256": "4e9a99426a38d9536b923f38e465097d04c38f688fd6dad1d2a74b15b5b5a0d6",
+      "current_sha256": "4e9a99426a38d9536b923f38e465097d04c38f688fd6dad1d2a74b15b5b5a0d6",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "validation_compare/commands.log",
+      "original_sha256": "5e44a5cabc9199391e7dbaecf58b4018d9da4e005e0b062e5ee9fb744c9d3923",
+      "current_sha256": "5e44a5cabc9199391e7dbaecf58b4018d9da4e005e0b062e5ee9fb744c9d3923",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "validation_compare/evaluation_seed24_n100.log",
+      "original_sha256": "2709eae4db19c0497bb7dd17674b881046198120f725311c6ce83b1f0d20eda4",
+      "current_sha256": "2709eae4db19c0497bb7dd17674b881046198120f725311c6ce83b1f0d20eda4",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "validation_compare/source_mapping.json",
+      "original_sha256": "80edfa405e3a9088d2f602195bc06c8a8b8e1fd4e1656bc4d052dc65f3a2cf9f",
+      "current_sha256": "80edfa405e3a9088d2f602195bc06c8a8b8e1fd4e1656bc4d052dc65f3a2cf9f",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "validation_compare/environment_provenance.md",
+      "original_sha256": "d4b417220709c5dba291c81e92bed91a98dc42411b2ee7dd384cf7c60dc08781",
+      "current_sha256": "d4b417220709c5dba291c81e92bed91a98dc42411b2ee7dd384cf7c60dc08781",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "validation_compare/integrity.json",
+      "original_sha256": "209894aed0cd7b6fc5cdb1e0fe8f5d453fdd0a203163c2e8ee24c0596056824d",
+      "current_sha256": "209894aed0cd7b6fc5cdb1e0fe8f5d453fdd0a203163c2e8ee24c0596056824d",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "validation_compare/reward_components_seed24_n100.csv",
+      "original_sha256": "af80186e7c1729902395d88c09375a95a4c49bb5cf00f4a8a735c96126f5cf37",
+      "current_sha256": "af80186e7c1729902395d88c09375a95a4c49bb5cf00f4a8a735c96126f5cf37",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "validation_compare/contact_teammate1_seed24_env0.mp4",
+      "original_sha256": "b78b89a5fe37cf5b6b7f9189e39270adab4f93fa941b628c7fc691d4bbb30d49",
+      "current_sha256": "b78b89a5fe37cf5b6b7f9189e39270adab4f93fa941b628c7fc691d4bbb30d49",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "validation_compare/video_manifest.json",
+      "original_sha256": "983448a6234a30a120185022391b8dbac266d7bb04aeebcfb77f89f1beaf6a93",
+      "current_sha256": "983448a6234a30a120185022391b8dbac266d7bb04aeebcfb77f89f1beaf6a93",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "validation_compare/smoke_seed24.json",
+      "original_sha256": "3ed31b478cf2023ac4d0fac187ae625916789cba26e1d293fae5ad696917ec72",
+      "current_sha256": "3ed31b478cf2023ac4d0fac187ae625916789cba26e1d293fae5ad696917ec72",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "validation_compare/reward_decomposition_summary.md",
+      "original_sha256": "24ca08ab0c706ef2e5b11f39ddfc41fe32722284a6d9e6722f31f0ad0885512f",
+      "current_sha256": "24ca08ab0c706ef2e5b11f39ddfc41fe32722284a6d9e6722f31f0ad0885512f",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "validation_compare/reward_components_episode_seed24_n100.csv",
+      "original_sha256": "39feb7c5512657b18e553a025a2b76b752f40a6ff29b393d9709ddeaaa4b518c",
+      "current_sha256": "39feb7c5512657b18e553a025a2b76b752f40a6ff29b393d9709ddeaaa4b518c",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "validation_compare/validation.json",
+      "original_sha256": "8f03a58cdafe314b565eacef9fdf6d1d6d9ef6689154d661247f5bec62591303",
+      "current_sha256": "8f03a58cdafe314b565eacef9fdf6d1d6d9ef6689154d661247f5bec62591303",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "validation_compare/video_seed24_env0/source_hashes.json",
+      "original_sha256": "df78be478b180dac2d63bebba63d3de307e08495e529eb597a8120e8d30f8c76",
+      "current_sha256": "df78be478b180dac2d63bebba63d3de307e08495e529eb597a8120e8d30f8c76",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "validation_compare/video_seed24_env0/reward_components_step.csv",
+      "original_sha256": "e8b2495737d424f20560e51de93bf8cb838eabc3963191466b656b20b62c0f38",
+      "current_sha256": "e8b2495737d424f20560e51de93bf8cb838eabc3963191466b656b20b62c0f38",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "validation_compare/video_seed24_env0/config.json",
+      "original_sha256": "49985fba440b0106427a6a9fb75e89dea17d38807b5b8f0c5f4198adb4948196",
+      "current_sha256": "49985fba440b0106427a6a9fb75e89dea17d38807b5b8f0c5f4198adb4948196",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "validation_compare/video_seed24_env0/reward_components_summary.csv",
+      "original_sha256": "5b87b95d08bb330e657eeee0c8b7b2db1c9b5b766d91fe12d8181a4bcc818d10",
+      "current_sha256": "5b87b95d08bb330e657eeee0c8b7b2db1c9b5b766d91fe12d8181a4bcc818d10",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "validation_compare/video_seed24_env0/reward_components_episode.csv",
+      "original_sha256": "7f2a71cc06f15769ea2fd3fad1cb937adf0a4fe67b0be5bad230fb26ab502f64",
+      "current_sha256": "7f2a71cc06f15769ea2fd3fad1cb937adf0a4fe67b0be5bad230fb26ab502f64",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "validation_compare/video_seed24_env0/evaluation.json",
+      "original_sha256": "6e277bee6aafa698aac60dd5e07e1effbaee2dc24eef6d130006acf4ce9d99ed",
+      "current_sha256": "6e277bee6aafa698aac60dd5e07e1effbaee2dc24eef6d130006acf4ce9d99ed",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "validation_compare/video_seed24_env0/visualization.json",
+      "original_sha256": "bc0b83cb7536e15b5ec87ba02d840f1f6ed34597654d2a02395991f8311c3757",
+      "current_sha256": "bc0b83cb7536e15b5ec87ba02d840f1f6ed34597654d2a02395991f8311c3757",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "validation_compare/video_seed24_env0/video/contact_teammate1_seed24_env0-step-0.mp4",
+      "original_sha256": "b78b89a5fe37cf5b6b7f9189e39270adab4f93fa941b628c7fc691d4bbb30d49",
+      "current_sha256": "b78b89a5fe37cf5b6b7f9189e39270adab4f93fa941b628c7fc691d4bbb30d49",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "validation_compare/evaluation_seed24_n100/source_hashes.json",
+      "original_sha256": "df78be478b180dac2d63bebba63d3de307e08495e529eb597a8120e8d30f8c76",
+      "current_sha256": "df78be478b180dac2d63bebba63d3de307e08495e529eb597a8120e8d30f8c76",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "validation_compare/evaluation_seed24_n100/reward_components_step.csv",
+      "original_sha256": "83079685ed3011fa39bfc23fbb7252917b1d220ec57f78826d442b95c8dcc040",
+      "current_sha256": "83079685ed3011fa39bfc23fbb7252917b1d220ec57f78826d442b95c8dcc040",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "validation_compare/evaluation_seed24_n100/config.json",
+      "original_sha256": "9fe4088313b7bddce50844915e7dd02fd1f9d2c6399c6007d31d4119c21abcf2",
+      "current_sha256": "9fe4088313b7bddce50844915e7dd02fd1f9d2c6399c6007d31d4119c21abcf2",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "validation_compare/evaluation_seed24_n100/reward_components_summary.csv",
+      "original_sha256": "af80186e7c1729902395d88c09375a95a4c49bb5cf00f4a8a735c96126f5cf37",
+      "current_sha256": "af80186e7c1729902395d88c09375a95a4c49bb5cf00f4a8a735c96126f5cf37",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "validation_compare/evaluation_seed24_n100/reward_components_episode.csv",
+      "original_sha256": "39feb7c5512657b18e553a025a2b76b752f40a6ff29b393d9709ddeaaa4b518c",
+      "current_sha256": "39feb7c5512657b18e553a025a2b76b752f40a6ff29b393d9709ddeaaa4b518c",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "validation_compare/evaluation_seed24_n100/evaluation.json",
+      "original_sha256": "4e9a99426a38d9536b923f38e465097d04c38f688fd6dad1d2a74b15b5b5a0d6",
+      "current_sha256": "4e9a99426a38d9536b923f38e465097d04c38f688fd6dad1d2a74b15b5b5a0d6",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "validation_compare/smoke_seed24/source_hashes.json",
+      "original_sha256": "df78be478b180dac2d63bebba63d3de307e08495e529eb597a8120e8d30f8c76",
+      "current_sha256": "df78be478b180dac2d63bebba63d3de307e08495e529eb597a8120e8d30f8c76",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "validation_compare/smoke_seed24/reward_components_step.csv",
+      "original_sha256": "fbc2d39bc3e91527d1f622fcf7db27975b00cfea12e4ff3a2f671565b9b1985a",
+      "current_sha256": "fbc2d39bc3e91527d1f622fcf7db27975b00cfea12e4ff3a2f671565b9b1985a",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "validation_compare/smoke_seed24/config.json",
+      "original_sha256": "ba00f64731beb5eb8f0282a28510c09ccdb982678c83a274288d0d5fe63f7fa0",
+      "current_sha256": "ba00f64731beb5eb8f0282a28510c09ccdb982678c83a274288d0d5fe63f7fa0",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "validation_compare/smoke_seed24/reward_components_summary.csv",
+      "original_sha256": "407113f03ddccaf18d9bdf3e1b1ac8a5a5f6f163bb52d89420d3a0cfa62e5525",
+      "current_sha256": "407113f03ddccaf18d9bdf3e1b1ac8a5a5f6f163bb52d89420d3a0cfa62e5525",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "validation_compare/smoke_seed24/reward_components_episode.csv",
+      "original_sha256": "4f3aa3a8638619f8a0cb2aa0d66f8ba58a1c7e694764375a6de14b094aa7ae32",
+      "current_sha256": "4f3aa3a8638619f8a0cb2aa0d66f8ba58a1c7e694764375a6de14b094aa7ae32",
+      "unchanged": true,
+      "approved_change": false
+    },
+    {
+      "path": "validation_compare/smoke_seed24/evaluation.json",
+      "original_sha256": "3ed31b478cf2023ac4d0fac187ae625916789cba26e1d293fae5ad696917ec72",
+      "current_sha256": "3ed31b478cf2023ac4d0fac187ae625916789cba26e1d293fae5ad696917ec72",
+      "unchanged": true,
+      "approved_change": false
+    }
+  ],
+  "framework_committed_files_checked": 1816,
+  "approved_framework_overlays": [
+    ".gitattributes",
+    ".gitignore",
+    "README.md",
+    "pyproject.toml",
+    "scripts/reinforcement_learning/rsl_rl/cli_args.py",
+    "scripts/reinforcement_learning/rsl_rl/play.py",
+    "scripts/reinforcement_learning/rsl_rl/train.py"
+  ],
+  "original_preservation": {
+    "/home/zxro/teammate_ant_rl": {
+      "state_unchanged": true,
+      "state": {
+        "head": "4513d7cae5d4fdc6af9288349531e6b49422f7b1\n",
+        "branch": "observation-ablation\n",
+        "status": "?? cross_eval_team1_policy/\n?? scripts/evaluate_contact_teammate1.py\n?? validation_compare/\n",
+        "remotes": "origin\thttps://github.com/dding222/ant_rl.git (fetch)\norigin\thttps://github.com/dding222/ant_rl.git (push)\n"
+      },
+      "inventory_entries": 873,
+      "inventory_differences": []
+    },
+    "/home/zxro/arena/IsaacLab": {
+      "state_unchanged": true,
+      "state": {
+        "head": "3c6e67bb5c7ada942a6d1884ab69338f57596f77\n",
+        "branch": "ant-assignment\n",
+        "status": " M scripts/reinforcement_learning/rsl_rl/play.py\n M source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/__init__.py\n?? scripts/reinforcement_learning/rsl_rl/diagnose_ant_progress.py\n?? scripts/reinforcement_learning/rsl_rl/play_one_episode.py\n?? source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/agents/rsl_rl_ppo_contact_cfg.py\n?? source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/agents/rsl_rl_ppo_lr_cfg.py\n?? source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_contact_observations.py\n?? source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_friction_random_env_cfg.py\n?? source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_ood_env_cfg.py\n?? source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_ood_terrain_env_cfg.py\n?? source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_terrain_heightscan_env_cfg.py\n",
+        "remotes": "origin\thttps://github.com/isaac-sim/IsaacLab.git (fetch)\norigin\thttps://github.com/isaac-sim/IsaacLab.git (push)\n"
+      },
+      "inventory_entries": 2975,
+      "inventory_differences": []
+    },
+    "/home/zxro/IsaacLab_RS": {
+      "state_unchanged": true,
+      "state": {
+        "head": "5a7f4e3c8c11a68be60f5ef567869e21f743c2ca\n",
+        "branch": "course-assignment\n",
+        "status": " M .gitignore\n?? docs/videos/training_base.mp4\n?? docs/videos/training_contact.mp4\n?? docs/videos/training_diverse.mp4\n?? docs/videos/training_heightscan.mp4\n?? docs/videos/training_rollout_manifest.json\n",
+        "remotes": "origin\thttps://github.com/zxro-z/IsaacLab_RS_Assignment1.git (fetch)\norigin\thttps://github.com/zxro-z/IsaacLab_RS_Assignment1.git (push)\nupstream\thttps://github.com/isaac-sim/IsaacLab.git (fetch)\nupstream\thttps://github.com/isaac-sim/IsaacLab.git (push)\n"
+      }
+    }
+  },
+  "edited_file_whitespace_issues": [],
+  "path_audit_categories": {
+    "C_DOCUMENTATION": 7,
+    "A_HISTORICAL_OR_ARCHIVED_REFERENCE": 5914,
+    "B_ACTIVE_WITH_DOCUMENTED_OVERRIDE": 5,
+    "A_HISTORICAL_RECORD_KEY": 1
+  },
+  "reproduced_policy_count": 3,
+  "all_three_evaluation_outputs_complete": true,
+  "DepthCam_status": "RESULTS / PROVENANCE ONLY",
+  "Git_LFS_configuration": "Upstream attributes preserved; submission filter declarations removed; no LFS introduced."
+}

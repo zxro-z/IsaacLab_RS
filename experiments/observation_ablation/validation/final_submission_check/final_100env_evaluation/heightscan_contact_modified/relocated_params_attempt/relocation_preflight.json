@@ -1,0 +1,45 @@
+{
+  "PASS": true,
+  "path_only_change_verified_by_reverse_replacement_sha256": true,
+  "YAML_hashes": [
+    {
+      "source": "/home/zxro/teammate_ant_rl/logs/rsl_rl/ant/v3_depth/params/env.yaml",
+      "destination": "logs/rsl_rl/ant/modified/params/env.yaml",
+      "sha256": "2a1d81c4824d8fb6aaac56d920bdd7c8df31e3f09b827344fb409d666fbb9d8e",
+      "bytes": 20229,
+      "training_hash_match": true,
+      "evaluation_hash_match": true,
+      "evidence": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/source_mapping.json"
+    },
+    {
+      "source": "/home/zxro/teammate_ant_rl/logs/rsl_rl/ant/v3_depth/params/reward_weights.yaml",
+      "destination": "logs/rsl_rl/ant/modified/params/reward_weights.yaml",
+      "sha256": "2caf923da1f64d35ecfc1100d0b52dd2a50847221b062190819fcf47ffb5d969",
+      "bytes": 217,
+      "training_hash_match": true,
+      "evaluation_hash_match": true,
+      "evidence": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/source_mapping.json"
+    }
+  ],
+  "saved_reward_weights_match_canonical_evaluator": true,
+  "saved_env_TotalReward_mapping_matches": true,
+  "checkpoint_sha256": "0471caaadd646feac85cb7bbed0d2c3668279d2d65db9507030a649895ea11b4",
+  "checkpoint_iteration": 788,
+  "checkpoint_actor_input_dimension": 126,
+  "git_provenance": {
+    "git_commit": "4513d7cae5d4fdc6af9288349531e6b49422f7b1",
+    "git_commit_source": "preserved_submission_provenance",
+    "repository_snapshot": true
+  },
+  "preserved_evaluation_settings": {
+    "task": "Ant-rl-Ablation-HeightScan-Contact-ModifiedReward-v0",
+    "seed": 24,
+    "terrain_seed": 42,
+    "num_envs": 100,
+    "deterministic_mean_action": true,
+    "first_episode_only": true,
+    "episode_seconds": 16,
+    "control_steps": 960
+  },
+  "py_compile": "PASS"
+}

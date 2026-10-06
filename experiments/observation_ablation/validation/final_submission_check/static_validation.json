@@ -1,0 +1,657 @@
+{
+  "phase": "3 static validation",
+  "errors": [],
+  "path_audit_counts": {
+    "B ACTIVE EXECUTABLE DEFAULT/REFERENCE": 22,
+    "A HISTORICAL PROVENANCE": 1062,
+    "C README/DOCUMENTATION": 8
+  },
+  "python_files_compiled": 38,
+  "json_files_parsed": 195,
+  "csv_files_read": 65,
+  "nonfinite_count": 0,
+  "nonfinite_examples": [],
+  "copied_hash_mismatches": [],
+  "checkpoints": [
+    {
+      "file": "experiments/observation_ablation/heightscan_4096x32x1000/checkpoints/best_model.pt",
+      "bytes": 3619381,
+      "hash_matches_summary": true
+    },
+    {
+      "file": "experiments/observation_ablation/heightscan_4096x32x1000/checkpoints/final_model.pt",
+      "bytes": 3619307,
+      "hash_matches_summary": true
+    },
+    {
+      "file": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/checkpoints/best_model.pt",
+      "bytes": 3657781,
+      "hash_matches_summary": true
+    },
+    {
+      "file": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/checkpoints/final_model.pt",
+      "bytes": 3657707,
+      "hash_matches_summary": true
+    },
+    {
+      "file": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/checkpoints/best_model.pt",
+      "bytes": 3657781,
+      "hash_matches_summary": true
+    },
+    {
+      "file": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/checkpoints/final_model.pt",
+      "bytes": 3657707,
+      "hash_matches_summary": true
+    }
+  ],
+  "custom_helper_hashes": {
+    "ant_contact_observations.py": "e463d5bf8866b2d6b05caab9a651112e13053c7972ad0cb63853f747e977a132",
+    "ant_terrain_heightscan_env_cfg.py": "e93ca45ac82d7687a1cee28c4d2178d7daf193544a0beb44911feac578f910e7",
+    "ant_friction_random_env_cfg.py": "15b6a2807aa3c71bc052a3cfc741ec760a80ac41c8bc2496112163fbe4b9fa0a",
+    "ant_ood_terrain_env_cfg.py": "efe5cc160fc3a82244d7c7c18382d194c74e61476177a4113d1da9aa33630d0a"
+  },
+  "source_mapping_checks": [
+    {
+      "experiment": "heightscan_4096x32x1000",
+      "group": "training",
+      "file": "scripts/observation_ablation_budget.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_4096x32x1000",
+      "group": "training",
+      "file": "source/ant/ablation_env_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_4096x32x1000",
+      "group": "training",
+      "file": "source/ant/agents/ablation_ppo_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_4096x32x1000",
+      "group": "training",
+      "file": "source/ant/agents/ablation_budget_ppo_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_4096x32x1000",
+      "group": "training",
+      "file": "source/ant/ant_env_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_4096x32x1000",
+      "group": "training",
+      "file": "source/ant/agents/rsl_rl_ppo_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_4096x32x1000",
+      "group": "training",
+      "file": "source/ant/__init__.py",
+      "match": false
+    },
+    {
+      "experiment": "heightscan_4096x32x1000",
+      "group": "training",
+      "file": "source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_env_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_4096x32x1000",
+      "group": "training",
+      "file": "source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_terrain_heightscan_env_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_4096x32x1000",
+      "group": "training",
+      "file": "source/isaaclab/isaaclab/managers/reward_manager.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_4096x32x1000",
+      "group": "training",
+      "file": "source/isaaclab/isaaclab/envs/mdp/observations.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_4096x32x1000",
+      "group": "training",
+      "file": "source/isaaclab/isaaclab/sensors/ray_caster/ray_caster.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_4096x32x1000",
+      "group": "training",
+      "file": "source/isaaclab/isaaclab/sensors/ray_caster/patterns/patterns.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_4096x32x1000",
+      "group": "evaluation",
+      "file": "scripts/observation_ablation_budget.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_4096x32x1000",
+      "group": "evaluation",
+      "file": "source/ant/ablation_env_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_4096x32x1000",
+      "group": "evaluation",
+      "file": "source/ant/agents/ablation_ppo_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_4096x32x1000",
+      "group": "evaluation",
+      "file": "source/ant/agents/ablation_budget_ppo_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_4096x32x1000",
+      "group": "evaluation",
+      "file": "source/ant/ant_env_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_4096x32x1000",
+      "group": "evaluation",
+      "file": "source/ant/agents/rsl_rl_ppo_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_4096x32x1000",
+      "group": "evaluation",
+      "file": "source/ant/__init__.py",
+      "match": false
+    },
+    {
+      "experiment": "heightscan_4096x32x1000",
+      "group": "evaluation",
+      "file": "source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_env_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_4096x32x1000",
+      "group": "evaluation",
+      "file": "source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_terrain_heightscan_env_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_4096x32x1000",
+      "group": "evaluation",
+      "file": "source/isaaclab/isaaclab/managers/reward_manager.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_4096x32x1000",
+      "group": "evaluation",
+      "file": "source/isaaclab/isaaclab/envs/mdp/observations.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_4096x32x1000",
+      "group": "evaluation",
+      "file": "source/isaaclab/isaaclab/sensors/ray_caster/ray_caster.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_4096x32x1000",
+      "group": "evaluation",
+      "file": "source/isaaclab/isaaclab/sensors/ray_caster/patterns/patterns.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_modified_4096x32x1000",
+      "group": "training",
+      "file": "scripts/stage2_observation_ablation.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_modified_4096x32x1000",
+      "group": "training",
+      "file": "source/ant/ablation_env_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_modified_4096x32x1000",
+      "group": "training",
+      "file": "source/ant/stage2_env_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_modified_4096x32x1000",
+      "group": "training",
+      "file": "source/ant/rewards.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_modified_4096x32x1000",
+      "group": "training",
+      "file": "source/ant/agents/stage2_ppo_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_modified_4096x32x1000",
+      "group": "training",
+      "file": "source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_contact_observations.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_modified_4096x32x1000",
+      "group": "training",
+      "file": "source/ant/agents/ablation_ppo_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_modified_4096x32x1000",
+      "group": "training",
+      "file": "source/ant/agents/ablation_budget_ppo_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_modified_4096x32x1000",
+      "group": "training",
+      "file": "source/ant/ant_env_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_modified_4096x32x1000",
+      "group": "training",
+      "file": "source/ant/agents/rsl_rl_ppo_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_modified_4096x32x1000",
+      "group": "training",
+      "file": "source/ant/__init__.py",
+      "match": false
+    },
+    {
+      "experiment": "heightscan_contact_modified_4096x32x1000",
+      "group": "training",
+      "file": "source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_env_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_modified_4096x32x1000",
+      "group": "training",
+      "file": "source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_terrain_heightscan_env_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_modified_4096x32x1000",
+      "group": "training",
+      "file": "source/isaaclab/isaaclab/managers/reward_manager.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_modified_4096x32x1000",
+      "group": "training",
+      "file": "source/isaaclab/isaaclab/envs/mdp/observations.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_modified_4096x32x1000",
+      "group": "training",
+      "file": "source/isaaclab/isaaclab/sensors/ray_caster/ray_caster.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_modified_4096x32x1000",
+      "group": "training",
+      "file": "source/isaaclab/isaaclab/sensors/ray_caster/patterns/patterns.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_modified_4096x32x1000",
+      "group": "evaluation",
+      "file": "scripts/stage2_observation_ablation.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_modified_4096x32x1000",
+      "group": "evaluation",
+      "file": "source/ant/ablation_env_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_modified_4096x32x1000",
+      "group": "evaluation",
+      "file": "source/ant/stage2_env_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_modified_4096x32x1000",
+      "group": "evaluation",
+      "file": "source/ant/rewards.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_modified_4096x32x1000",
+      "group": "evaluation",
+      "file": "source/ant/agents/stage2_ppo_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_modified_4096x32x1000",
+      "group": "evaluation",
+      "file": "source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_contact_observations.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_modified_4096x32x1000",
+      "group": "evaluation",
+      "file": "source/ant/agents/ablation_ppo_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_modified_4096x32x1000",
+      "group": "evaluation",
+      "file": "source/ant/agents/ablation_budget_ppo_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_modified_4096x32x1000",
+      "group": "evaluation",
+      "file": "source/ant/ant_env_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_modified_4096x32x1000",
+      "group": "evaluation",
+      "file": "source/ant/agents/rsl_rl_ppo_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_modified_4096x32x1000",
+      "group": "evaluation",
+      "file": "source/ant/__init__.py",
+      "match": false
+    },
+    {
+      "experiment": "heightscan_contact_modified_4096x32x1000",
+      "group": "evaluation",
+      "file": "source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_env_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_modified_4096x32x1000",
+      "group": "evaluation",
+      "file": "source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_terrain_heightscan_env_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_modified_4096x32x1000",
+      "group": "evaluation",
+      "file": "source/isaaclab/isaaclab/managers/reward_manager.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_modified_4096x32x1000",
+      "group": "evaluation",
+      "file": "source/isaaclab/isaaclab/envs/mdp/observations.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_modified_4096x32x1000",
+      "group": "evaluation",
+      "file": "source/isaaclab/isaaclab/sensors/ray_caster/ray_caster.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_modified_4096x32x1000",
+      "group": "evaluation",
+      "file": "source/isaaclab/isaaclab/sensors/ray_caster/patterns/patterns.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_stock_4096x32x1000",
+      "group": "training",
+      "file": "scripts/contact_stock_observation_ablation.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_stock_4096x32x1000",
+      "group": "training",
+      "file": "source/ant/ablation_env_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_stock_4096x32x1000",
+      "group": "training",
+      "file": "source/ant/contact_stock_env_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_stock_4096x32x1000",
+      "group": "training",
+      "file": "source/ant/stage2_env_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_stock_4096x32x1000",
+      "group": "training",
+      "file": "source/ant/agents/contact_stock_ppo_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_stock_4096x32x1000",
+      "group": "training",
+      "file": "experiments/observation_ablation/shared/contact_observation.json",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_stock_4096x32x1000",
+      "group": "training",
+      "file": "source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_contact_observations.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_stock_4096x32x1000",
+      "group": "training",
+      "file": "source/ant/agents/ablation_ppo_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_stock_4096x32x1000",
+      "group": "training",
+      "file": "source/ant/agents/ablation_budget_ppo_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_stock_4096x32x1000",
+      "group": "training",
+      "file": "source/ant/ant_env_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_stock_4096x32x1000",
+      "group": "training",
+      "file": "source/ant/agents/rsl_rl_ppo_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_stock_4096x32x1000",
+      "group": "training",
+      "file": "source/ant/__init__.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_stock_4096x32x1000",
+      "group": "training",
+      "file": "source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_env_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_stock_4096x32x1000",
+      "group": "training",
+      "file": "source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_terrain_heightscan_env_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_stock_4096x32x1000",
+      "group": "training",
+      "file": "source/isaaclab/isaaclab/managers/reward_manager.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_stock_4096x32x1000",
+      "group": "training",
+      "file": "source/isaaclab/isaaclab/envs/mdp/observations.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_stock_4096x32x1000",
+      "group": "training",
+      "file": "source/isaaclab/isaaclab/sensors/ray_caster/ray_caster.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_stock_4096x32x1000",
+      "group": "training",
+      "file": "source/isaaclab/isaaclab/sensors/ray_caster/patterns/patterns.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_stock_4096x32x1000",
+      "group": "evaluation",
+      "file": "scripts/contact_stock_observation_ablation.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_stock_4096x32x1000",
+      "group": "evaluation",
+      "file": "source/ant/ablation_env_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_stock_4096x32x1000",
+      "group": "evaluation",
+      "file": "source/ant/contact_stock_env_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_stock_4096x32x1000",
+      "group": "evaluation",
+      "file": "source/ant/stage2_env_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_stock_4096x32x1000",
+      "group": "evaluation",
+      "file": "source/ant/agents/contact_stock_ppo_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_stock_4096x32x1000",
+      "group": "evaluation",
+      "file": "experiments/observation_ablation/shared/contact_observation.json",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_stock_4096x32x1000",
+      "group": "evaluation",
+      "file": "source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_contact_observations.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_stock_4096x32x1000",
+      "group": "evaluation",
+      "file": "source/ant/agents/ablation_ppo_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_stock_4096x32x1000",
+      "group": "evaluation",
+      "file": "source/ant/agents/ablation_budget_ppo_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_stock_4096x32x1000",
+      "group": "evaluation",
+      "file": "source/ant/ant_env_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_stock_4096x32x1000",
+      "group": "evaluation",
+      "file": "source/ant/agents/rsl_rl_ppo_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_stock_4096x32x1000",
+      "group": "evaluation",
+      "file": "source/ant/__init__.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_stock_4096x32x1000",
+      "group": "evaluation",
+      "file": "source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_env_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_stock_4096x32x1000",
+      "group": "evaluation",
+      "file": "source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_terrain_heightscan_env_cfg.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_stock_4096x32x1000",
+      "group": "evaluation",
+      "file": "source/isaaclab/isaaclab/managers/reward_manager.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_stock_4096x32x1000",
+      "group": "evaluation",
+      "file": "source/isaaclab/isaaclab/envs/mdp/observations.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_stock_4096x32x1000",
+      "group": "evaluation",
+      "file": "source/isaaclab/isaaclab/sensors/ray_caster/ray_caster.py",
+      "match": true
+    },
+    {
+      "experiment": "heightscan_contact_stock_4096x32x1000",
+      "group": "evaluation",
+      "file": "source/isaaclab/isaaclab/sensors/ray_caster/patterns/patterns.py",
+      "match": true
+    }
+  ],
+  "source_mapping_mismatches": [
+    {
+      "experiment": "heightscan_4096x32x1000",
+      "group": "training",
+      "file": "source/ant/__init__.py",
+      "match": false
+    },
+    {
+      "experiment": "heightscan_4096x32x1000",
+      "group": "evaluation",
+      "file": "source/ant/__init__.py",
+      "match": false
+    },
+    {
+      "experiment": "heightscan_contact_modified_4096x32x1000",
+      "group": "training",
+      "file": "source/ant/__init__.py",
+      "match": false
+    },
+    {
+      "experiment": "heightscan_contact_modified_4096x32x1000",
+      "group": "evaluation",
+      "file": "source/ant/__init__.py",
+      "match": false
+    }
+  ]
+}

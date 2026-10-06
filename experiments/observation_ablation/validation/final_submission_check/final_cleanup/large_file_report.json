@@ -1,0 +1,132 @@
+{
+  "file_count": 2402,
+  "logical_bytes": 413393260,
+  "top_30": [
+    {
+      "path": "cross_eval_team1_policy/teammate2/main/reward_components_step.csv",
+      "bytes": 18500111
+    },
+    {
+      "path": "validation_compare/evaluation_seed24_n100/reward_components_step.csv",
+      "bytes": 15943163
+    },
+    {
+      "path": "cross_eval_team1_policy/teammate1/main/reward_components_step.csv",
+      "bytes": 14664103
+    },
+    {
+      "path": "cross_eval_team1_policy/final_unseen/main/reward_components_step.csv",
+      "bytes": 13138861
+    },
+    {
+      "path": "validation_compare/contact_teammate1_seed24_env0.mp4",
+      "bytes": 5879851
+    },
+    {
+      "path": "validation_compare/video_seed24_env0/video/contact_teammate1_seed24_env0-step-0.mp4",
+      "bytes": 5879851
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/best_model.pt",
+      "bytes": 3657781
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_stock_s42_e4096_n32_i1000/best_model.pt",
+      "bytes": 3657781
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/checkpoints/best_model.pt",
+      "bytes": 3657781
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/checkpoints/best_model.pt",
+      "bytes": 3657781
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_999.pt",
+      "bytes": 3657707
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_550.pt",
+      "bytes": 3657707
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_950.pt",
+      "bytes": 3657707
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_150.pt",
+      "bytes": 3657707
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_800.pt",
+      "bytes": 3657707
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_400.pt",
+      "bytes": 3657707
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_200.pt",
+      "bytes": 3657707
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_450.pt",
+      "bytes": 3657707
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_500.pt",
+      "bytes": 3657707
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_850.pt",
+      "bytes": 3657707
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_100.pt",
+      "bytes": 3657707
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_650.pt",
+      "bytes": 3657707
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_350.pt",
+      "bytes": 3657707
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_900.pt",
+      "bytes": 3657707
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_700.pt",
+      "bytes": 3657707
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_250.pt",
+      "bytes": 3657707
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_300.pt",
+      "bytes": 3657707
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_750.pt",
+      "bytes": 3657707
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_600.pt",
+      "bytes": 3657707
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_stock_s42_e4096_n32_i1000/model_999.pt",
+      "bytes": 3657707
+    }
+  ],
+  "files_at_least_50_MiB": [],
+  "files_at_least_100_MiB": [],
+  "checkpoint_bytes": 266051503,
+  "log_bytes": 247412079,
+  "GitHub_file_size_blocker": false,
+  "policy_reference": "https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github"
+}

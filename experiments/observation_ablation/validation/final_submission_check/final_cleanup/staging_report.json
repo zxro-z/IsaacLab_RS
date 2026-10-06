@@ -1,0 +1,366 @@
+{
+  "branch": "main",
+  "commits": 0,
+  "remotes": "",
+  "staged_files_initial_count": 2390,
+  "staged_logical_bytes_initial": 413359907,
+  "staged_by_top_level_directory": {
+    ".dockerignore": {
+      "files": 1,
+      "bytes": 445
+    },
+    ".flake8": {
+      "files": 1,
+      "bytes": 861
+    },
+    ".gitattributes": {
+      "files": 1,
+      "bytes": 82
+    },
+    ".github": {
+      "files": 22,
+      "bytes": 68347
+    },
+    ".gitignore": {
+      "files": 1,
+      "bytes": 218
+    },
+    ".pre-commit-config.yaml": {
+      "files": 1,
+      "bytes": 3158
+    },
+    "CITATION.cff": {
+      "files": 1,
+      "bytes": 1490
+    },
+    "CONTRIBUTING.md": {
+      "files": 1,
+      "bytes": 1770
+    },
+    "CONTRIBUTORS.md": {
+      "files": 1,
+      "bytes": 2768
+    },
+    "LICENSE": {
+      "files": 1,
+      "bytes": 1630
+    },
+    "LICENSE-mimic": {
+      "files": 1,
+      "bytes": 10142
+    },
+    "README.md": {
+      "files": 1,
+      "bytes": 14820
+    },
+    "SECURITY.md": {
+      "files": 1,
+      "bytes": 1708
+    },
+    "VERSION": {
+      "files": 1,
+      "bytes": 6
+    },
+    "apps": {
+      "files": 21,
+      "bytes": 76271
+    },
+    "cross_eval_team1_policy": {
+      "files": 58,
+      "bytes": 49550003
+    },
+    "docker": {
+      "files": 23,
+      "bytes": 72055
+    },
+    "docs": {
+      "files": 581,
+      "bytes": 40230398
+    },
+    "environment.yml": {
+      "files": 1,
+      "bytes": 285
+    },
+    "experiments": {
+      "files": 366,
+      "bytes": 38609216
+    },
+    "isaaclab.bat": {
+      "files": 1,
+      "bytes": 23596
+    },
+    "isaaclab.sh": {
+      "files": 1,
+      "bytes": 25367
+    },
+    "logs": {
+      "files": 93,
+      "bytes": 247412079
+    },
+    "pyproject.toml": {
+      "files": 1,
+      "bytes": 332
+    },
+    "pytest.ini": {
+      "files": 1,
+      "bytes": 68
+    },
+    "scripts": {
+      "files": 117,
+      "bytes": 1027454
+    },
+    "source": {
+      "files": 1023,
+      "bytes": 7778725
+    },
+    "tools": {
+      "files": 38,
+      "bytes": 121500
+    },
+    "validation_compare": {
+      "files": 36,
+      "bytes": 29313423
+    }
+  },
+  "largest_staged_files": [
+    {
+      "path": "cross_eval_team1_policy/teammate2/main/reward_components_step.csv",
+      "bytes": 18500111,
+      "blob": "2334cea7980de6098daeaec6766eb151b228ad79",
+      "mode": "100644"
+    },
+    {
+      "path": "validation_compare/evaluation_seed24_n100/reward_components_step.csv",
+      "bytes": 15943163,
+      "blob": "e8d853d7cbfdcf28477530b245936f47aef1455b",
+      "mode": "100644"
+    },
+    {
+      "path": "cross_eval_team1_policy/teammate1/main/reward_components_step.csv",
+      "bytes": 14664103,
+      "blob": "88c88cd5bc4ee3531e765929281c3c3a80e6e1fa",
+      "mode": "100644"
+    },
+    {
+      "path": "cross_eval_team1_policy/final_unseen/main/reward_components_step.csv",
+      "bytes": 13138861,
+      "blob": "0eb770f483ab6cf78fbe3dd37213607f96376685",
+      "mode": "100644"
+    },
+    {
+      "path": "validation_compare/contact_teammate1_seed24_env0.mp4",
+      "bytes": 5879851,
+      "blob": "464b104aa48a71034bc16fa5426a04621e11d6b6",
+      "mode": "100644"
+    },
+    {
+      "path": "validation_compare/video_seed24_env0/video/contact_teammate1_seed24_env0-step-0.mp4",
+      "bytes": 5879851,
+      "blob": "464b104aa48a71034bc16fa5426a04621e11d6b6",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/checkpoints/best_model.pt",
+      "bytes": 3657781,
+      "blob": "c4ec5002205bd9af34043a6205ba419aab81de8f",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/checkpoints/best_model.pt",
+      "bytes": 3657781,
+      "blob": "cc60e50d97b68ac86d25cbe624f016ef0f871cb5",
+      "mode": "100644"
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/best_model.pt",
+      "bytes": 3657781,
+      "blob": "c4ec5002205bd9af34043a6205ba419aab81de8f",
+      "mode": "100644"
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_stock_s42_e4096_n32_i1000/best_model.pt",
+      "bytes": 3657781,
+      "blob": "cc60e50d97b68ac86d25cbe624f016ef0f871cb5",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/checkpoints/final_model.pt",
+      "bytes": 3657707,
+      "blob": "1fddc1fe04ff72cc688d792f279fec338e4aab3e",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/checkpoints/final_model.pt",
+      "bytes": 3657707,
+      "blob": "d9862600157d8faf7d60f960f447cec866535e9d",
+      "mode": "100644"
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_100.pt",
+      "bytes": 3657707,
+      "blob": "a426c64639cf9e179adf6aa4d13151011bfd99ed",
+      "mode": "100644"
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_150.pt",
+      "bytes": 3657707,
+      "blob": "c01a588884ba1920c0e09ed69759c0da18a314b7",
+      "mode": "100644"
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_200.pt",
+      "bytes": 3657707,
+      "blob": "6ba49079ac42ee75e8fe866c7b8a287aa375b5d7",
+      "mode": "100644"
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_250.pt",
+      "bytes": 3657707,
+      "blob": "858aa962045d3ba12e1396c302a3e81f703c4b9a",
+      "mode": "100644"
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_300.pt",
+      "bytes": 3657707,
+      "blob": "090b4246f1ec8ea29046017cf2a4efffad99c480",
+      "mode": "100644"
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_350.pt",
+      "bytes": 3657707,
+      "blob": "2254abfbc908fb8e16f130aa1461f12b3c2a23b0",
+      "mode": "100644"
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_400.pt",
+      "bytes": 3657707,
+      "blob": "957c7d8e0caf540a16fbd714f6856ff5120553b6",
+      "mode": "100644"
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_450.pt",
+      "bytes": 3657707,
+      "blob": "87a43b13c0110e38983e6518dfe8223c44bf0d40",
+      "mode": "100644"
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_500.pt",
+      "bytes": 3657707,
+      "blob": "5847a979d751f0357d218902ccf003380481d6b7",
+      "mode": "100644"
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_550.pt",
+      "bytes": 3657707,
+      "blob": "77cc8325c0867ddbe88dcb9a19055410b284dd9c",
+      "mode": "100644"
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_600.pt",
+      "bytes": 3657707,
+      "blob": "b7376f33d8504b209a8c983a172d1f7f16d7ec04",
+      "mode": "100644"
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_650.pt",
+      "bytes": 3657707,
+      "blob": "d807a35879d4f71e4f70b8d5b500c28c12260cd6",
+      "mode": "100644"
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_700.pt",
+      "bytes": 3657707,
+      "blob": "4ec8ed574b8ba7ed27ec8d51709d386c24721202",
+      "mode": "100644"
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_750.pt",
+      "bytes": 3657707,
+      "blob": "110ef5fd8c252d393d1c949f1ca4814a83ce938e",
+      "mode": "100644"
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_800.pt",
+      "bytes": 3657707,
+      "blob": "e9d567bfa3cfe262f05d01a7a1b6d1fbdc696f28",
+      "mode": "100644"
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_850.pt",
+      "bytes": 3657707,
+      "blob": "8b1df41890d7e9d7628b5933fde88d04a7505905",
+      "mode": "100644"
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_900.pt",
+      "bytes": 3657707,
+      "blob": "7db0d27340f93266d6923d18aee5f8dccc0e9d4f",
+      "mode": "100644"
+    },
+    {
+      "path": "logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/model_950.pt",
+      "bytes": 3657707,
+      "blob": "1beee6d6a24e076dfe021b37de8004ace97b1f91",
+      "mode": "100644"
+    }
+  ],
+  "file_contents_match_index_blobs": true,
+  "mandatory_artifacts_staged": true,
+  "archived_evidence_force_added_due_to_preserved_nested_ignore_rules": [
+    "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/smoke_mapping_attempt/source_parity.json",
+    "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/smoke_mapping_attempt/config.json",
+    "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/smoke_mapping_attempt/source_mapping.json",
+    "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/smoke_mapping_attempt/agent.json",
+    "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/smoke_slice_mapping_attempt/source_parity.json",
+    "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/smoke_slice_mapping_attempt/config.json",
+    "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/smoke_slice_mapping_attempt/source_mapping.json",
+    "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/smoke_slice_mapping_attempt/agent.json",
+    "experiments/observation_ablation/heightscan_4096x32x1000/smoke/source_parity.json",
+    "experiments/observation_ablation/heightscan_4096x32x1000/smoke/manifest.json",
+    "experiments/observation_ablation/heightscan_4096x32x1000/smoke/config.json",
+    "experiments/observation_ablation/heightscan_4096x32x1000/smoke/source_mapping.json",
+    "experiments/observation_ablation/heightscan_4096x32x1000/smoke/agent.json",
+    "experiments/observation_ablation/heightscan_4096x32x1000/smoke/smoke.json",
+    "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/smoke_mapping_attempt_run.log",
+    "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/training_run.log",
+    "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/smoke_run.log",
+    "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/evaluation_run.log",
+    "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/smoke_mapping_attempt/source_parity.json",
+    "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/smoke_mapping_attempt/config.json",
+    "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/smoke_mapping_attempt/source_mapping.json",
+    "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/smoke_mapping_attempt/agent.json",
+    "experiments/observation_ablation/heightscan/smoke_attempt_03/source_parity.json",
+    "experiments/observation_ablation/heightscan/smoke_attempt_03/manifest.json",
+    "experiments/observation_ablation/heightscan/smoke_attempt_03/config.json",
+    "experiments/observation_ablation/heightscan/smoke_attempt_03/source_mapping.json",
+    "experiments/observation_ablation/heightscan/smoke_attempt_03/agent.json",
+    "experiments/observation_ablation/heightscan/evaluation_attempt_01/source_parity.json",
+    "experiments/observation_ablation/heightscan/evaluation_attempt_01/manifest.json",
+    "experiments/observation_ablation/heightscan/evaluation_attempt_01/config.json",
+    "experiments/observation_ablation/heightscan/evaluation_attempt_01/source_mapping.json",
+    "experiments/observation_ablation/heightscan/evaluation_attempt_01/agent.json",
+    "experiments/observation_ablation/heightscan/smoke_original/source_parity.json",
+    "experiments/observation_ablation/heightscan/smoke_original/manifest.json",
+    "experiments/observation_ablation/heightscan/smoke_original/config.json",
+    "experiments/observation_ablation/heightscan/smoke_original/source_mapping.json",
+    "experiments/observation_ablation/heightscan/smoke_original/agent.json",
+    "experiments/observation_ablation/heightscan/smoke_original/smoke.json",
+    "experiments/observation_ablation/heightscan/smoke_original/run.log"
+  ],
+  "git_diff_cached_check_exit_code": 2,
+  "git_diff_cached_check_scope": "Fresh import includes pre-existing whitespace; source byte preservation takes priority over unsolicited formatting edits. New submission edits were separately checked and passed.",
+  "source_formatting_not_modified": true,
+  "no_LFS_filters_in_submission_attributes": true,
+  "no_commit_created": true,
+  "no_remote_added": true,
+  "no_push": true,
+  "staged_file_count": 2396,
+  "staged_total_logical_size_bytes": 414348217,
+  "git_diff_cached_check_output_file": "experiments/observation_ablation/validation/final_submission_check/final_cleanup/staged_whitespace_check.txt",
+  "git_diff_cached_whitespace_warning_count": 3020,
+  "ready_for_final_commit_strict_all_checks_PASS": false,
+  "remaining_issue": "No commit blocker under approved scoped whitespace policy; full-import findings preserved and documented.",
+  "approved_new_changes_whitespace_check": "PASS",
+  "ready_for_final_commit_under_approved_scoped_policy": true,
+  "whitespace_policy_record": "docs/submission_provenance/whitespace_policy.md"
+}

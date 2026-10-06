@@ -1,0 +1,32 @@
+{
+  "PASS": true,
+  "fallback_manifest_fields": {
+    "git_commit": "4513d7cae5d4fdc6af9288349531e6b49422f7b1",
+    "git_commit_source": "preserved_submission_provenance",
+    "repository_snapshot": true
+  },
+  "Git_checkout_manifest_fields": {
+    "git_commit": "4513d7cae5d4fdc6af9288349531e6b49422f7b1",
+    "git_commit_source": "git_rev_parse_HEAD",
+    "repository_snapshot": false
+  },
+  "error_policy_checks": {
+    "non_evaluation_fallback_disabled": true,
+    "unrelated_git_error_not_masked": true
+  },
+  "py_compile": "PASS",
+  "AST_evaluation_semantics_unchanged_except_provenance": {
+    "scripts/observation_ablation.py": true,
+    "scripts/observation_ablation_budget.py": true,
+    "scripts/contact_stock_observation_ablation.py": true,
+    "scripts/stage2_observation_ablation.py": true
+  },
+  "modified_existing_files": [
+    "scripts/stage2_observation_ablation.py",
+    "scripts/contact_stock_observation_ablation.py",
+    "scripts/observation_ablation_budget.py",
+    "scripts/observation_ablation.py"
+  ],
+  "new_source_file": "scripts/submission_provenance.py",
+  "git_initialized": false
+}

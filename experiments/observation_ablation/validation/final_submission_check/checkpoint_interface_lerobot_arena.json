@@ -1,0 +1,7 @@
+{
+  "status": "NOT RUN",
+  "test": "selected checkpoint CPU inspection",
+  "reason": "AppLauncher clean shutdown timed out; process group stopped, exit -9",
+  "environment_created": false,
+  "physics_steps": 0
+}

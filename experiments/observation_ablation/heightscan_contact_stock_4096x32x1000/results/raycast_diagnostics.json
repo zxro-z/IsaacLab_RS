@@ -1,0 +1,6 @@
+{
+  "raw_missing_ray_samples": 316466,
+  "interpretation": "Inf raw hit = no mesh intersection; canonical height_scan clip maps to -1",
+  "processed_observations_finite": true,
+  "raw_nan": false
+}

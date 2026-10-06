@@ -1,0 +1,63 @@
+{
+  "status": "PASS",
+  "checkpoints": [
+    {
+      "experiment": "heightscan_4096x32x1000",
+      "checkpoint": "experiments/observation_ablation/heightscan_4096x32x1000/checkpoints/best_model.pt",
+      "serialization": "PASS",
+      "weights_only": true,
+      "actor_first_layer": [
+        400,
+        122
+      ],
+      "critic_first_layer": [
+        400,
+        122
+      ],
+      "actual_actor_input_dim": 122,
+      "matches_config_snapshot_and_expected_interface": true,
+      "checkpoint_iteration_field": 804,
+      "selected_iteration": 804,
+      "model_tensors_finite": true
+    },
+    {
+      "experiment": "heightscan_contact_stock_4096x32x1000",
+      "checkpoint": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/checkpoints/best_model.pt",
+      "serialization": "PASS",
+      "weights_only": true,
+      "actor_first_layer": [
+        400,
+        126
+      ],
+      "critic_first_layer": [
+        400,
+        126
+      ],
+      "actual_actor_input_dim": 126,
+      "matches_config_snapshot_and_expected_interface": true,
+      "checkpoint_iteration_field": 972,
+      "selected_iteration": 972,
+      "model_tensors_finite": true
+    },
+    {
+      "experiment": "heightscan_contact_modified_4096x32x1000",
+      "checkpoint": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/checkpoints/best_model.pt",
+      "serialization": "PASS",
+      "weights_only": true,
+      "actor_first_layer": [
+        400,
+        126
+      ],
+      "critic_first_layer": [
+        400,
+        126
+      ],
+      "actual_actor_input_dim": 126,
+      "matches_config_snapshot_and_expected_interface": true,
+      "checkpoint_iteration_field": 788,
+      "selected_iteration": 788,
+      "model_tensors_finite": true
+    }
+  ],
+  "inference_performed": false
+}

@@ -1,0 +1,11 @@
+{
+  "environment_with_stage1": true,
+  "modified_reward_with_saved_v3_depth": true,
+  "ppo_with_stage1": true,
+  "architecture_with_stage1": true,
+  "proprio_heightscan_with_stage1": true,
+  "explicit_contact_canonical": true,
+  "terrain_mesh": true,
+  "evaluation_terrain_assignment": true,
+  "stage2": true
+}

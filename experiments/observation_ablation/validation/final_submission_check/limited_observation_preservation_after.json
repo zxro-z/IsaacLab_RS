@@ -1,0 +1,41 @@
+{
+  "original_git_state_unchanged": {
+    "/home/zxro/teammate_ant_rl": true,
+    "/home/zxro/arena/IsaacLab": true,
+    "/home/zxro/IsaacLab_RS": true
+  },
+  "original_git_states_after": {
+    "/home/zxro/teammate_ant_rl": {
+      "head": "4513d7cae5d4fdc6af9288349531e6b49422f7b1\n",
+      "branch": "observation-ablation\n",
+      "status": "?? cross_eval_team1_policy/\n?? scripts/evaluate_contact_teammate1.py\n?? validation_compare/\n",
+      "remote": "origin\thttps://github.com/dding222/ant_rl.git (fetch)\norigin\thttps://github.com/dding222/ant_rl.git (push)\n"
+    },
+    "/home/zxro/arena/IsaacLab": {
+      "head": "3c6e67bb5c7ada942a6d1884ab69338f57596f77\n",
+      "branch": "ant-assignment\n",
+      "status": " M scripts/reinforcement_learning/rsl_rl/play.py\n M source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/__init__.py\n?? scripts/reinforcement_learning/rsl_rl/diagnose_ant_progress.py\n?? scripts/reinforcement_learning/rsl_rl/play_one_episode.py\n?? source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/agents/rsl_rl_ppo_contact_cfg.py\n?? source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/agents/rsl_rl_ppo_lr_cfg.py\n?? source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_contact_observations.py\n?? source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_friction_random_env_cfg.py\n?? source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_ood_env_cfg.py\n?? source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_ood_terrain_env_cfg.py\n?? source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_terrain_heightscan_env_cfg.py\n",
+      "remote": "origin\thttps://github.com/isaac-sim/IsaacLab.git (fetch)\norigin\thttps://github.com/isaac-sim/IsaacLab.git (push)\n"
+    },
+    "/home/zxro/IsaacLab_RS": {
+      "head": "5a7f4e3c8c11a68be60f5ef567869e21f743c2ca\n",
+      "branch": "course-assignment\n",
+      "status": " M .gitignore\n?? docs/videos/training_base.mp4\n?? docs/videos/training_contact.mp4\n?? docs/videos/training_diverse.mp4\n?? docs/videos/training_heightscan.mp4\n?? docs/videos/training_rollout_manifest.json\n",
+      "remote": "origin\thttps://github.com/zxro-z/IsaacLab_RS_Assignment1.git (fetch)\norigin\thttps://github.com/zxro-z/IsaacLab_RS_Assignment1.git (push)\nupstream\thttps://github.com/isaac-sim/IsaacLab.git (fetch)\nupstream\thttps://github.com/isaac-sim/IsaacLab.git (push)\n"
+    }
+  },
+  "original_worktree_inventory": {
+    "/home/zxro/teammate_ant_rl": {
+      "entries": 873,
+      "differences": []
+    },
+    "/home/zxro/arena/IsaacLab": {
+      "entries": 2975,
+      "differences": []
+    }
+  },
+  "submission_files_checked_excluding_validation_directory": 2240,
+  "submission_changed_or_missing_files": [],
+  "submission_new_files_outside_validation_directory": [],
+  "old_repository_scope": "Git state checked; no full old-repository content inventory recorded. Old repository was not used."
+}

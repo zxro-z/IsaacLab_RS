@@ -1,0 +1,27 @@
+{
+  "original_repositories": {
+    "/home/zxro/teammate_ant_rl": {
+      "git_state_unchanged": true,
+      "inventory_hash_and_mtime_unchanged": true,
+      "inventory_entries": 873
+    },
+    "/home/zxro/arena/IsaacLab": {
+      "git_state_unchanged": true,
+      "inventory_hash_and_mtime_unchanged": true,
+      "inventory_entries": 2975
+    },
+    "/home/zxro/IsaacLab_RS": {
+      "git_state_unchanged": true
+    }
+  },
+  "three_HeightScan_evaluations": "REPRODUCED",
+  "DepthCam": "RESULTS / PROVENANCE ONLY",
+  "checkpoint_hashes": "PASS",
+  "historical_result_comparison": "Exact evaluation-summary equality and byte-identical episode CSV for all three HeightScan conditions",
+  "scoped_whitespace": "PASS",
+  "full_import_whitespace_findings": 3020,
+  "full_import_whitespace_status": "KNOWN EXCEPTION",
+  "commit_authorized": true,
+  "remote": "NONE",
+  "push": "NOT PERFORMED"
+}

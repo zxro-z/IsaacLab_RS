@@ -1,0 +1,14 @@
+# Generated/runtime junk only; logs, checkpoints and validation evidence are tracked.
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.vscode/
+.idea/
+.DS_Store
+build/
+dist/
+core
+core.[0-9]*

@@ -1,0 +1,590 @@
+[
+  {
+    "probe": "a",
+    "command": [
+      "./isaaclab.sh",
+      "-p",
+      "/home/zxro/ant_rl_submission/experiments/observation_ablation/validation/final_submission_check/shutdown_probe_a.py"
+    ],
+    "cwd": "/home/zxro/ant_rl_submission",
+    "python": "/home/zxro/miniforge3/envs/lerobot-arena/bin/python",
+    "conda_environment": "lerobot-arena",
+    "LD_PRELOAD": null,
+    "PYTHONPATH": "/home/zxro/ant_rl_submission/source:/home/zxro/ant_rl_submission/source/isaaclab:/home/zxro/ant_rl_submission/source/isaaclab_assets:/home/zxro/ant_rl_submission/source/isaaclab_tasks:/home/zxro/ant_rl_submission/source/isaaclab_rl:/home/zxro/ant_rl_submission/source/isaaclab_mimic",
+    "imports_requested": [],
+    "initialization_completed_timestamp": "2026-10-06T04:51:04.190094+00:00",
+    "close_invoked_timestamp": "2026-10-06T04:51:04.191540+00:00",
+    "close_returned_timestamp": null,
+    "timeout_after_close_seconds": 30,
+    "timeout_reason": null,
+    "exit_code": 139,
+    "termination_signal": null,
+    "clean_shutdown": false,
+    "events": [
+      {
+        "event": "process_started",
+        "timestamp": "2026-10-06T04:51:00.508132+00:00",
+        "monotonic": 677385.590599661,
+        "python": "/home/zxro/miniforge3/envs/lerobot-arena/bin/python",
+        "cwd": "/home/zxro/ant_rl_submission",
+        "conda_prefix": "/home/zxro/miniforge3/envs/lerobot-arena",
+        "LD_PRELOAD": null
+      },
+      {
+        "event": "initialization_completed",
+        "timestamp": "2026-10-06T04:51:04.190094+00:00",
+        "monotonic": 677389.272560063,
+        "experience": "/home/zxro/ant_rl_submission/apps/isaaclab.python.headless.kit",
+        "launcher_source": "/home/zxro/ant_rl_submission/source/isaaclab/isaaclab/app/__init__.py",
+        "isaac_sim_location": "/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim",
+        "kit_location": "/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim/kit"
+      },
+      {
+        "event": "close_invoked",
+        "timestamp": "2026-10-06T04:51:04.191540+00:00",
+        "monotonic": 677389.274015274
+      }
+    ],
+    "wall_seconds": 4.205179417040199,
+    "last_console_lines": [
+      "[INFO] Using python from: /home/zxro/miniforge3/envs/lerobot-arena/bin/python",
+      "{\"event\": \"process_started\", \"timestamp\": \"2026-10-06T04:51:00.508132+00:00\", \"monotonic\": 677385.590599661, \"python\": \"/home/zxro/miniforge3/envs/lerobot-arena/bin/python\", \"cwd\": \"/home/zxro/ant_rl_submission\", \"conda_prefix\": \"/home/zxro/miniforge3/envs/lerobot-arena\", \"LD_PRELOAD\": null}",
+      "MESA: warning: Driver does not support the 0x7d67 PCI ID.",
+      "MESA: warning: Driver does not support the 0x7d67 PCI ID.",
+      "[INFO][AppLauncher]: Using device: cuda:0",
+      "[INFO][AppLauncher]: Loading experience file: /home/zxro/ant_rl_submission/apps/isaaclab.python.headless.kit",
+      "{\"event\": \"initialization_completed\", \"timestamp\": \"2026-10-06T04:51:04.190094+00:00\", \"monotonic\": 677389.272560063, \"experience\": \"/home/zxro/ant_rl_submission/apps/isaaclab.python.headless.kit\", \"launcher_source\": \"/home/zxro/ant_rl_submission/source/isaaclab/isaaclab/app/__init__.py\", \"isaac_sim_location\": \"/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim\", \"kit_location\": \"/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim/kit\"}",
+      "{\"event\": \"close_invoked\", \"timestamp\": \"2026-10-06T04:51:04.191540+00:00\", \"monotonic\": 677389.274015274}",
+      "Fatal Python error: Fatal Python error: Segmentation faultSegmentation fault",
+      "",
+      "",
+      "",
+      "Thread 0x00007b636a87f740 (most recent call first):",
+      "  File \"/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim/exts/isaacsim.simulation_app/isaacsim/simulation_app/simulation_app.py\", line 838 in close",
+      "  File \"/home/zxro/ant_rl_submission/experiments/observation_ablation/validation/final_submission_check/shutdown_probe_a.py\", line 51 in <module>",
+      "",
+      "Extension modules: omni.mdl.pymdlsdk._pymdlsdk",
+      "Extension modules: omni.mdl.pymdlsdk._pymdlsdk, numpy.core._multiarray_umath, numpy.core._multiarray_umath, numpy.core._multiarray_tests, numpy.core._multiarray_tests, numpy.linalg._umath_linalg, numpy.linalg._umath_linalg, numpy.fft._pocketfft_internal, numpy.fft._pocketfft_internal, numpy.random._common, numpy.random._common, numpy.random.bit_generator, numpy.random.bit_generator, numpy.random._bounded_integers, numpy.random._bounded_integers, numpy.random._mt19937, numpy.random._mt19937, numpy.random.mtrand, numpy.random.mtrand, numpy.random._philox, numpy.random._philox, numpy.random._pcg64, numpy.random._pcg64, numpy.random._sfc64, numpy.random._sfc64, numpy.random._generator, numpy.random._generator, scipy._lib._ccallback_c, scipy._lib._ccallback_c, scipy.sparse._sparsetools, scipy.sparse._sparsetools, _csparsetools, _csparsetools, scipy.sparse._csparsetools, scipy.sparse._csparsetools, scipy.linalg._fblas, scipy.linalg._fblas, scipy.linalg._flapack, scipy.linalg._flapack, scipy.linalg.cython_lapack, scipy.linalg.cython_lapack, scipy.linalg._cythonized_array_utils, scipy.linalg._cythonized_array_utils, scipy.linalg._solve_toeplitz, scipy.linalg._solve_toeplitz, scipy.linalg._decomp_lu_cython, scipy.linalg._decomp_lu_cython, scipy.linalg._matfuncs_sqrtm_triu, scipy.linalg._matfuncs_sqrtm_triu, scipy.linalg._matfuncs_expm, scipy.linalg._matfuncs_expm, scipy.linalg._linalg_pythran, scipy.linalg._linalg_pythran, scipy.linalg.cython_blas, scipy.linalg.cython_blas, scipy.linalg._decomp_update, scipy.linalg._decomp_update, scipy.sparse.linalg._dsolve._superlu, scipy.sparse.linalg._dsolve._superlu, scipy.sparse.linalg._eigen.arpack._arpack, scipy.sparse.linalg._eigen.arpack._arpack, scipy.sparse.linalg._propack._spropack, scipy.sparse.linalg._propack._spropack, scipy.sparse.linalg._propack._dpropack, scipy.sparse.linalg._propack._dpropack, scipy.sparse.linalg._propack._cpropack, scipy.sparse.linalg._propack._cpropack, scipy.sparse.linalg._propack._zpropack, scipy.sparse.linalg._propack._zpropack, , scipy.sparse.csgraph._toolsscipy.sparse.csgraph._tools, , scipy.sparse.csgraph._shortest_pathscipy.sparse.csgraph._shortest_path, , scipy.sparse.csgraph._traversalscipy.sparse.csgraph._traversal, , scipy.sparse.csgraph._min_spanning_treescipy.sparse.csgraph._min_spanning_tree, , scipy.sparse.csgraph._flowscipy.sparse.csgraph._flow, , scipy.sparse.csgraph._matchingscipy.sparse.csgraph._matching, , scipy.sparse.csgraph._reorderingscipy.sparse.csgraph._reordering, , scipy.spatial._ckdtreescipy.spatial._ckdtree, scipy._lib.messagestream, scipy._lib.messagestream, scipy.spatial._qhull, scipy.spatial._qhull, scipy.spatial._voronoi, scipy.spatial._voronoi, scipy.spatial._distance_wrap, scipy.spatial._distance_wrap, scipy.spatial._hausdorff, scipy.spatial._hausdorff, scipy.special._ufuncs_cxx, scipy.special._ufuncs_cxx, scipy.special._ufuncs, scipy.special._ufuncs, , scipy.special._specfunscipy.special._specfun, scipy.special._comb, scipy.special._comb, scipy.special._ellip_harm_2, scipy.special._ellip_harm_2, , scipy.spatial.transform._rotationscipy.spatial.transform._rotation, , torch._Ctorch._C, , torch._C._dynamo.autograd_compilertorch._C._dynamo.autograd_compiler, , torch._C._dynamo.eval_frametorch._C._dynamo.eval_frame, torch._C._dynamo.guards, torch._C._dynamo.guards, torch._C._dynamo.utils, torch._C._dynamo.utils, torch._C._fft, torch._C._fft, torch._C._linalg, torch._C._linalg, , torch._C._nestedtorch._C._nested, , torch._C._nntorch._C._nn, , torch._C._sparsetorch._C._sparse, , torch._C._specialtorch._C._special, yaml._yaml, yaml._yaml, , xxhash._xxhashxxhash._xxhash, , PIL._imagingPIL._imaging, , scipy.optimize._group_columnsscipy.optimize._group_columns, , scipy.optimize._trlib._trlibscipy.optimize._trlib._trlib, , scipy.optimize._lbfgsbscipy.optimize._lbfgsb, _moduleTNC, _moduleTNC, scipy.optimize._moduleTNC, scipy.optimize._moduleTNC, scipy.optimize._cobyla, scipy.optimize._cobyla, scipy.optimize._slsqp, scipy.optimize._slsqp, , scipy.optimize._minpackscipy.optimize._minpack, , scipy.optimize._lsq.givens_eliminationscipy.optimize._lsq.givens_elimination, , scipy.optimize._zerosscipy.optimize._zeros, , scipy.optimize._cython_nnlsscipy.optimize._cython_nnls, , scipy._lib._uarray._uarrayscipy._lib._uarray._uarray, , scipy.linalg._decomp_interpolativescipy.linalg._decomp_interpolative, , scipy.optimize._bglu_densescipy.optimize._bglu_dense, scipy.optimize._lsap, scipy.optimize._lsap, scipy.optimize._direct, scipy.optimize._direct, psutil._psutil_linux, psutil._psutil_linux, psutil._psutil_posix, psutil._psutil_posix, , lxml._elementpathlxml._elementpath, , lxml.etreelxml.etree, , scipy.ndimage._nd_imagescipy.ndimage._nd_image, , scipy.ndimage._rank_filter_1dscipy.ndimage._rank_filter_1d, , _ni_label_ni_label, scipy.ndimage._ni_label, scipy.ndimage._ni_label, , scipy.interpolate._fitpackscipy.interpolate._fitpack, scipy.interpolate._dfitpack, scipy.interpolate._dfitpack, scipy.interpolate._dierckx, scipy.interpolate._dierckx, scipy.interpolate._ppoly, scipy.interpolate._ppoly, scipy.interpolate._interpnd, scipy.interpolate._interpnd, scipy.interpolate._rbfinterp_pythran, scipy.interpolate._rbfinterp_pythran, , scipy.interpolate._rgi_cythonscipy.interpolate._rgi_cython, , scipy.interpolate._bsplscipy.interpolate._bspl, , h5py._errorsh5py._errors, , h5py.defsh5py.defs, , h5py._objectsh5py._objects, , h5py.h5h5py.h5, , h5py.utilsh5py.utils, , h5py.h5th5py.h5t, , h5py.h5sh5py.h5s, , h5py.h5ach5py.h5ac, , h5py.h5ph5py.h5p, h5py.h5r, h5py.h5r, h5py._proxy, h5py._proxy, h5py._conv, h5py._conv, h5py.h5z, h5py.h5z, h5py.h5a, h5py.h5a, h5py.h5d, h5py.h5d, h5py.h5ds, h5py.h5ds, h5py.h5g, h5py.h5g, h5py.h5i, h5py.h5i, h5py.h5o, h5py.h5o, h5py.h5f, h5py.h5f, , h5py.h5fdh5py.h5fd, , h5py.h5plh5py.h5pl, , h5py.h5lh5py.h5l, , h5py._selectorh5py._selector, , kiwisolver._cextkiwisolver._cext, , hidhid, , hppfcl.hppfclhppfcl.hppfcl, pinocchio.pinocchio_pywrap, pinocchio.pinocchio_pywrap, , nlopt._nloptnlopt._nlopt, , PIL._imagingftPIL._imagingft, , av._coreav._core, , av.loggingav.logging, , av.bytesourceav.bytesource, , av.bufferav.buffer, , av.audio.formatav.audio.format, , av.errorav.error, , av.dictionaryav.dictionary, , av.container.pyioav.container.pyio, , av.utilsav.utils, , av.optionav.option, , av.descriptorav.descriptor, , av.formatav.format, , av.streamav.stream, , av.container.streamsav.container.streams, , av.sidedata.motionvectorsav.sidedata.motionvectors, , av.sidedata.sidedataav.sidedata.sidedata, , av.opaqueav.opaque, , av.packetav.packet, , av.container.inputav.container.input, , av.container.outputav.container.output, , av.container.coreav.container.core, , av.codec.contextav.codec.context, , av.video.formatav.video.format, , av.video.reformatterav.video.reformatter, , av.planeav.plane, , av.video.planeav.video.plane, , av.video.frameav.video.frame, , av.video.streamav.video.stream, , av.codec.hwaccelav.codec.hwaccel, , av.codec.codecav.codec.codec, , av.frameav.frame, , av.audio.layoutav.audio.layout, , av.audio.planeav.audio.plane, , av.audio.frameav.audio.frame, , av.audio.streamav.audio.stream, , av.filter.linkav.filter.link, , av.filter.contextav.filter.context, , av.filter.graphav.filter.graph, , av.filter.filterav.filter.filter, , av.filter.loudnormav.filter.loudnorm, , av.audio.resamplerav.audio.resampler, , av.audio.codeccontextav.audio.codeccontext, , av.audio.fifoav.audio.fifo, , av.bitstreamav.bitstream, av.video.codeccontext, av.video.codeccontext (total:  (total: 175175))",
+      "",
+      "./isaaclab.sh: line 461: 395127 Segmentation fault      (core dumped) ${python_exe} \"$@\""
+    ],
+    "forced_kill_is_clean_shutdown": false,
+    "environment_created": false,
+    "explicit_physics_steps": 0
+  },
+  {
+    "probe": "b",
+    "command": [
+      "./isaaclab.sh",
+      "-p",
+      "/home/zxro/ant_rl_submission/experiments/observation_ablation/validation/final_submission_check/shutdown_probe_b.py"
+    ],
+    "cwd": "/home/zxro/ant_rl_submission",
+    "python": "/home/zxro/miniforge3/envs/lerobot-arena/bin/python",
+    "conda_environment": "lerobot-arena",
+    "LD_PRELOAD": null,
+    "PYTHONPATH": "/home/zxro/ant_rl_submission/source:/home/zxro/ant_rl_submission/source/isaaclab:/home/zxro/ant_rl_submission/source/isaaclab_assets:/home/zxro/ant_rl_submission/source/isaaclab_tasks:/home/zxro/ant_rl_submission/source/isaaclab_rl:/home/zxro/ant_rl_submission/source/isaaclab_mimic",
+    "imports_requested": [
+      "isaaclab"
+    ],
+    "initialization_completed_timestamp": "2026-10-06T04:51:08.911986+00:00",
+    "close_invoked_timestamp": "2026-10-06T04:51:08.914271+00:00",
+    "close_returned_timestamp": null,
+    "timeout_after_close_seconds": 30,
+    "timeout_reason": "close timeout after 30 seconds",
+    "exit_code": -9,
+    "termination_signal": "SIGKILL",
+    "clean_shutdown": false,
+    "events": [
+      {
+        "event": "process_started",
+        "timestamp": "2026-10-06T04:51:04.717675+00:00",
+        "monotonic": 677389.80014246,
+        "python": "/home/zxro/miniforge3/envs/lerobot-arena/bin/python",
+        "cwd": "/home/zxro/ant_rl_submission",
+        "conda_prefix": "/home/zxro/miniforge3/envs/lerobot-arena",
+        "LD_PRELOAD": null
+      },
+      {
+        "event": "initialization_completed",
+        "timestamp": "2026-10-06T04:51:08.911986+00:00",
+        "monotonic": 677393.994453335,
+        "experience": "/home/zxro/ant_rl_submission/apps/isaaclab.python.headless.kit",
+        "launcher_source": "/home/zxro/ant_rl_submission/source/isaaclab/isaaclab/app/__init__.py",
+        "isaac_sim_location": "/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim",
+        "kit_location": "/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim/kit"
+      },
+      {
+        "event": "import_pass",
+        "timestamp": "2026-10-06T04:51:08.913461+00:00",
+        "monotonic": 677393.995925548,
+        "module": "isaaclab",
+        "file": "/home/zxro/ant_rl_submission/source/isaaclab/isaaclab/__init__.py"
+      },
+      {
+        "event": "close_invoked",
+        "timestamp": "2026-10-06T04:51:08.914271+00:00",
+        "monotonic": 677393.996730936
+      }
+    ],
+    "wall_seconds": 34.26381052297074,
+    "last_console_lines": [
+      "\u001b[3g",
+      "\u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH   ",
+      "[INFO] Using python from: /home/zxro/miniforge3/envs/lerobot-arena/bin/python",
+      "{\"event\": \"process_started\", \"timestamp\": \"2026-10-06T04:51:04.717675+00:00\", \"monotonic\": 677389.80014246, \"python\": \"/home/zxro/miniforge3/envs/lerobot-arena/bin/python\", \"cwd\": \"/home/zxro/ant_rl_submission\", \"conda_prefix\": \"/home/zxro/miniforge3/envs/lerobot-arena\", \"LD_PRELOAD\": null}",
+      "MESA: warning: Driver does not support the 0x7d67 PCI ID.",
+      "MESA: warning: Driver does not support the 0x7d67 PCI ID.",
+      "[INFO][AppLauncher]: Using device: cuda:0",
+      "[INFO][AppLauncher]: Loading experience file: /home/zxro/ant_rl_submission/apps/isaaclab.python.headless.kit",
+      "{\"event\": \"initialization_completed\", \"timestamp\": \"2026-10-06T04:51:08.911986+00:00\", \"monotonic\": 677393.994453335, \"experience\": \"/home/zxro/ant_rl_submission/apps/isaaclab.python.headless.kit\", \"launcher_source\": \"/home/zxro/ant_rl_submission/source/isaaclab/isaaclab/app/__init__.py\", \"isaac_sim_location\": \"/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim\", \"kit_location\": \"/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim/kit\"}",
+      "{\"event\": \"import_pass\", \"timestamp\": \"2026-10-06T04:51:08.913461+00:00\", \"monotonic\": 677393.995925548, \"module\": \"isaaclab\", \"file\": \"/home/zxro/ant_rl_submission/source/isaaclab/isaaclab/__init__.py\"}",
+      "{\"event\": \"close_invoked\", \"timestamp\": \"2026-10-06T04:51:08.914271+00:00\", \"monotonic\": 677393.996730936}"
+    ],
+    "forced_kill_is_clean_shutdown": false,
+    "environment_created": false,
+    "explicit_physics_steps": 0
+  },
+  {
+    "probe": "c",
+    "command": [
+      "./isaaclab.sh",
+      "-p",
+      "/home/zxro/ant_rl_submission/experiments/observation_ablation/validation/final_submission_check/shutdown_probe_c.py"
+    ],
+    "cwd": "/home/zxro/ant_rl_submission",
+    "python": "/home/zxro/miniforge3/envs/lerobot-arena/bin/python",
+    "conda_environment": "lerobot-arena",
+    "LD_PRELOAD": null,
+    "PYTHONPATH": "/home/zxro/ant_rl_submission/source:/home/zxro/ant_rl_submission/source/isaaclab:/home/zxro/ant_rl_submission/source/isaaclab_assets:/home/zxro/ant_rl_submission/source/isaaclab_tasks:/home/zxro/ant_rl_submission/source/isaaclab_rl:/home/zxro/ant_rl_submission/source/isaaclab_mimic",
+    "imports_requested": [
+      "isaaclab",
+      "isaaclab_tasks"
+    ],
+    "initialization_completed_timestamp": "2026-10-06T04:51:42.794842+00:00",
+    "close_invoked_timestamp": "2026-10-06T04:51:42.797873+00:00",
+    "close_returned_timestamp": null,
+    "timeout_after_close_seconds": 30,
+    "timeout_reason": null,
+    "exit_code": 139,
+    "termination_signal": null,
+    "clean_shutdown": false,
+    "events": [
+      {
+        "event": "process_started",
+        "timestamp": "2026-10-06T04:51:38.982238+00:00",
+        "monotonic": 677424.064707158,
+        "python": "/home/zxro/miniforge3/envs/lerobot-arena/bin/python",
+        "cwd": "/home/zxro/ant_rl_submission",
+        "conda_prefix": "/home/zxro/miniforge3/envs/lerobot-arena",
+        "LD_PRELOAD": null
+      },
+      {
+        "event": "initialization_completed",
+        "timestamp": "2026-10-06T04:51:42.794842+00:00",
+        "monotonic": 677427.877307807,
+        "experience": "/home/zxro/ant_rl_submission/apps/isaaclab.python.headless.kit",
+        "launcher_source": "/home/zxro/ant_rl_submission/source/isaaclab/isaaclab/app/__init__.py",
+        "isaac_sim_location": "/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim",
+        "kit_location": "/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim/kit"
+      },
+      {
+        "event": "import_pass",
+        "timestamp": "2026-10-06T04:51:42.796510+00:00",
+        "monotonic": 677427.878973512,
+        "module": "isaaclab",
+        "file": "/home/zxro/ant_rl_submission/source/isaaclab/isaaclab/__init__.py"
+      },
+      {
+        "event": "import_pass",
+        "timestamp": "2026-10-06T04:51:42.797214+00:00",
+        "monotonic": 677427.879674062,
+        "module": "isaaclab_tasks",
+        "file": "/home/zxro/ant_rl_submission/source/isaaclab_tasks/isaaclab_tasks/__init__.py"
+      },
+      {
+        "event": "close_invoked",
+        "timestamp": "2026-10-06T04:51:42.797873+00:00",
+        "monotonic": 677427.880331939
+      }
+    ],
+    "wall_seconds": 4.205614969949238,
+    "last_console_lines": [
+      "\u001b[3g",
+      "\u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH   ",
+      "[INFO] Using python from: /home/zxro/miniforge3/envs/lerobot-arena/bin/python",
+      "{\"event\": \"process_started\", \"timestamp\": \"2026-10-06T04:51:38.982238+00:00\", \"monotonic\": 677424.064707158, \"python\": \"/home/zxro/miniforge3/envs/lerobot-arena/bin/python\", \"cwd\": \"/home/zxro/ant_rl_submission\", \"conda_prefix\": \"/home/zxro/miniforge3/envs/lerobot-arena\", \"LD_PRELOAD\": null}",
+      "MESA: warning: Driver does not support the 0x7d67 PCI ID.",
+      "MESA: warning: Driver does not support the 0x7d67 PCI ID.",
+      "[INFO][AppLauncher]: Using device: cuda:0",
+      "[INFO][AppLauncher]: Loading experience file: /home/zxro/ant_rl_submission/apps/isaaclab.python.headless.kit",
+      "{\"event\": \"initialization_completed\", \"timestamp\": \"2026-10-06T04:51:42.794842+00:00\", \"monotonic\": 677427.877307807, \"experience\": \"/home/zxro/ant_rl_submission/apps/isaaclab.python.headless.kit\", \"launcher_source\": \"/home/zxro/ant_rl_submission/source/isaaclab/isaaclab/app/__init__.py\", \"isaac_sim_location\": \"/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim\", \"kit_location\": \"/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim/kit\"}",
+      "{\"event\": \"import_pass\", \"timestamp\": \"2026-10-06T04:51:42.796510+00:00\", \"monotonic\": 677427.878973512, \"module\": \"isaaclab\", \"file\": \"/home/zxro/ant_rl_submission/source/isaaclab/isaaclab/__init__.py\"}",
+      "{\"event\": \"import_pass\", \"timestamp\": \"2026-10-06T04:51:42.797214+00:00\", \"monotonic\": 677427.879674062, \"module\": \"isaaclab_tasks\", \"file\": \"/home/zxro/ant_rl_submission/source/isaaclab_tasks/isaaclab_tasks/__init__.py\"}",
+      "{\"event\": \"close_invoked\", \"timestamp\": \"2026-10-06T04:51:42.797873+00:00\", \"monotonic\": 677427.880331939}",
+      "Fatal Python error: Segmentation fault",
+      "",
+      "Thread 0x000078d50f215740 (most recent call first):",
+      "  File \"/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim/exts/isaacsim.simulation_app/isaacsim/simulation_app/simulation_app.py\", line 838 in close",
+      "  File \"/home/zxro/ant_rl_submission/experiments/observation_ablation/validation/final_submission_check/shutdown_probe_c.py\", line 51 in <module>",
+      "",
+      "Extension modules: omni.mdl.pymdlsdk._pymdlsdk, numpy.core._multiarray_umath, numpy.core._multiarray_tests, numpy.linalg._umath_linalg, numpy.fft._pocketfft_internal, numpy.random._common, numpy.random.bit_generator, numpy.random._bounded_integers, numpy.random._mt19937, numpy.random.mtrand, numpy.random._philox, numpy.random._pcg64, numpy.random._sfc64, numpy.random._generator, scipy._lib._ccallback_c, scipy.sparse._sparsetools, _csparsetools, scipy.sparse._csparsetools, scipy.linalg._fblas, scipy.linalg._flapack, scipy.linalg.cython_lapack, scipy.linalg._cythonized_array_utils, scipy.linalg._solve_toeplitz, scipy.linalg._decomp_lu_cython, scipy.linalg._matfuncs_sqrtm_triu, scipy.linalg._matfuncs_expm, scipy.linalg._linalg_pythran, scipy.linalg.cython_blas, scipy.linalg._decomp_update, scipy.sparse.linalg._dsolve._superlu, scipy.sparse.linalg._eigen.arpack._arpack, scipy.sparse.linalg._propack._spropack, scipy.sparse.linalg._propack._dpropack, scipy.sparse.linalg._propack._cpropack, scipy.sparse.linalg._propack._zpropack, scipy.sparse.csgraph._tools, scipy.sparse.csgraph._shortest_path, scipy.sparse.csgraph._traversal, scipy.sparse.csgraph._min_spanning_tree, scipy.sparse.csgraph._flow, scipy.sparse.csgraph._matching, scipy.sparse.csgraph._reordering, scipy.spatial._ckdtree, scipy._lib.messagestream, scipy.spatial._qhull, scipy.spatial._voronoi, scipy.spatial._distance_wrap, scipy.spatial._hausdorff, scipy.special._ufuncs_cxx, scipy.special._ufuncs, scipy.special._specfun, scipy.special._comb, scipy.special._ellip_harm_2, scipy.spatial.transform._rotation, torch._C, torch._C._dynamo.autograd_compiler, torch._C._dynamo.eval_frame, torch._C._dynamo.guards, torch._C._dynamo.utils, torch._C._fft, torch._C._linalg, torch._C._nested, torch._C._nn, torch._C._sparse, torch._C._special, yaml._yaml, xxhash._xxhash, PIL._imaging, scipy.optimize._group_columns, scipy.optimize._trlib._trlib, scipy.optimize._lbfgsb, _moduleTNC, scipy.optimize._moduleTNC, scipy.optimize._cobyla, scipy.optimize._slsqp, scipy.optimize._minpack, scipy.optimize._lsq.givens_elimination, scipy.optimize._zeros, scipy.optimize._cython_nnls, scipy._lib._uarray._uarray, scipy.linalg._decomp_interpolative, scipy.optimize._bglu_dense, scipy.optimize._lsap, scipy.optimize._direct, psutil._psutil_linux, psutil._psutil_posix, lxml._elementpath, lxml.etree, scipy.ndimage._nd_image, scipy.ndimage._rank_filter_1d, _ni_label, scipy.ndimage._ni_label, scipy.interpolate._fitpack, scipy.interpolate._dfitpack, scipy.interpolate._dierckx, scipy.interpolate._ppoly, scipy.interpolate._interpnd, scipy.interpolate._rbfinterp_pythran, scipy.interpolate._rgi_cython, scipy.interpolate._bspl, h5py._errors, h5py.defs, h5py._objects, h5py.h5, h5py.utils, h5py.h5t, h5py.h5s, h5py.h5ac, h5py.h5p, h5py.h5r, h5py._proxy, h5py._conv, h5py.h5z, h5py.h5a, h5py.h5d, h5py.h5ds, h5py.h5g, h5py.h5i, h5py.h5o, h5py.h5f, h5py.h5fd, h5py.h5pl, h5py.h5l, h5py._selector, kiwisolver._cext, hid, hppfcl.hppfcl, pinocchio.pinocchio_pywrap, nlopt._nlopt, PIL._imagingft, av._core, av.logging, av.bytesource, av.buffer, av.audio.format, av.error, av.dictionary, av.container.pyio, av.utils, av.option, av.descriptor, av.format, av.stream, av.container.streams, av.sidedata.motionvectors, av.sidedata.sidedata, av.opaque, av.packet, av.container.input, av.container.output, av.container.core, av.codec.context, av.video.format, av.video.reformatter, av.plane, av.video.plane, av.video.frame, av.video.stream, av.codec.hwaccel, av.codec.codec, av.frame, av.audio.layout, av.audio.plane, av.audio.frame, av.audio.stream, av.filter.link, av.filter.context, av.filter.graph, av.filter.filter, av.filter.loudnorm, av.audio.resampler, av.audio.codeccontext, av.audio.fifo, av.bitstream, av.video.codeccontext (total: 175)",
+      "./isaaclab.sh: line 461: 395447 Segmentation fault      (core dumped) ${python_exe} \"$@\""
+    ],
+    "forced_kill_is_clean_shutdown": false,
+    "environment_created": false,
+    "explicit_physics_steps": 0
+  },
+  {
+    "probe": "d",
+    "command": [
+      "./isaaclab.sh",
+      "-p",
+      "/home/zxro/ant_rl_submission/experiments/observation_ablation/validation/final_submission_check/shutdown_probe_d.py"
+    ],
+    "cwd": "/home/zxro/ant_rl_submission",
+    "python": "/home/zxro/miniforge3/envs/lerobot-arena/bin/python",
+    "conda_environment": "lerobot-arena",
+    "LD_PRELOAD": null,
+    "PYTHONPATH": "/home/zxro/ant_rl_submission/source:/home/zxro/ant_rl_submission/source/isaaclab:/home/zxro/ant_rl_submission/source/isaaclab_assets:/home/zxro/ant_rl_submission/source/isaaclab_tasks:/home/zxro/ant_rl_submission/source/isaaclab_rl:/home/zxro/ant_rl_submission/source/isaaclab_mimic",
+    "imports_requested": [
+      "isaaclab",
+      "isaaclab_tasks",
+      "ant"
+    ],
+    "initialization_completed_timestamp": "2026-10-06T04:51:46.898232+00:00",
+    "close_invoked_timestamp": "2026-10-06T04:51:46.902501+00:00",
+    "close_returned_timestamp": null,
+    "timeout_after_close_seconds": 30,
+    "timeout_reason": null,
+    "exit_code": 134,
+    "termination_signal": null,
+    "clean_shutdown": false,
+    "events": [
+      {
+        "event": "process_started",
+        "timestamp": "2026-10-06T04:51:43.190801+00:00",
+        "monotonic": 677428.273272755,
+        "python": "/home/zxro/miniforge3/envs/lerobot-arena/bin/python",
+        "cwd": "/home/zxro/ant_rl_submission",
+        "conda_prefix": "/home/zxro/miniforge3/envs/lerobot-arena",
+        "LD_PRELOAD": null
+      },
+      {
+        "event": "initialization_completed",
+        "timestamp": "2026-10-06T04:51:46.898232+00:00",
+        "monotonic": 677431.980697035,
+        "experience": "/home/zxro/ant_rl_submission/apps/isaaclab.python.headless.kit",
+        "launcher_source": "/home/zxro/ant_rl_submission/source/isaaclab/isaaclab/app/__init__.py",
+        "isaac_sim_location": "/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim",
+        "kit_location": "/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim/kit"
+      },
+      {
+        "event": "import_pass",
+        "timestamp": "2026-10-06T04:51:46.899849+00:00",
+        "monotonic": 677431.98231142,
+        "module": "isaaclab",
+        "file": "/home/zxro/ant_rl_submission/source/isaaclab/isaaclab/__init__.py"
+      },
+      {
+        "event": "import_pass",
+        "timestamp": "2026-10-06T04:51:46.900590+00:00",
+        "monotonic": 677431.983049688,
+        "module": "isaaclab_tasks",
+        "file": "/home/zxro/ant_rl_submission/source/isaaclab_tasks/isaaclab_tasks/__init__.py"
+      },
+      {
+        "event": "import_pass",
+        "timestamp": "2026-10-06T04:51:46.901775+00:00",
+        "monotonic": 677431.984235445,
+        "module": "ant",
+        "file": "/home/zxro/ant_rl_submission/source/ant/__init__.py"
+      },
+      {
+        "event": "close_invoked",
+        "timestamp": "2026-10-06T04:51:46.902501+00:00",
+        "monotonic": 677431.984960008
+      }
+    ],
+    "wall_seconds": 4.207082384964451,
+    "last_console_lines": [
+      "[INFO][AppLauncher]: Using device: cuda:0",
+      "[INFO][AppLauncher]: Loading experience file: /home/zxro/ant_rl_submission/apps/isaaclab.python.headless.kit",
+      "{\"event\": \"initialization_completed\", \"timestamp\": \"2026-10-06T04:51:46.898232+00:00\", \"monotonic\": 677431.980697035, \"experience\": \"/home/zxro/ant_rl_submission/apps/isaaclab.python.headless.kit\", \"launcher_source\": \"/home/zxro/ant_rl_submission/source/isaaclab/isaaclab/app/__init__.py\", \"isaac_sim_location\": \"/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim\", \"kit_location\": \"/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim/kit\"}",
+      "{\"event\": \"import_pass\", \"timestamp\": \"2026-10-06T04:51:46.899849+00:00\", \"monotonic\": 677431.98231142, \"module\": \"isaaclab\", \"file\": \"/home/zxro/ant_rl_submission/source/isaaclab/isaaclab/__init__.py\"}",
+      "{\"event\": \"import_pass\", \"timestamp\": \"2026-10-06T04:51:46.900590+00:00\", \"monotonic\": 677431.983049688, \"module\": \"isaaclab_tasks\", \"file\": \"/home/zxro/ant_rl_submission/source/isaaclab_tasks/isaaclab_tasks/__init__.py\"}",
+      "{\"event\": \"import_pass\", \"timestamp\": \"2026-10-06T04:51:46.901775+00:00\", \"monotonic\": 677431.984235445, \"module\": \"ant\", \"file\": \"/home/zxro/ant_rl_submission/source/ant/__init__.py\"}",
+      "{\"event\": \"close_invoked\", \"timestamp\": \"2026-10-06T04:51:46.902501+00:00\", \"monotonic\": 677431.984960008}",
+      "malloc_consolidate(): invalid chunk size",
+      "Fatal Python error: Segmentation fault",
+      "",
+      "Thread 0x00007a5f213c9740 (most recent call first):",
+      "  File \"/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim/exts/isaacsim.simulation_app/isaacsim/simulation_app/simulation_app.py\"Fatal Python error: , line Aborted838",
+      "",
+      " in close",
+      "  File \"/home/zxro/ant_rl_submission/experiments/observation_ablation/validation/final_submission_check/shutdown_probe_d.py\", line 51 in <module>",
+      "",
+      "Extension modules: omni.mdl.pymdlsdk._pymdlsdk, numpy.core._multiarray_umath, numpy.core._multiarray_tests, numpy.linalg._umath_linalg, numpy.fft._pocketfft_internal",
+      "Extension modules: , omni.mdl.pymdlsdk._pymdlsdknumpy.random._common, numpy.core._multiarray_umath, numpy.random.bit_generator, numpy.core._multiarray_tests, numpy.random._bounded_integers, numpy.linalg._umath_linalg, numpy.random._mt19937, numpy.fft._pocketfft_internal, numpy.random.mtrand, numpy.random._philox, numpy.random._common, numpy.random._pcg64, numpy.random._sfc64, , numpy.random._generatornumpy.random.bit_generator, numpy.random._bounded_integers, numpy.random._mt19937, numpy.random.mtrand, numpy.random._philox, numpy.random._pcg64, scipy._lib._ccallback_c, numpy.random._sfc64, , numpy.random._generatorscipy.sparse._sparsetools, _csparsetools, scipy.sparse._csparsetools, scipy.linalg._fblas, scipy.linalg._flapack, , scipy._lib._ccallback_cscipy.linalg.cython_lapack, scipy.linalg._cythonized_array_utils, scipy.sparse._sparsetools, scipy.linalg._solve_toeplitz, , _csparsetoolsscipy.linalg._decomp_lu_cython, scipy.linalg._matfuncs_sqrtm_triu, scipy.sparse._csparsetools, scipy.linalg._matfuncs_expm, , scipy.linalg._linalg_pythranscipy.linalg._fblas, scipy.linalg.cython_blas, scipy.linalg._decomp_update, scipy.sparse.linalg._dsolve._superlu, scipy.sparse.linalg._eigen.arpack._arpack, scipy.sparse.linalg._propack._spropack, scipy.sparse.linalg._propack._dpropack, , scipy.sparse.linalg._propack._cpropackscipy.linalg._flapack, scipy.sparse.linalg._propack._zpropack, scipy.linalg.cython_lapack, scipy.sparse.csgraph._tools, scipy.linalg._cythonized_array_utils, scipy.sparse.csgraph._shortest_path, scipy.linalg._solve_toeplitz, scipy.sparse.csgraph._traversal, scipy.linalg._decomp_lu_cython, scipy.sparse.csgraph._min_spanning_tree, scipy.linalg._matfuncs_sqrtm_triu, scipy.sparse.csgraph._flow, scipy.linalg._matfuncs_expm, , scipy.linalg._linalg_pythranscipy.sparse.csgraph._matching, , scipy.linalg.cython_blasscipy.sparse.csgraph._reordering, scipy.spatial._ckdtree, scipy.linalg._decomp_update, scipy._lib.messagestream, scipy.sparse.linalg._dsolve._superlu, scipy.sparse.linalg._eigen.arpack._arpack, scipy.spatial._qhull, scipy.sparse.linalg._propack._spropack, scipy.spatial._voronoi, scipy.sparse.linalg._propack._dpropack, scipy.spatial._distance_wrap, scipy.sparse.linalg._propack._cpropack, , scipy.spatial._hausdorffscipy.sparse.linalg._propack._zpropack, scipy.special._ufuncs_cxx, , scipy.special._ufuncsscipy.sparse.csgraph._tools, scipy.sparse.csgraph._shortest_path, scipy.special._specfun, scipy.sparse.csgraph._traversal, scipy.special._comb, scipy.sparse.csgraph._min_spanning_tree, scipy.special._ellip_harm_2, scipy.sparse.csgraph._flow, scipy.spatial.transform._rotation, scipy.sparse.csgraph._matching, , torch._Cscipy.sparse.csgraph._reordering, torch._C._dynamo.autograd_compiler, scipy.spatial._ckdtree, torch._C._dynamo.eval_frame, scipy._lib.messagestream, torch._C._dynamo.guards, torch._C._dynamo.utils, scipy.spatial._qhull, torch._C._fft, scipy.spatial._voronoi, torch._C._linalg, scipy.spatial._distance_wrap, torch._C._nested, , scipy.spatial._hausdorfftorch._C._nn, scipy.special._ufuncs_cxx, torch._C._sparse, scipy.special._ufuncs, torch._C._special, scipy.special._specfun, scipy.special._comb, scipy.special._ellip_harm_2, scipy.spatial.transform._rotation, torch._C, torch._C._dynamo.autograd_compiler, torch._C._dynamo.eval_frame, torch._C._dynamo.guards, torch._C._dynamo.utils, torch._C._fft, torch._C._linalg, torch._C._nested, torch._C._nn, torch._C._sparse, yaml._yaml, torch._C._special, xxhash._xxhash, PIL._imaging, scipy.optimize._group_columns, scipy.optimize._trlib._trlib, scipy.optimize._lbfgsb, _moduleTNC, scipy.optimize._moduleTNC, scipy.optimize._cobyla, yaml._yaml, scipy.optimize._slsqp, xxhash._xxhash, scipy.optimize._minpack, scipy.optimize._lsq.givens_elimination, PIL._imaging, scipy.optimize._zeros, scipy.optimize._group_columns, scipy.optimize._cython_nnls, scipy.optimize._trlib._trlib, scipy._lib._uarray._uarray, scipy.optimize._lbfgsb, scipy.linalg._decomp_interpolative, scipy.optimize._bglu_dense, _moduleTNC, scipy.optimize._lsap, scipy.optimize._moduleTNC, scipy.optimize._direct, scipy.optimize._cobyla, scipy.optimize._slsqp, psutil._psutil_linux, scipy.optimize._minpack, psutil._psutil_posix, scipy.optimize._lsq.givens_elimination, scipy.optimize._zeros, scipy.optimize._cython_nnls, scipy._lib._uarray._uarray, scipy.linalg._decomp_interpolative, scipy.optimize._bglu_dense, , scipy.optimize._lsaplxml._elementpath, lxml.etree, scipy.optimize._direct, scipy.ndimage._nd_image, psutil._psutil_linux, scipy.ndimage._rank_filter_1d, psutil._psutil_posix, _ni_label, scipy.ndimage._ni_label, , scipy.interpolate._fitpacklxml._elementpath, scipy.interpolate._dfitpack, lxml.etree, scipy.interpolate._dierckx, scipy.ndimage._nd_image, scipy.interpolate._ppoly, scipy.interpolate._interpnd, scipy.ndimage._rank_filter_1d, scipy.interpolate._rbfinterp_pythran, _ni_label, scipy.interpolate._rgi_cython, scipy.ndimage._ni_label, scipy.interpolate._bspl, scipy.interpolate._fitpack, scipy.interpolate._dfitpack, scipy.interpolate._dierckx, h5py._errors, scipy.interpolate._ppoly, h5py.defs, scipy.interpolate._interpnd, h5py._objects, scipy.interpolate._rbfinterp_pythran, h5py.h5, h5py.utils, scipy.interpolate._rgi_cython, h5py.h5t, scipy.interpolate._bspl, h5py.h5s, h5py.h5ac, , h5py._errorsh5py.h5p, , h5py.defsh5py.h5r, , h5py._objectsh5py._proxy, h5py.h5, h5py._conv, h5py.utils, h5py.h5z, h5py.h5t, h5py.h5a, h5py.h5s, h5py.h5d, h5py.h5ac, h5py.h5ds, h5py.h5p, h5py.h5g, h5py.h5r, h5py.h5i, h5py._proxy, h5py.h5o, h5py._conv, h5py.h5f, h5py.h5z, h5py.h5fd, h5py.h5a, h5py.h5pl, h5py.h5d, h5py.h5l, h5py.h5ds, h5py._selector, h5py.h5g, h5py.h5i, h5py.h5o, kiwisolver._cext, h5py.h5f, , hidh5py.h5fd, h5py.h5pl, hppfcl.hppfcl, h5py.h5l, pinocchio.pinocchio_pywrap, h5py._selector, nlopt._nlopt, kiwisolver._cext, hid, hppfcl.hppfcl, pinocchio.pinocchio_pywrap, PIL._imagingft, nlopt._nlopt, av._core, av.logging, av.bytesource, PIL._imagingft, av.buffer, av.audio.format, av._core, av.error, av.logging, av.dictionary, av.bytesource, av.buffer, av.container.pyio, av.audio.format, av.utils, av.error, av.option, av.dictionary, av.descriptor, av.format, av.container.pyio, av.stream, av.utils, av.container.streams, av.option, av.sidedata.motionvectors, av.descriptor, av.format, av.sidedata.sidedata, av.stream, av.opaque, av.packet, av.container.streams, , av.container.inputav.sidedata.motionvectors, av.container.output, av.sidedata.sidedata, av.container.core, av.opaque, av.codec.context, av.packet, av.video.format, av.container.input, av.video.reformatter, av.container.output, av.plane, av.container.core, , av.video.planeav.codec.context, , av.video.frameav.video.format, , av.video.streamav.video.reformatter, , av.planeav.codec.hwaccel, av.video.plane, av.codec.codec, av.video.frame, av.frame, av.video.stream, av.audio.layout, av.codec.hwaccel, av.audio.plane, av.codec.codec, av.audio.frame, av.frame, av.audio.stream, av.audio.layout, , av.filter.linkav.audio.plane, , av.filter.contextav.audio.frame, , av.audio.streamav.filter.graph, av.filter.link, av.filter.context, av.filter.filter, av.filter.graph, av.filter.loudnorm, av.filter.filter, av.audio.resampler, av.filter.loudnorm, av.audio.codeccontext, , av.audio.resamplerav.audio.fifo, av.bitstream, av.audio.codeccontext, av.audio.fifo, av.bitstream, av.video.codeccontext, av.video.codeccontext (total:  (total: 175175))",
+      "",
+      "./isaaclab.sh: line 461: 395604 Aborted                 (core dumped) ${python_exe} \"$@\""
+    ],
+    "forced_kill_is_clean_shutdown": false,
+    "environment_created": false,
+    "explicit_physics_steps": 0
+  },
+  {
+    "probe": "e",
+    "command": [
+      "./isaaclab.sh",
+      "-p",
+      "/home/zxro/ant_rl_submission/experiments/observation_ablation/validation/final_submission_check/shutdown_probe_e.py"
+    ],
+    "cwd": "/home/zxro/ant_rl_submission",
+    "python": "/home/zxro/miniforge3/envs/lerobot-arena/bin/python",
+    "conda_environment": "lerobot-arena",
+    "LD_PRELOAD": null,
+    "PYTHONPATH": "/home/zxro/ant_rl_submission/source:/home/zxro/ant_rl_submission/source/isaaclab:/home/zxro/ant_rl_submission/source/isaaclab_assets:/home/zxro/ant_rl_submission/source/isaaclab_tasks:/home/zxro/ant_rl_submission/source/isaaclab_rl:/home/zxro/ant_rl_submission/source/isaaclab_mimic",
+    "imports_requested": [
+      "isaaclab",
+      "isaaclab_tasks",
+      "ant",
+      "isaaclab_tasks.manager_based.classic.ant.ant_contact_observations",
+      "isaaclab_tasks.manager_based.classic.ant.ant_terrain_heightscan_env_cfg"
+    ],
+    "initialization_completed_timestamp": "2026-10-06T04:51:51.744983+00:00",
+    "close_invoked_timestamp": "2026-10-06T04:51:51.781696+00:00",
+    "close_returned_timestamp": null,
+    "timeout_after_close_seconds": 30,
+    "timeout_reason": "close timeout after 30 seconds",
+    "exit_code": -9,
+    "termination_signal": "SIGKILL",
+    "clean_shutdown": false,
+    "events": [
+      {
+        "event": "process_started",
+        "timestamp": "2026-10-06T04:51:47.386564+00:00",
+        "monotonic": 677432.469031831,
+        "python": "/home/zxro/miniforge3/envs/lerobot-arena/bin/python",
+        "cwd": "/home/zxro/ant_rl_submission",
+        "conda_prefix": "/home/zxro/miniforge3/envs/lerobot-arena",
+        "LD_PRELOAD": null
+      },
+      {
+        "event": "initialization_completed",
+        "timestamp": "2026-10-06T04:51:51.744983+00:00",
+        "monotonic": 677436.8274491,
+        "experience": "/home/zxro/ant_rl_submission/apps/isaaclab.python.headless.kit",
+        "launcher_source": "/home/zxro/ant_rl_submission/source/isaaclab/isaaclab/app/__init__.py",
+        "isaac_sim_location": "/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim",
+        "kit_location": "/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim/kit"
+      },
+      {
+        "event": "import_pass",
+        "timestamp": "2026-10-06T04:51:51.746213+00:00",
+        "monotonic": 677436.828673053,
+        "module": "isaaclab",
+        "file": "/home/zxro/ant_rl_submission/source/isaaclab/isaaclab/__init__.py"
+      },
+      {
+        "event": "import_pass",
+        "timestamp": "2026-10-06T04:51:51.746887+00:00",
+        "monotonic": 677436.82934627,
+        "module": "isaaclab_tasks",
+        "file": "/home/zxro/ant_rl_submission/source/isaaclab_tasks/isaaclab_tasks/__init__.py"
+      },
+      {
+        "event": "import_pass",
+        "timestamp": "2026-10-06T04:51:51.748012+00:00",
+        "monotonic": 677436.830473174,
+        "module": "ant",
+        "file": "/home/zxro/ant_rl_submission/source/ant/__init__.py"
+      },
+      {
+        "event": "import_pass",
+        "timestamp": "2026-10-06T04:51:51.749150+00:00",
+        "monotonic": 677436.831610456,
+        "module": "isaaclab_tasks.manager_based.classic.ant.ant_contact_observations",
+        "file": "/home/zxro/ant_rl_submission/source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_contact_observations.py"
+      },
+      {
+        "event": "import_pass",
+        "timestamp": "2026-10-06T04:51:51.780449+00:00",
+        "monotonic": 677436.862911653,
+        "module": "isaaclab_tasks.manager_based.classic.ant.ant_terrain_heightscan_env_cfg",
+        "file": "/home/zxro/ant_rl_submission/source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_terrain_heightscan_env_cfg.py"
+      },
+      {
+        "event": "close_invoked",
+        "timestamp": "2026-10-06T04:51:51.781696+00:00",
+        "monotonic": 677436.864160125
+      }
+    ],
+    "wall_seconds": 34.46417041902896,
+    "last_console_lines": [
+      "\u001b[3g",
+      "\u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH   ",
+      "[INFO] Using python from: /home/zxro/miniforge3/envs/lerobot-arena/bin/python",
+      "{\"event\": \"process_started\", \"timestamp\": \"2026-10-06T04:51:47.386564+00:00\", \"monotonic\": 677432.469031831, \"python\": \"/home/zxro/miniforge3/envs/lerobot-arena/bin/python\", \"cwd\": \"/home/zxro/ant_rl_submission\", \"conda_prefix\": \"/home/zxro/miniforge3/envs/lerobot-arena\", \"LD_PRELOAD\": null}",
+      "MESA: warning: Driver does not support the 0x7d67 PCI ID.",
+      "MESA: warning: Driver does not support the 0x7d67 PCI ID.",
+      "[INFO][AppLauncher]: Using device: cuda:0",
+      "[INFO][AppLauncher]: Loading experience file: /home/zxro/ant_rl_submission/apps/isaaclab.python.headless.kit",
+      "{\"event\": \"initialization_completed\", \"timestamp\": \"2026-10-06T04:51:51.744983+00:00\", \"monotonic\": 677436.8274491, \"experience\": \"/home/zxro/ant_rl_submission/apps/isaaclab.python.headless.kit\", \"launcher_source\": \"/home/zxro/ant_rl_submission/source/isaaclab/isaaclab/app/__init__.py\", \"isaac_sim_location\": \"/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim\", \"kit_location\": \"/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim/kit\"}",
+      "{\"event\": \"import_pass\", \"timestamp\": \"2026-10-06T04:51:51.746213+00:00\", \"monotonic\": 677436.828673053, \"module\": \"isaaclab\", \"file\": \"/home/zxro/ant_rl_submission/source/isaaclab/isaaclab/__init__.py\"}",
+      "{\"event\": \"import_pass\", \"timestamp\": \"2026-10-06T04:51:51.746887+00:00\", \"monotonic\": 677436.82934627, \"module\": \"isaaclab_tasks\", \"file\": \"/home/zxro/ant_rl_submission/source/isaaclab_tasks/isaaclab_tasks/__init__.py\"}",
+      "{\"event\": \"import_pass\", \"timestamp\": \"2026-10-06T04:51:51.748012+00:00\", \"monotonic\": 677436.830473174, \"module\": \"ant\", \"file\": \"/home/zxro/ant_rl_submission/source/ant/__init__.py\"}",
+      "{\"event\": \"import_pass\", \"timestamp\": \"2026-10-06T04:51:51.749150+00:00\", \"monotonic\": 677436.831610456, \"module\": \"isaaclab_tasks.manager_based.classic.ant.ant_contact_observations\", \"file\": \"/home/zxro/ant_rl_submission/source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_contact_observations.py\"}",
+      "{\"event\": \"import_pass\", \"timestamp\": \"2026-10-06T04:51:51.780449+00:00\", \"monotonic\": 677436.862911653, \"module\": \"isaaclab_tasks.manager_based.classic.ant.ant_terrain_heightscan_env_cfg\", \"file\": \"/home/zxro/ant_rl_submission/source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_terrain_heightscan_env_cfg.py\"}",
+      "{\"event\": \"close_invoked\", \"timestamp\": \"2026-10-06T04:51:51.781696+00:00\", \"monotonic\": 677436.864160125}"
+    ],
+    "forced_kill_is_clean_shutdown": false,
+    "environment_created": false,
+    "explicit_physics_steps": 0
+  },
+  {
+    "probe": "control_framework",
+    "command": [
+      "./isaaclab.sh",
+      "-p",
+      "/home/zxro/ant_rl_submission/experiments/observation_ablation/validation/final_submission_check/shutdown_control_framework.py"
+    ],
+    "cwd": "/home/zxro/arena/IsaacLab",
+    "python": "/home/zxro/miniforge3/envs/lerobot-arena/bin/python",
+    "conda_environment": "lerobot-arena",
+    "LD_PRELOAD": null,
+    "PYTHONPATH": "/home/zxro/arena/IsaacLab/source:/home/zxro/arena/IsaacLab/source/isaaclab:/home/zxro/arena/IsaacLab/source/isaaclab_assets:/home/zxro/arena/IsaacLab/source/isaaclab_tasks:/home/zxro/arena/IsaacLab/source/isaaclab_rl:/home/zxro/arena/IsaacLab/source/isaaclab_mimic",
+    "imports_requested": [],
+    "initialization_completed_timestamp": "2026-10-06T04:52:25.811217+00:00",
+    "close_invoked_timestamp": "2026-10-06T04:52:25.812556+00:00",
+    "close_returned_timestamp": null,
+    "timeout_after_close_seconds": 30,
+    "timeout_reason": null,
+    "exit_code": 134,
+    "termination_signal": null,
+    "clean_shutdown": false,
+    "events": [
+      {
+        "event": "process_started",
+        "timestamp": "2026-10-06T04:52:21.866284+00:00",
+        "monotonic": 677466.948750751,
+        "python": "/home/zxro/miniforge3/envs/lerobot-arena/bin/python",
+        "cwd": "/home/zxro/arena/IsaacLab",
+        "conda_prefix": "/home/zxro/miniforge3/envs/lerobot-arena",
+        "LD_PRELOAD": null
+      },
+      {
+        "event": "initialization_completed",
+        "timestamp": "2026-10-06T04:52:25.811217+00:00",
+        "monotonic": 677470.893682044,
+        "experience": "/home/zxro/arena/IsaacLab/apps/isaaclab.python.headless.kit",
+        "launcher_source": "/home/zxro/arena/IsaacLab/source/isaaclab/isaaclab/app/__init__.py",
+        "isaac_sim_location": "/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim",
+        "kit_location": "/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim/kit"
+      },
+      {
+        "event": "close_invoked",
+        "timestamp": "2026-10-06T04:52:25.812556+00:00",
+        "monotonic": 677470.895019061
+      }
+    ],
+    "wall_seconds": 4.405731200939044,
+    "last_console_lines": [
+      "\u001b[3g",
+      "\u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH   ",
+      "[INFO] Using python from: /home/zxro/miniforge3/envs/lerobot-arena/bin/python",
+      "{\"event\": \"process_started\", \"timestamp\": \"2026-10-06T04:52:21.866284+00:00\", \"monotonic\": 677466.948750751, \"python\": \"/home/zxro/miniforge3/envs/lerobot-arena/bin/python\", \"cwd\": \"/home/zxro/arena/IsaacLab\", \"conda_prefix\": \"/home/zxro/miniforge3/envs/lerobot-arena\", \"LD_PRELOAD\": null}",
+      "MESA: warning: Driver does not support the 0x7d67 PCI ID.",
+      "MESA: warning: Driver does not support the 0x7d67 PCI ID.",
+      "[INFO][AppLauncher]: Using device: cuda:0",
+      "[INFO][AppLauncher]: Loading experience file: /home/zxro/arena/IsaacLab/apps/isaaclab.python.headless.kit",
+      "{\"event\": \"initialization_completed\", \"timestamp\": \"2026-10-06T04:52:25.811217+00:00\", \"monotonic\": 677470.893682044, \"experience\": \"/home/zxro/arena/IsaacLab/apps/isaaclab.python.headless.kit\", \"launcher_source\": \"/home/zxro/arena/IsaacLab/source/isaaclab/isaaclab/app/__init__.py\", \"isaac_sim_location\": \"/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim\", \"kit_location\": \"/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim/kit\"}",
+      "{\"event\": \"close_invoked\", \"timestamp\": \"2026-10-06T04:52:25.812556+00:00\", \"monotonic\": 677470.895019061}",
+      "malloc_consolidate(): unaligned fastbin chunk detected",
+      "Fatal Python error: Aborted",
+      "",
+      "Current thread 0x000076e4c46db740 (most recent call first):",
+      "  File \"/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim/exts/isaacsim.simulation_app/isaacsim/simulation_app/simulation_app.py\", line 838 in close",
+      "  File \"/home/zxro/ant_rl_submission/experiments/observation_ablation/validation/final_submission_check/shutdown_control_framework.py\", line 51 in <module>",
+      "",
+      "Extension modules: omni.mdl.pymdlsdk._pymdlsdk, numpy.core._multiarray_umath, numpy.core._multiarray_tests, numpy.linalg._umath_linalg, numpy.fft._pocketfft_internal, numpy.random._common, numpy.random.bit_generator, numpy.random._bounded_integers, numpy.random._mt19937, numpy.random.mtrand, numpy.random._philox, numpy.random._pcg64, numpy.random._sfc64, numpy.random._generator, scipy._lib._ccallback_c, scipy.sparse._sparsetools, _csparsetools, scipy.sparse._csparsetools, scipy.linalg._fblas, scipy.linalg._flapack, scipy.linalg.cython_lapack, scipy.linalg._cythonized_array_utils, scipy.linalg._solve_toeplitz, scipy.linalg._decomp_lu_cython, scipy.linalg._matfuncs_sqrtm_triu, scipy.linalg._matfuncs_expm, scipy.linalg._linalg_pythran, scipy.linalg.cython_blas, scipy.linalg._decomp_update, scipy.sparse.linalg._dsolve._superlu, scipy.sparse.linalg._eigen.arpack._arpack, scipy.sparse.linalg._propack._spropack, scipy.sparse.linalg._propack._dpropack, scipy.sparse.linalg._propack._cpropack, scipy.sparse.linalg._propack._zpropack, scipy.sparse.csgraph._tools, scipy.sparse.csgraph._shortest_path, scipy.sparse.csgraph._traversal, scipy.sparse.csgraph._min_spanning_tree, scipy.sparse.csgraph._flow, scipy.sparse.csgraph._matching, scipy.sparse.csgraph._reordering, scipy.spatial._ckdtree, scipy._lib.messagestream, scipy.spatial._qhull, scipy.spatial._voronoi, scipy.spatial._distance_wrap, scipy.spatial._hausdorff, scipy.special._ufuncs_cxx, scipy.special._ufuncs, scipy.special._specfun, scipy.special._comb, scipy.special._ellip_harm_2, scipy.spatial.transform._rotation, torch._C, torch._C._dynamo.autograd_compiler, torch._C._dynamo.eval_frame, torch._C._dynamo.guards, torch._C._dynamo.utils, torch._C._fft, torch._C._linalg, torch._C._nested, torch._C._nn, torch._C._sparse, torch._C._special, yaml._yaml, xxhash._xxhash, PIL._imaging, scipy.optimize._group_columns, scipy.optimize._trlib._trlib, scipy.optimize._lbfgsb, _moduleTNC, scipy.optimize._moduleTNC, scipy.optimize._cobyla, scipy.optimize._slsqp, scipy.optimize._minpack, scipy.optimize._lsq.givens_elimination, scipy.optimize._zeros, scipy.optimize._cython_nnls, scipy._lib._uarray._uarray, scipy.linalg._decomp_interpolative, scipy.optimize._bglu_dense, scipy.optimize._lsap, scipy.optimize._direct, psutil._psutil_linux, psutil._psutil_posix, lxml._elementpath, lxml.etree, scipy.ndimage._nd_image, scipy.ndimage._rank_filter_1d, _ni_label, scipy.ndimage._ni_label, scipy.interpolate._fitpack, scipy.interpolate._dfitpack, scipy.interpolate._dierckx, scipy.interpolate._ppoly, scipy.interpolate._interpnd, scipy.interpolate._rbfinterp_pythran, scipy.interpolate._rgi_cython, scipy.interpolate._bspl, h5py._errors, h5py.defs, h5py._objects, h5py.h5, h5py.utils, h5py.h5t, h5py.h5s, h5py.h5ac, h5py.h5p, h5py.h5r, h5py._proxy, h5py._conv, h5py.h5z, h5py.h5a, h5py.h5d, h5py.h5ds, h5py.h5g, h5py.h5i, h5py.h5o, h5py.h5f, h5py.h5fd, h5py.h5pl, h5py.h5l, h5py._selector, kiwisolver._cext, hid, hppfcl.hppfcl, pinocchio.pinocchio_pywrap, nlopt._nlopt, PIL._imagingft, av._core, av.logging, av.bytesource, av.buffer, av.audio.format, av.error, av.dictionary, av.container.pyio, av.utils, av.option, av.descriptor, av.format, av.stream, av.container.streams, av.sidedata.motionvectors, av.sidedata.sidedata, av.opaque, av.packet, av.container.input, av.container.output, av.container.core, av.codec.context, av.video.format, av.video.reformatter, av.plane, av.video.plane, av.video.frame, av.video.stream, av.codec.hwaccel, av.codec.codec, av.frame, av.audio.layout, av.audio.plane, av.audio.frame, av.audio.stream, av.filter.link, av.filter.context, av.filter.graph, av.filter.filter, av.filter.loudnorm, av.audio.resampler, av.audio.codeccontext, av.audio.fifo, av.bitstream, av.video.codeccontext (total: 175)",
+      "./isaaclab.sh: line 461: 395927 Aborted                 (core dumped) ${python_exe} \"$@\""
+    ],
+    "forced_kill_is_clean_shutdown": false,
+    "environment_created": false,
+    "explicit_physics_steps": 0
+  },
+  {
+    "probe": "control_pure_isaacsim",
+    "command": [
+      "/home/zxro/miniforge3/envs/lerobot-arena/bin/python",
+      "-B",
+      "/home/zxro/ant_rl_submission/experiments/observation_ablation/validation/final_submission_check/shutdown_control_pure_isaacsim.py"
+    ],
+    "cwd": "/home/zxro/ant_rl_submission",
+    "python": "/home/zxro/miniforge3/envs/lerobot-arena/bin/python",
+    "conda_environment": "lerobot-arena",
+    "LD_PRELOAD": null,
+    "PYTHONPATH": null,
+    "imports_requested": [],
+    "initialization_completed_timestamp": "2026-10-06T04:52:31.811776+00:00",
+    "close_invoked_timestamp": "2026-10-06T04:52:31.813534+00:00",
+    "close_returned_timestamp": null,
+    "timeout_after_close_seconds": 30,
+    "timeout_reason": null,
+    "exit_code": -11,
+    "termination_signal": "SIGSEGV",
+    "clean_shutdown": false,
+    "events": [
+      {
+        "event": "process_started",
+        "timestamp": "2026-10-06T04:52:26.259785+00:00",
+        "monotonic": 677471.342252762,
+        "python": "/home/zxro/miniforge3/envs/lerobot-arena/bin/python",
+        "cwd": "/home/zxro/ant_rl_submission",
+        "conda_prefix": "/home/zxro/miniforge3/envs/lerobot-arena",
+        "LD_PRELOAD": null
+      },
+      {
+        "event": "initialization_completed",
+        "timestamp": "2026-10-06T04:52:31.811776+00:00",
+        "monotonic": 677476.894242156,
+        "experience": null,
+        "launcher_source": null,
+        "isaac_sim_location": "/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim",
+        "kit_location": "/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim/kit"
+      },
+      {
+        "event": "close_invoked",
+        "timestamp": "2026-10-06T04:52:31.813534+00:00",
+        "monotonic": 677476.895996168
+      }
+    ],
+    "wall_seconds": 6.609976719948463,
+    "last_console_lines": [
+      "  File \"/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/threading.py\", line 1045 in _bootstrap_inner",
+      "  File \"/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/threading.py\", line 1002 in _bootstrap",
+      "",
+      "Thread 0x0000746d89a40640 (most recent call first):",
+      "  File \"/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/concurrent/futures/thread.py\", line 81 in _worker",
+      "  File \"/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/threading.py\", line 982 in run",
+      "  File \"/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/threading.py\", line 1045 in _bootstrap_inner",
+      "  File \"/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/threading.py\", line 1002 in _bootstrap",
+      "",
+      "Thread 0x0000746d8a9ff640 (most recent call first):",
+      "  File \"/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/concurrent/futures/thread.py\", line 81 in _worker",
+      "  File \"/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/threading.py\", line 982 in run",
+      "  File \"/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/threading.py\", line 1045 in _bootstrap_inner",
+      "  File \"/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/threading.py\", line 1002 in _bootstrap",
+      "",
+      "Thread 0x0000747207181740 (most recent call first):",
+      "  File \"/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim/exts/isaacsim.simulation_app/isaacsim/simulation_app/simulation_app.py\", line 838 in close",
+      "  File \"/home/zxro/ant_rl_submission/experiments/observation_ablation/validation/final_submission_check/shutdown_control_pure_isaacsim.py\", line 51 in <module>",
+      "",
+      "Extension modules: psutil._psutil_linux, psutil._psutil_posix, omni.mdl.pymdlsdk._pymdlsdk, numpy.core._multiarray_umath, numpy.core._multiarray_tests, numpy.linalg._umath_linalg, numpy.fft._pocketfft_internal, numpy.random._common, numpy.random.bit_generator, numpy.random._bounded_integers, numpy.random._mt19937, numpy.random.mtrand, numpy.random._philox, numpy.random._pcg64, numpy.random._sfc64, numpy.random._generator, PIL._imaging, scipy._lib._ccallback_c, scipy.sparse._sparsetools, _csparsetools, scipy.sparse._csparsetools, scipy.linalg._fblas, scipy.linalg._flapack, scipy.linalg.cython_lapack, scipy.linalg._cythonized_array_utils, scipy.linalg._solve_toeplitz, scipy.linalg._decomp_lu_cython, scipy.linalg._matfuncs_sqrtm_triu, scipy.linalg._matfuncs_expm, scipy.linalg._linalg_pythran, scipy.linalg.cython_blas, scipy.linalg._decomp_update, scipy.sparse.linalg._dsolve._superlu, scipy.sparse.linalg._eigen.arpack._arpack, scipy.sparse.linalg._propack._spropack, scipy.sparse.linalg._propack._dpropack, scipy.sparse.linalg._propack._cpropack, scipy.sparse.linalg._propack._zpropack, scipy.sparse.csgraph._tools, scipy.sparse.csgraph._shortest_path, scipy.sparse.csgraph._traversal, scipy.sparse.csgraph._min_spanning_tree, scipy.sparse.csgraph._flow, scipy.sparse.csgraph._matching, scipy.sparse.csgraph._reordering, scipy.spatial._ckdtree, scipy._lib.messagestream, scipy.spatial._qhull, scipy.spatial._voronoi, scipy.spatial._distance_wrap, scipy.spatial._hausdorff, scipy.special._ufuncs_cxx, scipy.special._ufuncs, scipy.special._specfun, scipy.special._comb, scipy.special._ellip_harm_2, scipy.spatial.transform._rotation, torch._C, torch._C._dynamo.autograd_compiler, torch._C._dynamo.eval_frame, torch._C._dynamo.guards, torch._C._dynamo.utils, torch._C._fft, torch._C._linalg, torch._C._nested, torch._C._nn, torch._C._sparse, torch._C._special, osqp._osqp, charset_normalizer.md, requests.packages.charset_normalizer.md, requests.packages.chardet.md, scipy.io.matlab._mio_utils, scipy.io.matlab._streams, scipy.io.matlab._mio5_utils, yaml._yaml (total: 76)"
+    ],
+    "forced_kill_is_clean_shutdown": false,
+    "environment_created": false,
+    "explicit_physics_steps": 0
+  }
+]

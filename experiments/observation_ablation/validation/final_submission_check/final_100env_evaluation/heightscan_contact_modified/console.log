@@ -1,0 +1,48 @@
+[3gH    H    H    H    H    H    H    H    H    H    H    H    H    H    H    H    H    H    H    H   [INFO] Using python from: /home/zxro/miniforge3/envs/lerobot-arena/bin/python
+[VALIDATION] {"event": "canonical_evaluator_started", "timestamp": "2026-10-06T05:07:44.473082+00:00", "monotonic": 678389.555552585, "script": "/home/zxro/ant_rl_submission/scripts/stage2_observation_ablation.py", "arguments": ["/home/zxro/ant_rl_submission/scripts/stage2_observation_ablation.py", "evaluate", "--headless", "--checkpoint", "/home/zxro/ant_rl_submission/experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/checkpoints/best_model.pt", "--output", "/home/zxro/ant_rl_submission/experiments/observation_ablation/validation/final_submission_check/final_100env_evaluation/heightscan_contact_modified/canonical_evaluator_output"], "python": "/home/zxro/miniforge3/envs/lerobot-arena/bin/python"}
+[INFO][AppLauncher]: Using device: cuda:0
+[INFO][AppLauncher]: Loading experience file: /home/zxro/ant_rl_submission/apps/isaaclab.python.headless.kit
+Loading user config located at: '/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim/kit/data/Kit/Isaac-Sim/5.1/user.config.json'
+[Info] [carb] Logging to file: /home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim/kit/logs/Kit/Isaac-Sim/5.1/kit_20261006_140744.log
+2026-10-06T05:07:44Z [3ms] [Warning] [omni.ext.plugin] [ext: ant] Extensions config 'extension.toml' doesn't exist '/home/zxro/ant_rl_submission/source/ant' or '/home/zxro/ant_rl_submission/source/ant/config'
+2026-10-06T05:07:44Z [57ms] [Warning] [omni.usd_config.extension] Enable omni.materialx.libs extension to use MaterialX
+2026-10-06T05:07:44Z [318ms] [Warning] [carb] Acquiring non optional plugin interface which is not listed as dependency: [omni::physx::IPhysxBenchmarks v1.0] (plugin: <default plugin>), by client: omni.physics.physx.plugin. Add it to CARB_PLUGIN_IMPL_DEPS() macro of a client.
+2026-10-06T05:07:44Z [422ms] [Warning] [omni.isaac.dynamic_control] omni.isaac.dynamic_control is deprecated as of Isaac Sim 4.5. No action is needed from end-users.
+MESA: warning: Driver does not support the 0x7d67 PCI ID.
+MESA: warning: Driver does not support the 0x7d67 PCI ID.
+
+|---------------------------------------------------------------------------------------------|
+| Driver Version: 570.211.01    | Graphics API: Vulkan
+|=============================================================================================|
+| GPU | Name                             | Active | LDA | GPU Memory | Vendor-ID | LUID       |
+|     |                                  |        |     |            | Device-ID | UUID       |
+|     |                                  |        |     |            | Bus-ID    |            |
+|---------------------------------------------------------------------------------------------|
+| 0   | NVIDIA GeForce RTX 5070 Ti       | Yes: 0 |     | 16303   MB | 10de      | 0          |
+|     |                                  |        |     |            | 2c05      | 995e9a97.. |
+|     |                                  |        |     |            | 2         |            |
+|=============================================================================================|
+| OS: 22.04.5 LTS (Jammy Jellyfish) ubuntu, Version: 22.04.5, Kernel: 6.8.0-138-generic
+| XServer Vendor: The X.Org Foundation, XServer Version: 12101004 (1.21.1.4)
+| Processor: Intel(R) Core(TM) Ultra 7 265K
+| Cores: 20 | Logical Cores: 20
+|---------------------------------------------------------------------------------------------|
+| Total Memory (MB): 63562 | Free Memory: 46432
+| Total Page/Swap (MB): 2047 | Free Page/Swap: 2044
+|---------------------------------------------------------------------------------------------|
+2026-10-06T05:07:48Z [3,445ms] [Warning] [gpu.foundation.plugin] CPU performance profile is set to powersave. This profile sets the CPU to the lowest frequency reducing performance.
+2026-10-06T05:07:48Z [3,456ms] [Warning] [gpu.foundation.plugin] IOMMU is enabled.
+2026-10-06T05:07:48Z [3,478ms] [Warning] [omni.kvdb.plugin] Disabling key-value database because another kit process is locking it
+Traceback (most recent call last):
+  File "/home/zxro/ant_rl_submission/scripts/stage2_observation_ablation.py", line 421, in <module>
+    main()
+  File "/home/zxro/ant_rl_submission/scripts/stage2_observation_ablation.py", line 154, in main
+    saved_weights = yaml.safe_load((ROOT / "logs/rsl_rl/ant/v3_depth/params/reward_weights.yaml").read_text())
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/pathlib.py", line 1058, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/zxro/ant_rl_submission/logs/rsl_rl/ant/v3_depth/params/reward_weights.yaml'

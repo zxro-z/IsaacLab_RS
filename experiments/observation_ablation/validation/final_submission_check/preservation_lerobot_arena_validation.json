@@ -1,0 +1,15 @@
+{
+  "/home/zxro/teammate_ant_rl": {
+    "git_state_matches_phase2": true,
+    "file_inventory_matches_phase2": true
+  },
+  "/home/zxro/arena/IsaacLab": {
+    "git_state_matches_phase2": true,
+    "file_inventory_matches_phase2": true
+  },
+  "/home/zxro/IsaacLab_RS": {
+    "git_state_matches_phase2": true
+  },
+  "submission_source_and_evidence_mismatches": [],
+  "git_initialized": false
+}

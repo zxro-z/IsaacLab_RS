@@ -1,0 +1,217 @@
+{
+  "result": "PASS",
+  "reproduction_classification": "REPRODUCED",
+  "evaluation_summary_exactly_matches_canonical": true,
+  "episode_csv_byte_identical_to_canonical": true,
+  "task": "Ant-rl-Ablation-HeightScan-Contact-ModifiedReward-v0",
+  "selected_iteration": 788,
+  "checkpoint": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/checkpoints/best_model.pt",
+  "checkpoint_sha256": "0471caaadd646feac85cb7bbed0d2c3668279d2d65db9507030a649895ea11b4",
+  "actual_policy_observation": {
+    "event": "policy_observation",
+    "timestamp": "2026-10-06T05:16:29.915374+00:00",
+    "monotonic": 678914.997843372,
+    "shape": [
+      100,
+      126
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0"
+  },
+  "loaded_checkpoint_interface": {
+    "event": "checkpoint_loaded",
+    "timestamp": "2026-10-06T05:16:29.988670+00:00",
+    "monotonic": 678915.071138159,
+    "actor_first_layer_shape": [
+      400,
+      126
+    ],
+    "selected_iteration": 788
+  },
+  "evaluation_seed": 24,
+  "terrain_seed": 42,
+  "num_envs": 100,
+  "maximum_episode_seconds": 16,
+  "maximum_control_steps": 960,
+  "deterministic_mean_actions": true,
+  "completed_episodes": 100,
+  "metrics": {
+    "episode_return": {
+      "mean": 134.8413062994602,
+      "std": 68.01870008545355,
+      "min": -0.2847863882780075,
+      "max": 220.21659920813215
+    },
+    "episode_steps": {
+      "mean": 727.12,
+      "std": 340.8911931980643,
+      "min": 14.0,
+      "max": 960.0
+    },
+    "episode_duration": {
+      "mean": 12.118666666666668,
+      "std": 5.681519886634405,
+      "min": 0.23333333333333334,
+      "max": 16.0
+    },
+    "forward_displacement": {
+      "mean": 56.562676486968996,
+      "std": 28.363852967095763,
+      "min": -0.2662334442138672,
+      "max": 91.76393127441406
+    },
+    "mean_forward_velocity": {
+      "mean": 4.071815782239149,
+      "std": 1.5654030958855099,
+      "min": -0.7707883176349458,
+      "max": 5.743081742556654
+    },
+    "fall": {
+      "count": 43,
+      "ratio": 0.43
+    },
+    "timeout": {
+      "count": 57,
+      "ratio": 0.57
+    },
+    "other": {
+      "count": 0,
+      "ratio": 0.0
+    },
+    ">=2m": {
+      "count": 86,
+      "ratio": 0.86
+    },
+    ">=5m": {
+      "count": 86,
+      "ratio": 0.86
+    },
+    ">=10m": {
+      "count": 84,
+      "ratio": 0.84
+    },
+    "out_of_terrain_x": {
+      "count": 26,
+      "ratio": 0.26
+    }
+  },
+  "reward_components": {
+    "progress": {
+      "mean": 141.3718641064514,
+      "std": 70.93426048076222,
+      "min": -0.6625976776704192,
+      "max": 229.46290216885973
+    },
+    "alive": {
+      "mean": 6.0557503158319745,
+      "std": 2.8440061978492635,
+      "min": 0.10833333898335695,
+      "max": 8.000000417232513
+    },
+    "upright": {
+      "mean": 0.5719833871361334,
+      "std": 0.2874612268369046,
+      "min": 0.0016666668234393,
+      "max": 0.800000075250864
+    },
+    "move_to_target": {
+      "mean": 16.44962256682802,
+      "std": 8.058822763956469,
+      "min": 0.2738563767634332,
+      "max": 23.68355532735586
+    },
+    "foot_contact": {
+      "mean": 2.584166801441461,
+      "std": 1.3074304891110633,
+      "min": 0.01666666753590107,
+      "max": 4.266666889190674
+    },
+    "action_l2": {
+      "mean": -0.18913759809753586,
+      "std": 0.3819827942713855,
+      "min": -2.60150400903035,
+      "max": -0.0006306775737812131
+    },
+    "energy": {
+      "mean": -19.27511033006256,
+      "std": 9.676896159870141,
+      "min": -29.187444154871628,
+      "max": -0.11553900956641883
+    },
+    "joint_velocity": {
+      "mean": -2.6589063210825405,
+      "std": 1.3529269864526516,
+      "min": -4.079032795591047,
+      "max": -0.015340500074671581
+    },
+    "joint_pos_limits": {
+      "mean": -8.53550630557256,
+      "std": 5.024043178577715,
+      "min": -28.95468646397603,
+      "max": -0.03743261285126209
+    },
+    "foot_slip": {
+      "mean": -1.5334197912271157,
+      "std": 0.7834737467698082,
+      "min": -2.348223652879824,
+      "max": -0.005918577313423157
+    },
+    "total": {
+      "mean": 134.8413062994602,
+      "std": 68.01870008545355,
+      "min": -0.2847863882780075,
+      "max": 220.21659920813215
+    }
+  },
+  "residuals": {
+    "max_step_reward_residual": 8.997812983579934e-08,
+    "max_episode_reward_residual": 4.5749304717901396e-06,
+    "mean_episode_reward_residual": 9.972653990786285e-07
+  },
+  "process": {
+    "exit_code": 0,
+    "timeout_reason": null,
+    "wall_seconds": 23.030907814973034,
+    "summary_exists": true,
+    "external_termination": false
+  },
+  "env_close_returned": true,
+  "app_close_returned": false,
+  "shutdown_interpretation": "Process exited 0 without external termination; env.close returned. SimulationApp.close return marker absent; clean application-close return is not claimed.",
+  "provenance_path_mapping": {
+    "original_runtime_path": "logs/rsl_rl/ant/v3_depth/params/",
+    "submission_path": "logs/rsl_rl/ant/modified/params/",
+    "scope": "Two directly source-hash-verified saved configuration files; no legacy run/checkpoint sequence copied. YAML contents preserved byte-for-byte.",
+    "source_repository_commit": "4513d7cae5d4fdc6af9288349531e6b49422f7b1",
+    "source_branch": "observation-ablation",
+    "files": [
+      {
+        "source": "/home/zxro/teammate_ant_rl/logs/rsl_rl/ant/v3_depth/params/env.yaml",
+        "destination": "logs/rsl_rl/ant/modified/params/env.yaml",
+        "sha256": "2a1d81c4824d8fb6aaac56d920bdd7c8df31e3f09b827344fb409d666fbb9d8e",
+        "bytes": 20229,
+        "training_hash_match": true,
+        "evaluation_hash_match": true,
+        "evidence": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/source_mapping.json"
+      },
+      {
+        "source": "/home/zxro/teammate_ant_rl/logs/rsl_rl/ant/v3_depth/params/reward_weights.yaml",
+        "destination": "logs/rsl_rl/ant/modified/params/reward_weights.yaml",
+        "sha256": "2caf923da1f64d35ecfc1100d0b52dd2a50847221b062190819fcf47ffb5d969",
+        "bytes": 217,
+        "training_hash_match": true,
+        "evaluation_hash_match": true,
+        "evidence": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/source_mapping.json"
+      }
+    ],
+    "active_evaluator": "scripts/stage2_observation_ablation.py",
+    "active_path_reference_replacements": 4,
+    "evaluator_before_sha256": "e1272646d7d4c43de81dfa2aee50c6eab770aa3242dc20a0c432af8c79375cab",
+    "evaluator_after_sha256": "ca8ae87dd763a1fe85b18338dca74f19e2c149736673d356bc1bb2c85b6a6b52",
+    "historical_manifests_and_logs_modified": false
+  },
+  "all_three_canonical_heightscan_evaluations_now_complete": true,
+  "previous_stock_evaluations_not_rerun": true,
+  "README_runtime_cleanup_remains_separate": true,
+  "Git_initialized": false
+}

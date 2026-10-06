@@ -1,0 +1,3 @@
+# Runtime stdout/stderr stays local; commands.log is the reproducible record.
+*_run.log
+*_attempt/

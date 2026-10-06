@@ -1,0 +1,13 @@
+# cwd: /home/zxro/teammate_ant_rl
+# Python: /home/zxro/anaconda3/envs/env_isaaclab_231/bin/python
+# Runtime environment:
+# ISAAC_SIM_SITE_PACKAGES=/home/zxro/anaconda3/envs/env_isaaclab/lib/python3.11/site-packages
+# PYTHONDONTWRITEBYTECODE=1
+# CONDA_PREFIX=/home/zxro/anaconda3/envs/env_isaaclab_231
+# Preflight YAML/mapping diagnostic attempts are preserved locally and ignored.
+# No training occurred until the final smoke PASS.
+git fetch origin
+python -u scripts/stage2_observation_ablation.py smoke --headless --output experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/smoke
+python -u scripts/stage2_observation_ablation.py train --headless --output logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000
+python -u scripts/stage2_observation_ablation.py evaluate --headless --output experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/results --checkpoint logs/rsl_rl/observation_ablation/ablation_heightscan_contact_modified_s42_e4096_n32_i1000/best_model.pt
+python scripts/finalize_stage2_observation_ablation.py

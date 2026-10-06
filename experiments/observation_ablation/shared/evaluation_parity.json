@@ -1,0 +1,9 @@
+{
+  "frozen_config": true,
+  "reward": true,
+  "ppo": true,
+  "controlled_sources": true,
+  "driver_diagnostic_fix_only": true,
+  "historical_team1_evaluation_mesh": true,
+  "historical_team1_terrain_assignment": true
+}

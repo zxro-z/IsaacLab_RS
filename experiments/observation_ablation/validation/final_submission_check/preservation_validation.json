@@ -1,0 +1,16 @@
+{
+  "/home/zxro/teammate_ant_rl": {
+    "git_state_unchanged": true,
+    "file_inventory_unchanged": true
+  },
+  "/home/zxro/arena/IsaacLab": {
+    "git_state_unchanged": true,
+    "file_inventory_unchanged": true
+  },
+  "/home/zxro/IsaacLab_RS": {
+    "git_state_unchanged": true
+  },
+  "submission_copied_files_changed": [
+    "experiments/observation_ablation/README.md"
+  ]
+}

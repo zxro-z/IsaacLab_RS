@@ -1,0 +1,89 @@
+{
+  "classification": "INCONCLUSIVE",
+  "classification_scope": "Exact hang mechanism: outcomes vary between close timeout, SIGSEGV and SIGABRT. A base runtime shutdown failure is confirmed independently of submission project imports.",
+  "first_shutdown_failure": "A (bare AppLauncher, SIGSEGV)",
+  "first_timeout": "B (30 seconds after close)",
+  "original_framework_reproduces_shutdown_failure": true,
+  "pure_isaacsim_reproduces_shutdown_failure": true,
+  "identical_bare_hang_in_both_roots": false,
+  "submission_specific_failure_demonstrated": false,
+  "clean_shutdown_count": 0,
+  "probe_results": [
+    {
+      "probe": "a",
+      "record": "shutdown_probe_a.json",
+      "exit_code": 139,
+      "signal": "SIGSEGV (shell status 128+11)",
+      "close_returned": false,
+      "timeout": null,
+      "initialization_pass": true,
+      "import_pass_count": 0
+    },
+    {
+      "probe": "b",
+      "record": "shutdown_probe_b.json",
+      "exit_code": -9,
+      "signal": "SIGKILL",
+      "close_returned": false,
+      "timeout": "close timeout after 30 seconds",
+      "initialization_pass": true,
+      "import_pass_count": 1
+    },
+    {
+      "probe": "c",
+      "record": "shutdown_probe_c.json",
+      "exit_code": 139,
+      "signal": "SIGSEGV (shell status 128+11)",
+      "close_returned": false,
+      "timeout": null,
+      "initialization_pass": true,
+      "import_pass_count": 2
+    },
+    {
+      "probe": "d",
+      "record": "shutdown_probe_d.json",
+      "exit_code": 134,
+      "signal": "SIGABRT (shell status 128+6)",
+      "close_returned": false,
+      "timeout": null,
+      "initialization_pass": true,
+      "import_pass_count": 3
+    },
+    {
+      "probe": "e",
+      "record": "shutdown_probe_e.json",
+      "exit_code": -9,
+      "signal": "SIGKILL",
+      "close_returned": false,
+      "timeout": "close timeout after 30 seconds",
+      "initialization_pass": true,
+      "import_pass_count": 5
+    },
+    {
+      "probe": "control_framework",
+      "record": "shutdown_control_framework.json",
+      "exit_code": 134,
+      "signal": "SIGABRT (shell status 128+6)",
+      "close_returned": false,
+      "timeout": null,
+      "initialization_pass": true,
+      "import_pass_count": 0
+    },
+    {
+      "probe": "control_pure_isaacsim",
+      "record": "shutdown_control_pure_isaacsim.json",
+      "exit_code": -11,
+      "signal": "SIGSEGV",
+      "close_returned": false,
+      "timeout": null,
+      "initialization_pass": true,
+      "import_pass_count": 0
+    }
+  ],
+  "LD_PRELOAD_used": false,
+  "environment_creation_performed": false,
+  "explicit_physics_steps": 0,
+  "one_env_test_executed": false,
+  "full_evaluation_executed": false,
+  "next_step": "Propose a separately approved, bounded one-env observation-shape diagnostic with flushed evidence and external timeout. Treat forced termination as runtime shutdown limitation, not validation success. No clean lifecycle or full evaluation readiness has been established."
+}

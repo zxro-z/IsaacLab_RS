@@ -1,0 +1,28 @@
+{
+  "current_source_constants": {
+    "PROGRESS_WEIGHT": 2.5,
+    "ALIVE_WEIGHT": 0.5,
+    "UPRIGHT_WEIGHT": 0.05,
+    "HEADING_WEIGHT": 1.5,
+    "CONTACT_WEIGHT": 1.0,
+    "ACTION_WEIGHT": -0.005,
+    "ENERGY_WEIGHT": -0.15,
+    "JOINT_VEL_WEIGHT": -0.001,
+    "JOINT_LIMIT_WEIGHT": -0.5,
+    "FOOT_SLIP_WEIGHT": -0.07,
+    "CONTACT_FORCE_THRESHOLD": 5.0
+  },
+  "saved_v3_depth": {
+    "ACTION_WEIGHT": -0.005,
+    "ALIVE_WEIGHT": 0.5,
+    "CONTACT_WEIGHT": 1.0,
+    "ENERGY_WEIGHT": -0.15,
+    "FOOT_SLIP_WEIGHT": -0.07,
+    "HEADING_WEIGHT": 1.5,
+    "JOINT_LIMIT_WEIGHT": -0.5,
+    "JOINT_VEL_WEIGHT": -0.001,
+    "PROGRESS_WEIGHT": 2.5,
+    "UPRIGHT_WEIGHT": 0.05
+  },
+  "match": true
+}

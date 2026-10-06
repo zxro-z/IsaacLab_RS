@@ -1,0 +1,171 @@
+{
+  "output": "/home/zxro/teammate_ant_rl/validation_compare/contact_teammate1_seed24_env0.mp4",
+  "sha256": "b78b89a5fe37cf5b6b7f9189e39270adab4f93fa941b628c7fc691d4bbb30d49",
+  "ffprobe": {
+    "programs": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "60/1",
+        "avg_frame_rate": "60/1",
+        "nb_frames": "901"
+      }
+    ],
+    "format": {
+      "duration": "15.017000",
+      "size": "5879851"
+    }
+  },
+  "full_decode_pass": true,
+  "task": "Isaac-Ant-Teammate1-RewardEnv-v0",
+  "seed": 24,
+  "terrain_seed": 42,
+  "num_envs": 1,
+  "env_index": 0,
+  "episode_index": 0,
+  "first_episode_only": true,
+  "checkpoint": "/home/zxro/IsaacLab_RS/logs/rsl_rl/ant/2026-10-03_01-10-01_ablation_heightscan_contact_obs127_s42/model_999.pt",
+  "checkpoint_sha256": "8fa361827664fce1a42a2f4d42152853c81a6a8cf63deb3174aca5b9d80d937a",
+  "dimensions": {
+    "actor_input_dim": 127,
+    "critic_input_dim": 127,
+    "observation_dim": 127
+  },
+  "telemetry": {
+    "env_id": 0,
+    "episode_return": 58.04483903408982,
+    "official_float32_episode_return": 58.04482650756836,
+    "episode_steps": 901,
+    "episode_seconds": 15.016666666666666,
+    "forward_displacement": 52.10516357421875,
+    "legacy_preterminal_displacement": 52.08879089355469,
+    "maximum_forward_displacement": 52.10516357421875,
+    "mean_forward_velocity": 3.4575179814651493,
+    "fall": true,
+    "timeout": false,
+    "map_boundary_exit": false,
+    "reward_identity_residual": 1.8491250557417516e-06,
+    "terrain_row": 14,
+    "terrain_column": 0,
+    "reward_progress": 52.053387673106045,
+    "reward_alive": 7.500000391155481,
+    "reward_upright": 1.2600001185201108,
+    "reward_move_to_target": 7.18369745509699,
+    "reward_action_l2": -0.1376512278889095,
+    "reward_energy": -6.180376322037773,
+    "reward_joint_pos_limits": -3.6342172047370696
+  },
+  "visualization": {
+    "camera_eye_heading_frame": [
+      -3.8,
+      -3.2,
+      1.8
+    ],
+    "lookat_heading_frame": [
+      1.0,
+      0.0,
+      -0.15
+    ],
+    "camera_logic": "Yaw-only rear-oblique asset-root follow; decision-time quaternion",
+    "terrain_visual_diffuse": [
+      0.48,
+      0.5,
+      0.52
+    ],
+    "roughness": 0.9,
+    "metallic": 0,
+    "distant_light": {
+      "intensity": 3000,
+      "rotation_xyz_deg": [
+        0,
+        -78,
+        -35
+      ],
+      "color": [
+        1,
+        0.96,
+        0.9
+      ],
+      "angle": 0.5
+    },
+    "dome_fill": {
+      "intensity": 120,
+      "color": [
+        0.85,
+        0.9,
+        1
+      ]
+    },
+    "physical_signature_before": {
+      "terrain_mesh_sha256": "5ec492e2ca8e38ee00a8bc59a82b4a580f4015c733d2b2579846f2ba62b9f6a8",
+      "physics_bindings": {
+        "/physicsScene.material:binding:physics": [
+          "/physicsScene/defaultMaterial"
+        ],
+        "/World/ground/terrain/mesh.material:binding:physics": [
+          "/World/ground/terrain/physicsMaterial"
+        ]
+      },
+      "physics_material_attributes": {
+        "/physicsScene/defaultMaterial.physics:dynamicFriction": "1.0",
+        "/physicsScene/defaultMaterial.physics:restitution": "0.0",
+        "/physicsScene/defaultMaterial.physics:staticFriction": "1.0",
+        "/World/ground/terrain/physicsMaterial.physics:dynamicFriction": "1.0",
+        "/World/ground/terrain/physicsMaterial.physics:restitution": "0.0",
+        "/World/ground/terrain/physicsMaterial.physics:staticFriction": "1.0"
+      },
+      "robot_material_sha256": "7888c9de9534ed04676a4ea8a579e90a688a2eb0d2814f89d0269f663ba29147",
+      "env_origins_sha256": "f576cbc958f73bb478d2be00e0e0ccbd993751274e9d1b88a333c56ec12dc5a5"
+    },
+    "physical_signature_after": {
+      "terrain_mesh_sha256": "5ec492e2ca8e38ee00a8bc59a82b4a580f4015c733d2b2579846f2ba62b9f6a8",
+      "physics_bindings": {
+        "/physicsScene.material:binding:physics": [
+          "/physicsScene/defaultMaterial"
+        ],
+        "/World/ground/terrain/mesh.material:binding:physics": [
+          "/World/ground/terrain/physicsMaterial"
+        ]
+      },
+      "physics_material_attributes": {
+        "/physicsScene/defaultMaterial.physics:dynamicFriction": "1.0",
+        "/physicsScene/defaultMaterial.physics:restitution": "0.0",
+        "/physicsScene/defaultMaterial.physics:staticFriction": "1.0",
+        "/World/ground/terrain/physicsMaterial.physics:dynamicFriction": "1.0",
+        "/World/ground/terrain/physicsMaterial.physics:restitution": "0.0",
+        "/World/ground/terrain/physicsMaterial.physics:staticFriction": "1.0"
+      },
+      "robot_material_sha256": "7888c9de9534ed04676a4ea8a579e90a688a2eb0d2814f89d0269f663ba29147",
+      "env_origins_sha256": "f576cbc958f73bb478d2be00e0e0ccbd993751274e9d1b88a333c56ec12dc5a5"
+    },
+    "physics_geometry_unchanged": true,
+    "physics_material_unchanged": true,
+    "origin_note": "Original host resets at its fixed assigned terrain origin; behavior retained",
+    "terminal_frame": "Hold preterminal image for one frame; no reset pose or extra episode"
+  },
+  "terrain_mesh_sha256": "5ec492e2ca8e38ee00a8bc59a82b4a580f4015c733d2b2579846f2ba62b9f6a8",
+  "same_mesh_as_main": true,
+  "env_origin": [
+    45.0,
+    -45.0,
+    0.6334189176559448
+  ],
+  "initial_root_state": [
+    45.0,
+    -45.0,
+    1.1334189176559448,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "note": "Single-env video is not the 100-env env0 initial condition: vectorized tile assignment/reset/material sampling depends on num_envs. No episode selection."
+}

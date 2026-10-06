@@ -1,0 +1,1 @@
+ISAACLAB_ROOT=/home/user/package/Isaaclab-2.3.0 python scripts/evaluate_depthcam_ablation.py --stage modified --checkpoint logs/rsl_rl/ant/contact_depth/best_model.pt --output experiments/observation_ablation/depthcam_modified_2048x32x2000/results --headless

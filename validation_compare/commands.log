@@ -1,0 +1,20 @@
+# cwd=/home/zxro/teammate_ant_rl
+
+ISAAC_SIM_SITE_PACKAGES=/home/zxro/anaconda3/envs/env_isaaclab/lib/python3.11/site-packages PYTHONDONTWRITEBYTECODE=1 CONDA_PREFIX=/home/zxro/anaconda3/envs/env_isaaclab_231 /home/zxro/anaconda3/envs/env_isaaclab_231/bin/python scripts/evaluate_contact_teammate1.py --task Isaac-Ant-Teammate1-RewardEnv-v0 --checkpoint /home/zxro/IsaacLab_RS/logs/rsl_rl/ant/2026-10-03_01-10-01_ablation_heightscan_contact_obs127_s42/model_999.pt --seed 24 --num_envs 4 --height_scan --foot_contacts --headless --output validation_compare/smoke_seed24 > /tmp/teammate1_smoke.log 2>&1
+
+ISAAC_SIM_SITE_PACKAGES=/home/zxro/anaconda3/envs/env_isaaclab/lib/python3.11/site-packages PYTHONDONTWRITEBYTECODE=1 CONDA_PREFIX=/home/zxro/anaconda3/envs/env_isaaclab_231 /home/zxro/anaconda3/envs/env_isaaclab_231/bin/python scripts/evaluate_contact_teammate1.py --task Isaac-Ant-Teammate1-RewardEnv-v0 --checkpoint /home/zxro/IsaacLab_RS/logs/rsl_rl/ant/2026-10-03_01-10-01_ablation_heightscan_contact_obs127_s42/model_999.pt --seed 24 --num_envs 100 --height_scan --foot_contacts --headless --output validation_compare/evaluation_seed24_n100 > /tmp/teammate1_n100.log 2>&1
+
+ISAAC_SIM_SITE_PACKAGES=/home/zxro/anaconda3/envs/env_isaaclab/lib/python3.11/site-packages PYTHONDONTWRITEBYTECODE=1 CONDA_PREFIX=/home/zxro/anaconda3/envs/env_isaaclab_231 /home/zxro/anaconda3/envs/env_isaaclab_231/bin/python scripts/evaluate_contact_teammate1.py --task Isaac-Ant-Teammate1-RewardEnv-v0 --checkpoint /home/zxro/IsaacLab_RS/logs/rsl_rl/ant/2026-10-03_01-10-01_ablation_heightscan_contact_obs127_s42/model_999.pt --seed 24 --num_envs 1 --height_scan --foot_contacts --headless --video --output validation_compare/video_seed24_env0 > /tmp/teammate1_video.log 2>&1
+
+python /tmp/finalize_teammate1_report.py
+
+PYTHONPYCACHEPREFIX=/tmp/teammate1_pycache /home/zxro/anaconda3/envs/env_isaaclab_231/bin/python -m py_compile scripts/evaluate_contact_teammate1.py validation_compare/postprocess_source.py
+
+git -C /home/zxro/teammate_ant_rl diff --check
+
+ffprobe -v error -show_streams -show_format validation_compare/contact_teammate1_seed24_env0.mp4
+
+ffmpeg -v error -i validation_compare/contact_teammate1_seed24_env0.mp4 -f null -
+
+ffmpeg -v error -i validation_compare/contact_teammate1_seed24_env0.mp4 -vf 'fps=1/4,scale=640:360,tile=2x2' -frames:v 1 -y /tmp/teammate1_contact_frames.jpg
+# Before/after SHA256 audit: all2147 RS files and original228 teammate files unchanged; validation.json records final checks.

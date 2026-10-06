@@ -1,0 +1,9 @@
+{"event": "app_initialized", "timestamp": "2026-10-06T04:56:40.336241+00:00", "monotonic": 677725.418707185}
+{"event": "environment_creation_started", "timestamp": "2026-10-06T04:56:40.368712+00:00", "monotonic": 677725.451177201}
+{"event": "environment_created", "timestamp": "2026-10-06T04:56:47.451838+00:00", "monotonic": 677732.534303908}
+{"event": "reset_invoked", "timestamp": "2026-10-06T04:56:47.453552+00:00", "monotonic": 677732.536016234}
+{"event": "reset_returned", "timestamp": "2026-10-06T04:56:47.600264+00:00", "monotonic": 677732.68273178}
+{"event": "observation_evidence_flushed", "timestamp": "2026-10-06T04:56:47.607450+00:00", "monotonic": 677732.689911703, "result": "PASS", "shape": [1, 122]}
+{"event": "env_close_invoked", "timestamp": "2026-10-06T04:56:47.608105+00:00", "monotonic": 677732.690565231}
+{"event": "env_close_returned", "timestamp": "2026-10-06T04:56:47.926502+00:00", "monotonic": 677733.008976061}
+{"event": "app_close_invoked", "timestamp": "2026-10-06T04:56:47.930728+00:00", "monotonic": 677733.013191281}

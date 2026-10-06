@@ -1,0 +1,17 @@
+{
+  "command": [
+    "./isaaclab.sh",
+    "-p",
+    "experiments/observation_ablation/validation/final_submission_check/runtime_lerobot_arena_probe.py",
+    "--headless"
+  ],
+  "cwd": "/home/zxro/ant_rl_submission",
+  "environment": {
+    "CONDA_PREFIX": "/home/zxro/miniforge3/envs/lerobot-arena",
+    "PYTHONPATH": "/home/zxro/ant_rl_submission/source:/home/zxro/ant_rl_submission/source/isaaclab:/home/zxro/ant_rl_submission/source/isaaclab_assets:/home/zxro/ant_rl_submission/source/isaaclab_tasks:/home/zxro/ant_rl_submission/source/isaaclab_rl:/home/zxro/ant_rl_submission/source/isaaclab_mimic",
+    "ISAACLAB_RS": "/home/zxro/ant_rl_submission",
+    "ISAACLAB_ROOT": "/home/zxro/ant_rl_submission",
+    "LD_PRELOAD": null,
+    "ISAAC_SIM_SITE_PACKAGES": null
+  }
+}

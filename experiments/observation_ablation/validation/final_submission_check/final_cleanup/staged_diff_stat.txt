@@ -1,0 +1,2397 @@
+ .dockerignore                                      |    27 +
+ .flake8                                            |    23 +
+ .gitattributes                                     |     1 +
+ .github/CODEOWNERS                                 |    96 +
+ .github/ISSUE_TEMPLATE/bug.md                      |    54 +
+ .github/ISSUE_TEMPLATE/proposal.md                 |    37 +
+ .github/ISSUE_TEMPLATE/question.md                 |    13 +
+ .github/LICENSE_HEADER.txt                         |     4 +
+ .github/LICENSE_HEADER_MIMIC.txt                   |     4 +
+ .github/PULL_REQUEST_TEMPLATE.md                   |    56 +
+ .github/actions/combine-results/action.yml         |   103 +
+ .github/actions/docker-build/action.yml            |    78 +
+ .github/actions/run-tests/action.yml               |   157 +
+ .github/labeler.yml                                |    77 +
+ .github/stale.yml                                  |    67 +
+ .github/workflows/build.yml                        |   222 +
+ .github/workflows/cherry-pick.yml                  |    42 +
+ .github/workflows/daily-compatibility.yml          |   231 +
+ .github/workflows/docs.yaml                        |    87 +
+ .github/workflows/labeler.yml                      |    17 +
+ .github/workflows/license-check.yaml               |   130 +
+ .github/workflows/license-exceptions.json          |   444 +
+ .github/workflows/mirror-repository.yml            |    68 +
+ .github/workflows/postmerge-ci.yml                 |   170 +
+ .github/workflows/pre-commit.yaml                  |    18 +
+ .gitignore                                         |    14 +
+ .pre-commit-config.yaml                            |    86 +
+ CITATION.cff                                       |    53 +
+ CONTRIBUTING.md                                    |    45 +
+ CONTRIBUTORS.md                                    |   164 +
+ LICENSE                                            |    30 +
+ LICENSE-mimic                                      |   175 +
+ README.md                                          |   185 +
+ SECURITY.md                                        |    38 +
+ VERSION                                            |     1 +
+ apps/isaaclab.python.headless.kit                  |   220 +
+ apps/isaaclab.python.headless.rendering.kit        |   161 +
+ apps/isaaclab.python.kit                           |   307 +
+ apps/isaaclab.python.rendering.kit                 |   150 +
+ apps/isaaclab.python.xr.openxr.headless.kit        |    64 +
+ apps/isaaclab.python.xr.openxr.kit                 |    93 +
+ apps/isaacsim_4_5/extension.toml                   |     1 +
+ apps/isaacsim_4_5/isaaclab.python.headless.kit     |   202 +
+ .../isaaclab.python.headless.rendering.kit         |   145 +
+ apps/isaacsim_4_5/isaaclab.python.kit              |   301 +
+ apps/isaacsim_4_5/isaaclab.python.rendering.kit    |   140 +
+ .../isaaclab.python.xr.openxr.headless.kit         |    41 +
+ apps/isaacsim_4_5/isaaclab.python.xr.openxr.kit    |    71 +
+ apps/isaacsim_4_5/rendering_modes/balanced.kit     |    36 +
+ apps/isaacsim_4_5/rendering_modes/performance.kit  |    35 +
+ apps/isaacsim_4_5/rendering_modes/quality.kit      |    36 +
+ apps/isaacsim_4_5/rendering_modes/xr.kit           |    35 +
+ apps/rendering_modes/balanced.kit                  |    36 +
+ apps/rendering_modes/extension.toml                |     1 +
+ apps/rendering_modes/performance.kit               |    35 +
+ apps/rendering_modes/quality.kit                   |    36 +
+ cross_eval_team1_policy/commands.log               |    12 +
+ cross_eval_team1_policy/comparison.csv             |     9 +
+ cross_eval_team1_policy/comparison.md              |    64 +
+ cross_eval_team1_policy/evaluate_depth_policy.py   |   200 +
+ .../evaluate_depth_policy_initial.py               |   181 +
+ .../evaluate_depth_policy_smoke_version.py         |   200 +
+ cross_eval_team1_policy/final_unseen/main.log      |   232 +
+ .../final_unseen/main/config.json                  |   945 +
+ .../final_unseen/main/evaluation_seed24_n100.json  | 11725 +++
+ .../main/reward_components_episode.csv             |   101 +
+ .../final_unseen/main/reward_components_step.csv   | 65163 +++++++++++++
+ .../main/reward_components_summary.csv             |     9 +
+ .../final_unseen/main/source_hashes.json           |    11 +
+ cross_eval_team1_policy/final_unseen/smoke.log     |   232 +
+ .../final_unseen/smoke/config.json                 |   945 +
+ .../smoke/reward_components_episode.csv            |     5 +
+ .../final_unseen/smoke/reward_components_step.csv  |  3404 +
+ .../smoke/reward_components_summary.csv            |     9 +
+ .../final_unseen/smoke/smoke.json                  |   781 +
+ .../final_unseen/smoke/source_hashes.json          |    11 +
+ cross_eval_team1_policy/finalize_results.py        |    75 +
+ cross_eval_team1_policy/integrity.json             |   101 +
+ cross_eval_team1_policy/main_metrics.csv           |     4 +
+ cross_eval_team1_policy/policy_manifest.json       |    57 +
+ cross_eval_team1_policy/run_sequence.py            |    27 +
+ cross_eval_team1_policy/source_mapping.json        |    85 +
+ cross_eval_team1_policy/teammate1/main.log         |   239 +
+ cross_eval_team1_policy/teammate1/main/config.json |   876 +
+ .../teammate1/main/evaluation_seed24_n100.json     | 11723 +++
+ .../teammate1/main/reward_components_episode.csv   |   101 +
+ .../teammate1/main/reward_components_step.csv      | 72068 +++++++++++++++
+ .../teammate1/main/reward_components_summary.csv   |     9 +
+ .../teammate1/main/source_hashes.json              |    11 +
+ .../teammate1/smoke/config.json                    |   876 +
+ .../teammate1/smoke/initialization.log             |    88 +
+ .../teammate1/smoke_action_check/config.json       |   876 +
+ .../teammate1/smoke_action_check/evaluation.log    |   240 +
+ .../reward_components_episode.csv                  |     5 +
+ .../smoke_action_check/reward_components_step.csv  |  2905 +
+ .../reward_components_summary.csv                  |     9 +
+ .../teammate1/smoke_action_check/smoke.json        |   774 +
+ .../smoke_action_check/source_hashes.json          |    11 +
+ .../teammate1/smoke_diagnostic/config.json         |   876 +
+ .../teammate1/smoke_diagnostic/initialization.log  |   246 +
+ cross_eval_team1_policy/teammate2/main.log         |   234 +
+ cross_eval_team1_policy/teammate2/main/config.json |  1255 +
+ .../teammate2/main/evaluation_seed24_n100.json     | 11725 +++
+ .../teammate2/main/reward_components_episode.csv   |   101 +
+ .../teammate2/main/reward_components_step.csv      | 90894 +++++++++++++++++++
+ .../teammate2/main/reward_components_summary.csv   |     9 +
+ .../teammate2/main/source_hashes.json              |    11 +
+ cross_eval_team1_policy/teammate2/smoke.log        |   234 +
+ .../teammate2/smoke/config.json                    |  1255 +
+ .../teammate2/smoke/reward_components_episode.csv  |     5 +
+ .../teammate2/smoke/reward_components_step.csv     |  3494 +
+ .../teammate2/smoke/reward_components_summary.csv  |     9 +
+ cross_eval_team1_policy/teammate2/smoke/smoke.json |   781 +
+ .../teammate2/smoke/source_hashes.json             |    11 +
+ docker/.env.base                                   |    19 +
+ docker/.env.cloudxr-runtime                        |     8 +
+ docker/.env.ros2                                   |    14 +
+ docker/.ros/cyclonedds.xml                         |    15 +
+ docker/.ros/fastdds.xml                            |    27 +
+ docker/Dockerfile.base                             |   111 +
+ docker/Dockerfile.curobo                           |   144 +
+ docker/Dockerfile.ros2                             |    39 +
+ docker/cluster/.env.cluster                        |    22 +
+ docker/cluster/cluster_interface.sh                |   211 +
+ docker/cluster/run_singularity.sh                  |    82 +
+ docker/cluster/submit_job_pbs.sh                   |    23 +
+ docker/cluster/submit_job_slurm.sh                 |    25 +
+ docker/container.py                                |   142 +
+ docker/container.sh                                |    17 +
+ docker/docker-compose.cloudxr-runtime.patch.yaml   |    52 +
+ docker/docker-compose.yaml                         |   153 +
+ docker/test/test_docker.py                         |    64 +
+ docker/utils/__init__.py                           |     8 +
+ docker/utils/container_interface.py                |   316 +
+ docker/utils/state_file.py                         |   151 +
+ docker/utils/x11_utils.py                          |   227 +
+ docker/x11.yaml                                    |    41 +
+ docs/Makefile                                      |    19 +
+ docs/README.md                                     |    75 +
+ docs/_redirect/index.html                          |     8 +
+ docs/_templates/versioning.html                    |    21 +
+ docs/conf.py                                       |   304 +
+ docs/index.rst                                     |   186 +
+ docs/licenses/assets/anymal_b-license.txt          |    29 +
+ docs/licenses/assets/anymal_c-license.txt          |    29 +
+ docs/licenses/assets/franka-license.txt            |   176 +
+ docs/licenses/assets/kinova-license.txt            |    95 +
+ docs/licenses/assets/robotiq-license.txt           |    23 +
+ docs/licenses/assets/unitree-license.txt           |    29 +
+ docs/licenses/assets/valkyrie-license              |   249 +
+ .../dependencies/Farama-Notifications-license.txt  |    21 +
+ docs/licenses/dependencies/GitPython-license.txt   |    29 +
+ docs/licenses/dependencies/InquirerPy-license.txt  |    21 +
+ docs/licenses/dependencies/absl-py-license.txt     |   201 +
+ .../dependencies/accessible-pygments-license.txt   |    29 +
+ docs/licenses/dependencies/alabaster-license.txt   |    12 +
+ .../antlr4_python3_runtime-license.txt             |    28 +
+ docs/licenses/dependencies/anyio-license.txt       |    20 +
+ docs/licenses/dependencies/anytree-license.txt     |   201 +
+ docs/licenses/dependencies/assimp-license.txt      |    78 +
+ docs/licenses/dependencies/asttokens-license.txt   |   201 +
+ docs/licenses/dependencies/attrs-license           |    21 +
+ docs/licenses/dependencies/autodocsumm-license.txt |   201 +
+ docs/licenses/dependencies/babel-license.txt       |    22 +
+ .../dependencies/beautifulsoup4-license.txt        |    26 +
+ docs/licenses/dependencies/black-license.txt       |    21 +
+ docs/licenses/dependencies/boost-license.txt       |    23 +
+ docs/licenses/dependencies/botocore-license.txt    |   176 +
+ docs/licenses/dependencies/certifi-license.txt     |    20 +
+ .../dependencies/charset-normalizer-license.txt    |    21 +
+ docs/licenses/dependencies/click-license.txt       |    28 +
+ docs/licenses/dependencies/cloudpickle-license.txt |    32 +
+ docs/licenses/dependencies/cmeel-license.txt       |    25 +
+ docs/licenses/dependencies/codespell-license.txt   |   339 +
+ docs/licenses/dependencies/colorama-license.txt    |    27 +
+ docs/licenses/dependencies/comm-license.txt        |    29 +
+ .../dependencies/console-bridge-license.txt        |    25 +
+ docs/licenses/dependencies/contourpy-license.txt   |    29 +
+ docs/licenses/dependencies/cuRobo-license.txt      |    93 +
+ docs/licenses/dependencies/cycler-license.txt      |    27 +
+ docs/licenses/dependencies/decorator-license.txt   |    27 +
+ .../dependencies/dex-retargeting-license.txt       |    21 +
+ .../dependencies/docker-pycreds-license.txt        |   201 +
+ docs/licenses/dependencies/egl_probe-license.txt   |    21 +
+ docs/licenses/dependencies/eigenpy-license.txt     |    26 +
+ docs/licenses/dependencies/einops-license.txt      |    21 +
+ docs/licenses/dependencies/executing-license.txt   |    21 +
+ docs/licenses/dependencies/filelock-license.txt    |    24 +
+ docs/licenses/dependencies/flake8-license.txt      |    22 +
+ docs/licenses/dependencies/flaky-license.txt       |   166 +
+ docs/licenses/dependencies/flatdict-license.txt    |    25 +
+ docs/licenses/dependencies/fonttools-license.txt   |    21 +
+ docs/licenses/dependencies/fsspec-license.txt      |    29 +
+ docs/licenses/dependencies/gitdb-license.txt       |    42 +
+ docs/licenses/dependencies/grpcio-license.txt      |   609 +
+ docs/licenses/dependencies/gym-license.txt         |    34 +
+ docs/licenses/dependencies/gym-notices-license.txt |    19 +
+ docs/licenses/dependencies/gymnasium-license.txt   |    22 +
+ docs/licenses/dependencies/h5py-license.txt        |    30 +
+ docs/licenses/dependencies/hf-xet-license.txt      |   201 +
+ docs/licenses/dependencies/hidapi-license.txt      |    26 +
+ docs/licenses/dependencies/hpp-fcl-license.txt     |    34 +
+ .../dependencies/huggingface-hub-license.txt       |   201 +
+ docs/licenses/dependencies/hydra-license.txt       |    21 +
+ docs/licenses/dependencies/idna-license.txt        |    13 +
+ docs/licenses/dependencies/imageio-license.txt     |    23 +
+ .../dependencies/imageio_ffmpeg-license.txt        |    25 +
+ docs/licenses/dependencies/imagesize-license.txt   |     8 +
+ docs/licenses/dependencies/iniconfig-license.txt   |    21 +
+ docs/licenses/dependencies/ipython-license.txt     |    33 +
+ docs/licenses/dependencies/ipywidgets-license.txt  |    27 +
+ docs/licenses/dependencies/isaacsim-license.txt    |   188 +
+ docs/licenses/dependencies/isort-license.txt       |    21 +
+ docs/licenses/dependencies/jinja2-license.txt      |    28 +
+ docs/licenses/dependencies/jmespath-license.txt    |    21 +
+ docs/licenses/dependencies/joblib-license.txt      |    29 +
+ docs/licenses/dependencies/jsonschema-license.txt  |    19 +
+ .../jsonschema-specifications-license.txt          |    19 +
+ docs/licenses/dependencies/junitparser-license.txt |    13 +
+ .../dependencies/jupyterlab_widgets-license.txt    |    27 +
+ docs/licenses/dependencies/kiwisolver-license.txt  |    71 +
+ docs/licenses/dependencies/labeler-license.txt     |    21 +
+ docs/licenses/dependencies/latexcodec-license.txt  |     7 +
+ docs/licenses/dependencies/legged-gym-license.txt  |    31 +
+ .../dependencies/loop-rate-limiters-license.txt    |   201 +
+ .../dependencies/markdown-it-py-license.txt        |    21 +
+ docs/licenses/dependencies/markdown-license.txt    |    15 +
+ docs/licenses/dependencies/markupsafe-license.txt  |    28 +
+ .../dependencies/matplotlib-inline-license.txt     |    29 +
+ docs/licenses/dependencies/matplotlib-license.txt  |    99 +
+ .../dependencies/mdit-py-plugins-license.txt       |    21 +
+ docs/licenses/dependencies/mdurl-license.txt       |    46 +
+ docs/licenses/dependencies/moviepy-license.txt     |    21 +
+ docs/licenses/dependencies/mpmath-license.txt      |    27 +
+ docs/licenses/dependencies/myst-parser-license.txt |    21 +
+ docs/licenses/dependencies/networkx-license.txt    |    37 +
+ docs/licenses/dependencies/newton-license.txt      |   176 +
+ docs/licenses/dependencies/nlopt-license.txt       |    39 +
+ docs/licenses/dependencies/numpy-license.txt       |    30 +
+ docs/licenses/dependencies/octomap-license.txt     |    31 +
+ docs/licenses/dependencies/omegaconf-license.txt   |    29 +
+ docs/licenses/dependencies/onnx-license.txt        |   202 +
+ docs/licenses/dependencies/open3d-license.txt      |    22 +
+ .../dependencies/opencv-python-license.txt         |    21 +
+ docs/licenses/dependencies/packaging-license.txt   |   176 +
+ docs/licenses/dependencies/pandas-license.txt      |    31 +
+ docs/licenses/dependencies/pathtools-license.txt   |    21 +
+ docs/licenses/dependencies/pexpect-license.txt     |    19 +
+ docs/licenses/dependencies/pillow-license.txt      |    30 +
+ docs/licenses/dependencies/pin-license.txt         |    26 +
+ docs/licenses/dependencies/pin-pink-license.txt    |   201 +
+ docs/licenses/dependencies/pinocchio-license.txt   |    26 +
+ docs/licenses/dependencies/pluggy-license.txt      |    21 +
+ .../dependencies/pre-commit-hooks-license.txt      |    19 +
+ docs/licenses/dependencies/pre-commit-license.txt  |    19 +
+ docs/licenses/dependencies/prettytable-license.txt |    30 +
+ docs/licenses/dependencies/proglog-license.txt     |    21 +
+ docs/licenses/dependencies/protobuf-license.txt    |    32 +
+ docs/licenses/dependencies/psutil-license.txt      |    29 +
+ docs/licenses/dependencies/ptyprocess-license.txt  |    19 +
+ docs/licenses/dependencies/pure_eval-license.txt   |    21 +
+ .../dependencies/pybtex-docutils-license.txt       |     7 +
+ .../dependencies/pydata-sphinx-theme-license.txt   |    29 +
+ docs/licenses/dependencies/pygame-license.txt      |   502 +
+ docs/licenses/dependencies/pyglet-license.txt      |    30 +
+ .../licenses/dependencies/pygrep-hooks-license.txt |    19 +
+ docs/licenses/dependencies/pyparsing-license.txt   |    18 +
+ docs/licenses/dependencies/pyperclip-license.txt   |    27 +
+ docs/licenses/dependencies/pyright-license.txt     |    47 +
+ docs/licenses/dependencies/pytest-license.txt      |    21 +
+ docs/licenses/dependencies/pytest-mock-license.txt |    21 +
+ .../dependencies/python-dateutil-license.txt       |    54 +
+ .../dependencies/python-dotenv-license.txt         |    27 +
+ docs/licenses/dependencies/pytorch3d-license.txt   |    30 +
+ .../dependencies/pytransform3d-license.txt         |    30 +
+ docs/licenses/dependencies/pytz-license.txt        |    19 +
+ docs/licenses/dependencies/pyupgrade-license.txt   |    19 +
+ docs/licenses/dependencies/pyyaml-license.txt      |    20 +
+ docs/licenses/dependencies/qhull-license.txt       |    39 +
+ docs/licenses/dependencies/qpsolvers-license.txt   |   165 +
+ docs/licenses/dependencies/quadprog-license.txt    |   339 +
+ docs/licenses/dependencies/ray-license.txt         |   450 +
+ docs/licenses/dependencies/referencing-license.txt |    19 +
+ docs/licenses/dependencies/regex-license.txt       |   208 +
+ docs/licenses/dependencies/requests-license.txt    |   174 +
+ docs/licenses/dependencies/rich-license.txt        |    19 +
+ docs/licenses/dependencies/rl_games-license.txt    |    21 +
+ docs/licenses/dependencies/robomimc-license.txt    |    21 +
+ docs/licenses/dependencies/rsl_rl-license.txt      |   141 +
+ docs/licenses/dependencies/safetensors-license.txt |   201 +
+ .../licenses/dependencies/scikit-learn-license.txt |    29 +
+ docs/licenses/dependencies/sentry-sdk-license.txt  |    21 +
+ .../licenses/dependencies/setproctitle-license.txt |    28 +
+ docs/licenses/dependencies/setuptools-license.txt  |    17 +
+ docs/licenses/dependencies/shortuuid-license.txt   |    29 +
+ docs/licenses/dependencies/six-license.txt         |    18 +
+ docs/licenses/dependencies/skrl-license.txt        |    21 +
+ docs/licenses/dependencies/smmap-license.txt       |    29 +
+ docs/licenses/dependencies/sniffio-license.txt     |   201 +
+ .../dependencies/snowballstemmer-license.txt       |    29 +
+ docs/licenses/dependencies/soupsieve-license.txt   |     9 +
+ .../dependencies/sphinx-book-theme-license.txt     |    29 +
+ .../dependencies/sphinx-copybutton-license.txt     |    21 +
+ .../dependencies/sphinx-design-license.txt         |    21 +
+ docs/licenses/dependencies/sphinx-icon-license.txt |    25 +
+ docs/licenses/dependencies/sphinx-license.txt      |    31 +
+ .../dependencies/sphinx-multiversion-license.txt   |    25 +
+ docs/licenses/dependencies/sphinx-tabs-license.txt |    21 +
+ .../sphinxcontrib-applehelp-license.txt            |     8 +
+ .../dependencies/sphinxcontrib-bibtex-license.txt  |    26 +
+ .../dependencies/sphinxcontrib-devhelp-license.txt |     8 +
+ .../sphinxcontrib-htmlhelp-license.txt             |     8 +
+ .../dependencies/sphinxcontrib-jsmath-license.txt  |     8 +
+ .../dependencies/sphinxcontrib-qthelp-license.txt  |     8 +
+ .../sphinxcontrib-serializinghtml-license.txt      |     8 +
+ docs/licenses/dependencies/sphinxemoji-license.txt |    27 +
+ .../dependencies/stable-baselines3-license.txt     |    21 +
+ docs/licenses/dependencies/stack-data-license.txt  |    21 +
+ docs/licenses/dependencies/sympy-license.txt       |   153 +
+ docs/licenses/dependencies/tensorboard-license.txt |   203 +
+ .../licenses/dependencies/tensorboardx-license.txt |    21 +
+ docs/licenses/dependencies/tensordict-license.txt  |    21 +
+ docs/licenses/dependencies/termcolor-license.txt   |    19 +
+ .../dependencies/threadpoolctl-license.txt         |    24 +
+ docs/licenses/dependencies/tinyxml-license.txt     |    18 +
+ docs/licenses/dependencies/tokenizers-license.txt  |   201 +
+ docs/licenses/dependencies/toml-license.txt        |    27 +
+ docs/licenses/dependencies/torch-license.txt       |    27 +
+ docs/licenses/dependencies/torchvision-license.txt |    29 +
+ docs/licenses/dependencies/tqdm-license.txt        |    49 +
+ docs/licenses/dependencies/traitlets-license.txt   |    30 +
+ .../licenses/dependencies/transformers-license.txt |   203 +
+ docs/licenses/dependencies/trimesh-license.txt     |    21 +
+ docs/licenses/dependencies/triton-license.txt      |    23 +
+ .../dependencies/typing-extensions-license.txt     |   279 +
+ .../dependencies/typing-inspection-license.txt     |    21 +
+ docs/licenses/dependencies/tzdata-license.txt      |    15 +
+ docs/licenses/dependencies/urdfdom-license.txt     |    33 +
+ docs/licenses/dependencies/urllib3-license.txt     |    21 +
+ .../dependencies/walk-these-ways-license.txt       |    25 +
+ docs/licenses/dependencies/wandb-license.txt       |    21 +
+ docs/licenses/dependencies/warp-license.txt        |   176 +
+ docs/licenses/dependencies/werkzeug-license.txt    |    28 +
+ .../dependencies/widgetsnbextension-license.txt    |    27 +
+ docs/licenses/dependencies/zipp-license.txt        |     1 +
+ docs/licenses/dependencies/zlib-license.txt        |    25 +
+ docs/make.bat                                      |    65 +
+ docs/requirements.txt                              |    18 +
+ docs/source/_static/NVIDIA-logo-black.png          |   Bin 0 -> 39261 bytes
+ docs/source/_static/NVIDIA-logo-white.png          |   Bin 0 -> 130540 bytes
+ .../_static/actuator-group/actuator-dark.svg       |   522 +
+ .../_static/actuator-group/actuator-light.svg      | 10214 +++
+ .../_static/actuator-group/dc_motor_clipping.jpg   |   Bin 0 -> 63276 bytes
+ docs/source/_static/benchmarks/cartpole.jpg        |   Bin 0 -> 139764 bytes
+ docs/source/_static/benchmarks/cartpole_camera.jpg |   Bin 0 -> 59002 bytes
+ docs/source/_static/benchmarks/g1_rough.jpg        |   Bin 0 -> 1169796 bytes
+ docs/source/_static/benchmarks/shadow.jpg          |   Bin 0 -> 116659 bytes
+ docs/source/_static/css/custom.css                 |   112 +
+ docs/source/_static/demos/arms.jpg                 |   Bin 0 -> 313056 bytes
+ docs/source/_static/demos/bipeds.jpg               |   Bin 0 -> 158757 bytes
+ docs/source/_static/demos/deformables.jpg          |   Bin 0 -> 324431 bytes
+ docs/source/_static/demos/h1_locomotion.jpg        |   Bin 0 -> 337160 bytes
+ docs/source/_static/demos/hands.jpg                |   Bin 0 -> 199627 bytes
+ docs/source/_static/demos/markers.jpg              |   Bin 0 -> 175336 bytes
+ docs/source/_static/demos/multi_asset.jpg          |   Bin 0 -> 551533 bytes
+ docs/source/_static/demos/pick_and_place.jpg       |   Bin 0 -> 259917 bytes
+ docs/source/_static/demos/procedural_terrain.jpg   |   Bin 0 -> 448684 bytes
+ docs/source/_static/demos/quadcopter.jpg           |   Bin 0 -> 71881 bytes
+ docs/source/_static/demos/quadrupeds.jpg           |   Bin 0 -> 346110 bytes
+ .../source/_static/demos/renderer_rtx_realtime.jpg |   Bin 0 -> 141878 bytes
+ docs/source/_static/demos/start_ar.jpg             |   Bin 0 -> 69913 bytes
+ docs/source/_static/favicon.ico                    |   Bin 0 -> 15406 bytes
+ .../how-to/howto_rendering_example_balanced.jpg    |   Bin 0 -> 144149 bytes
+ .../how-to/howto_rendering_example_performance.jpg |   Bin 0 -> 157386 bytes
+ .../how-to/howto_rendering_example_quality.jpg     |   Bin 0 -> 209737 bytes
+ docs/source/_static/isaaclab.jpg                   |   Bin 0 -> 668544 bytes
+ docs/source/_static/multi-gpu-rl/a3c-dark.svg      |   364 +
+ docs/source/_static/multi-gpu-rl/a3c-light.svg     |   385 +
+ .../_static/overview/sensors/camera_depth.jpg      |   Bin 0 -> 19213 bytes
+ .../_static/overview/sensors/camera_instance.jpg   |   Bin 0 -> 18058 bytes
+ .../_static/overview/sensors/camera_instanceID.jpg |   Bin 0 -> 15952 bytes
+ .../_static/overview/sensors/camera_normals.jpg    |   Bin 0 -> 16814 bytes
+ .../source/_static/overview/sensors/camera_rgb.jpg |   Bin 0 -> 49868 bytes
+ .../_static/overview/sensors/camera_semantic.jpg   |   Bin 0 -> 17980 bytes
+ .../_static/overview/sensors/contact_diagram.jpg   |   Bin 0 -> 160782 bytes
+ .../overview/sensors/contact_visualization.jpg     |   Bin 0 -> 104622 bytes
+ .../_static/overview/sensors/frame_transformer.jpg |   Bin 0 -> 145208 bytes
+ .../sensors/frame_transformer_visualizer.jpg       |   Bin 0 -> 42815 bytes
+ .../_static/overview/sensors/imu_diagram.jpg       |   Bin 0 -> 138998 bytes
+ .../_static/overview/sensors/imu_visualizer.jpg    |   Bin 0 -> 64601 bytes
+ .../overview/sensors/raycaster_patterns.jpg        |   Bin 0 -> 253172 bytes
+ .../overview/sensors/raycaster_visualizer.jpg      |   Bin 0 -> 238348 bytes
+ .../00_hover/hover_stable_wave.png                 |   Bin 0 -> 440557 bytes
+ .../00_hover/hover_training_robots.png             |   Bin 0 -> 385419 bytes
+ ...c_velocity_flat_anymal_d_v0_IO_descriptors.yaml |   349 +
+ .../isaac_velocity_flat_g1_v0_IO_descriptors.yaml  |   724 +
+ .../reference-architecture/deployment-dark.svg     |     3 +
+ .../reference-architecture/deployment-light.svg    |     3 +
+ .../reference-architecture/isaac-lab-ra-dark.svg   |     3 +
+ .../reference-architecture/isaac-lab-ra-light.svg  |     3 +
+ .../multi-gpu-training-dark.svg                    |     3 +
+ .../multi-gpu-training-light.svg                   |     3 +
+ .../single-gpu-training-dark.svg                   |     3 +
+ .../single-gpu-training-light.svg                  |     3 +
+ docs/source/_static/refs.bib                       |   177 +
+ docs/source/_static/setup/asset_caching.jpg        |   Bin 0 -> 374471 bytes
+ docs/source/_static/setup/cloudxr_ar_panel.jpg     |   Bin 0 -> 32357 bytes
+ .../_static/setup/cloudxr_avp_connect_ui.jpg       |   Bin 0 -> 14499 bytes
+ docs/source/_static/setup/cloudxr_avp_ik_error.jpg |   Bin 0 -> 301133 bytes
+ .../source/_static/setup/cloudxr_avp_teleop_ui.jpg |   Bin 0 -> 16493 bytes
+ docs/source/_static/setup/cloudxr_viewport.jpg     |   Bin 0 -> 114196 bytes
+ docs/source/_static/setup/ecosystem-dark.jpg       |   Bin 0 -> 182687 bytes
+ docs/source/_static/setup/ecosystem-light.jpg      |   Bin 0 -> 176206 bytes
+ docs/source/_static/setup/isaac_ants_example.jpg   |   Bin 0 -> 170019 bytes
+ docs/source/_static/setup/shadow_hands_example.jpg |   Bin 0 -> 29378 bytes
+ docs/source/_static/setup/verify_install.jpg       |   Bin 0 -> 199658 bytes
+ .../_static/setup/walkthrough_1_1_result.jpg       |   Bin 0 -> 185443 bytes
+ .../_static/setup/walkthrough_1_2_arrows.jpg       |   Bin 0 -> 108267 bytes
+ .../_static/setup/walkthrough_project_setup.svg    |     1 +
+ .../_static/setup/walkthrough_sim_stage_scene.svg  |     1 +
+ .../_static/setup/walkthrough_stage_context.svg    |     1 +
+ .../_static/setup/walkthrough_training_vectors.svg |     1 +
+ .../_static/task-workflows/direct-based-dark.svg   |     3 +
+ .../_static/task-workflows/direct-based-light.svg  |     3 +
+ .../_static/task-workflows/manager-based-dark.svg  |     3 +
+ .../_static/task-workflows/manager-based-light.svg |     3 +
+ docs/source/_static/tasks.jpg                      |   Bin 0 -> 464725 bytes
+ docs/source/_static/tasks/automate/00004.jpg       |   Bin 0 -> 49111 bytes
+ .../_static/tasks/automate/01053_disassembly.jpg   |   Bin 0 -> 28155 bytes
+ docs/source/_static/tasks/classic/ant.jpg          |   Bin 0 -> 234491 bytes
+ .../_static/tasks/classic/cart_double_pendulum.jpg |   Bin 0 -> 219224 bytes
+ docs/source/_static/tasks/classic/cartpole.jpg     |   Bin 0 -> 278750 bytes
+ docs/source/_static/tasks/classic/humanoid.jpg     |   Bin 0 -> 220946 bytes
+ docs/source/_static/tasks/factory/gear_mesh.jpg    |   Bin 0 -> 47279 bytes
+ docs/source/_static/tasks/factory/nut_thread.jpg   |   Bin 0 -> 44543 bytes
+ docs/source/_static/tasks/factory/peg_insert.jpg   |   Bin 0 -> 43938 bytes
+ .../_static/tasks/future_plans/deformable/drop.jpg |   Bin 0 -> 25903 bytes
+ .../_static/tasks/future_plans/deformable/flag.jpg |   Bin 0 -> 17833 bytes
+ .../tasks/future_plans/deformable/fluid_pour.jpg   |   Bin 0 -> 61788 bytes
+ .../future_plans/deformable/fluid_transport.jpg    |   Bin 0 -> 89228 bytes
+ .../_static/tasks/future_plans/deformable/pick.jpg |   Bin 0 -> 37247 bytes
+ .../tasks/future_plans/deformable/place.jpg        |   Bin 0 -> 31492 bytes
+ .../_static/tasks/future_plans/deformable/rope.jpg |   Bin 0 -> 34371 bytes
+ .../tasks/future_plans/deformable/shirt-basket.jpg |   Bin 0 -> 27122 bytes
+ .../tasks/future_plans/deformable/shirt.jpg        |   Bin 0 -> 40687 bytes
+ .../tasks/future_plans/deformable/stacking.jpg     |   Bin 0 -> 24790 bytes
+ .../tasks/future_plans/deformable/sweater.jpg      |   Bin 0 -> 36202 bytes
+ .../future_plans/deformable/tower_of_hanoi.jpg     |   Bin 0 -> 28248 bytes
+ .../_static/tasks/future_plans/deformable/vest.jpg |   Bin 0 -> 44279 bytes
+ .../tasks/future_plans/rigid/beat-the-buzz.jpg     |   Bin 0 -> 24401 bytes
+ .../_static/tasks/future_plans/rigid/cabinet.jpg   |   Bin 0 -> 21502 bytes
+ .../_static/tasks/future_plans/rigid/hockey.jpg    |   Bin 0 -> 32399 bytes
+ .../_static/tasks/future_plans/rigid/jenga.jpg     |   Bin 0 -> 38419 bytes
+ .../_static/tasks/future_plans/rigid/lift.jpg      |   Bin 0 -> 59761 bytes
+ .../tasks/future_plans/rigid/locomotion.jpg        |   Bin 0 -> 90707 bytes
+ .../tasks/future_plans/rigid/mobile_cabinet.jpg    |   Bin 0 -> 61198 bytes
+ .../tasks/future_plans/rigid/mobile_reach.jpg      |   Bin 0 -> 27568 bytes
+ .../_static/tasks/future_plans/rigid/nut-bolt.jpg  |   Bin 0 -> 29808 bytes
+ .../tasks/future_plans/rigid/peg-in-hole.jpg       |   Bin 0 -> 23574 bytes
+ .../_static/tasks/future_plans/rigid/pyramid.jpg   |   Bin 0 -> 36821 bytes
+ .../_static/tasks/future_plans/rigid/reach.jpg     |   Bin 0 -> 38995 bytes
+ .../_static/tasks/future_plans/rigid/shadow.jpg    |   Bin 0 -> 73939 bytes
+ docs/source/_static/tasks/locomotion/a1_flat.jpg   |   Bin 0 -> 155080 bytes
+ docs/source/_static/tasks/locomotion/a1_rough.jpg  |   Bin 0 -> 244321 bytes
+ .../tasks/locomotion/agility_digit_flat.jpg        |   Bin 0 -> 244944 bytes
+ .../tasks/locomotion/agility_digit_loco_manip.jpg  |   Bin 0 -> 250841 bytes
+ .../tasks/locomotion/agility_digit_rough.jpg       |   Bin 0 -> 240474 bytes
+ .../_static/tasks/locomotion/anymal_b_flat.jpg     |   Bin 0 -> 169317 bytes
+ .../_static/tasks/locomotion/anymal_b_rough.jpg    |   Bin 0 -> 254756 bytes
+ .../_static/tasks/locomotion/anymal_c_flat.jpg     |   Bin 0 -> 220053 bytes
+ .../_static/tasks/locomotion/anymal_c_rough.jpg    |   Bin 0 -> 310484 bytes
+ .../_static/tasks/locomotion/anymal_d_flat.jpg     |   Bin 0 -> 245789 bytes
+ .../_static/tasks/locomotion/anymal_d_rough.jpg    |   Bin 0 -> 312429 bytes
+ docs/source/_static/tasks/locomotion/g1_flat.jpg   |   Bin 0 -> 1163142 bytes
+ docs/source/_static/tasks/locomotion/g1_rough.jpg  |   Bin 0 -> 1169796 bytes
+ docs/source/_static/tasks/locomotion/go1_flat.jpg  |   Bin 0 -> 144390 bytes
+ docs/source/_static/tasks/locomotion/go1_rough.jpg |   Bin 0 -> 216384 bytes
+ docs/source/_static/tasks/locomotion/go2_flat.jpg  |   Bin 0 -> 177792 bytes
+ docs/source/_static/tasks/locomotion/go2_rough.jpg |   Bin 0 -> 233147 bytes
+ docs/source/_static/tasks/locomotion/h1_flat.jpg   |   Bin 0 -> 106872 bytes
+ docs/source/_static/tasks/locomotion/h1_rough.jpg  |   Bin 0 -> 169799 bytes
+ docs/source/_static/tasks/locomotion/spot_flat.jpg |   Bin 0 -> 87832 bytes
+ .../tasks/manipulation/agibot_place_mug.jpg        |   Bin 0 -> 77293 bytes
+ .../tasks/manipulation/agibot_place_toy.jpg        |   Bin 0 -> 81016 bytes
+ .../_static/tasks/manipulation/allegro_cube.jpg    |   Bin 0 -> 103465 bytes
+ .../_static/tasks/manipulation/franka_lift.jpg     |   Bin 0 -> 193446 bytes
+ .../tasks/manipulation/franka_open_drawer.jpg      |   Bin 0 -> 124090 bytes
+ .../_static/tasks/manipulation/franka_reach.jpg    |   Bin 0 -> 198124 bytes
+ .../_static/tasks/manipulation/franka_stack.jpg    |   Bin 0 -> 131565 bytes
+ .../_static/tasks/manipulation/g1_pick_place.jpg   |   Bin 0 -> 159101 bytes
+ .../manipulation/g1_pick_place_fixed_base.jpg      |   Bin 0 -> 151707 bytes
+ .../g1_pick_place_locomanipulation.jpg             |   Bin 0 -> 88207 bytes
+ .../tasks/manipulation/galbot_stack_cube.jpg       |   Bin 0 -> 57825 bytes
+ .../_static/tasks/manipulation/gr-1_pick_place.jpg |   Bin 0 -> 113077 bytes
+ .../manipulation/gr-1_pick_place_annotation.jpg    |   Bin 0 -> 52971 bytes
+ .../tasks/manipulation/gr-1_pick_place_waist.jpg   |   Bin 0 -> 61739 bytes
+ .../tasks/manipulation/kuka_allegro_lift.jpg       |   Bin 0 -> 47720 bytes
+ .../tasks/manipulation/kuka_allegro_reorient.jpg   |   Bin 0 -> 52080 bytes
+ .../_static/tasks/manipulation/shadow_cube.jpg     |   Bin 0 -> 126215 bytes
+ .../tasks/manipulation/shadow_hand_over.jpg        |   Bin 0 -> 144111 bytes
+ .../_static/tasks/manipulation/ur10_reach.jpg      |   Bin 0 -> 201139 bytes
+ .../manipulation/ur10_stack_surface_gripper.jpg    |   Bin 0 -> 76607 bytes
+ .../_static/tasks/manipulation/ur10e_reach.jpg     |   Bin 0 -> 134849 bytes
+ .../_static/tasks/navigation/anymal_c_nav.jpg      |   Bin 0 -> 142532 bytes
+ docs/source/_static/tasks/others/humanoid_amp.jpg  |   Bin 0 -> 121642 bytes
+ docs/source/_static/tasks/others/quadcopter.jpg    |   Bin 0 -> 58039 bytes
+ docs/source/_static/teleop/hand_asset.jpg          |   Bin 0 -> 104134 bytes
+ docs/source/_static/teleop/teleop_diagram.jpg      |   Bin 0 -> 336377 bytes
+ .../height_field/discrete_obstacles_terrain.jpg    |   Bin 0 -> 91428 bytes
+ .../discrete_obstacles_terrain_choice.jpg          |   Bin 0 -> 33975 bytes
+ .../discrete_obstacles_terrain_fixed.jpg           |   Bin 0 -> 32427 bytes
+ .../inverted_pyramid_sloped_terrain.jpg            |   Bin 0 -> 148994 bytes
+ .../inverted_pyramid_stairs_terrain.jpg            |   Bin 0 -> 47349 bytes
+ .../height_field/pyramid_sloped_terrain.jpg        |   Bin 0 -> 150200 bytes
+ .../height_field/pyramid_stairs_terrain.jpg        |   Bin 0 -> 29207 bytes
+ .../height_field/random_uniform_terrain.jpg        |   Bin 0 -> 333513 bytes
+ .../height_field/stepping_stones_terrain.jpg       |   Bin 0 -> 248578 bytes
+ .../_static/terrains/height_field/wave_terrain.jpg |   Bin 0 -> 282380 bytes
+ .../_static/terrains/trimesh/box_terrain.jpg       |   Bin 0 -> 2956 bytes
+ .../trimesh/box_terrain_with_two_boxes.jpg         |   Bin 0 -> 2993 bytes
+ .../_static/terrains/trimesh/flat_terrain.jpg      |   Bin 0 -> 2852 bytes
+ .../terrains/trimesh/floating_ring_terrain.jpg     |   Bin 0 -> 2995 bytes
+ .../_static/terrains/trimesh/gap_terrain.jpg       |   Bin 0 -> 3708 bytes
+ .../trimesh/inverted_pyramid_stairs_terrain.jpg    |   Bin 0 -> 5796 bytes
+ .../inverted_pyramid_stairs_terrain_with_holes.jpg |   Bin 0 -> 6353 bytes
+ .../_static/terrains/trimesh/pit_terrain.jpg       |   Bin 0 -> 3218 bytes
+ .../trimesh/pit_terrain_with_two_levels.jpg        |   Bin 0 -> 4370 bytes
+ .../terrains/trimesh/pyramid_stairs_terrain.jpg    |   Bin 0 -> 3595 bytes
+ .../trimesh/pyramid_stairs_terrain_with_holes.jpg  |   Bin 0 -> 4926 bytes
+ .../_static/terrains/trimesh/rails_terrain.jpg     |   Bin 0 -> 3326 bytes
+ .../terrains/trimesh/random_grid_terrain.jpg       |   Bin 0 -> 6378 bytes
+ .../trimesh/random_grid_terrain_with_holes.jpg     |   Bin 0 -> 6093 bytes
+ .../trimesh/repeated_objects_box_terrain.jpg       |   Bin 0 -> 60154 bytes
+ .../trimesh/repeated_objects_cylinder_terrain.jpg  |   Bin 0 -> 84510 bytes
+ .../trimesh/repeated_objects_pyramid_terrain.jpg   |   Bin 0 -> 62332 bytes
+ .../_static/terrains/trimesh/star_terrain.jpg      |   Bin 0 -> 9751 bytes
+ .../tutorials/tutorial_add_new_robot_result.jpg    |   Bin 0 -> 120400 bytes
+ .../_static/tutorials/tutorial_add_sensors.jpg     |   Bin 0 -> 197550 bytes
+ .../_static/tutorials/tutorial_convert_mesh.jpg    |   Bin 0 -> 23413 bytes
+ .../_static/tutorials/tutorial_convert_mjcf.jpg    |   Bin 0 -> 25668 bytes
+ .../_static/tutorials/tutorial_convert_urdf.jpg    |   Bin 0 -> 20215 bytes
+ .../tutorials/tutorial_create_direct_workflow.jpg  |   Bin 0 -> 237605 bytes
+ .../_static/tutorials/tutorial_create_empty.jpg    |   Bin 0 -> 89516 bytes
+ .../tutorials/tutorial_create_manager_base.jpg     |   Bin 0 -> 244815 bytes
+ .../tutorials/tutorial_create_manager_rl_env.jpg   |   Bin 0 -> 261708 bytes
+ .../tutorials/tutorial_creating_a_scene.jpg        |   Bin 0 -> 171874 bytes
+ .../_static/tutorials/tutorial_launch_app.jpg      |   Bin 0 -> 127856 bytes
+ .../tutorials/tutorial_modify_direct_rl_env.jpg    |   Bin 0 -> 163254 bytes
+ .../tutorial_operational_space_controller.jpg      |   Bin 0 -> 195130 bytes
+ .../tutorials/tutorial_policy_inference_in_usd.jpg |   Bin 0 -> 48790 bytes
+ .../tutorials/tutorial_register_environment.jpg    |   Bin 0 -> 243662 bytes
+ .../tutorials/tutorial_run_articulation.jpg        |   Bin 0 -> 161075 bytes
+ .../tutorials/tutorial_run_deformable_object.jpg   |   Bin 0 -> 198472 bytes
+ .../tutorials/tutorial_run_rigid_object.jpg        |   Bin 0 -> 123076 bytes
+ .../tutorials/tutorial_run_surface_gripper.jpg     |   Bin 0 -> 234303 bytes
+ .../_static/tutorials/tutorial_spawn_prims.jpg     |   Bin 0 -> 147935 bytes
+ .../tutorials/tutorial_task_space_controller.jpg   |   Bin 0 -> 226142 bytes
+ docs/source/_static/vscode_tasks.png               |   Bin 0 -> 983040 bytes
+ docs/source/api/index.rst                          |    81 +
+ docs/source/api/lab/isaaclab.actuators.rst         |   135 +
+ docs/source/api/lab/isaaclab.app.rst               |   115 +
+ docs/source/api/lab/isaaclab.assets.rst            |   115 +
+ docs/source/api/lab/isaaclab.controllers.rst       |    66 +
+ docs/source/api/lab/isaaclab.devices.rst           |   119 +
+ docs/source/api/lab/isaaclab.envs.mdp.rst          |    54 +
+ docs/source/api/lab/isaaclab.envs.rst              |   114 +
+ docs/source/api/lab/isaaclab.envs.ui.rst           |    31 +
+ docs/source/api/lab/isaaclab.managers.rst          |   160 +
+ docs/source/api/lab/isaaclab.markers.rst           |    23 +
+ docs/source/api/lab/isaaclab.scene.rst             |    23 +
+ docs/source/api/lab/isaaclab.sensors.patterns.rst  |    61 +
+ docs/source/api/lab/isaaclab.sensors.rst           |   168 +
+ docs/source/api/lab/isaaclab.sim.converters.rst    |    70 +
+ docs/source/api/lab/isaaclab.sim.rst               |    65 +
+ docs/source/api/lab/isaaclab.sim.schemas.rst       |   103 +
+ docs/source/api/lab/isaaclab.sim.spawners.rst      |   329 +
+ docs/source/api/lab/isaaclab.terrains.rst          |   261 +
+ docs/source/api/lab/isaaclab.utils.rst             |   140 +
+ .../api/lab_mimic/isaaclab_mimic.datagen.rst       |    82 +
+ docs/source/api/lab_mimic/isaaclab_mimic.envs.rst  |    26 +
+ docs/source/api/lab_rl/isaaclab_rl.rst             |    35 +
+ docs/source/api/lab_tasks/isaaclab_tasks.utils.rst |     6 +
+ .../deployment/cloudxr_teleoperation_cluster.rst   |   207 +
+ docs/source/deployment/cluster.rst                 |   211 +
+ docs/source/deployment/docker.rst                  |   368 +
+ docs/source/deployment/index.rst                   |    77 +
+ docs/source/deployment/run_docker_example.rst      |   141 +
+ .../source/experimental-features/bleeding-edge.rst |    11 +
+ .../newton-physics-integration/index.rst           |    46 +
+ .../newton-physics-integration/installation.rst    |    93 +
+ .../limitations-and-known-bugs.rst                 |    56 +
+ .../newton-visualizer.rst                          |    39 +
+ .../newton-physics-integration/sim-to-real.rst     |    92 +
+ .../newton-physics-integration/sim-to-sim.rst      |   167 +
+ .../solver-transitioning.rst                       |    73 +
+ .../training-environments.rst                      |    82 +
+ docs/source/features/hydra.rst                     |   129 +
+ docs/source/features/multi_gpu.rst                 |   222 +
+ docs/source/features/population_based_training.rst |   140 +
+ docs/source/features/ray.rst                       |   432 +
+ docs/source/features/reproducibility.rst           |    42 +
+ docs/source/how-to/add_own_library.rst             |   102 +
+ docs/source/how-to/cloudxr_teleoperation.rst       |  1119 +
+ docs/source/how-to/configure_rendering.rst         |   151 +
+ docs/source/how-to/curriculums.rst                 |   122 +
+ docs/source/how-to/draw_markers.rst                |    75 +
+ .../how-to/estimate_how_many_cameras_can_run.rst   |   121 +
+ docs/source/how-to/import_new_asset.rst            |   314 +
+ docs/source/how-to/index.rst                       |   173 +
+ docs/source/how-to/make_fixed_prim.rst             |   179 +
+ docs/source/how-to/master_omniverse.rst            |   123 +
+ docs/source/how-to/multi_asset_spawning.rst        |   129 +
+ docs/source/how-to/optimize_stage_creation.rst     |   146 +
+ docs/source/how-to/record_animation.rst            |   127 +
+ docs/source/how-to/record_video.rst                |    25 +
+ docs/source/how-to/save_camera_output.rst          |   102 +
+ docs/source/how-to/simulation_performance.rst      |    72 +
+ docs/source/how-to/wrap_rl_env.rst                 |   167 +
+ docs/source/how-to/write_articulation_cfg.rst      |   268 +
+ .../migration/migrating_from_isaacgymenvs.rst      |   929 +
+ .../migration/migrating_from_omniisaacgymenvs.rst  |   999 +
+ docs/source/migration/migrating_from_orbit.rst     |   150 +
+ docs/source/overview/core-concepts/actuators.rst   |   100 +
+ docs/source/overview/core-concepts/index.rst       |    13 +
+ .../overview/core-concepts/motion_generators.rst   |   229 +
+ .../overview/core-concepts/sensors/camera.rst      |   159 +
+ .../core-concepts/sensors/contact_sensor.rst       |   104 +
+ .../core-concepts/sensors/frame_transformer.rst    |   111 +
+ docs/source/overview/core-concepts/sensors/imu.rst |    89 +
+ .../overview/core-concepts/sensors/index.rst       |    21 +
+ .../overview/core-concepts/sensors/ray_caster.rst  |    77 +
+ .../overview/core-concepts/task_workflows.rst      |   118 +
+ .../overview/developer-guide/development.rst       |   170 +
+ docs/source/overview/developer-guide/index.rst     |    15 +
+ .../overview/developer-guide/repo_structure.rst    |    69 +
+ docs/source/overview/developer-guide/vs_code.rst   |    77 +
+ docs/source/overview/environments.rst              |  1137 +
+ .../imitation-learning/augmented_imitation.rst     |   436 +
+ docs/source/overview/imitation-learning/index.rst  |    12 +
+ .../overview/imitation-learning/skillgen.rst       |   548 +
+ .../imitation-learning/teleop_imitation.rst        |  1030 +
+ docs/source/overview/own-project/index.rst         |    14 +
+ .../overview/own-project/project_structure.rst     |    44 +
+ docs/source/overview/own-project/template.rst      |   230 +
+ .../overview/reinforcement-learning/index.rst      |    15 +
+ .../performance_benchmarks.rst                     |   151 +
+ .../reinforcement-learning/rl_existing_scripts.rst |   298 +
+ .../reinforcement-learning/rl_frameworks.rst       |    88 +
+ .../reinforcement-learning/training_guide.rst      |   163 +
+ docs/source/overview/showroom.rst                  |   301 +
+ docs/source/overview/simple_agents.rst             |   120 +
+ .../policy_deployment/00_hover/hover_policy.rst    |   194 +
+ .../01_io_descriptors/io_descriptors_101.rst       |   281 +
+ docs/source/policy_deployment/index.rst            |    12 +
+ docs/source/refs/additional_resources.rst          |    36 +
+ docs/source/refs/bibliography.rst                  |     4 +
+ docs/source/refs/changelog.rst                     |    38 +
+ docs/source/refs/contributing.rst                  |   437 +
+ docs/source/refs/issues.rst                        |   114 +
+ docs/source/refs/license.rst                       |    46 +
+ docs/source/refs/migration.rst                     |   137 +
+ docs/source/refs/reference_architecture/index.rst  |   378 +
+ docs/source/refs/release_notes.rst                 |  1635 +
+ .../refs/snippets/tutorial_modify_direct_rl_env.py |    60 +
+ docs/source/refs/troubleshooting.rst               |   260 +
+ docs/source/setup/ecosystem.rst                    |   156 +
+ docs/source/setup/installation/asset_caching.rst   |    58 +
+ .../setup/installation/binaries_installation.rst   |    80 +
+ .../setup/installation/cloud_installation.rst      |   238 +
+ .../installation/include/bin_verify_isaacsim.rst   |    74 +
+ .../include/pip_python_virtual_env.rst             |   123 +
+ .../installation/include/pip_verify_isaacsim.rst   |    46 +
+ .../installation/include/src_build_isaaclab.rst    |    56 +
+ .../installation/include/src_clone_isaaclab.rst    |    78 +
+ .../include/src_python_virtual_env.rst             |   112 +
+ .../installation/include/src_symlink_isaacsim.rst  |    43 +
+ .../installation/include/src_verify_isaaclab.rst   |   102 +
+ docs/source/setup/installation/index.rst           |   196 +
+ .../installation/isaaclab_pip_installation.rst     |   116 +
+ .../source/setup/installation/pip_installation.rst |   107 +
+ .../setup/installation/source_installation.rst     |   109 +
+ docs/source/setup/quickstart.rst                   |   353 +
+ docs/source/setup/walkthrough/api_env_design.rst   |   158 +
+ .../setup/walkthrough/concepts_env_design.rst      |    70 +
+ docs/source/setup/walkthrough/index.rst            |    24 +
+ .../setup/walkthrough/technical_env_design.rst     |   204 +
+ .../setup/walkthrough/training_jetbot_gt.rst       |   221 +
+ .../training_jetbot_reward_exploration.rst         |   146 +
+ docs/source/tutorials/00_sim/create_empty.rst      |   167 +
+ docs/source/tutorials/00_sim/launch_app.rst        |   176 +
+ docs/source/tutorials/00_sim/spawn_prims.rst       |   192 +
+ docs/source/tutorials/01_assets/add_new_robot.rst  |   113 +
+ .../tutorials/01_assets/run_articulation.rst       |   146 +
+ .../tutorials/01_assets/run_deformable_object.rst  |   181 +
+ .../tutorials/01_assets/run_rigid_object.rst       |   153 +
+ .../tutorials/01_assets/run_surface_gripper.rst    |   170 +
+ docs/source/tutorials/02_scene/create_scene.rst    |   169 +
+ .../tutorials/03_envs/configuring_rl_training.rst  |   140 +
+ .../tutorials/03_envs/create_direct_rl_env.rst     |   339 +
+ .../tutorials/03_envs/create_manager_base_env.rst  |   220 +
+ .../tutorials/03_envs/create_manager_rl_env.rst    |   190 +
+ .../tutorials/03_envs/modify_direct_rl_env.rst     |   133 +
+ .../tutorials/03_envs/policy_inference_in_usd.rst  |    74 +
+ .../tutorials/03_envs/register_rl_env_gym.rst      |   172 +
+ docs/source/tutorials/03_envs/run_rl_training.rst  |   156 +
+ .../tutorials/04_sensors/add_sensors_on_robot.rst  |   210 +
+ .../tutorials/05_controllers/run_diff_ik.rst       |   159 +
+ docs/source/tutorials/05_controllers/run_osc.rst   |   191 +
+ docs/source/tutorials/index.rst                    |   110 +
+ docs/submission_provenance/README.md               |    28 +
+ docs/submission_provenance/copy_manifest.json      | 26137 ++++++
+ .../current_project_README.md                      |    18 +
+ .../final_submission_integrity.json                |   294 +
+ .../modified_config_mapping.json                   |    32 +
+ docs/submission_provenance/official_README.md      |   143 +
+ docs/submission_provenance/official_gitattributes  |    12 +
+ docs/submission_provenance/official_gitignore      |    71 +
+ docs/submission_provenance/official_pyproject.toml |   100 +
+ environment.yml                                    |    11 +
+ experiments/observation_ablation/README.md         |   411 +
+ .../depthcam_2048x32x2000/commands.log             |     1 +
+ .../results/episode_metrics.csv                    |   101 +
+ .../results/evaluation_summary.json                |   129 +
+ .../depthcam_2048x32x2000/results/main_metrics.csv |     6 +
+ .../results/reward_components.csv                  |     9 +
+ .../depthcam_2048x32x2000/training_summary.json    |    16 +
+ .../depthcam_modified_2048x32x2000/commands.log    |     1 +
+ .../results/episode_metrics.csv                    |   101 +
+ .../results/evaluation_summary.json                |   147 +
+ .../results/main_metrics.csv                       |     6 +
+ .../results/reward_components.csv                  |    12 +
+ .../training_summary.json                          |    16 +
+ .../observation_ablation/heightscan/.gitignore     |     3 +
+ .../heightscan/checkpoints/best_model.pt           |   Bin 0 -> 3619381 bytes
+ .../observation_ablation/heightscan/commands.log   |    24 +
+ .../heightscan/episode_metrics.csv                 |   101 +
+ .../heightscan/evaluation_attempt_01/agent.json    |    62 +
+ .../heightscan/evaluation_attempt_01/config.json   |   986 +
+ .../heightscan/evaluation_attempt_01/manifest.json |   279 +
+ .../evaluation_attempt_01/source_mapping.json      |    14 +
+ .../evaluation_attempt_01/source_parity.json       |   542 +
+ .../heightscan/evaluation_summary.json             |   116 +
+ .../heightscan/files_added.txt                     |    44 +
+ .../observation_ablation/heightscan/integrity.json |    34 +
+ .../heightscan/main_metrics.csv                    |    12 +
+ .../observation_ablation/heightscan/manifest.json  |   573 +
+ .../heightscan/raycast_diagnostics.json            |    42 +
+ .../heightscan/results/agent.json                  |    62 +
+ .../heightscan/results/config.json                 |   986 +
+ .../heightscan/results/episode_metrics.csv         |   101 +
+ .../heightscan/results/evaluation_summary.json     |   116 +
+ .../heightscan/results/main_metrics.csv            |     6 +
+ .../heightscan/results/manifest.json               |   279 +
+ .../heightscan/results/raycast_diagnostics.json    |     6 +
+ .../heightscan/results/reward_components.csv       |     9 +
+ .../heightscan/results/run.log                     |   224 +
+ .../heightscan/results/source_mapping.json         |    14 +
+ .../heightscan/results/source_parity.json          |   542 +
+ .../heightscan/reward_components.csv               |     9 +
+ .../heightscan/smoke/agent.json                    |    62 +
+ .../heightscan/smoke/config.json                   |   986 +
+ .../heightscan/smoke/manifest.json                 |   225 +
+ .../observation_ablation/heightscan/smoke/run.log  |   194 +
+ .../heightscan/smoke/smoke.json                    |   141 +
+ .../heightscan/smoke/source_mapping.json           |    14 +
+ .../heightscan/smoke/source_parity.json            |   542 +
+ .../heightscan/smoke_attempt_03/agent.json         |    62 +
+ .../heightscan/smoke_attempt_03/config.json        |   986 +
+ .../heightscan/smoke_attempt_03/manifest.json      |   225 +
+ .../smoke_attempt_03/source_mapping.json           |    14 +
+ .../heightscan/smoke_attempt_03/source_parity.json |   542 +
+ .../heightscan/smoke_original/agent.json           |    62 +
+ .../heightscan/smoke_original/config.json          |   986 +
+ .../heightscan/smoke_original/manifest.json        |   225 +
+ .../heightscan/smoke_original/run.log              |   194 +
+ .../heightscan/smoke_original/smoke.json           |   141 +
+ .../heightscan/smoke_original/source_mapping.json  |    14 +
+ .../heightscan/smoke_original/source_parity.json   |   542 +
+ .../heightscan/source_mapping.json                 |    31 +
+ .../heightscan/training_summary.json               |    11 +
+ .../heightscan_4096x32x1000/.gitignore             |     2 +
+ .../checkpoint_selection.json                      |    19 +
+ .../checkpoints/best_model.pt                      |   Bin 0 -> 3619381 bytes
+ .../checkpoints/final_model.pt                     |   Bin 0 -> 3619307 bytes
+ .../heightscan_4096x32x1000/commands.log           |    12 +
+ .../heightscan_4096x32x1000/episode_metrics.csv    |   101 +
+ .../evaluation_summary.json                        |   125 +
+ .../heightscan_4096x32x1000/files_added.txt        |    35 +
+ .../heightscan_4096x32x1000/integrity.json         |    20 +
+ .../heightscan_4096x32x1000/main_metrics.csv       |    13 +
+ .../heightscan_4096x32x1000/manifest.json          |   600 +
+ .../heightscan_4096x32x1000/parity.json            |    10 +
+ .../protected_artifacts_before.json                |  2238 +
+ .../raycast_diagnostics.json                       |     6 +
+ .../heightscan_4096x32x1000/results/agent.json     |    62 +
+ .../heightscan_4096x32x1000/results/config.json    |   986 +
+ .../results/episode_metrics.csv                    |   101 +
+ .../results/evaluation_summary.json                |   125 +
+ .../results/main_metrics.csv                       |     6 +
+ .../heightscan_4096x32x1000/results/manifest.json  |   288 +
+ .../results/raycast_diagnostics.json               |     6 +
+ .../results/reward_components.csv                  |     9 +
+ .../heightscan_4096x32x1000/results/run.log        |   224 +
+ .../results/source_mapping.json                    |    15 +
+ .../results/source_parity.json                     |   542 +
+ .../heightscan_4096x32x1000/reward_components.csv  |     9 +
+ .../heightscan_4096x32x1000/smoke/agent.json       |    62 +
+ .../heightscan_4096x32x1000/smoke/config.json      |   986 +
+ .../heightscan_4096x32x1000/smoke/manifest.json    |   234 +
+ .../heightscan_4096x32x1000/smoke/smoke.json       |   141 +
+ .../smoke/source_mapping.json                      |    15 +
+ .../smoke/source_parity.json                       |   542 +
+ .../smoke_verified/agent.json                      |    62 +
+ .../smoke_verified/config.json                     |   986 +
+ .../smoke_verified/manifest.json                   |   234 +
+ .../heightscan_4096x32x1000/smoke_verified/run.log |   194 +
+ .../smoke_verified/smoke.json                      |   141 +
+ .../smoke_verified/source_mapping.json             |    15 +
+ .../smoke_verified/source_parity.json              |   542 +
+ .../heightscan_4096x32x1000/source_mapping.json    |    47 +
+ .../heightscan_4096x32x1000/training_summary.json  |    22 +
+ .../.gitignore                                     |     2 +
+ .../checkpoint_selection.json                      |    19 +
+ .../checkpoints/best_model.pt                      |   Bin 0 -> 3657781 bytes
+ .../checkpoints/final_model.pt                     |   Bin 0 -> 3657707 bytes
+ .../commands.log                                   |    13 +
+ .../contact_observation_validation.json            |  6610 ++
+ .../episode_metrics.csv                            |   101 +
+ .../evaluation_summary.json                        |   143 +
+ .../files_added.txt                                |    41 +
+ .../heightscan_validation.json                     |    11 +
+ .../integrity.json                                 |    20 +
+ .../main_metrics.csv                               |    13 +
+ .../manifest.json                                  |   756 +
+ .../parity.json                                    |    11 +
+ .../protected_artifacts_before.json                |  2566 +
+ .../raycast_diagnostics.json                       |     6 +
+ .../results/agent.json                             |    62 +
+ .../results/config.json                            |  1063 +
+ .../results/episode_metrics.csv                    |   101 +
+ .../results/evaluation_summary.json                |   143 +
+ .../results/main_metrics.csv                       |     6 +
+ .../results/manifest.json                          |   363 +
+ .../results/raycast_diagnostics.json               |     6 +
+ .../results/reward_components.csv                  |    12 +
+ .../results/run.log                                |   213 +
+ .../results/source_mapping.json                    |    21 +
+ .../results/source_parity.json                     |   488 +
+ .../reward_components.csv                          |    12 +
+ .../reward_verification.json                       |    28 +
+ .../smoke/agent.json                               |    62 +
+ .../smoke/config.json                              |  1063 +
+ .../smoke/contact_observation_validation.json      |  6610 ++
+ .../smoke/heightscan_validation.json               |    11 +
+ .../smoke/manifest.json                            |   309 +
+ .../smoke/run.log                                  |   184 +
+ .../smoke/smoke.json                               |   132 +
+ .../smoke/source_mapping.json                      |    21 +
+ .../smoke/source_parity.json                       |   488 +
+ .../smoke_mapping_attempt/agent.json               |    62 +
+ .../smoke_mapping_attempt/config.json              |  1063 +
+ .../smoke_mapping_attempt/source_mapping.json      |    21 +
+ .../smoke_mapping_attempt/source_parity.json       |   488 +
+ .../smoke_slice_mapping_attempt/agent.json         |    62 +
+ .../smoke_slice_mapping_attempt/config.json        |  1063 +
+ .../source_mapping.json                            |    21 +
+ .../smoke_slice_mapping_attempt/source_parity.json |   488 +
+ .../source_mapping.json                            |    59 +
+ .../training_curve.csv                             |  1001 +
+ .../training_summary.json                          |    24 +
+ .../.gitignore                                     |     3 +
+ .../checkpoint_selection.json                      |    19 +
+ .../checkpoints/best_model.pt                      |   Bin 0 -> 3657781 bytes
+ .../checkpoints/final_model.pt                     |   Bin 0 -> 3657707 bytes
+ .../commands.log                                   |    16 +
+ .../comparison.md                                  |    27 +
+ .../contact_observation_validation.json            |  6714 ++
+ .../episode_metrics.csv                            |   101 +
+ .../evaluation_run.log                             |   224 +
+ .../evaluation_summary.json                        |   125 +
+ .../files_added.txt                                |    42 +
+ .../git_state.json                                 |     9 +
+ .../integrity.json                                 |    20 +
+ .../main_metrics.csv                               |    13 +
+ .../manifest.json                                  |   965 +
+ .../protected_artifacts_before.json                |  2898 +
+ .../raycast_diagnostics.json                       |     6 +
+ .../results/agent.json                             |    62 +
+ .../results/config.json                            |  1117 +
+ .../results/episode_metrics.csv                    |   101 +
+ .../results/evaluation_summary.json                |   125 +
+ .../results/main_metrics.csv                       |     6 +
+ .../results/manifest.json                          |   469 +
+ .../results/raycast_diagnostics.json               |     6 +
+ .../results/reward_components.csv                  |     9 +
+ .../results/source_mapping.json                    |    20 +
+ .../results/source_parity.json                     |   542 +
+ .../reward_components.csv                          |     9 +
+ .../smoke/agent.json                               |    62 +
+ .../smoke/config.json                              |  1117 +
+ .../smoke/contact_observation_validation.json      |  6714 ++
+ .../smoke/manifest.json                            |   415 +
+ .../smoke/smoke.json                               |   146 +
+ .../smoke/source_mapping.json                      |    20 +
+ .../smoke/source_parity.json                       |   542 +
+ .../smoke_mapping_attempt/agent.json               |    62 +
+ .../smoke_mapping_attempt/config.json              |  1117 +
+ .../smoke_mapping_attempt/source_mapping.json      |    20 +
+ .../smoke_mapping_attempt/source_parity.json       |   542 +
+ .../smoke_mapping_attempt_run.log                  |   200 +
+ .../smoke_run.log                                  |   195 +
+ .../source_mapping.json                            |    43 +
+ .../training_curve.csv                             |  1001 +
+ .../training_run.log                               | 25219 +++++
+ .../training_summary.json                          |    24 +
+ experiments/observation_ablation/protocol.json     |   200 +
+ .../shared/contact_observation.json                |    33 +
+ .../shared/dependency_sources.json                 |    14 +
+ .../shared/evaluation_parity.json                  |     9 +
+ .../shared/protected_artifacts_before.json         |  1214 +
+ .../shared/runtime_versions.json                   |    17 +
+ .../observation_ablation/shared/source_parity.json |   542 +
+ .../shared/stage2_contact_modified_protocol.json   |   200 +
+ .../checkpoint_interface_lerobot_arena.json        |     7 +
+ ...point_interface_validation_conda_libstdcpp.json |    63 +
+ .../documentation_validation.json                  |     7 +
+ .../environment_lerobot_arena_validation.json      |     6 +
+ .../canonical_evaluation_evidence_launcher.py      |    31 +
+ .../final_100env_evaluation_report.md              |    35 +
+ .../final_100env_evaluation_results.json           |   434 +
+ .../final_evaluation_preflight_report.md           |    27 +
+ .../final_evaluation_validation_summary.json       |   203 +
+ .../heightscan_contact_modified/console.log        |    48 +
+ .../execution_command.json                         |    24 +
+ .../failure_traceback.txt                          |    13 +
+ .../final_validation.json                          |    58 +
+ .../preflight_validation.json                      |    62 +
+ .../process_status.json                            |     8 +
+ .../canonical_evaluator_output/agent.json          |    62 +
+ .../canonical_evaluator_output/config.json         |  1063 +
+ .../canonical_evaluator_output/episode_metrics.csv |   101 +
+ .../evaluation_summary.json                        |   143 +
+ .../canonical_evaluator_output/main_metrics.csv    |     6 +
+ .../canonical_evaluator_output/manifest.json       |   365 +
+ .../raycast_diagnostics.json                       |     6 +
+ .../reward_components.csv                          |    12 +
+ .../canonical_evaluator_output/source_mapping.json |    21 +
+ .../canonical_evaluator_output/source_parity.json  |   488 +
+ .../relocated_params_attempt/console.log           |   221 +
+ .../execution_command.json                         |    24 +
+ .../integrity_after_evaluation.json                |  9321 ++
+ .../integrity_before_evaluation.json               |  9290 ++
+ .../integrity_before_relocation.json               |  9300 ++
+ .../modified_evaluator_path_relocation.patch       |    22 +
+ .../modified_final_evaluation_validation.json      |   217 +
+ .../modified_relocation_evaluation_report.md       |    45 +
+ .../relocated_params_attempt/process_status.json   |     7 +
+ .../relocation_preflight.json                      |    45 +
+ .../relocated_params_attempt/runtime_events.jsonl  |     7 +
+ .../runtime_evidence_launcher.py                   |    36 +
+ .../runtime_events.jsonl                           |     1 +
+ .../canonical_evaluator_output/agent.json          |    62 +
+ .../canonical_evaluator_output/config.json         |  1117 +
+ .../canonical_evaluator_output/episode_metrics.csv |   101 +
+ .../evaluation_summary.json                        |   125 +
+ .../canonical_evaluator_output/main_metrics.csv    |     6 +
+ .../canonical_evaluator_output/manifest.json       |   471 +
+ .../raycast_diagnostics.json                       |     6 +
+ .../reward_components.csv                          |     9 +
+ .../canonical_evaluator_output/source_mapping.json |    20 +
+ .../canonical_evaluator_output/source_parity.json  |   542 +
+ .../heightscan_contact_stock/console.log           |   227 +
+ .../execution_command.json                         |    24 +
+ .../heightscan_contact_stock/final_validation.json |   181 +
+ .../preflight_validation.json                      |    62 +
+ .../heightscan_contact_stock/process_status.json   |     8 +
+ .../heightscan_contact_stock/runtime_events.jsonl  |     1 +
+ .../canonical_evaluator_output/agent.json          |    62 +
+ .../canonical_evaluator_output/config.json         |   986 +
+ .../canonical_evaluator_output/episode_metrics.csv |   101 +
+ .../evaluation_summary.json                        |   125 +
+ .../canonical_evaluator_output/main_metrics.csv    |     6 +
+ .../canonical_evaluator_output/manifest.json       |   290 +
+ .../raycast_diagnostics.json                       |     6 +
+ .../reward_components.csv                          |     9 +
+ .../canonical_evaluator_output/source_mapping.json |    15 +
+ .../canonical_evaluator_output/source_parity.json  |   542 +
+ .../heightscan_stock/console.log                   |   226 +
+ .../heightscan_stock/execution_command.json        |    24 +
+ .../heightscan_stock/final_validation.json         |   181 +
+ .../heightscan_stock/preflight_validation.json     |    62 +
+ .../heightscan_stock/process_status.json           |     8 +
+ .../heightscan_stock/runtime_events.jsonl          |     1 +
+ .../integrity_after_final_100env.json              |  9285 ++
+ .../integrity_after_final_100env_patched.json      |  9321 ++
+ .../integrity_before_final_100env.json             |  9297 ++
+ .../integrity_before_final_100env_patched.json     |  9278 ++
+ .../provenance_compatibility_preflight.json        |    32 +
+ .../provenance_only_compatibility.patch            |   108 +
+ .../provenance_patch_changes.json                  |    22 +
+ .../final_cleanup/final_packaging_status.json      |    51 +
+ .../final_cleanup/grader_tree.txt                  |    46 +
+ .../final_cleanup/large_file_report.json           |   132 +
+ .../final_cleanup/path_audit.json                  | 47427 ++++++++++
+ .../final_cleanup/path_audit.md                    |    12 +
+ .../final_cleanup/staged_diff_stat.txt             |  2397 +
+ .../final_cleanup/staged_status.txt                |  2396 +
+ .../final_cleanup/staged_whitespace_check.txt      |     5 +
+ .../final_cleanup/staging_report.json              |   364 +
+ .../final_cleanup/static_validation.json           |  3366 +
+ .../static_validation_first_pass.json              |  3369 +
+ .../limited_observation_preservation_after.json    |    41 +
+ .../limited_observation_preservation_before.json   |  2264 +
+ .../limited_one_env_observation_probe.py           |    63 +
+ .../final_submission_check/path_audit.json         |  9844 ++
+ .../final_submission_check/path_audit.md           |    45 +
+ .../preservation_lerobot_arena_validation.json     |    15 +
+ .../preservation_validation.json                   |    16 +
+ .../runtime_app_launcher_command.json              |    18 +
+ ...ntime_app_launcher_command_conda_libstdcpp.json |    18 +
+ .../runtime_app_launcher_console.log               |   414 +
+ ...untime_app_launcher_console_conda_libstdcpp.log |    11 +
+ .../runtime_app_launcher_original_states.json      |    20 +
+ ...ntime_app_launcher_preservation_validation.json |    16 +
+ .../runtime_app_launcher_probe.py                  |   105 +
+ .../runtime_app_launcher_probe_conda_libstdcpp.py  |   105 +
+ .../runtime_app_launcher_process_status.json       |     4 +
+ ...pp_launcher_process_status_conda_libstdcpp.json |     4 +
+ .../runtime_app_launcher_recovered_validation.json |    51 +
+ ...ime_config_load_validation_conda_libstdcpp.json |    77 +
+ .../runtime_import_validation.json                 |     9 +
+ .../runtime_lerobot_arena_before_close.json        |    58 +
+ .../runtime_lerobot_arena_command.json             |    17 +
+ .../runtime_lerobot_arena_console.log              |     3 +
+ .../runtime_lerobot_arena_probe.py                 |    67 +
+ .../runtime_lerobot_arena_process_status.json      |     6 +
+ .../runtime_lerobot_arena_validation.json          |    72 +
+ ...runtime_obs_contact_modified_lerobot_arena.json |   207 +
+ ..._obs_contact_modified_lerobot_arena_console.log |   184 +
+ ...obs_contact_modified_lerobot_arena_events.jsonl |     9 +
+ .../runtime_obs_contact_stock_lerobot_arena.json   |   213 +
+ ...ime_obs_contact_stock_lerobot_arena_console.log |   190 +
+ ...me_obs_contact_stock_lerobot_arena_events.jsonl |     9 +
+ ...runtime_obs_heightscan_stock_lerobot_arena.json |   207 +
+ ..._obs_heightscan_stock_lerobot_arena_console.log |   189 +
+ ...obs_heightscan_stock_lerobot_arena_events.jsonl |     9 +
+ .../runtime_observation_shape_lerobot_arena.json   |     7 +
+ ...time_observation_shape_summary_lerobot_arena.md |    62 +
+ .../shutdown_control_framework.json                |    72 +
+ .../shutdown_control_framework.py                  |    58 +
+ .../shutdown_control_framework_console.log         |    17 +
+ .../shutdown_control_framework_events.jsonl        |     3 +
+ .../shutdown_control_pure_isaacsim.json            |    73 +
+ .../shutdown_control_pure_isaacsim.py              |    58 +
+ .../shutdown_control_pure_isaacsim_console.log     |  3405 +
+ .../shutdown_control_pure_isaacsim_events.jsonl    |     3 +
+ .../shutdown_diagnosis_classification.json         |    89 +
+ .../shutdown_diagnosis_summary.md                  |    43 +
+ .../shutdown_original_states_before.json           |    20 +
+ .../shutdown_preservation_validation.json          |    38 +
+ .../final_submission_check/shutdown_probe_a.json   |    73 +
+ .../final_submission_check/shutdown_probe_a.py     |    58 +
+ .../shutdown_probe_a_console.log                   |    20 +
+ .../shutdown_probe_a_events.jsonl                  |     3 +
+ .../final_submission_check/shutdown_probe_b.json   |    73 +
+ .../final_submission_check/shutdown_probe_b.py     |    58 +
+ .../shutdown_probe_b_console.log                   |     9 +
+ .../shutdown_probe_b_events.jsonl                  |     4 +
+ .../final_submission_check/shutdown_probe_c.json   |    90 +
+ .../final_submission_check/shutdown_probe_c.py     |    58 +
+ .../shutdown_probe_c_console.log                   |    18 +
+ .../shutdown_probe_c_events.jsonl                  |     5 +
+ .../final_submission_check/shutdown_probe_d.json   |    98 +
+ .../final_submission_check/shutdown_probe_d.py     |    58 +
+ .../shutdown_probe_d_console.log                   |    24 +
+ .../shutdown_probe_d_events.jsonl                  |     6 +
+ .../final_submission_check/shutdown_probe_e.json   |   109 +
+ .../final_submission_check/shutdown_probe_e.py     |    58 +
+ .../shutdown_probe_e_console.log                   |    13 +
+ .../shutdown_probe_e_events.jsonl                  |     8 +
+ .../shutdown_probe_plan.json                       |    67 +
+ .../shutdown_probe_results.json                    |   590 +
+ .../final_submission_check/static_validation.json  |   657 +
+ .../task_registration_lerobot_arena.json           |     7 +
+ ...sk_registration_validation_conda_libstdcpp.json |    38 +
+ isaaclab.bat                                       |   673 +
+ isaaclab.sh                                        |   651 +
+ logs/rsl_rl/ant/modified/params/env.yaml           |   736 +
+ .../rsl_rl/ant/modified/params/reward_weights.yaml |    10 +
+ .../agent.json                                     |    62 +
+ .../best_model.pt                                  |   Bin 0 -> 3657781 bytes
+ .../config.json                                    |  1063 +
+ .../events.out.tfevents.1791197547.zxro.371166.0   |   Bin 0 -> 1537660 bytes
+ .../manifest.json                                  |   361 +
+ .../model_0.pt                                     |   Bin 0 -> 3657239 bytes
+ .../model_100.pt                                   |   Bin 0 -> 3657707 bytes
+ .../model_150.pt                                   |   Bin 0 -> 3657707 bytes
+ .../model_200.pt                                   |   Bin 0 -> 3657707 bytes
+ .../model_250.pt                                   |   Bin 0 -> 3657707 bytes
+ .../model_300.pt                                   |   Bin 0 -> 3657707 bytes
+ .../model_350.pt                                   |   Bin 0 -> 3657707 bytes
+ .../model_400.pt                                   |   Bin 0 -> 3657707 bytes
+ .../model_450.pt                                   |   Bin 0 -> 3657707 bytes
+ .../model_50.pt                                    |   Bin 0 -> 3657633 bytes
+ .../model_500.pt                                   |   Bin 0 -> 3657707 bytes
+ .../model_550.pt                                   |   Bin 0 -> 3657707 bytes
+ .../model_600.pt                                   |   Bin 0 -> 3657707 bytes
+ .../model_650.pt                                   |   Bin 0 -> 3657707 bytes
+ .../model_700.pt                                   |   Bin 0 -> 3657707 bytes
+ .../model_750.pt                                   |   Bin 0 -> 3657707 bytes
+ .../model_800.pt                                   |   Bin 0 -> 3657707 bytes
+ .../model_850.pt                                   |   Bin 0 -> 3657707 bytes
+ .../model_900.pt                                   |   Bin 0 -> 3657707 bytes
+ .../model_950.pt                                   |   Bin 0 -> 3657707 bytes
+ .../model_999.pt                                   |   Bin 0 -> 3657707 bytes
+ .../run.log                                        | 29208 ++++++
+ .../source_mapping.json                            |    21 +
+ .../source_parity.json                             |   488 +
+ .../training_curve.csv                             |  1001 +
+ .../training_summary.json                          |    21 +
+ .../agent.json                                     |    62 +
+ .../best_model.pt                                  |   Bin 0 -> 3657781 bytes
+ .../config.json                                    |  1117 +
+ .../events.out.tfevents.1791249612.zxro.382237.0   |   Bin 0 -> 1275164 bytes
+ .../manifest.json                                  |   467 +
+ .../model_0.pt                                     |   Bin 0 -> 3657239 bytes
+ .../model_100.pt                                   |   Bin 0 -> 3657707 bytes
+ .../model_150.pt                                   |   Bin 0 -> 3657707 bytes
+ .../model_200.pt                                   |   Bin 0 -> 3657707 bytes
+ .../model_250.pt                                   |   Bin 0 -> 3657707 bytes
+ .../model_300.pt                                   |   Bin 0 -> 3657707 bytes
+ .../model_350.pt                                   |   Bin 0 -> 3657707 bytes
+ .../model_400.pt                                   |   Bin 0 -> 3657707 bytes
+ .../model_450.pt                                   |   Bin 0 -> 3657707 bytes
+ .../model_50.pt                                    |   Bin 0 -> 3657633 bytes
+ .../model_500.pt                                   |   Bin 0 -> 3657707 bytes
+ .../model_550.pt                                   |   Bin 0 -> 3657707 bytes
+ .../model_600.pt                                   |   Bin 0 -> 3657707 bytes
+ .../model_650.pt                                   |   Bin 0 -> 3657707 bytes
+ .../model_700.pt                                   |   Bin 0 -> 3657707 bytes
+ .../model_750.pt                                   |   Bin 0 -> 3657707 bytes
+ .../model_800.pt                                   |   Bin 0 -> 3657707 bytes
+ .../model_850.pt                                   |   Bin 0 -> 3657707 bytes
+ .../model_900.pt                                   |   Bin 0 -> 3657707 bytes
+ .../model_950.pt                                   |   Bin 0 -> 3657707 bytes
+ .../model_999.pt                                   |   Bin 0 -> 3657707 bytes
+ .../source_mapping.json                            |    20 +
+ .../source_parity.json                             |   542 +
+ .../training_curve.csv                             |  1001 +
+ .../training_summary.json                          |    21 +
+ .../agent.json                                     |    62 +
+ .../best_model.pt                                  |   Bin 0 -> 3619381 bytes
+ .../config.json                                    |   986 +
+ .../events.out.tfevents.1791192987.zxro.368187.0   |   Bin 0 -> 1275158 bytes
+ .../manifest.json                                  |   286 +
+ .../model_0.pt                                     |   Bin 0 -> 3618839 bytes
+ .../model_100.pt                                   |   Bin 0 -> 3619307 bytes
+ .../model_150.pt                                   |   Bin 0 -> 3619307 bytes
+ .../model_200.pt                                   |   Bin 0 -> 3619307 bytes
+ .../model_250.pt                                   |   Bin 0 -> 3619307 bytes
+ .../model_300.pt                                   |   Bin 0 -> 3619307 bytes
+ .../model_350.pt                                   |   Bin 0 -> 3619307 bytes
+ .../model_400.pt                                   |   Bin 0 -> 3619307 bytes
+ .../model_450.pt                                   |   Bin 0 -> 3619307 bytes
+ .../model_50.pt                                    |   Bin 0 -> 3619233 bytes
+ .../model_500.pt                                   |   Bin 0 -> 3619307 bytes
+ .../model_550.pt                                   |   Bin 0 -> 3619307 bytes
+ .../model_600.pt                                   |   Bin 0 -> 3619307 bytes
+ .../model_650.pt                                   |   Bin 0 -> 3619307 bytes
+ .../model_700.pt                                   |   Bin 0 -> 3619307 bytes
+ .../model_750.pt                                   |   Bin 0 -> 3619307 bytes
+ .../model_800.pt                                   |   Bin 0 -> 3619307 bytes
+ .../model_850.pt                                   |   Bin 0 -> 3619307 bytes
+ .../model_900.pt                                   |   Bin 0 -> 3619307 bytes
+ .../model_950.pt                                   |   Bin 0 -> 3619307 bytes
+ .../model_999.pt                                   |   Bin 0 -> 3619307 bytes
+ .../run.log                                        | 25219 +++++
+ .../source_mapping.json                            |    15 +
+ .../source_parity.json                             |   542 +
+ .../training_summary.json                          |    18 +
+ pyproject.toml                                     |    15 +
+ pytest.ini                                         |     3 +
+ scripts/benchmarks/benchmark_cameras.py            |   868 +
+ scripts/benchmarks/benchmark_load_robot.py         |   176 +
+ scripts/benchmarks/benchmark_non_rl.py             |   214 +
+ scripts/benchmarks/benchmark_rlgames.py            |   270 +
+ scripts/benchmarks/benchmark_rsl_rl.py             |   264 +
+ scripts/benchmarks/utils.py                        |   104 +
+ scripts/contact_stock_observation_ablation.py      |   416 +
+ scripts/demos/arms.py                              |   233 +
+ scripts/demos/bipeds.py                            |   137 +
+ scripts/demos/deformables.py                       |   201 +
+ scripts/demos/h1_locomotion.py                     |   226 +
+ scripts/demos/hands.py                             |   167 +
+ scripts/demos/markers.py                           |   154 +
+ scripts/demos/multi_asset.py                       |   306 +
+ scripts/demos/pick_and_place.py                    |   412 +
+ scripts/demos/procedural_terrain.py                |   174 +
+ scripts/demos/quadcopter.py                        |   119 +
+ scripts/demos/quadrupeds.py                        |   193 +
+ scripts/demos/sensors/cameras.py                   |   298 +
+ scripts/demos/sensors/contact_sensor.py            |   177 +
+ scripts/demos/sensors/frame_transformer_sensor.py  |   171 +
+ scripts/demos/sensors/imu_sensor.py                |   144 +
+ scripts/demos/sensors/raycaster_sensor.py          |   162 +
+ scripts/environments/export_IODescriptors.py       |   101 +
+ scripts/environments/list_envs.py                  |    64 +
+ scripts/environments/random_agent.py               |    72 +
+ scripts/environments/state_machine/lift_cube_sm.py |   319 +
+ .../environments/state_machine/lift_teddy_bear.py  |   341 +
+ .../environments/state_machine/open_cabinet_sm.py  |   333 +
+ .../environments/teleoperation/teleop_se3_agent.py |   268 +
+ scripts/environments/zero_agent.py                 |    72 +
+ scripts/evaluate_contact_teammate1.py              |   221 +
+ scripts/evaluate_depthcam_ablation.py              |   303 +
+ .../finalize_contact_stock_observation_ablation.py |   175 +
+ scripts/finalize_observation_ablation.py           |   238 +
+ scripts/finalize_observation_ablation_budget.py    |   229 +
+ scripts/finalize_stage2_observation_ablation.py    |   202 +
+ .../isaaclab_mimic/annotate_demos.py               |   537 +
+ .../isaaclab_mimic/consolidated_demo.py            |   474 +
+ .../isaaclab_mimic/generate_dataset.py             |   201 +
+ .../locomanipulation_sdg/generate_data.py          |   774 +
+ .../plot_navigation_trajectory.py                  |   109 +
+ scripts/imitation_learning/robomimic/play.py       |   193 +
+ .../imitation_learning/robomimic/robust_eval.py    |   334 +
+ scripts/imitation_learning/robomimic/train.py      |   451 +
+ scripts/observation_ablation.py                    |   352 +
+ scripts/observation_ablation_budget.py             |   367 +
+ .../ray/cluster_configs/Dockerfile                 |    23 +
+ .../google_cloud/kuberay.yaml.jinja                |   203 +
+ .../ray/grok_cluster_with_kubectl.py               |   274 +
+ .../hyperparameter_tuning/vision_cartpole_cfg.py   |    49 +
+ .../ray/hyperparameter_tuning/vision_cfg.py        |   151 +
+ scripts/reinforcement_learning/ray/launch.py       |   180 +
+ .../ray/mlflow_to_local_tensorboard.py             |   149 +
+ scripts/reinforcement_learning/ray/submit_job.py   |   157 +
+ scripts/reinforcement_learning/ray/task_runner.py  |   230 +
+ scripts/reinforcement_learning/ray/tuner.py        |   463 +
+ scripts/reinforcement_learning/ray/util.py         |   718 +
+ .../reinforcement_learning/ray/wrap_resources.py   |   162 +
+ scripts/reinforcement_learning/rl_games/play.py    |   243 +
+ scripts/reinforcement_learning/rl_games/train.py   |   256 +
+ scripts/reinforcement_learning/rsl_rl/cli_args.py  |    73 +
+ scripts/reinforcement_learning/rsl_rl/play.py      |   330 +
+ .../rsl_rl/play_one_episode.py                     |   248 +
+ scripts/reinforcement_learning/rsl_rl/train.py     |   235 +
+ scripts/reinforcement_learning/sb3/play.py         |   213 +
+ scripts/reinforcement_learning/sb3/train.py        |   230 +
+ scripts/reinforcement_learning/skrl/play.py        |   250 +
+ scripts/reinforcement_learning/skrl/train.py       |   236 +
+ .../config/newton_to_physx_anymal_d.yaml           |    34 +
+ .../config/newton_to_physx_g1.yaml                 |    84 +
+ .../config/newton_to_physx_go2.yaml                |    33 +
+ .../config/newton_to_physx_h1.yaml                 |    48 +
+ scripts/sim2sim_transfer/rsl_rl_transfer.py        |   286 +
+ scripts/stage2_observation_ablation.py             |   430 +
+ scripts/submission_provenance.py                   |    29 +
+ scripts/tools/blender_obj.py                       |    99 +
+ scripts/tools/check_instanceable.py                |   138 +
+ scripts/tools/convert_instanceable.py              |   161 +
+ scripts/tools/convert_mesh.py                      |   204 +
+ scripts/tools/convert_mjcf.py                      |   139 +
+ scripts/tools/convert_urdf.py                      |   163 +
+ scripts/tools/cosmos/cosmos_prompt_gen.py          |    85 +
+ scripts/tools/cosmos/transfer1_templates.json      |    96 +
+ scripts/tools/hdf5_to_mp4.py                       |   209 +
+ scripts/tools/merge_hdf5_datasets.py               |    47 +
+ scripts/tools/mp4_to_hdf5.py                       |   172 +
+ scripts/tools/pretrained_checkpoint.py             |   376 +
+ scripts/tools/process_meshes_to_obj.py             |    90 +
+ scripts/tools/record_demos.py                      |   557 +
+ scripts/tools/replay_demos.py                      |   248 +
+ scripts/tools/test/test_cosmos_prompt_gen.py       |   169 +
+ scripts/tools/test/test_hdf5_to_mp4.py             |   173 +
+ scripts/tools/test/test_mp4_to_hdf5.py             |   181 +
+ scripts/tutorials/00_sim/create_empty.py           |    61 +
+ scripts/tutorials/00_sim/launch_app.py             |    96 +
+ scripts/tutorials/00_sim/log_time.py               |    84 +
+ scripts/tutorials/00_sim/set_rendering_mode.py     |    83 +
+ scripts/tutorials/00_sim/spawn_prims.py            |   116 +
+ scripts/tutorials/01_assets/add_new_robot.py       |   179 +
+ scripts/tutorials/01_assets/run_articulation.py    |   143 +
+ .../tutorials/01_assets/run_deformable_object.py   |   168 +
+ scripts/tutorials/01_assets/run_rigid_object.py    |   148 +
+ scripts/tutorials/01_assets/run_surface_gripper.py |   183 +
+ scripts/tutorials/02_scene/create_scene.py         |   132 +
+ .../tutorials/03_envs/create_cartpole_base_env.py  |   174 +
+ scripts/tutorials/03_envs/create_cube_base_env.py  |   353 +
+ .../tutorials/03_envs/create_quadruped_base_env.py |   245 +
+ .../tutorials/03_envs/policy_inference_in_usd.py   |    87 +
+ scripts/tutorials/03_envs/run_cartpole_rl_env.py   |    79 +
+ .../tutorials/04_sensors/add_sensors_on_robot.py   |   179 +
+ .../tutorials/04_sensors/run_frame_transformer.py  |   185 +
+ scripts/tutorials/04_sensors/run_ray_caster.py     |   151 +
+ .../tutorials/04_sensors/run_ray_caster_camera.py  |   184 +
+ scripts/tutorials/04_sensors/run_usd_camera.py     |   289 +
+ scripts/tutorials/05_controllers/run_diff_ik.py    |   212 +
+ scripts/tutorials/05_controllers/run_osc.py        |   484 +
+ source/ant/__init__.py                             |    56 +
+ source/ant/ablation_env_cfg.py                     |    64 +
+ source/ant/agents/__init__.py                      |     4 +
+ source/ant/agents/ablation_budget_ppo_cfg.py       |    14 +
+ source/ant/agents/ablation_ppo_cfg.py              |    21 +
+ source/ant/agents/contact_stock_ppo_cfg.py         |     8 +
+ source/ant/agents/rsl_rl_ppo_cfg.py                |    52 +
+ source/ant/agents/stage2_ppo_cfg.py                |     8 +
+ source/ant/ant_env_cfg.py                          |   323 +
+ source/ant/contact_stock_env_cfg.py                |    19 +
+ source/ant/depth_actor_critic.py                   |   165 +
+ source/ant/depth_obs.py                            |    24 +
+ source/ant/rewards.py                              |   221 +
+ source/ant/stage2_env_cfg.py                       |    32 +
+ source/isaaclab/config/extension.toml              |    39 +
+ source/isaaclab/docs/CHANGELOG.rst                 |  5292 ++
+ source/isaaclab/docs/README.md                     |    11 +
+ source/isaaclab/isaaclab/__init__.py               |    19 +
+ source/isaaclab/isaaclab/actuators/__init__.py     |    37 +
+ .../isaaclab/isaaclab/actuators/actuator_base.py   |   364 +
+ source/isaaclab/isaaclab/actuators/actuator_cfg.py |   285 +
+ source/isaaclab/isaaclab/actuators/actuator_net.py |   187 +
+ source/isaaclab/isaaclab/actuators/actuator_pd.py  |   448 +
+ source/isaaclab/isaaclab/app/__init__.py           |    15 +
+ source/isaaclab/isaaclab/app/app_launcher.py       |  1073 +
+ source/isaaclab/isaaclab/assets/__init__.py        |    47 +
+ .../isaaclab/assets/articulation/__init__.py       |    10 +
+ .../isaaclab/assets/articulation/articulation.py   |  2134 +
+ .../assets/articulation/articulation_cfg.py        |    71 +
+ .../assets/articulation/articulation_data.py       |  1137 +
+ source/isaaclab/isaaclab/assets/asset_base.py      |   363 +
+ source/isaaclab/isaaclab/assets/asset_base_cfg.py  |    77 +
+ .../isaaclab/assets/deformable_object/__init__.py  |    10 +
+ .../assets/deformable_object/deformable_object.py  |   416 +
+ .../deformable_object/deformable_object_cfg.py     |    29 +
+ .../deformable_object/deformable_object_data.py    |   235 +
+ .../isaaclab/assets/rigid_object/__init__.py       |    10 +
+ .../isaaclab/assets/rigid_object/rigid_object.py   |   560 +
+ .../assets/rigid_object/rigid_object_cfg.py        |    32 +
+ .../assets/rigid_object/rigid_object_data.py       |   656 +
+ .../assets/rigid_object_collection/__init__.py     |    10 +
+ .../rigid_object_collection.py                     |   751 +
+ .../rigid_object_collection_cfg.py                 |    28 +
+ .../rigid_object_collection_data.py                |   514 +
+ .../isaaclab/assets/surface_gripper/__init__.py    |     9 +
+ .../assets/surface_gripper/surface_gripper.py      |   422 +
+ .../assets/surface_gripper/surface_gripper_cfg.py  |    33 +
+ source/isaaclab/isaaclab/controllers/__init__.py   |    17 +
+ .../isaaclab/controllers/config/__init__.py        |     4 +
+ .../controllers/config/data/lula_franka_gen.urdf   |   415 +
+ .../isaaclab/controllers/config/rmp_flow.py        |    94 +
+ .../isaaclab/controllers/differential_ik.py        |   240 +
+ .../isaaclab/controllers/differential_ik_cfg.py    |    70 +
+ .../isaaclab/controllers/joint_impedance.py        |   229 +
+ .../isaaclab/controllers/operational_space.py      |   548 +
+ .../isaaclab/controllers/operational_space_cfg.py  |    90 +
+ .../isaaclab/controllers/pink_ik/__init__.py       |    13 +
+ .../controllers/pink_ik/local_frame_task.py        |   116 +
+ .../controllers/pink_ik/null_space_posture_task.py |   242 +
+ .../isaaclab/controllers/pink_ik/pink_ik.py        |   255 +
+ .../isaaclab/controllers/pink_ik/pink_ik_cfg.py    |    71 +
+ .../pink_ik/pink_kinematics_configuration.py       |   181 +
+ source/isaaclab/isaaclab/controllers/rmp_flow.py   |   163 +
+ source/isaaclab/isaaclab/controllers/utils.py      |   136 +
+ source/isaaclab/isaaclab/devices/__init__.py       |    28 +
+ source/isaaclab/isaaclab/devices/device_base.py    |   119 +
+ .../isaaclab/isaaclab/devices/gamepad/__init__.py  |     9 +
+ .../isaaclab/devices/gamepad/se2_gamepad.py        |   211 +
+ .../isaaclab/devices/gamepad/se3_gamepad.py        |   266 +
+ .../isaaclab/isaaclab/devices/keyboard/__init__.py |     9 +
+ .../isaaclab/devices/keyboard/se2_keyboard.py      |   180 +
+ .../isaaclab/devices/keyboard/se3_keyboard.py      |   208 +
+ .../isaaclab/isaaclab/devices/openxr/__init__.py   |    10 +
+ source/isaaclab/isaaclab/devices/openxr/common.py  |    43 +
+ .../isaaclab/isaaclab/devices/openxr/manus_vive.py |   248 +
+ .../isaaclab/devices/openxr/manus_vive_utils.py    |   509 +
+ .../isaaclab/devices/openxr/openxr_device.py       |   305 +
+ .../devices/openxr/retargeters/__init__.py         |    16 +
+ .../openxr/retargeters/dex/dex_retargeter.py       |    39 +
+ .../dex-retargeting/fourier_hand_left_dexpilot.yml |    30 +
+ .../fourier_hand_right_dexpilot.yml                |    29 +
+ .../fourier/gr1_t2_dex_retargeting_utils.py        |   255 +
+ .../humanoid/fourier/gr1t2_retargeter.py           |   158 +
+ .../humanoid/unitree/g1_lower_body_standing.py     |    28 +
+ .../dex-retargeting/unitree_hand_left_dexpilot.yml |    24 +
+ .../unitree_hand_right_dexpilot.yml                |    24 +
+ .../unitree/inspire/g1_dex_retargeting_utils.py    |   259 +
+ .../unitree/inspire/g1_upper_body_retargeter.py    |   154 +
+ .../dex-retargeting/g1_hand_left_dexpilot.yml      |    23 +
+ .../dex-retargeting/g1_hand_right_dexpilot.yml     |    23 +
+ .../unitree/trihand/g1_dex_retargeting_utils.py    |   252 +
+ .../unitree/trihand/g1_upper_body_retargeter.py    |   166 +
+ .../openxr/retargeters/manipulator/__init__.py     |    13 +
+ .../retargeters/manipulator/gripper_retargeter.py  |    92 +
+ .../retargeters/manipulator/se3_abs_retargeter.py  |   166 +
+ .../retargeters/manipulator/se3_rel_retargeter.py  |   208 +
+ source/isaaclab/isaaclab/devices/openxr/xr_cfg.py  |    79 +
+ .../isaaclab/isaaclab/devices/retargeter_base.py   |    47 +
+ .../isaaclab/devices/spacemouse/__init__.py        |     9 +
+ .../isaaclab/devices/spacemouse/se2_spacemouse.py  |   170 +
+ .../isaaclab/devices/spacemouse/se3_spacemouse.py  |   212 +
+ .../isaaclab/isaaclab/devices/spacemouse/utils.py  |    78 +
+ .../isaaclab/devices/teleop_device_factory.py      |   124 +
+ source/isaaclab/isaaclab/envs/__init__.py          |    57 +
+ source/isaaclab/isaaclab/envs/common.py            |   146 +
+ source/isaaclab/isaaclab/envs/direct_marl_env.py   |   754 +
+ .../isaaclab/isaaclab/envs/direct_marl_env_cfg.py  |   230 +
+ source/isaaclab/isaaclab/envs/direct_rl_env.py     |   693 +
+ source/isaaclab/isaaclab/envs/direct_rl_env_cfg.py |   234 +
+ source/isaaclab/isaaclab/envs/manager_based_env.py |   560 +
+ .../isaaclab/envs/manager_based_env_cfg.py         |   136 +
+ .../isaaclab/isaaclab/envs/manager_based_rl_env.py |   394 +
+ .../isaaclab/envs/manager_based_rl_env_cfg.py      |    80 +
+ .../isaaclab/envs/manager_based_rl_mimic_env.py    |   158 +
+ source/isaaclab/isaaclab/envs/mdp/__init__.py      |    25 +
+ .../isaaclab/isaaclab/envs/mdp/actions/__init__.py |    13 +
+ .../isaaclab/envs/mdp/actions/actions_cfg.py       |   376 +
+ .../envs/mdp/actions/binary_joint_actions.py       |   210 +
+ .../isaaclab/envs/mdp/actions/joint_actions.py     |   261 +
+ .../envs/mdp/actions/joint_actions_to_limits.py    |   280 +
+ .../envs/mdp/actions/non_holonomic_actions.py      |   194 +
+ .../isaaclab/envs/mdp/actions/pink_actions_cfg.py  |    43 +
+ .../envs/mdp/actions/pink_task_space_actions.py    |   366 +
+ .../envs/mdp/actions/rmpflow_actions_cfg.py        |    52 +
+ .../envs/mdp/actions/rmpflow_task_space_actions.py |   214 +
+ .../envs/mdp/actions/surface_gripper_actions.py    |   106 +
+ .../envs/mdp/actions/task_space_actions.py         |   773 +
+ .../isaaclab/envs/mdp/commands/__init__.py         |    19 +
+ .../isaaclab/envs/mdp/commands/commands_cfg.py     |   248 +
+ .../isaaclab/envs/mdp/commands/null_command.py     |    69 +
+ .../isaaclab/envs/mdp/commands/pose_2d_command.py  |   203 +
+ .../isaaclab/envs/mdp/commands/pose_command.py     |   155 +
+ .../isaaclab/envs/mdp/commands/velocity_command.py |   287 +
+ source/isaaclab/isaaclab/envs/mdp/curriculums.py   |   292 +
+ source/isaaclab/isaaclab/envs/mdp/events.py        |  1800 +
+ source/isaaclab/isaaclab/envs/mdp/observations.py  |   689 +
+ .../isaaclab/envs/mdp/recorders/__init__.py        |     8 +
+ .../isaaclab/envs/mdp/recorders/recorders.py       |    61 +
+ .../isaaclab/envs/mdp/recorders/recorders_cfg.py   |    63 +
+ source/isaaclab/isaaclab/envs/mdp/rewards.py       |   319 +
+ source/isaaclab/isaaclab/envs/mdp/terminations.py  |   161 +
+ source/isaaclab/isaaclab/envs/mimic_env_cfg.py     |   310 +
+ source/isaaclab/isaaclab/envs/ui/__init__.py       |    16 +
+ .../isaaclab/isaaclab/envs/ui/base_env_window.py   |   458 +
+ source/isaaclab/isaaclab/envs/ui/empty_window.py   |    79 +
+ .../envs/ui/manager_based_rl_env_window.py         |    40 +
+ .../isaaclab/envs/ui/viewport_camera_controller.py |   232 +
+ source/isaaclab/isaaclab/envs/utils/__init__.py    |     6 +
+ .../isaaclab/isaaclab/envs/utils/io_descriptors.py |   372 +
+ source/isaaclab/isaaclab/envs/utils/marl.py        |   274 +
+ source/isaaclab/isaaclab/envs/utils/spaces.py      |   221 +
+ source/isaaclab/isaaclab/managers/__init__.py      |    34 +
+ .../isaaclab/isaaclab/managers/action_manager.py   |   454 +
+ .../isaaclab/isaaclab/managers/command_manager.py  |   423 +
+ .../isaaclab/managers/curriculum_manager.py        |   203 +
+ source/isaaclab/isaaclab/managers/event_manager.py |   421 +
+ source/isaaclab/isaaclab/managers/manager_base.py  |   414 +
+ .../isaaclab/isaaclab/managers/manager_term_cfg.py |   354 +
+ .../isaaclab/managers/observation_manager.py       |   647 +
+ .../isaaclab/isaaclab/managers/recorder_manager.py |   542 +
+ .../isaaclab/isaaclab/managers/reward_manager.py   |   246 +
+ .../isaaclab/isaaclab/managers/scene_entity_cfg.py |   285 +
+ .../isaaclab/managers/termination_manager.py       |   270 +
+ source/isaaclab/isaaclab/markers/__init__.py       |    25 +
+ .../isaaclab/isaaclab/markers/config/__init__.py   |   147 +
+ .../isaaclab/markers/visualization_markers.py      |   415 +
+ source/isaaclab/isaaclab/scene/__init__.py         |    29 +
+ .../isaaclab/isaaclab/scene/interactive_scene.py   |   790 +
+ .../isaaclab/scene/interactive_scene_cfg.py        |   126 +
+ source/isaaclab/isaaclab/sensors/__init__.py       |    44 +
+ .../isaaclab/isaaclab/sensors/camera/__init__.py   |    13 +
+ source/isaaclab/isaaclab/sensors/camera/camera.py  |   719 +
+ .../isaaclab/isaaclab/sensors/camera/camera_cfg.py |   142 +
+ .../isaaclab/sensors/camera/camera_data.py         |    91 +
+ .../isaaclab/sensors/camera/tiled_camera.py        |   429 +
+ .../isaaclab/sensors/camera/tiled_camera_cfg.py    |    16 +
+ source/isaaclab/isaaclab/sensors/camera/utils.py   |   271 +
+ .../isaaclab/sensors/contact_sensor/__init__.py    |    10 +
+ .../sensors/contact_sensor/contact_sensor.py       |   480 +
+ .../sensors/contact_sensor/contact_sensor_cfg.py   |    76 +
+ .../sensors/contact_sensor/contact_sensor_data.py  |   132 +
+ .../isaaclab/sensors/frame_transformer/__init__.py |    10 +
+ .../sensors/frame_transformer/frame_transformer.py |   526 +
+ .../frame_transformer/frame_transformer_cfg.py     |    73 +
+ .../frame_transformer/frame_transformer_data.py    |    56 +
+ source/isaaclab/isaaclab/sensors/imu/__init__.py   |    12 +
+ source/isaaclab/isaaclab/sensors/imu/imu.py        |   256 +
+ source/isaaclab/isaaclab/sensors/imu/imu_cfg.py    |    46 +
+ source/isaaclab/isaaclab/sensors/imu/imu_data.py   |    56 +
+ .../isaaclab/sensors/ray_caster/__init__.py        |    13 +
+ .../sensors/ray_caster/patterns/__init__.py        |     9 +
+ .../sensors/ray_caster/patterns/patterns.py        |   179 +
+ .../sensors/ray_caster/patterns/patterns_cfg.py    |   218 +
+ .../isaaclab/sensors/ray_caster/ray_caster.py      |   334 +
+ .../sensors/ray_caster/ray_caster_camera.py        |   433 +
+ .../sensors/ray_caster/ray_caster_camera_cfg.py    |    63 +
+ .../isaaclab/sensors/ray_caster/ray_caster_cfg.py  |    99 +
+ .../isaaclab/sensors/ray_caster/ray_caster_data.py |    29 +
+ source/isaaclab/isaaclab/sensors/sensor_base.py    |   362 +
+ .../isaaclab/isaaclab/sensors/sensor_base_cfg.py   |    42 +
+ source/isaaclab/isaaclab/sim/__init__.py           |    34 +
+ .../isaaclab/isaaclab/sim/converters/__init__.py   |    26 +
+ .../sim/converters/asset_converter_base.py         |   198 +
+ .../sim/converters/asset_converter_base_cfg.py     |    48 +
+ .../isaaclab/sim/converters/mesh_converter.py      |   246 +
+ .../isaaclab/sim/converters/mesh_converter_cfg.py  |    48 +
+ .../isaaclab/sim/converters/mjcf_converter.py      |   103 +
+ .../isaaclab/sim/converters/mjcf_converter_cfg.py  |    35 +
+ .../isaaclab/sim/converters/urdf_converter.py      |   322 +
+ .../isaaclab/sim/converters/urdf_converter_cfg.py  |   130 +
+ source/isaaclab/isaaclab/sim/schemas/__init__.py   |   125 +
+ source/isaaclab/isaaclab/sim/schemas/schemas.py    |  1070 +
+ .../isaaclab/isaaclab/sim/schemas/schemas_cfg.py   |   627 +
+ source/isaaclab/isaaclab/sim/simulation_cfg.py     |   412 +
+ source/isaaclab/isaaclab/sim/simulation_context.py |  1083 +
+ source/isaaclab/isaaclab/sim/spawners/__init__.py  |    64 +
+ .../isaaclab/sim/spawners/from_files/__init__.py   |    17 +
+ .../isaaclab/sim/spawners/from_files/from_files.py |   331 +
+ .../sim/spawners/from_files/from_files_cfg.py      |   162 +
+ .../isaaclab/sim/spawners/lights/__init__.py       |    14 +
+ .../isaaclab/sim/spawners/lights/lights.py         |    82 +
+ .../isaaclab/sim/spawners/lights/lights_cfg.py     |   188 +
+ .../isaaclab/sim/spawners/materials/__init__.py    |    60 +
+ .../sim/spawners/materials/physics_materials.py    |   129 +
+ .../spawners/materials/physics_materials_cfg.py    |   120 +
+ .../sim/spawners/materials/visual_materials.py     |   126 +
+ .../sim/spawners/materials/visual_materials_cfg.py |   110 +
+ .../isaaclab/sim/spawners/meshes/__init__.py       |    24 +
+ .../isaaclab/sim/spawners/meshes/meshes.py         |   376 +
+ .../isaaclab/sim/spawners/meshes/meshes_cfg.py     |   144 +
+ .../isaaclab/sim/spawners/sensors/__init__.py      |    15 +
+ .../isaaclab/sim/spawners/sensors/sensors.py       |   148 +
+ .../isaaclab/sim/spawners/sensors/sensors_cfg.py   |   226 +
+ .../isaaclab/sim/spawners/shapes/__init__.py       |    18 +
+ .../isaaclab/sim/spawners/shapes/shapes.py         |   311 +
+ .../isaaclab/sim/spawners/shapes/shapes_cfg.py     |   122 +
+ .../isaaclab/isaaclab/sim/spawners/spawner_cfg.py  |   118 +
+ .../isaaclab/sim/spawners/wrappers/__init__.py     |    14 +
+ .../isaaclab/sim/spawners/wrappers/wrappers.py     |   193 +
+ .../isaaclab/sim/spawners/wrappers/wrappers_cfg.py |    67 +
+ source/isaaclab/isaaclab/sim/utils.py              |  1053 +
+ source/isaaclab/isaaclab/terrains/__init__.py      |    29 +
+ .../isaaclab/isaaclab/terrains/config/__init__.py  |     8 +
+ source/isaaclab/isaaclab/terrains/config/rough.py  |    52 +
+ .../isaaclab/terrains/height_field/__init__.py     |    38 +
+ .../isaaclab/terrains/height_field/hf_terrains.py  |   436 +
+ .../terrains/height_field/hf_terrains_cfg.py       |   186 +
+ .../isaaclab/terrains/height_field/utils.py        |   173 +
+ .../isaaclab/isaaclab/terrains/sub_terrain_cfg.py  |    95 +
+ .../isaaclab/terrains/terrain_generator.py         |   394 +
+ .../isaaclab/terrains/terrain_generator_cfg.py     |   129 +
+ .../isaaclab/isaaclab/terrains/terrain_importer.py |   393 +
+ .../isaaclab/terrains/terrain_importer_cfg.py      |   103 +
+ .../isaaclab/isaaclab/terrains/trimesh/__init__.py |    29 +
+ .../isaaclab/terrains/trimesh/mesh_terrains.py     |   860 +
+ .../isaaclab/terrains/trimesh/mesh_terrains_cfg.py |   316 +
+ source/isaaclab/isaaclab/terrains/trimesh/utils.py |   194 +
+ source/isaaclab/isaaclab/terrains/utils.py         |   275 +
+ source/isaaclab/isaaclab/ui/widgets/__init__.py    |     9 +
+ source/isaaclab/isaaclab/ui/widgets/image_plot.py  |   208 +
+ source/isaaclab/isaaclab/ui/widgets/line_plot.py   |   608 +
+ .../isaaclab/ui/widgets/manager_live_visualizer.py |   297 +
+ .../isaaclab/ui/widgets/ui_visualizer_base.py      |   148 +
+ .../isaaclab/ui/widgets/ui_widget_wrapper.py       |    51 +
+ source/isaaclab/isaaclab/ui/xr_widgets/__init__.py |     7 +
+ .../isaaclab/ui/xr_widgets/instruction_widget.py   |   277 +
+ .../isaaclab/ui/xr_widgets/scene_visualization.py  |   609 +
+ .../ui/xr_widgets/teleop_visualization_manager.py  |    67 +
+ source/isaaclab/isaaclab/utils/__init__.py         |    17 +
+ source/isaaclab/isaaclab/utils/array.py            |    95 +
+ source/isaaclab/isaaclab/utils/assets.py           |   206 +
+ source/isaaclab/isaaclab/utils/buffers/__init__.py |    10 +
+ .../isaaclab/utils/buffers/circular_buffer.py      |   167 +
+ .../isaaclab/utils/buffers/delay_buffer.py         |   177 +
+ .../isaaclab/utils/buffers/timestamped_buffer.py   |    28 +
+ source/isaaclab/isaaclab/utils/configclass.py      |   499 +
+ .../isaaclab/isaaclab/utils/datasets/__init__.py   |    17 +
+ .../utils/datasets/dataset_file_handler_base.py    |    63 +
+ .../isaaclab/utils/datasets/episode_data.py        |   220 +
+ .../utils/datasets/hdf5_dataset_file_handler.py    |   197 +
+ source/isaaclab/isaaclab/utils/dict.py             |   344 +
+ .../isaaclab/utils/interpolation/__init__.py       |    10 +
+ .../utils/interpolation/linear_interpolation.py    |    85 +
+ source/isaaclab/isaaclab/utils/io/__init__.py      |    11 +
+ source/isaaclab/isaaclab/utils/io/torchscript.py   |    39 +
+ source/isaaclab/isaaclab/utils/io/yaml.py          |    55 +
+ source/isaaclab/isaaclab/utils/math.py             |  1968 +
+ .../isaaclab/isaaclab/utils/modifiers/__init__.py  |    65 +
+ .../isaaclab/isaaclab/utils/modifiers/modifier.py  |   259 +
+ .../isaaclab/utils/modifiers/modifier_base.py      |    78 +
+ .../isaaclab/utils/modifiers/modifier_cfg.py       |    78 +
+ source/isaaclab/isaaclab/utils/noise/__init__.py   |    35 +
+ source/isaaclab/isaaclab/utils/noise/noise_cfg.py  |   111 +
+ .../isaaclab/isaaclab/utils/noise/noise_model.py   |   191 +
+ .../isaaclab/utils/pretrained_checkpoint.py        |   173 +
+ source/isaaclab/isaaclab/utils/sensors.py          |    60 +
+ source/isaaclab/isaaclab/utils/string.py           |   372 +
+ source/isaaclab/isaaclab/utils/timer.py            |   171 +
+ source/isaaclab/isaaclab/utils/types.py            |    39 +
+ source/isaaclab/isaaclab/utils/version.py          |    23 +
+ source/isaaclab/isaaclab/utils/warp/__init__.py    |     8 +
+ source/isaaclab/isaaclab/utils/warp/kernels.py     |   133 +
+ source/isaaclab/isaaclab/utils/warp/ops.py         |   145 +
+ source/isaaclab/pyproject.toml                     |     3 +
+ source/isaaclab/setup.py                           |    85 +
+ source/isaaclab/test/actuators/test_dc_motor.py    |   193 +
+ .../test/actuators/test_ideal_pd_actuator.py       |   274 +
+ .../test/actuators/test_implicit_actuator.py       |   243 +
+ source/isaaclab/test/app/test_argparser_launch.py  |    42 +
+ source/isaaclab/test/app/test_env_var_launch.py    |    33 +
+ source/isaaclab/test/app/test_kwarg_launch.py      |    29 +
+ .../isaaclab/test/app/test_non_headless_launch.py  |    65 +
+ .../isaaclab/test/assets/check_external_force.py   |   130 +
+ .../test/assets/check_fixed_base_assets.py         |   166 +
+ .../isaaclab/test/assets/check_ridgeback_franka.py |   167 +
+ source/isaaclab/test/assets/test_articulation.py   |  2074 +
+ .../isaaclab/test/assets/test_deformable_object.py |   341 +
+ source/isaaclab/test/assets/test_rigid_object.py   |  1129 +
+ .../test/assets/test_rigid_object_collection.py    |   808 +
+ .../isaaclab/test/assets/test_surface_gripper.py   |   225 +
+ .../test/controllers/simplified_test_robot.urdf    |   191 +
+ .../test/controllers/test_controller_utils.py      |   662 +
+ .../test/controllers/test_differential_ik.py       |   230 +
+ .../test/controllers/test_ik_configs/README.md     |   119 +
+ .../test_ik_configs/pink_ik_g1_test_configs.json   |   111 +
+ .../test_ik_configs/pink_ik_gr1_test_configs.json  |    93 +
+ .../test/controllers/test_local_frame_task.py      |   481 +
+ .../controllers/test_null_space_posture_task.py    |   339 +
+ .../test/controllers/test_operational_space.py     |  1656 +
+ source/isaaclab/test/controllers/test_pink_ik.py   |   442 +
+ .../test/controllers/test_pink_ik_components.py    |   307 +
+ .../urdfs/test_urdf_two_link_robot.urdf            |    32 +
+ source/isaaclab/test/deps/isaacsim/check_camera.py |   253 +
+ .../isaacsim/check_floating_base_made_fixed.py     |   203 +
+ .../test/deps/isaacsim/check_legged_robot_clone.py |   187 +
+ .../isaaclab/test/deps/isaacsim/check_ref_count.py |   158 +
+ .../deps/isaacsim/check_rep_texture_randomizer.py  |   164 +
+ source/isaaclab/test/deps/test_scipy.py            |    63 +
+ source/isaaclab/test/deps/test_torch.py            |   157 +
+ source/isaaclab/test/devices/check_keyboard.py     |    90 +
+ .../test/devices/test_device_constructors.py       |   461 +
+ source/isaaclab/test/devices/test_oxr_device.py    |   252 +
+ .../check_manager_based_env_anymal_locomotion.py   |   254 +
+ .../envs/check_manager_based_env_floating_cube.py  |   266 +
+ .../test/envs/test_action_state_recorder_term.py   |   115 +
+ .../isaaclab/test/envs/test_color_randomization.py |   173 +
+ source/isaaclab/test/envs/test_direct_marl_env.py  |    79 +
+ .../isaaclab/test/envs/test_env_rendering_logic.py |   208 +
+ .../isaaclab/test/envs/test_manager_based_env.py   |   200 +
+ .../envs/test_manager_based_rl_env_obs_spaces.py   |   141 +
+ .../test/envs/test_manager_based_rl_env_ui.py      |    87 +
+ .../test/envs/test_modify_env_param_curr_term.py   |   104 +
+ .../isaaclab/test/envs/test_null_command_term.py   |    48 +
+ .../isaaclab/test/envs/test_scale_randomization.py |   351 +
+ source/isaaclab/test/envs/test_spaces_utils.py     |   162 +
+ .../test/envs/test_texture_randomization.py        |   234 +
+ .../isaaclab/test/managers/test_event_manager.py   |   406 +
+ .../test/managers/test_observation_manager.py      |   800 +
+ .../test/managers/test_recorder_manager.py         |   181 +
+ .../isaaclab/test/managers/test_reward_manager.py  |   189 +
+ .../test/markers/check_markers_visibility.py       |   151 +
+ .../test/markers/test_visualization_markers.py     |   204 +
+ .../performance/test_kit_startup_performance.py    |    23 +
+ .../performance/test_robot_load_performance.py     |    53 +
+ .../isaaclab/test/scene/check_interactive_scene.py |   164 +
+ .../isaaclab/test/scene/test_interactive_scene.py  |   217 +
+ .../isaaclab/test/sensors/check_contact_sensor.py  |   188 +
+ source/isaaclab/test/sensors/check_imu_sensor.py   |   196 +
+ source/isaaclab/test/sensors/check_ray_caster.py   |   183 +
+ source/isaaclab/test/sensors/test_camera.py        |   909 +
+ .../isaaclab/test/sensors/test_contact_sensor.py   |   639 +
+ .../test/sensors/test_frame_transformer.py         |   591 +
+ source/isaaclab/test/sensors/test_imu.py           |   557 +
+ .../test/sensors/test_multi_tiled_camera.py        |   509 +
+ .../isaaclab/test/sensors/test_outdated_sensor.py  |    79 +
+ .../test/sensors/test_ray_caster_camera.py         |  1015 +
+ source/isaaclab/test/sensors/test_sensor_base.py   |   231 +
+ source/isaaclab/test/sensors/test_tiled_camera.py  |  1771 +
+ .../isaaclab/test/sensors/test_tiled_camera_env.py |   142 +
+ .../isaaclab/test/sensors/urdfs/simple_2_link.urdf |    82 +
+ source/isaaclab/test/sim/check_meshes.py           |   168 +
+ .../sim/test_build_simulation_context_headless.py  |    89 +
+ .../test_build_simulation_context_nonheadless.py   |    81 +
+ source/isaaclab/test/sim/test_mesh_converter.py    |   314 +
+ source/isaaclab/test/sim/test_mjcf_converter.py    |   104 +
+ source/isaaclab/test/sim/test_schemas.py           |   399 +
+ .../isaaclab/test/sim/test_simulation_context.py   |   148 +
+ .../test/sim/test_simulation_render_config.py      |   210 +
+ source/isaaclab/test/sim/test_spawn_from_files.py  |    98 +
+ source/isaaclab/test/sim/test_spawn_lights.py      |   155 +
+ source/isaaclab/test/sim/test_spawn_materials.py   |   176 +
+ source/isaaclab/test/sim/test_spawn_meshes.py      |   256 +
+ source/isaaclab/test/sim/test_spawn_sensors.py     |   115 +
+ source/isaaclab/test/sim/test_spawn_shapes.py      |   292 +
+ source/isaaclab/test/sim/test_spawn_wrappers.py    |   162 +
+ source/isaaclab/test/sim/test_stage_in_memory.py   |   236 +
+ source/isaaclab/test/sim/test_urdf_converter.py    |   140 +
+ source/isaaclab/test/sim/test_utils.py             |   131 +
+ .../terrains/check_height_field_subterrains.py     |   266 +
+ .../test/terrains/check_mesh_subterrains.py        |   430 +
+ .../test/terrains/check_terrain_importer.py        |   211 +
+ .../test/terrains/test_terrain_generator.py        |   162 +
+ .../test/terrains/test_terrain_importer.py         |   332 +
+ source/isaaclab/test/utils/test_assets.py          |    52 +
+ source/isaaclab/test/utils/test_circular_buffer.py |   183 +
+ source/isaaclab/test/utils/test_configclass.py     |  1079 +
+ source/isaaclab/test/utils/test_delay_buffer.py    |   100 +
+ source/isaaclab/test/utils/test_dict.py            |    99 +
+ source/isaaclab/test/utils/test_episode_data.py    |   154 +
+ .../test/utils/test_hdf5_dataset_file_handler.py   |   120 +
+ source/isaaclab/test/utils/test_math.py            |  1293 +
+ source/isaaclab/test/utils/test_modifiers.py       |   226 +
+ source/isaaclab/test/utils/test_noise.py           |   111 +
+ source/isaaclab/test/utils/test_string.py          |   215 +
+ source/isaaclab/test/utils/test_timer.py           |    41 +
+ .../visualization/check_scene_xr_visualization.py  |   257 +
+ source/isaaclab_assets/config/extension.toml       |    21 +
+ source/isaaclab_assets/data/.gitkeep               |     6 +
+ source/isaaclab_assets/docs/CHANGELOG.rst          |    71 +
+ source/isaaclab_assets/docs/README.md              |    41 +
+ source/isaaclab_assets/isaaclab_assets/__init__.py |    24 +
+ .../isaaclab_assets/robots/__init__.py             |    29 +
+ .../isaaclab_assets/robots/agibot.py               |   160 +
+ .../isaaclab_assets/robots/agility.py              |    39 +
+ .../isaaclab_assets/robots/allegro.py              |    69 +
+ .../isaaclab_assets/isaaclab_assets/robots/ant.py  |    55 +
+ .../isaaclab_assets/robots/anymal.py               |   175 +
+ .../isaaclab_assets/robots/cart_double_pendulum.py |    54 +
+ .../isaaclab_assets/robots/cartpole.py             |    51 +
+ .../isaaclab_assets/robots/cassie.py               |    90 +
+ .../isaaclab_assets/robots/fourier.py              |   163 +
+ .../isaaclab_assets/robots/franka.py               |   148 +
+ .../isaaclab_assets/robots/galbot.py               |   103 +
+ .../isaaclab_assets/robots/humanoid.py             |    70 +
+ .../isaaclab_assets/robots/humanoid_28.py          |    50 +
+ .../isaaclab_assets/robots/kinova.py               |   172 +
+ .../isaaclab_assets/robots/kuka_allegro.py         |   114 +
+ .../isaaclab_assets/robots/pick_and_place.py       |    69 +
+ .../isaaclab_assets/robots/quadcopter.py           |    57 +
+ .../isaaclab_assets/robots/ridgeback_franka.py     |    84 +
+ .../isaaclab_assets/robots/sawyer.py               |    67 +
+ .../isaaclab_assets/robots/shadow_hand.py          |    85 +
+ .../isaaclab_assets/isaaclab_assets/robots/spot.py |   182 +
+ .../isaaclab_assets/robots/unitree.py              |   611 +
+ .../isaaclab_assets/robots/universal_robots.py     |   165 +
+ .../isaaclab_assets/sensors/__init__.py            |    10 +
+ .../isaaclab_assets/sensors/velodyne.py            |    26 +
+ source/isaaclab_assets/pyproject.toml              |     3 +
+ source/isaaclab_assets/setup.py                    |    39 +
+ source/isaaclab_assets/test/test_valid_configs.py  |    64 +
+ source/isaaclab_mimic/config/extension.toml        |    29 +
+ source/isaaclab_mimic/docs/CHANGELOG.rst           |   156 +
+ source/isaaclab_mimic/isaaclab_mimic/__init__.py   |     8 +
+ .../isaaclab_mimic/datagen/__init__.py             |    14 +
+ .../isaaclab_mimic/datagen/data_generator.py       |   978 +
+ .../isaaclab_mimic/datagen/datagen_info.py         |   107 +
+ .../isaaclab_mimic/datagen/datagen_info_pool.py    |   225 +
+ .../isaaclab_mimic/datagen/generation.py           |   249 +
+ .../isaaclab_mimic/datagen/selection_strategy.py   |   308 +
+ .../isaaclab_mimic/isaaclab_mimic/datagen/utils.py |   214 +
+ .../isaaclab_mimic/datagen/waypoint.py             |   426 +
+ .../isaaclab_mimic/isaaclab_mimic/envs/__init__.py |   169 +
+ .../envs/agibot_place_toy2box_mimic_env_cfg.py     |    84 +
+ .../envs/agibot_place_upright_mug_mimic_env_cfg.py |    81 +
+ .../envs/franka_bin_stack_ik_rel_mimic_env_cfg.py  |    93 +
+ .../envs/franka_stack_ik_abs_mimic_env.py          |    98 +
+ .../envs/franka_stack_ik_abs_mimic_env_cfg.py      |    87 +
+ .../franka_stack_ik_rel_blueprint_mimic_env_cfg.py |   127 +
+ .../envs/franka_stack_ik_rel_mimic_env.py          |   188 +
+ .../envs/franka_stack_ik_rel_mimic_env_cfg.py      |   133 +
+ .../envs/franka_stack_ik_rel_skillgen_env_cfg.py   |   137 +
+ ...stack_ik_rel_visuomotor_cosmos_mimic_env_cfg.py |   128 +
+ ...franka_stack_ik_rel_visuomotor_mimic_env_cfg.py |   128 +
+ .../envs/galbot_stack_rmp_abs_mimic_env.py         |    47 +
+ .../envs/galbot_stack_rmp_abs_mimic_env_cfg.py     |   254 +
+ .../envs/galbot_stack_rmp_rel_mimic_env.py         |    48 +
+ .../envs/galbot_stack_rmp_rel_mimic_env_cfg.py     |   254 +
+ .../isaaclab_mimic/envs/pick_place_mimic_env.py    |   178 +
+ .../isaaclab_mimic/envs/pinocchio_envs/__init__.py |    55 +
+ .../exhaustpipe_gr1t2_mimic_env_cfg.py             |   112 +
+ .../locomanipulation_g1_mimic_env.py               |   129 +
+ .../locomanipulation_g1_mimic_env_cfg.py           |   112 +
+ .../pinocchio_envs/nutpour_gr1t2_mimic_env_cfg.py  |   156 +
+ .../pinocchio_envs/pickplace_gr1t2_mimic_env.py    |   129 +
+ .../pickplace_gr1t2_mimic_env_cfg.py               |   109 +
+ .../pickplace_gr1t2_waist_enabled_mimic_env_cfg.py |   111 +
+ .../locomanipulation_sdg/__init__.py               |     6 +
+ .../locomanipulation_sdg/data_classes.py           |    83 +
+ .../locomanipulation_sdg/envs/__init__.py          |    17 +
+ .../envs/g1_locomanipulation_sdg_env.py            |   285 +
+ .../envs/locomanipulation_sdg_env.py               |    90 +
+ .../envs/locomanipulation_sdg_env_cfg.py           |    47 +
+ .../locomanipulation_sdg/occupancy_map_utils.py    |   744 +
+ .../locomanipulation_sdg/path_utils.py             |   215 +
+ .../locomanipulation_sdg/scene_utils.py            |   190 +
+ .../locomanipulation_sdg/transform_utils.py        |    48 +
+ .../motion_planners/curobo/curobo_planner.py       |  1950 +
+ .../motion_planners/curobo/curobo_planner_cfg.py   |   459 +
+ .../motion_planners/curobo/plan_visualizer.py      |   938 +
+ .../motion_planners/motion_planner_base.py         |   133 +
+ .../isaaclab_mimic/ui/instruction_display.py       |    99 +
+ source/isaaclab_mimic/pyproject.toml               |     3 +
+ source/isaaclab_mimic/setup.py                     |    63 +
+ .../test/test_curobo_planner_cube_stack.py         |   248 +
+ .../test/test_curobo_planner_franka.py             |   173 +
+ .../isaaclab_mimic/test/test_generate_dataset.py   |   142 +
+ .../test/test_generate_dataset_skillgen.py         |    91 +
+ .../isaaclab_mimic/test/test_selection_strategy.py |   277 +
+ source/isaaclab_rl/config/extension.toml           |    23 +
+ source/isaaclab_rl/docs/CHANGELOG.rst              |   175 +
+ source/isaaclab_rl/isaaclab_rl/__init__.py         |    19 +
+ .../isaaclab_rl/isaaclab_rl/rl_games/__init__.py   |     9 +
+ .../isaaclab_rl/rl_games/pbt/__init__.py           |     7 +
+ .../isaaclab_rl/rl_games/pbt/mutation.py           |    48 +
+ source/isaaclab_rl/isaaclab_rl/rl_games/pbt/pbt.py |   268 +
+ .../isaaclab_rl/rl_games/pbt/pbt_cfg.py            |    63 +
+ .../isaaclab_rl/rl_games/pbt/pbt_utils.py          |   295 +
+ .../isaaclab_rl/isaaclab_rl/rl_games/rl_games.py   |   413 +
+ source/isaaclab_rl/isaaclab_rl/rsl_rl/__init__.py  |    23 +
+ .../isaaclab_rl/rsl_rl/distillation_cfg.py         |   116 +
+ source/isaaclab_rl/isaaclab_rl/rsl_rl/exporter.py  |   215 +
+ source/isaaclab_rl/isaaclab_rl/rsl_rl/rl_cfg.py    |   238 +
+ source/isaaclab_rl/isaaclab_rl/rsl_rl/rnd_cfg.py   |    99 +
+ .../isaaclab_rl/isaaclab_rl/rsl_rl/symmetry_cfg.py |    51 +
+ .../isaaclab_rl/rsl_rl/vecenv_wrapper.py           |   187 +
+ source/isaaclab_rl/isaaclab_rl/sb3.py              |   433 +
+ source/isaaclab_rl/isaaclab_rl/skrl.py             |    86 +
+ source/isaaclab_rl/pyproject.toml                  |     3 +
+ source/isaaclab_rl/setup.py                        |    84 +
+ source/isaaclab_rl/test/test_rl_games_wrapper.py   |   141 +
+ source/isaaclab_rl/test/test_rsl_rl_wrapper.py     |   176 +
+ source/isaaclab_rl/test/test_sb3_wrapper.py        |   138 +
+ source/isaaclab_rl/test/test_skrl_wrapper.py       |   135 +
+ source/isaaclab_tasks/config/extension.toml        |    22 +
+ source/isaaclab_tasks/docs/CHANGELOG.rst           |  1072 +
+ source/isaaclab_tasks/docs/README.md               |    60 +
+ source/isaaclab_tasks/isaaclab_tasks/__init__.py   |    39 +
+ .../isaaclab_tasks/direct/__init__.py              |    10 +
+ .../isaaclab_tasks/direct/allegro_hand/__init__.py |    30 +
+ .../direct/allegro_hand/agents/__init__.py         |     4 +
+ .../allegro_hand/agents/rl_games_ppo_cfg.yaml      |    91 +
+ .../direct/allegro_hand/agents/rsl_rl_ppo_cfg.py   |    38 +
+ .../direct/allegro_hand/agents/skrl_ppo_cfg.yaml   |    85 +
+ .../direct/allegro_hand/allegro_hand_env_cfg.py    |   121 +
+ .../isaaclab_tasks/direct/ant/__init__.py          |    28 +
+ .../isaaclab_tasks/direct/ant/agents/__init__.py   |     4 +
+ .../direct/ant/agents/rl_games_ppo_cfg.yaml        |    81 +
+ .../direct/ant/agents/rsl_rl_ppo_cfg.py            |    38 +
+ .../direct/ant/agents/skrl_ppo_cfg.yaml            |    85 +
+ .../isaaclab_tasks/direct/ant/ant_env.py           |    75 +
+ .../isaaclab_tasks/direct/anymal_c/__init__.py     |    40 +
+ .../direct/anymal_c/agents/__init__.py             |     4 +
+ .../anymal_c/agents/rl_games_flat_ppo_cfg.yaml     |    81 +
+ .../anymal_c/agents/rl_games_rough_ppo_cfg.yaml    |    81 +
+ .../direct/anymal_c/agents/rsl_rl_ppo_cfg.py       |    68 +
+ .../direct/anymal_c/agents/skrl_flat_ppo_cfg.yaml  |    85 +
+ .../direct/anymal_c/agents/skrl_rough_ppo_cfg.yaml |    85 +
+ .../isaaclab_tasks/direct/anymal_c/anymal_c_env.py |   197 +
+ .../direct/anymal_c/anymal_c_env_cfg.py            |   148 +
+ .../isaaclab_tasks/direct/automate/__init__.py     |    33 +
+ .../direct/automate/agents/__init__.py             |     4 +
+ .../direct/automate/agents/rl_games_ppo_cfg.yaml   |   105 +
+ .../isaaclab_tasks/direct/automate/assembly_env.py |   881 +
+ .../direct/automate/assembly_env_cfg.py            |   200 +
+ .../direct/automate/assembly_tasks_cfg.py          |   270 +
+ .../direct/automate/automate_algo_utils.py         |   316 +
+ .../direct/automate/automate_log_utils.py          |    28 +
+ .../direct/automate/disassembly_env.py             |   884 +
+ .../direct/automate/disassembly_env_cfg.py         |   196 +
+ .../direct/automate/disassembly_tasks_cfg.py       |   220 +
+ .../direct/automate/factory_control.py             |   196 +
+ .../direct/automate/industreal_algo_utils.py       |   374 +
+ .../direct/automate/run_disassembly_w_id.py        |    83 +
+ .../isaaclab_tasks/direct/automate/run_w_id.py     |    89 +
+ .../direct/automate/soft_dtw_cuda.py               |   452 +
+ .../direct/cart_double_pendulum/__init__.py        |    29 +
+ .../direct/cart_double_pendulum/agents/__init__.py |     4 +
+ .../agents/rl_games_ppo_cfg.yaml                   |    83 +
+ .../cart_double_pendulum/agents/skrl_ippo_cfg.yaml |    85 +
+ .../agents/skrl_mappo_cfg.yaml                     |    87 +
+ .../cart_double_pendulum/agents/skrl_ppo_cfg.yaml  |    85 +
+ .../cart_double_pendulum_env.py                    |   229 +
+ .../isaaclab_tasks/direct/cartpole/__init__.py     |    51 +
+ .../direct/cartpole/agents/__init__.py             |     4 +
+ .../cartpole/agents/rl_games_camera_ppo_cfg.yaml   |   100 +
+ .../direct/cartpole/agents/rl_games_ppo_cfg.yaml   |    83 +
+ .../direct/cartpole/agents/rsl_rl_ppo_cfg.py       |    38 +
+ .../direct/cartpole/agents/sb3_ppo_cfg.yaml        |    25 +
+ .../cartpole/agents/skrl_camera_ppo_cfg.yaml       |   101 +
+ .../direct/cartpole/agents/skrl_ppo_cfg.yaml       |    85 +
+ .../direct/cartpole/cartpole_camera_env.py         |   228 +
+ .../isaaclab_tasks/direct/cartpole/cartpole_env.py |   174 +
+ .../direct/cartpole_showcase/__init__.py           |     9 +
+ .../direct/cartpole_showcase/cartpole/__init__.py  |   186 +
+ .../cartpole_showcase/cartpole/agents/__init__.py  |     4 +
+ .../cartpole/agents/skrl_box_box_ppo_cfg.yaml      |   106 +
+ .../cartpole/agents/skrl_box_discrete_ppo_cfg.yaml |   102 +
+ .../agents/skrl_box_multidiscrete_ppo_cfg.yaml     |   102 +
+ .../cartpole/agents/skrl_dict_box_ppo_cfg.yaml     |   129 +
+ .../agents/skrl_dict_discrete_ppo_cfg.yaml         |   125 +
+ .../agents/skrl_dict_multidiscrete_ppo_cfg.yaml    |   125 +
+ .../cartpole/agents/skrl_discrete_box_ppo_cfg.yaml |   108 +
+ .../agents/skrl_discrete_discrete_ppo_cfg.yaml     |   104 +
+ .../skrl_discrete_multidiscrete_ppo_cfg.yaml       |   104 +
+ .../agents/skrl_multidiscrete_box_ppo_cfg.yaml     |   108 +
+ .../skrl_multidiscrete_discrete_ppo_cfg.yaml       |   104 +
+ .../skrl_multidiscrete_multidiscrete_ppo_cfg.yaml  |   104 +
+ .../cartpole/agents/skrl_tuple_box_ppo_cfg.yaml    |   129 +
+ .../agents/skrl_tuple_discrete_ppo_cfg.yaml        |   125 +
+ .../agents/skrl_tuple_multidiscrete_ppo_cfg.yaml   |   125 +
+ .../cartpole_showcase/cartpole/cartpole_env.py     |   134 +
+ .../cartpole_showcase/cartpole/cartpole_env_cfg.py |   595 +
+ .../cartpole_showcase/cartpole_camera/__init__.py  |   118 +
+ .../cartpole_camera/agents/__init__.py             |     4 +
+ .../agents/skrl_box_box_ppo_cfg.yaml               |   132 +
+ .../agents/skrl_box_discrete_ppo_cfg.yaml          |   128 +
+ .../agents/skrl_box_multidiscrete_ppo_cfg.yaml     |   128 +
+ .../agents/skrl_dict_box_ppo_cfg.yaml              |   144 +
+ .../agents/skrl_dict_discrete_ppo_cfg.yaml         |   140 +
+ .../agents/skrl_dict_multidiscrete_ppo_cfg.yaml    |   140 +
+ .../agents/skrl_tuple_box_ppo_cfg.yaml             |   152 +
+ .../agents/skrl_tuple_discrete_ppo_cfg.yaml        |   148 +
+ .../agents/skrl_tuple_multidiscrete_ppo_cfg.yaml   |   148 +
+ .../cartpole_camera/cartpole_camera_env.py         |    73 +
+ .../cartpole_camera/cartpole_camera_env_cfg.py     |   357 +
+ .../isaaclab_tasks/direct/factory/__init__.py      |    44 +
+ .../direct/factory/agents/__init__.py              |     4 +
+ .../direct/factory/agents/rl_games_ppo_cfg.yaml    |   123 +
+ .../direct/factory/factory_control.py              |   206 +
+ .../isaaclab_tasks/direct/factory/factory_env.py   |   820 +
+ .../direct/factory/factory_env_cfg.py              |   209 +
+ .../direct/factory/factory_tasks_cfg.py            |   447 +
+ .../isaaclab_tasks/direct/factory/factory_utils.py |   114 +
+ .../isaaclab_tasks/direct/forge/__init__.py        |    44 +
+ .../isaaclab_tasks/direct/forge/agents/__init__.py |     4 +
+ .../direct/forge/agents/rl_games_ppo_cfg.yaml      |   123 +
+ .../forge/agents/rl_games_ppo_cfg_nut_thread.yaml  |   123 +
+ .../isaaclab_tasks/direct/forge/forge_env.py       |   383 +
+ .../isaaclab_tasks/direct/forge/forge_env_cfg.py   |   148 +
+ .../isaaclab_tasks/direct/forge/forge_events.py    |    15 +
+ .../isaaclab_tasks/direct/forge/forge_tasks_cfg.py |    33 +
+ .../isaaclab_tasks/direct/forge/forge_utils.py     |    35 +
+ .../direct/franka_cabinet/__init__.py              |    27 +
+ .../direct/franka_cabinet/agents/__init__.py       |     4 +
+ .../franka_cabinet/agents/rl_games_ppo_cfg.yaml    |    80 +
+ .../direct/franka_cabinet/agents/rsl_rl_ppo_cfg.py |    38 +
+ .../direct/franka_cabinet/agents/skrl_ppo_cfg.yaml |    85 +
+ .../direct/franka_cabinet/franka_cabinet_env.py    |   491 +
+ .../isaaclab_tasks/direct/humanoid/__init__.py     |    28 +
+ .../direct/humanoid/agents/__init__.py             |     4 +
+ .../direct/humanoid/agents/rl_games_ppo_cfg.yaml   |    80 +
+ .../direct/humanoid/agents/rsl_rl_ppo_cfg.py       |    38 +
+ .../direct/humanoid/agents/skrl_ppo_cfg.yaml       |    85 +
+ .../isaaclab_tasks/direct/humanoid/humanoid_env.py |    97 +
+ .../isaaclab_tasks/direct/humanoid_amp/__init__.py |    46 +
+ .../direct/humanoid_amp/agents/__init__.py         |     4 +
+ .../humanoid_amp/agents/skrl_dance_amp_cfg.yaml    |   116 +
+ .../humanoid_amp/agents/skrl_run_amp_cfg.yaml      |   116 +
+ .../humanoid_amp/agents/skrl_walk_amp_cfg.yaml     |   116 +
+ .../direct/humanoid_amp/humanoid_amp_env.py        |   242 +
+ .../direct/humanoid_amp/humanoid_amp_env_cfg.py    |    91 +
+ .../direct/humanoid_amp/motions/README.md          |    33 +
+ .../direct/humanoid_amp/motions/__init__.py        |    11 +
+ .../direct/humanoid_amp/motions/humanoid_dance.npz |   Bin 0 -> 910662 bytes
+ .../direct/humanoid_amp/motions/humanoid_run.npz   |   Bin 0 -> 87382 bytes
+ .../direct/humanoid_amp/motions/humanoid_walk.npz  |   Bin 0 -> 159670 bytes
+ .../direct/humanoid_amp/motions/motion_loader.py   |   277 +
+ .../direct/humanoid_amp/motions/motion_viewer.py   |   132 +
+ .../direct/inhand_manipulation/__init__.py         |     4 +
+ .../inhand_manipulation/inhand_manipulation_env.py |   433 +
+ .../isaaclab_tasks/direct/locomotion/__init__.py   |     4 +
+ .../direct/locomotion/locomotion_env.py            |   280 +
+ .../isaaclab_tasks/direct/quadcopter/__init__.py   |    28 +
+ .../direct/quadcopter/agents/__init__.py           |     4 +
+ .../direct/quadcopter/agents/rl_games_ppo_cfg.yaml |    81 +
+ .../direct/quadcopter/agents/rsl_rl_ppo_cfg.py     |    38 +
+ .../direct/quadcopter/agents/skrl_ppo_cfg.yaml     |    85 +
+ .../direct/quadcopter/quadcopter_env.py            |   253 +
+ .../isaaclab_tasks/direct/shadow_hand/__init__.py  |    76 +
+ .../direct/shadow_hand/agents/__init__.py          |     4 +
+ .../shadow_hand/agents/rl_games_ppo_cfg.yaml       |    91 +
+ .../shadow_hand/agents/rl_games_ppo_ff_cfg.yaml    |   112 +
+ .../shadow_hand/agents/rl_games_ppo_lstm_cfg.yaml  |   123 +
+ .../agents/rl_games_ppo_vision_cfg.yaml            |   112 +
+ .../direct/shadow_hand/agents/rsl_rl_ppo_cfg.py    |    98 +
+ .../direct/shadow_hand/agents/skrl_ff_ppo_cfg.yaml |    85 +
+ .../direct/shadow_hand/agents/skrl_ppo_cfg.yaml    |    85 +
+ .../direct/shadow_hand/feature_extractor.py        |   194 +
+ .../direct/shadow_hand/shadow_hand_env_cfg.py      |   285 +
+ .../direct/shadow_hand/shadow_hand_vision_env.py   |   204 +
+ .../direct/shadow_hand_over/__init__.py            |    29 +
+ .../direct/shadow_hand_over/agents/__init__.py     |     4 +
+ .../shadow_hand_over/agents/rl_games_ppo_cfg.yaml  |    91 +
+ .../shadow_hand_over/agents/skrl_ippo_cfg.yaml     |    85 +
+ .../shadow_hand_over/agents/skrl_mappo_cfg.yaml    |    87 +
+ .../shadow_hand_over/agents/skrl_ppo_cfg.yaml      |    85 +
+ .../shadow_hand_over/shadow_hand_over_env.py       |   423 +
+ .../shadow_hand_over/shadow_hand_over_env_cfg.py   |   226 +
+ .../isaaclab_tasks/manager_based/__init__.py       |    10 +
+ .../manager_based/classic/__init__.py              |    12 +
+ .../manager_based/classic/ant/__init__.py          |    29 +
+ .../manager_based/classic/ant/agents/__init__.py   |     4 +
+ .../classic/ant/agents/rl_games_ppo_cfg.yaml       |    81 +
+ .../classic/ant/agents/rsl_rl_ppo_cfg.py           |    38 +
+ .../classic/ant/agents/sb3_ppo_cfg.yaml            |    30 +
+ .../classic/ant/agents/skrl_ppo_cfg.yaml           |    85 +
+ .../classic/ant/ant_contact_observations.py        |    73 +
+ .../manager_based/classic/ant/ant_env_cfg.py       |   184 +
+ .../classic/ant/ant_friction_random_env_cfg.py     |    36 +
+ .../classic/ant/ant_ood_terrain_env_cfg.py         |   195 +
+ .../classic/ant/ant_terrain_heightscan_env_cfg.py  |   202 +
+ .../manager_based/classic/cartpole/__init__.py     |    70 +
+ .../classic/cartpole/agents/__init__.py            |     4 +
+ .../cartpole/agents/rl_games_camera_ppo_cfg.yaml   |   100 +
+ .../cartpole/agents/rl_games_feature_ppo_cfg.yaml  |    84 +
+ .../classic/cartpole/agents/rl_games_ppo_cfg.yaml  |    83 +
+ .../classic/cartpole/agents/rsl_rl_ppo_cfg.py      |    64 +
+ .../classic/cartpole/agents/sb3_ppo_cfg.yaml       |    25 +
+ .../classic/cartpole/agents/skrl_ppo_cfg.yaml      |    85 +
+ .../classic/cartpole/cartpole_camera_env_cfg.py    |   176 +
+ .../classic/cartpole/cartpole_env_cfg.py           |   181 +
+ .../manager_based/classic/cartpole/mdp/__init__.py |    10 +
+ .../manager_based/classic/cartpole/mdp/rewards.py  |    26 +
+ .../manager_based/classic/cartpole/mdp/symmetry.py |    67 +
+ .../manager_based/classic/humanoid/__init__.py     |    29 +
+ .../classic/humanoid/agents/__init__.py            |     4 +
+ .../classic/humanoid/agents/rl_games_ppo_cfg.yaml  |    80 +
+ .../classic/humanoid/agents/rsl_rl_ppo_cfg.py      |    38 +
+ .../classic/humanoid/agents/sb3_ppo_cfg.yaml       |    27 +
+ .../classic/humanoid/agents/skrl_ppo_cfg.yaml      |    85 +
+ .../classic/humanoid/humanoid_env_cfg.py           |   221 +
+ .../manager_based/classic/humanoid/mdp/__init__.py |    11 +
+ .../classic/humanoid/mdp/observations.py           |    75 +
+ .../manager_based/classic/humanoid/mdp/rewards.py  |   143 +
+ .../manager_based/locomanipulation/__init__.py     |     9 +
+ .../locomanipulation/pick_place/__init__.py        |    31 +
+ .../agents/robomimic/bc_rnn_low_dim.json           |   117 +
+ .../pick_place/configs/action_cfg.py               |    34 +
+ .../configs/agile_locomotion_observation_cfg.py    |    84 +
+ .../pick_place/configs/pink_controller_cfg.py      |   126 +
+ .../fixed_base_upper_body_ik_g1_env_cfg.py         |   215 +
+ .../pick_place/locomanipulation_g1_env_cfg.py      |   229 +
+ .../locomanipulation/pick_place/mdp/__init__.py    |    12 +
+ .../locomanipulation/pick_place/mdp/actions.py     |   125 +
+ .../pick_place/mdp/observations.py                 |    32 +
+ .../locomanipulation/tracking/__init__.py          |     4 +
+ .../locomanipulation/tracking/config/__init__.py   |     4 +
+ .../tracking/config/digit/__init__.py              |    32 +
+ .../tracking/config/digit/agents/__init__.py       |     4 +
+ .../tracking/config/digit/agents/rsl_rl_ppo_cfg.py |    38 +
+ .../tracking/config/digit/loco_manip_env_cfg.py    |   250 +
+ .../manager_based/locomotion/__init__.py           |     8 +
+ .../manager_based/locomotion/velocity/__init__.py  |    12 +
+ .../locomotion/velocity/config/__init__.py         |     9 +
+ .../locomotion/velocity/config/a1/__init__.py      |    60 +
+ .../velocity/config/a1/agents/__init__.py          |     4 +
+ .../velocity/config/a1/agents/rsl_rl_ppo_cfg.py    |    49 +
+ .../velocity/config/a1/agents/sb3_ppo_cfg.yaml     |    28 +
+ .../config/a1/agents/skrl_flat_ppo_cfg.yaml        |    85 +
+ .../config/a1/agents/skrl_rough_ppo_cfg.yaml       |    85 +
+ .../locomotion/velocity/config/a1/flat_env_cfg.py  |    43 +
+ .../locomotion/velocity/config/a1/rough_env_cfg.py |    85 +
+ .../velocity/config/anymal_b/__init__.py           |    63 +
+ .../velocity/config/anymal_b/agents/__init__.py    |     4 +
+ .../config/anymal_b/agents/rsl_rl_ppo_cfg.py       |    99 +
+ .../config/anymal_b/agents/skrl_flat_ppo_cfg.yaml  |    85 +
+ .../config/anymal_b/agents/skrl_rough_ppo_cfg.yaml |    85 +
+ .../velocity/config/anymal_b/flat_env_cfg.py       |    43 +
+ .../velocity/config/anymal_b/rough_env_cfg.py      |    46 +
+ .../velocity/config/anymal_c/__init__.py           |    68 +
+ .../velocity/config/anymal_c/agents/__init__.py    |     4 +
+ .../anymal_c/agents/rl_games_flat_ppo_cfg.yaml     |    81 +
+ .../anymal_c/agents/rl_games_rough_ppo_cfg.yaml    |    81 +
+ .../config/anymal_c/agents/rsl_rl_ppo_cfg.py       |    99 +
+ .../config/anymal_c/agents/skrl_flat_ppo_cfg.yaml  |    85 +
+ .../config/anymal_c/agents/skrl_rough_ppo_cfg.yaml |    85 +
+ .../velocity/config/anymal_c/flat_env_cfg.py       |    43 +
+ .../velocity/config/anymal_c/rough_env_cfg.py      |    46 +
+ .../velocity/config/anymal_d/__init__.py           |    70 +
+ .../velocity/config/anymal_d/agents/__init__.py    |     4 +
+ .../anymal_d/agents/rsl_rl_distillation_cfg.py     |    35 +
+ .../config/anymal_d/agents/rsl_rl_ppo_cfg.py       |    98 +
+ .../config/anymal_d/agents/skrl_flat_ppo_cfg.yaml  |    85 +
+ .../config/anymal_d/agents/skrl_rough_ppo_cfg.yaml |    85 +
+ .../velocity/config/anymal_d/flat_env_cfg.py       |    43 +
+ .../velocity/config/anymal_d/rough_env_cfg.py      |    46 +
+ .../locomotion/velocity/config/cassie/__init__.py  |    56 +
+ .../velocity/config/cassie/agents/__init__.py      |     4 +
+ .../config/cassie/agents/rsl_rl_ppo_cfg.py         |    49 +
+ .../config/cassie/agents/skrl_flat_ppo_cfg.yaml    |    85 +
+ .../config/cassie/agents/skrl_rough_ppo_cfg.yaml   |    85 +
+ .../velocity/config/cassie/flat_env_cfg.py         |    39 +
+ .../velocity/config/cassie/rough_env_cfg.py        |   115 +
+ .../locomotion/velocity/config/digit/__init__.py   |    54 +
+ .../velocity/config/digit/agents/__init__.py       |     4 +
+ .../velocity/config/digit/agents/rsl_rl_ppo_cfg.py |    50 +
+ .../velocity/config/digit/flat_env_cfg.py          |    37 +
+ .../velocity/config/digit/rough_env_cfg.py         |   266 +
+ .../locomotion/velocity/config/g1/__init__.py      |    59 +
+ .../velocity/config/g1/agents/__init__.py          |     4 +
+ .../velocity/config/g1/agents/rsl_rl_ppo_cfg.py    |    49 +
+ .../config/g1/agents/skrl_flat_ppo_cfg.yaml        |    85 +
+ .../config/g1/agents/skrl_rough_ppo_cfg.yaml       |    85 +
+ .../locomotion/velocity/config/g1/flat_env_cfg.py  |    56 +
+ .../locomotion/velocity/config/g1/rough_env_cfg.py |   181 +
+ .../locomotion/velocity/config/go1/__init__.py     |    56 +
+ .../velocity/config/go1/agents/__init__.py         |     4 +
+ .../velocity/config/go1/agents/rsl_rl_ppo_cfg.py   |    49 +
+ .../config/go1/agents/skrl_flat_ppo_cfg.yaml       |    85 +
+ .../config/go1/agents/skrl_rough_ppo_cfg.yaml      |    85 +
+ .../locomotion/velocity/config/go1/flat_env_cfg.py |    43 +
+ .../velocity/config/go1/rough_env_cfg.py           |    85 +
+ .../locomotion/velocity/config/go2/__init__.py     |    56 +
+ .../velocity/config/go2/agents/__init__.py         |     4 +
+ .../velocity/config/go2/agents/rsl_rl_ppo_cfg.py   |    49 +
+ .../config/go2/agents/skrl_flat_ppo_cfg.yaml       |    85 +
+ .../config/go2/agents/skrl_rough_ppo_cfg.yaml      |    85 +
+ .../locomotion/velocity/config/go2/flat_env_cfg.py |    43 +
+ .../velocity/config/go2/rough_env_cfg.py           |    85 +
+ .../locomotion/velocity/config/h1/__init__.py      |    59 +
+ .../velocity/config/h1/agents/__init__.py          |     4 +
+ .../velocity/config/h1/agents/rsl_rl_ppo_cfg.py    |    49 +
+ .../config/h1/agents/skrl_flat_ppo_cfg.yaml        |    85 +
+ .../config/h1/agents/skrl_rough_ppo_cfg.yaml       |    85 +
+ .../locomotion/velocity/config/h1/flat_env_cfg.py  |    41 +
+ .../locomotion/velocity/config/h1/rough_env_cfg.py |   142 +
+ .../locomotion/velocity/config/spot/README.md      |     9 +
+ .../locomotion/velocity/config/spot/__init__.py    |    34 +
+ .../velocity/config/spot/agents/__init__.py        |     4 +
+ .../velocity/config/spot/agents/rsl_rl_ppo_cfg.py  |    39 +
+ .../config/spot/agents/skrl_flat_ppo_cfg.yaml      |    85 +
+ .../velocity/config/spot/flat_env_cfg.py           |   377 +
+ .../velocity/config/spot/mdp/__init__.py           |    10 +
+ .../locomotion/velocity/config/spot/mdp/events.py  |    58 +
+ .../locomotion/velocity/config/spot/mdp/rewards.py |   282 +
+ .../locomotion/velocity/mdp/__init__.py            |    12 +
+ .../locomotion/velocity/mdp/curriculums.py         |    55 +
+ .../locomotion/velocity/mdp/rewards.py             |   116 +
+ .../locomotion/velocity/mdp/symmetry/__init__.py   |    10 +
+ .../locomotion/velocity/mdp/symmetry/anymal.py     |   260 +
+ .../locomotion/velocity/mdp/terminations.py        |    53 +
+ .../locomotion/velocity/velocity_env_cfg.py        |   329 +
+ .../manager_based/manipulation/__init__.py         |     8 +
+ .../manager_based/manipulation/cabinet/__init__.py |     6 +
+ .../manipulation/cabinet/cabinet_env_cfg.py        |   278 +
+ .../manipulation/cabinet/config/__init__.py        |     9 +
+ .../manipulation/cabinet/config/franka/__init__.py |    67 +
+ .../cabinet/config/franka/agents/__init__.py       |     4 +
+ .../config/franka/agents/rl_games_ppo_cfg.yaml     |    81 +
+ .../cabinet/config/franka/agents/rsl_rl_ppo_cfg.py |    38 +
+ .../cabinet/config/franka/agents/skrl_ppo_cfg.yaml |    85 +
+ .../cabinet/config/franka/ik_abs_env_cfg.py        |    47 +
+ .../cabinet/config/franka/ik_rel_env_cfg.py        |    48 +
+ .../cabinet/config/franka/joint_pos_env_cfg.py     |    93 +
+ .../manipulation/cabinet/mdp/__init__.py           |    11 +
+ .../manipulation/cabinet/mdp/observations.py       |    59 +
+ .../manipulation/cabinet/mdp/rewards.py            |   162 +
+ .../manager_based/manipulation/deploy/__init__.py  |    17 +
+ .../manipulation/deploy/mdp/__init__.py            |    10 +
+ .../manipulation/deploy/mdp/rewards.py             |   231 +
+ .../manipulation/deploy/reach/__init__.py          |     6 +
+ .../manipulation/deploy/reach/config/__init__.py   |     6 +
+ .../deploy/reach/config/ur_10e/__init__.py         |    42 +
+ .../deploy/reach/config/ur_10e/agents/__init__.py  |     4 +
+ .../reach/config/ur_10e/agents/rsl_rl_ppo_cfg.py   |    37 +
+ .../reach/config/ur_10e/joint_pos_env_cfg.py       |   112 +
+ .../reach/config/ur_10e/ros_inference_env_cfg.py   |    46 +
+ .../manipulation/deploy/reach/reach_env_cfg.py     |   215 +
+ .../manipulation/dexsuite/__init__.py              |    26 +
+ .../manipulation/dexsuite/adr_curriculum.py        |   122 +
+ .../manipulation/dexsuite/config/__init__.py       |     9 +
+ .../dexsuite/config/kuka_allegro/__init__.py       |    63 +
+ .../config/kuka_allegro/agents/__init__.py         |     4 +
+ .../kuka_allegro/agents/rl_games_ppo_cfg.yaml      |   111 +
+ .../config/kuka_allegro/agents/rsl_rl_ppo_cfg.py   |    39 +
+ .../kuka_allegro/dexsuite_kuka_allegro_env_cfg.py  |    79 +
+ .../manipulation/dexsuite/dexsuite_env_cfg.py      |   466 +
+ .../manipulation/dexsuite/mdp/__init__.py          |    12 +
+ .../manipulation/dexsuite/mdp/commands/__init__.py |     6 +
+ .../dexsuite/mdp/commands/pose_commands.py         |   179 +
+ .../dexsuite/mdp/commands/pose_commands_cfg.py     |    92 +
+ .../manipulation/dexsuite/mdp/curriculums.py       |   113 +
+ .../manipulation/dexsuite/mdp/observations.py      |   197 +
+ .../manipulation/dexsuite/mdp/rewards.py           |   126 +
+ .../manipulation/dexsuite/mdp/terminations.py      |    49 +
+ .../manipulation/dexsuite/mdp/utils.py             |   247 +
+ .../manager_based/manipulation/inhand/__init__.py  |    14 +
+ .../manipulation/inhand/config/__init__.py         |     9 +
+ .../inhand/config/allegro_hand/__init__.py         |    68 +
+ .../inhand/config/allegro_hand/agents/__init__.py  |     4 +
+ .../allegro_hand/agents/rl_games_ppo_cfg.yaml      |    90 +
+ .../config/allegro_hand/agents/rsl_rl_ppo_cfg.py   |    43 +
+ .../config/allegro_hand/agents/skrl_ppo_cfg.yaml   |    85 +
+ .../inhand/config/allegro_hand/allegro_env_cfg.py  |    66 +
+ .../manipulation/inhand/inhand_env_cfg.py          |   346 +
+ .../manipulation/inhand/mdp/__init__.py            |    14 +
+ .../manipulation/inhand/mdp/commands/__init__.py   |     9 +
+ .../inhand/mdp/commands/commands_cfg.py            |    67 +
+ .../inhand/mdp/commands/orientation_command.py     |   144 +
+ .../manipulation/inhand/mdp/events.py              |   184 +
+ .../manipulation/inhand/mdp/observations.py        |    38 +
+ .../manipulation/inhand/mdp/rewards.py             |    96 +
+ .../manipulation/inhand/mdp/terminations.py        |    83 +
+ .../manager_based/manipulation/lift/__init__.py    |     9 +
+ .../manipulation/lift/config/__init__.py           |     9 +
+ .../manipulation/lift/config/franka/__init__.py    |    78 +
+ .../lift/config/franka/agents/__init__.py          |     4 +
+ .../config/franka/agents/rl_games_ppo_cfg.yaml     |    84 +
+ .../lift/config/franka/agents/robomimic/bc.json    |   264 +
+ .../lift/config/franka/agents/robomimic/bcq.json   |   299 +
+ .../lift/config/franka/agents/rsl_rl_ppo_cfg.py    |    38 +
+ .../lift/config/franka/agents/sb3_ppo_cfg.yaml     |    34 +
+ .../lift/config/franka/agents/skrl_ppo_cfg.yaml    |    85 +
+ .../lift/config/franka/ik_abs_env_cfg.py           |   110 +
+ .../lift/config/franka/ik_rel_env_cfg.py           |    48 +
+ .../lift/config/franka/joint_pos_env_cfg.py        |    93 +
+ .../manipulation/lift/lift_env_cfg.py              |   222 +
+ .../manipulation/lift/mdp/__init__.py              |    12 +
+ .../manipulation/lift/mdp/observations.py          |    29 +
+ .../manager_based/manipulation/lift/mdp/rewards.py |    67 +
+ .../manipulation/lift/mdp/terminations.py          |    53 +
+ .../manipulation/pick_place/__init__.py            |    66 +
+ .../robomimic/bc_rnn_image_exhaust_pipe.json       |   220 +
+ .../agents/robomimic/bc_rnn_image_nut_pouring.json |   220 +
+ .../agents/robomimic/bc_rnn_low_dim.json           |   117 +
+ .../pick_place/exhaustpipe_gr1t2_base_env_cfg.py   |   331 +
+ .../exhaustpipe_gr1t2_pink_ik_env_cfg.py           |   153 +
+ .../manipulation/pick_place/mdp/__init__.py        |    12 +
+ .../manipulation/pick_place/mdp/observations.py    |    85 +
+ .../pick_place/mdp/pick_place_events.py            |    95 +
+ .../manipulation/pick_place/mdp/terminations.py    |   218 +
+ .../pick_place/nutpour_gr1t2_base_env_cfg.py       |   366 +
+ .../pick_place/nutpour_gr1t2_pink_ik_env_cfg.py    |   151 +
+ .../pick_place/pickplace_gr1t2_env_cfg.py          |   415 +
+ .../pickplace_gr1t2_waist_enabled_env_cfg.py       |    87 +
+ .../pickplace_unitree_g1_inspire_hand_env_cfg.py   |   409 +
+ .../manager_based/manipulation/place/__init__.py   |     9 +
+ .../manipulation/place/config/__init__.py          |     9 +
+ .../manipulation/place/config/agibot/__init__.py   |    34 +
+ .../config/agibot/place_toy2box_rmp_rel_env_cfg.py |   346 +
+ .../agibot/place_upright_mug_rmp_rel_env_cfg.py    |   282 +
+ .../manipulation/place/mdp/__init__.py             |    11 +
+ .../manipulation/place/mdp/observations.py         |   118 +
+ .../manipulation/place/mdp/terminations.py         |   122 +
+ .../manager_based/manipulation/reach/__init__.py   |     6 +
+ .../manipulation/reach/config/__init__.py          |     9 +
+ .../manipulation/reach/config/franka/__init__.py   |    91 +
+ .../reach/config/franka/agents/__init__.py         |     4 +
+ .../config/franka/agents/rl_games_ppo_cfg.yaml     |    83 +
+ .../reach/config/franka/agents/rsl_rl_ppo_cfg.py   |    39 +
+ .../reach/config/franka/agents/skrl_ppo_cfg.yaml   |    85 +
+ .../reach/config/franka/ik_abs_env_cfg.py          |    47 +
+ .../reach/config/franka/ik_rel_env_cfg.py          |    48 +
+ .../reach/config/franka/joint_pos_env_cfg.py       |    56 +
+ .../reach/config/franka/osc_env_cfg.py             |    73 +
+ .../manipulation/reach/config/ur_10/__init__.py    |    36 +
+ .../reach/config/ur_10/agents/__init__.py          |     4 +
+ .../config/ur_10/agents/rl_games_ppo_cfg.yaml      |    83 +
+ .../reach/config/ur_10/agents/rsl_rl_ppo_cfg.py    |    39 +
+ .../reach/config/ur_10/agents/skrl_ppo_cfg.yaml    |    85 +
+ .../reach/config/ur_10/joint_pos_env_cfg.py        |    57 +
+ .../manipulation/reach/mdp/__init__.py             |    10 +
+ .../manipulation/reach/mdp/rewards.py              |    69 +
+ .../manipulation/reach/reach_env_cfg.py            |   229 +
+ .../manager_based/manipulation/stack/__init__.py   |     9 +
+ .../manipulation/stack/config/__init__.py          |     9 +
+ .../manipulation/stack/config/franka/__init__.py   |   129 +
+ .../stack/config/franka/agents/__init__.py         |     4 +
+ .../franka/agents/robomimic/bc_rnn_image_84.json   |   219 +
+ .../agents/robomimic/bc_rnn_image_cosmos.json      |   218 +
+ .../franka/agents/robomimic/bc_rnn_low_dim.json    |   101 +
+ .../config/franka/bin_stack_ik_rel_env_cfg.py      |    35 +
+ .../config/franka/bin_stack_joint_pos_env_cfg.py   |   207 +
+ .../stack/config/franka/stack_ik_abs_env_cfg.py    |    59 +
+ .../franka/stack_ik_rel_blueprint_env_cfg.py       |   273 +
+ .../stack/config/franka/stack_ik_rel_env_cfg.py    |    69 +
+ .../config/franka/stack_ik_rel_env_cfg_skillgen.py |   167 +
+ .../stack_ik_rel_instance_randomize_env_cfg.py     |    41 +
+ .../stack_ik_rel_visuomotor_cosmos_env_cfg.py      |   160 +
+ .../franka/stack_ik_rel_visuomotor_env_cfg.py      |   238 +
+ .../stack/config/franka/stack_joint_pos_env_cfg.py |   168 +
+ .../stack_joint_pos_instance_randomize_env_cfg.py  |   204 +
+ .../manipulation/stack/config/galbot/__init__.py   |    73 +
+ .../stack/config/galbot/stack_joint_pos_env_cfg.py |   327 +
+ .../stack/config/galbot/stack_rmp_rel_env_cfg.py   |   323 +
+ .../stack/config/ur10_gripper/__init__.py          |    33 +
+ .../config/ur10_gripper/stack_ik_rel_env_cfg.py    |    80 +
+ .../config/ur10_gripper/stack_joint_pos_env_cfg.py |   212 +
+ .../manipulation/stack/mdp/__init__.py             |    11 +
+ .../manipulation/stack/mdp/franka_stack_events.py  |   314 +
+ .../manipulation/stack/mdp/observations.py         |   532 +
+ .../manipulation/stack/mdp/terminations.py         |    92 +
+ .../manipulation/stack/stack_env_cfg.py            |   199 +
+ .../stack/stack_instance_randomize_env_cfg.py      |   135 +
+ .../manager_based/navigation/__init__.py           |     8 +
+ .../manager_based/navigation/config/__init__.py    |     6 +
+ .../navigation/config/anymal_c/__init__.py         |    34 +
+ .../navigation/config/anymal_c/agents/__init__.py  |     4 +
+ .../config/anymal_c/agents/rsl_rl_ppo_cfg.py       |    38 +
+ .../config/anymal_c/agents/skrl_flat_ppo_cfg.yaml  |    85 +
+ .../config/anymal_c/navigation_env_cfg.py          |   160 +
+ .../manager_based/navigation/mdp/__init__.py       |    11 +
+ .../navigation/mdp/pre_trained_policy_action.py    |   188 +
+ .../manager_based/navigation/mdp/rewards.py        |    27 +
+ .../isaaclab_tasks/utils/__init__.py               |     9 +
+ .../isaaclab_tasks/isaaclab_tasks/utils/hydra.py   |   108 +
+ .../isaaclab_tasks/utils/importer.py               |    93 +
+ .../isaaclab_tasks/utils/parse_cfg.py              |   218 +
+ source/isaaclab_tasks/pyproject.toml               |     3 +
+ source/isaaclab_tasks/setup.py                     |    55 +
+ .../isaaclab_tasks/test/benchmarking/configs.yaml  |   303 +
+ .../isaaclab_tasks/test/benchmarking/conftest.py   |   103 +
+ .../test/benchmarking/env_benchmark_test_utils.py  |   238 +
+ .../benchmarking/test_environments_training.py     |   117 +
+ source/isaaclab_tasks/test/env_test_utils.py       |   283 +
+ .../test/test_environment_determinism.py           |   128 +
+ source/isaaclab_tasks/test/test_environments.py    |    35 +
+ .../test/test_environments_with_stage_in_memory.py |    56 +
+ .../test/test_factory_environments.py              |    30 +
+ source/isaaclab_tasks/test/test_hydra.py           |   105 +
+ source/isaaclab_tasks/test/test_lift_teddy_bear.py |    41 +
+ .../test/test_multi_agent_environments.py          |    32 +
+ source/isaaclab_tasks/test/test_record_video.py    |    75 +
+ tools/conftest.py                                  |   425 +
+ tools/install_deps.py                              |   183 +
+ tools/run_all_tests.py                             |   400 +
+ tools/run_train_envs.py                            |    79 +
+ tools/template/__init__.py                         |     4 +
+ tools/template/cli.py                              |   262 +
+ tools/template/common.py                           |    15 +
+ tools/template/generator.py                        |   319 +
+ tools/template/requirements.txt                    |     5 +
+ tools/template/templates/agents/rl_games_ppo_cfg   |    78 +
+ tools/template/templates/agents/rsl_rl_ppo_cfg     |    38 +
+ tools/template/templates/agents/sb3_ppo_cfg        |    20 +
+ tools/template/templates/agents/skrl_amp_cfg       |   111 +
+ tools/template/templates/agents/skrl_ippo_cfg      |    80 +
+ tools/template/templates/agents/skrl_mappo_cfg     |    82 +
+ tools/template/templates/agents/skrl_ppo_cfg       |    80 +
+ tools/template/templates/extension/__init__ext     |    14 +
+ tools/template/templates/extension/__init__tasks   |    17 +
+ .../template/templates/extension/__init__workflow  |     6 +
+ .../templates/extension/config/extension.toml      |    35 +
+ .../templates/extension/docs/CHANGELOG.rst         |    10 +
+ tools/template/templates/extension/pyproject.toml  |     3 +
+ tools/template/templates/extension/setup.py        |    47 +
+ .../templates/extension/ui_extension_example.py    |    46 +
+ tools/template/templates/external/README.md        |   135 +
+ tools/template/templates/external/docker/.env.base |     8 +
+ .../template/templates/external/docker/Dockerfile  |    21 +
+ .../templates/external/docker/docker-compose.yaml  |    38 +
+ tools/template/templates/tasks/__init__agents      |     4 +
+ tools/template/templates/tasks/__init__task        |    43 +
+ .../templates/tasks/direct_multi-agent/env         |   184 +
+ .../templates/tasks/direct_multi-agent/env_cfg     |    55 +
+ .../templates/tasks/direct_single-agent/env        |   135 +
+ .../templates/tasks/direct_single-agent/env_cfg    |    48 +
+ .../tasks/manager-based_single-agent/env_cfg       |   180 +
+ .../manager-based_single-agent/mdp/__init__.py     |    10 +
+ .../manager-based_single-agent/mdp/rewards.py      |    26 +
+ tools/test_settings.py                             |    70 +
+ validation_compare/commands.log                    |    20 +
+ .../contact_teammate1_seed24_env0.mp4              |   Bin 0 -> 5879851 bytes
+ validation_compare/environment_provenance.md       |    37 +
+ validation_compare/evaluation_seed24_n100.json     | 11562 +++
+ validation_compare/evaluation_seed24_n100.log      |   206 +
+ .../evaluation_seed24_n100/config.json             |   953 +
+ .../evaluation_seed24_n100/evaluation.json         | 11562 +++
+ .../reward_components_episode.csv                  |   101 +
+ .../reward_components_step.csv                     | 76864 ++++++++++++++++
+ .../reward_components_summary.csv                  |     9 +
+ .../evaluation_seed24_n100/source_hashes.json      |     9 +
+ validation_compare/integrity.json                  |  1155 +
+ validation_compare/postprocess_source.py           |   134 +
+ .../reward_components_episode_seed24_n100.csv      |   101 +
+ .../reward_components_seed24_n100.csv              |     9 +
+ validation_compare/reward_decomposition_summary.md |    56 +
+ validation_compare/smoke_seed24.json               |   714 +
+ validation_compare/smoke_seed24.log                |   206 +
+ validation_compare/smoke_seed24/config.json        |   953 +
+ validation_compare/smoke_seed24/evaluation.json    |   714 +
+ .../smoke_seed24/reward_components_episode.csv     |     5 +
+ .../smoke_seed24/reward_components_step.csv        |  2937 +
+ .../smoke_seed24/reward_components_summary.csv     |     9 +
+ validation_compare/smoke_seed24/source_hashes.json |     9 +
+ validation_compare/source_mapping.json             |    54 +
+ validation_compare/validation.json                 |    18 +
+ validation_compare/video_manifest.json             |   171 +
+ validation_compare/video_seed24_env0.log           |   219 +
+ validation_compare/video_seed24_env0/config.json   |   953 +
+ .../video_seed24_env0/evaluation.json              |   376 +
+ .../reward_components_episode.csv                  |     2 +
+ .../video_seed24_env0/reward_components_step.csv   |   902 +
+ .../reward_components_summary.csv                  |     9 +
+ .../video_seed24_env0/source_hashes.json           |     9 +
+ .../video/contact_teammate1_seed24_env0-step-0.mp4 |   Bin 0 -> 5879851 bytes
+ .../video_seed24_env0/visualization.json           |    88 +
+ 2396 files changed, 1005793 insertions(+)

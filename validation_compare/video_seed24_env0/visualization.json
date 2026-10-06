@@ -1,0 +1,88 @@
+{
+  "camera_eye_heading_frame": [
+    -3.8,
+    -3.2,
+    1.8
+  ],
+  "lookat_heading_frame": [
+    1.0,
+    0.0,
+    -0.15
+  ],
+  "camera_logic": "Yaw-only rear-oblique asset-root follow; decision-time quaternion",
+  "terrain_visual_diffuse": [
+    0.48,
+    0.5,
+    0.52
+  ],
+  "roughness": 0.9,
+  "metallic": 0,
+  "distant_light": {
+    "intensity": 3000,
+    "rotation_xyz_deg": [
+      0,
+      -78,
+      -35
+    ],
+    "color": [
+      1,
+      0.96,
+      0.9
+    ],
+    "angle": 0.5
+  },
+  "dome_fill": {
+    "intensity": 120,
+    "color": [
+      0.85,
+      0.9,
+      1
+    ]
+  },
+  "physical_signature_before": {
+    "terrain_mesh_sha256": "5ec492e2ca8e38ee00a8bc59a82b4a580f4015c733d2b2579846f2ba62b9f6a8",
+    "physics_bindings": {
+      "/physicsScene.material:binding:physics": [
+        "/physicsScene/defaultMaterial"
+      ],
+      "/World/ground/terrain/mesh.material:binding:physics": [
+        "/World/ground/terrain/physicsMaterial"
+      ]
+    },
+    "physics_material_attributes": {
+      "/physicsScene/defaultMaterial.physics:dynamicFriction": "1.0",
+      "/physicsScene/defaultMaterial.physics:restitution": "0.0",
+      "/physicsScene/defaultMaterial.physics:staticFriction": "1.0",
+      "/World/ground/terrain/physicsMaterial.physics:dynamicFriction": "1.0",
+      "/World/ground/terrain/physicsMaterial.physics:restitution": "0.0",
+      "/World/ground/terrain/physicsMaterial.physics:staticFriction": "1.0"
+    },
+    "robot_material_sha256": "7888c9de9534ed04676a4ea8a579e90a688a2eb0d2814f89d0269f663ba29147",
+    "env_origins_sha256": "f576cbc958f73bb478d2be00e0e0ccbd993751274e9d1b88a333c56ec12dc5a5"
+  },
+  "physical_signature_after": {
+    "terrain_mesh_sha256": "5ec492e2ca8e38ee00a8bc59a82b4a580f4015c733d2b2579846f2ba62b9f6a8",
+    "physics_bindings": {
+      "/physicsScene.material:binding:physics": [
+        "/physicsScene/defaultMaterial"
+      ],
+      "/World/ground/terrain/mesh.material:binding:physics": [
+        "/World/ground/terrain/physicsMaterial"
+      ]
+    },
+    "physics_material_attributes": {
+      "/physicsScene/defaultMaterial.physics:dynamicFriction": "1.0",
+      "/physicsScene/defaultMaterial.physics:restitution": "0.0",
+      "/physicsScene/defaultMaterial.physics:staticFriction": "1.0",
+      "/World/ground/terrain/physicsMaterial.physics:dynamicFriction": "1.0",
+      "/World/ground/terrain/physicsMaterial.physics:restitution": "0.0",
+      "/World/ground/terrain/physicsMaterial.physics:staticFriction": "1.0"
+    },
+    "robot_material_sha256": "7888c9de9534ed04676a4ea8a579e90a688a2eb0d2814f89d0269f663ba29147",
+    "env_origins_sha256": "f576cbc958f73bb478d2be00e0e0ccbd993751274e9d1b88a333c56ec12dc5a5"
+  },
+  "physics_geometry_unchanged": true,
+  "physics_material_unchanged": true,
+  "origin_note": "Original host resets at its fixed assigned terrain origin; behavior retained",
+  "terminal_frame": "Hold preterminal image for one frame; no reset pose or extra episode"
+}

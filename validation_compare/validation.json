@@ -1,0 +1,18 @@
+{
+  "json_csv_pass": true,
+  "no_nan_inf_pass": true,
+  "episodes": 100,
+  "step_rows": 76863,
+  "py_compile_pass": true,
+  "git_diff_check_pass": true,
+  "video_full_decode_pass": true,
+  "frame_inspection": {
+    "robot_visible": true,
+    "terrain_visible": true,
+    "rear_oblique_follow": true,
+    "temporary_montage": "/tmp/teammate1_contact_frames.jpg"
+  },
+  "video_mesh_same_as_main": true,
+  "rs_unchanged": true,
+  "teammate_original_files_unchanged": true
+}

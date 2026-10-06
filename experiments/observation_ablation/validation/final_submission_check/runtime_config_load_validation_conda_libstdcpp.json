@@ -1,0 +1,77 @@
+{
+  "status": "PASS",
+  "configs": [
+    {
+      "experiment": "heightscan_4096x32x1000",
+      "config_class": "ant.ablation_env_cfg:AblationHeightScanCfg",
+      "status": "PASS",
+      "policy_terms": [
+        "base_lin_vel",
+        "base_ang_vel",
+        "base_yaw_roll",
+        "base_angle_to_target",
+        "base_up_proj",
+        "base_heading_proj",
+        "joint_pos_norm",
+        "joint_vel_rel",
+        "feet_body_forces",
+        "actions",
+        "height_scan"
+      ],
+      "matches_preserved_term_order": true,
+      "expected_interface": 122,
+      "runtime_observation_tensor_dimension": null,
+      "dimension_note": "Exact environment-produced observation tensor not measured because no environment is instantiated.",
+      "scene_num_envs_config_default": 2048
+    },
+    {
+      "experiment": "heightscan_contact_stock_4096x32x1000",
+      "config_class": "ant.contact_stock_env_cfg:HeightScanContactStockCfg",
+      "status": "PASS",
+      "policy_terms": [
+        "base_lin_vel",
+        "base_ang_vel",
+        "base_yaw_roll",
+        "base_angle_to_target",
+        "base_up_proj",
+        "base_heading_proj",
+        "joint_pos_norm",
+        "joint_vel_rel",
+        "feet_body_forces",
+        "actions",
+        "height_scan",
+        "foot_contacts"
+      ],
+      "matches_preserved_term_order": true,
+      "expected_interface": 126,
+      "runtime_observation_tensor_dimension": null,
+      "dimension_note": "Exact environment-produced observation tensor not measured because no environment is instantiated.",
+      "scene_num_envs_config_default": 4096
+    },
+    {
+      "experiment": "heightscan_contact_modified_4096x32x1000",
+      "config_class": "ant.stage2_env_cfg:Stage2HeightScanContactCfg",
+      "status": "PASS",
+      "policy_terms": [
+        "base_lin_vel",
+        "base_ang_vel",
+        "base_yaw_roll",
+        "base_angle_to_target",
+        "base_up_proj",
+        "base_heading_proj",
+        "joint_pos_norm",
+        "joint_vel_rel",
+        "feet_body_forces",
+        "actions",
+        "height_scan",
+        "foot_contacts"
+      ],
+      "matches_preserved_term_order": true,
+      "expected_interface": 126,
+      "runtime_observation_tensor_dimension": null,
+      "dimension_note": "Exact environment-produced observation tensor not measured because no environment is instantiated.",
+      "scene_num_envs_config_default": 4096
+    }
+  ],
+  "environment_created": false
+}

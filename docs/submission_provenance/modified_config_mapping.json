@@ -1,0 +1,32 @@
+{
+  "original_runtime_path": "logs/rsl_rl/ant/v3_depth/params/",
+  "submission_path": "logs/rsl_rl/ant/modified/params/",
+  "scope": "Two directly source-hash-verified saved configuration files; no legacy run/checkpoint sequence copied. YAML contents preserved byte-for-byte.",
+  "source_repository_commit": "4513d7cae5d4fdc6af9288349531e6b49422f7b1",
+  "source_branch": "observation-ablation",
+  "files": [
+    {
+      "source": "/home/zxro/teammate_ant_rl/logs/rsl_rl/ant/v3_depth/params/env.yaml",
+      "destination": "logs/rsl_rl/ant/modified/params/env.yaml",
+      "sha256": "2a1d81c4824d8fb6aaac56d920bdd7c8df31e3f09b827344fb409d666fbb9d8e",
+      "bytes": 20229,
+      "training_hash_match": true,
+      "evaluation_hash_match": true,
+      "evidence": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/source_mapping.json"
+    },
+    {
+      "source": "/home/zxro/teammate_ant_rl/logs/rsl_rl/ant/v3_depth/params/reward_weights.yaml",
+      "destination": "logs/rsl_rl/ant/modified/params/reward_weights.yaml",
+      "sha256": "2caf923da1f64d35ecfc1100d0b52dd2a50847221b062190819fcf47ffb5d969",
+      "bytes": 217,
+      "training_hash_match": true,
+      "evaluation_hash_match": true,
+      "evidence": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/source_mapping.json"
+    }
+  ],
+  "active_evaluator": "scripts/stage2_observation_ablation.py",
+  "active_path_reference_replacements": 4,
+  "evaluator_before_sha256": "e1272646d7d4c43de81dfa2aee50c6eab770aa3242dc20a0c432af8c79375cab",
+  "evaluator_after_sha256": "ca8ae87dd763a1fe85b18338dca74f19e2c149736673d356bc1bb2c85b6a6b52",
+  "historical_manifests_and_logs_modified": false
+}

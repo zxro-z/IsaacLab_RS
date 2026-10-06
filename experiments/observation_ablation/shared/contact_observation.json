@@ -1,0 +1,33 @@
+{
+  "canonical_source": "IsaacLab_RS/manager_based/classic/ant/ant_contact_observations.py",
+  "source_sha256": "e463d5bf8866b2d6b05caab9a651112e13053c7972ad0cb63853f747e977a132",
+  "sensor": "feet_contacts",
+  "foot_body_names": [
+    "front_left_foot",
+    "front_right_foot",
+    "left_back_foot",
+    "right_back_foot"
+  ],
+  "preserve_order": true,
+  "force_source": "ContactSensor.data.net_forces_w (world-frame current net force)",
+  "force_reduction": "L2 norm over xyz",
+  "threshold_N": 1.0,
+  "binary_condition": "force_norm > threshold (strict)",
+  "history_length": 0,
+  "history_semantics": "current sample only; no temporal max",
+  "update_period": 0.0,
+  "dtype": "force tensor dtype (runtime float32)",
+  "encoding": [
+    0.0,
+    1.0
+  ],
+  "scale": 1.0,
+  "clip": null,
+  "normalization": false,
+  "output_dim": 4,
+  "concatenation": "after proprio and terrain representation",
+  "heightscan_indices": [
+    122,
+    126
+  ]
+}

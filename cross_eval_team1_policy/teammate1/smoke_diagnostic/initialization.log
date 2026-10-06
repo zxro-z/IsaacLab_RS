@@ -1,0 +1,246 @@
+[INFO][AppLauncher]: Using device: cuda:0
+[INFO][AppLauncher]: Loading experience file: /home/zxro/IsaacLab_RS/apps/isaaclab.python.headless.rendering.kit
+[Warning] [simulation_app.simulation_app] Modules: ['omni.kit_app'] were loaded before SimulationApp was started and might not be loaded correctly.
+[Warning] [simulation_app.simulation_app] Please check to make sure no extra omniverse or pxr modules are imported before the call to SimulationApp(...)
+Loading user config located at: '/home/zxro/anaconda3/envs/env_isaaclab/lib/python3.11/site-packages/omni/data/Kit/Isaac-Sim/5.1/user.config.json'
+[Info] [carb] Logging to file: /home/zxro/anaconda3/envs/env_isaaclab/lib/python3.11/site-packages/omni/logs/Kit/Isaac-Sim/5.1/kit_20261004_214014.log
+MESA: warning: Driver does not support the 0x7d67 PCI ID.
+MESA: warning: Driver does not support the 0x7d67 PCI ID.
+
+|---------------------------------------------------------------------------------------------|
+| Driver Version: 570.211.01    | Graphics API: Vulkan
+|=============================================================================================|
+| GPU | Name                             | Active | LDA | GPU Memory | Vendor-ID | LUID       |
+|     |                                  |        |     |            | Device-ID | UUID       |
+|     |                                  |        |     |            | Bus-ID    |            |
+|---------------------------------------------------------------------------------------------|
+| 0   | NVIDIA GeForce RTX 5070 Ti       | Yes: 0 |     | 16303   MB | 10de      | 0          |
+|     |                                  |        |     |            | 2c05      | 995e9a97.. |
+|     |                                  |        |     |            | 2         |            |
+|=============================================================================================|
+| OS: 22.04.5 LTS (Jammy Jellyfish) ubuntu, Version: 22.04.5, Kernel: 6.8.0-138-generic
+| XServer Vendor: The X.Org Foundation, XServer Version: 12101004 (1.21.1.4)
+| Processor: Intel(R) Core(TM) Ultra 7 265K
+| Cores: 20 | Logical Cores: 20
+|---------------------------------------------------------------------------------------------|
+| Total Memory (MB): 63562 | Free Memory: 42152
+| Total Page/Swap (MB): 2047 | Free Page/Swap: 2047
+|---------------------------------------------------------------------------------------------|
+2026-10-04T12:40:15Z [557ms] [Warning] [gpu.foundation.plugin] CPU performance profile is set to powersave. This profile sets the CPU to the lowest frequency reducing performance.
+2026-10-04T12:40:15Z [563ms] [Warning] [gpu.foundation.plugin] IOMMU is enabled.
+2026-10-04T12:40:15Z [1,086ms] [Warning] [omni.log] Source: omni.hydra was already registered.
+2026-10-04T12:40:15Z [1,357ms] [Warning] [omni.isaac.dynamic_control] omni.isaac.dynamic_control is deprecated as of Isaac Sim 4.5. No action is needed from end-users.
+2026-10-04T12:40:17Z [2,515ms] [Warning] [pxr.Semantics] pxr.Semantics is deprecated - please use Semantics instead
+2026-10-04T12:40:17Z [2,573ms] [Warning] [omni.replicator.core.scripts.extension] No material configuration file, adding configuration to material settings directly.
+2026-10-04T12:40:19Z [5,364ms] [Warning] [omni.kvdb.plugin] Disabling key-value database because another kit process is locking it
+2026-10-04T12:40:19Z [5,365ms] [Warning] [usdrt.population.plugin] using high frequency span is disabled
+2026-10-04T12:40:20Z [5,449ms] [Warning] [carb] Acquiring non optional plugin interface which is not listed as dependency: [carb::dictionary::ISerializer v1.1] (plugin: carb.dictionary.serializer-json.plugin), by client: carb.scenerenderer-rtx.plugin. Add it to CARB_PLUGIN_IMPL_DEPS() macro of a client.
+2026-10-04T12:40:21Z [6,854ms] [Warning] [usdrt.hydra.fabric_scene_delegate.plugin] using high frequency span is disabled
+2026-10-04T12:40:21Z [6,854ms] [Warning] [usdrt.hydra.fabric_scene_delegate.plugin] using high frequency span is disabled
+2026-10-04T12:40:21Z [6,854ms] [Warning] [usdrt.hydra.fabric_scene_delegate.plugin] using high frequency span with attrs is disabled
+2026-10-04T12:40:21Z [6,859ms] [Warning] [omni.fabric.plugin] Warning: attribute viewportHandle not found for bucket id 7
+
+2026-10-04T12:40:21Z [6,864ms] [Warning] [usdrt.hydra.fabric_scene_delegate.plugin] using high frequency span is disabled
+2026-10-04T12:40:21Z [6,864ms] [Warning] [usdrt.hydra.fabric_scene_delegate.plugin] using high frequency span is disabled
+[INIT] creating environment
+Setting seed: 24
+[INFO]: Base environment:
+	Environment device    : cuda:0
+	Environment seed      : 24
+	Physics step-size     : 0.008333333333333333
+	Rendering step-size   : 0.016666666666666666
+	Environment step-size : 0.016666666666666666
+[INFO] Generating terrains randomly took : 1.608481 seconds
+[INFO]: Time taken for scene creation : 3.260349 seconds
+[INFO]: Scene manager:  <class InteractiveScene>
+	Number of environments: 4
+	Environment spacing   : 5.0
+	Source prim name      : /World/envs/env_0
+	Global prim paths     : ['/World/ground']
+	Replicate physics     : True
+[INFO]: Starting the simulation. This may take a few seconds. Please wait...
+2026-10-04T12:40:25Z [11,345ms] [Warning] [omni.physx.plugin] Damping attribute is unsupported for articulation joints and will be ignored (/World/envs/env_0/Robot/joints/front_left_leg).
+2026-10-04T12:40:25Z [11,345ms] [Warning] [omni.physx.plugin] Damping attribute is unsupported for articulation joints and will be ignored (/World/envs/env_0/Robot/joints/front_left_foot).
+2026-10-04T12:40:25Z [11,345ms] [Warning] [omni.physx.plugin] Damping attribute is unsupported for articulation joints and will be ignored (/World/envs/env_0/Robot/joints/front_right_leg).
+2026-10-04T12:40:25Z [11,345ms] [Warning] [omni.physx.plugin] Damping attribute is unsupported for articulation joints and will be ignored (/World/envs/env_0/Robot/joints/front_right_foot).
+2026-10-04T12:40:25Z [11,345ms] [Warning] [omni.physx.plugin] Damping attribute is unsupported for articulation joints and will be ignored (/World/envs/env_0/Robot/joints/left_back_leg).
+2026-10-04T12:40:25Z [11,345ms] [Warning] [omni.physx.plugin] Damping attribute is unsupported for articulation joints and will be ignored (/World/envs/env_0/Robot/joints/left_back_foot).
+2026-10-04T12:40:25Z [11,345ms] [Warning] [omni.physx.plugin] Damping attribute is unsupported for articulation joints and will be ignored (/World/envs/env_0/Robot/joints/right_back_leg).
+2026-10-04T12:40:25Z [11,345ms] [Warning] [omni.physx.plugin] Damping attribute is unsupported for articulation joints and will be ignored (/World/envs/env_0/Robot/joints/right_back_foot).
+2026-10-04T12:40:25Z [11,345ms] [Warning] [omni.physx.plugin] Damping attribute is unsupported for articulation joints and will be ignored (/World/envs/env_0/Robot/joints/front_right_leg).
+2026-10-04T12:40:25Z [11,345ms] [Warning] [omni.physx.plugin] Damping attribute is unsupported for articulation joints and will be ignored (/World/envs/env_0/Robot/joints/front_right_foot).
+2026-10-04T12:40:25Z [11,345ms] [Warning] [omni.physx.plugin] Damping attribute is unsupported for articulation joints and will be ignored (/World/envs/env_0/Robot/joints/left_back_leg).
+2026-10-04T12:40:25Z [11,345ms] [Warning] [omni.physx.plugin] Damping attribute is unsupported for articulation joints and will be ignored (/World/envs/env_0/Robot/joints/left_back_foot).
+2026-10-04T12:40:25Z [11,345ms] [Warning] [omni.physx.plugin] Damping attribute is unsupported for articulation joints and will be ignored (/World/envs/env_0/Robot/joints/right_back_leg).
+2026-10-04T12:40:25Z [11,345ms] [Warning] [omni.physx.plugin] Damping attribute is unsupported for articulation joints and will be ignored (/World/envs/env_0/Robot/joints/right_back_foot).
+2026-10-04T12:40:25Z [11,345ms] [Warning] [omni.physx.plugin] Damping attribute is unsupported for articulation joints and will be ignored (/World/envs/env_0/Robot/joints/front_right_leg).
+2026-10-04T12:40:25Z [11,345ms] [Warning] [omni.physx.plugin] Damping attribute is unsupported for articulation joints and will be ignored (/World/envs/env_0/Robot/joints/front_right_foot).
+2026-10-04T12:40:25Z [11,345ms] [Warning] [omni.physx.plugin] Damping attribute is unsupported for articulation joints and will be ignored (/World/envs/env_0/Robot/joints/left_back_leg).
+2026-10-04T12:40:25Z [11,345ms] [Warning] [omni.physx.plugin] Damping attribute is unsupported for articulation joints and will be ignored (/World/envs/env_0/Robot/joints/left_back_foot).
+2026-10-04T12:40:25Z [11,345ms] [Warning] [omni.physx.plugin] Damping attribute is unsupported for articulation joints and will be ignored (/World/envs/env_0/Robot/joints/right_back_leg).
+2026-10-04T12:40:25Z [11,345ms] [Warning] [omni.physx.plugin] Damping attribute is unsupported for articulation joints and will be ignored (/World/envs/env_0/Robot/joints/right_back_foot).
+2026-10-04T12:40:25Z [11,345ms] [Warning] [omni.physx.plugin] Damping attribute is unsupported for articulation joints and will be ignored (/World/envs/env_0/Robot/joints/left_back_leg).
+2026-10-04T12:40:25Z [11,345ms] [Warning] [omni.physx.plugin] Damping attribute is unsupported for articulation joints and will be ignored (/World/envs/env_0/Robot/joints/left_back_foot).
+2026-10-04T12:40:25Z [11,345ms] [Warning] [omni.physx.plugin] Damping attribute is unsupported for articulation joints and will be ignored (/World/envs/env_0/Robot/joints/right_back_leg).
+2026-10-04T12:40:25Z [11,345ms] [Warning] [omni.physx.plugin] Damping attribute is unsupported for articulation joints and will be ignored (/World/envs/env_0/Robot/joints/right_back_foot).
+2026-10-04T12:40:25Z [11,345ms] [Warning] [omni.physx.plugin] Damping attribute is unsupported for articulation joints and will be ignored (/World/envs/env_0/Robot/joints/left_back_leg).
+2026-10-04T12:40:25Z [11,345ms] [Warning] [omni.physx.plugin] Damping attribute is unsupported for articulation joints and will be ignored (/World/envs/env_0/Robot/joints/left_back_foot).
+2026-10-04T12:40:25Z [11,345ms] [Warning] [omni.physx.plugin] Damping attribute is unsupported for articulation joints and will be ignored (/World/envs/env_0/Robot/joints/right_back_leg).
+2026-10-04T12:40:25Z [11,345ms] [Warning] [omni.physx.plugin] Damping attribute is unsupported for articulation joints and will be ignored (/World/envs/env_0/Robot/joints/right_back_foot).
+2026-10-04T12:40:25Z [11,345ms] [Warning] [omni.physx.plugin] Damping attribute is unsupported for articulation joints and will be ignored (/World/envs/env_0/Robot/joints/right_back_leg).
+2026-10-04T12:40:25Z [11,345ms] [Warning] [omni.physx.plugin] Damping attribute is unsupported for articulation joints and will be ignored (/World/envs/env_0/Robot/joints/right_back_foot).
+2026-10-04T12:40:25Z [11,345ms] [Warning] [omni.physx.plugin] Damping attribute is unsupported for articulation joints and will be ignored (/World/envs/env_0/Robot/joints/right_back_leg).
+2026-10-04T12:40:25Z [11,345ms] [Warning] [omni.physx.plugin] Damping attribute is unsupported for articulation joints and will be ignored (/World/envs/env_0/Robot/joints/right_back_foot).
+2026-10-04T12:40:26Z [11,878ms] [Warning] [usdrt.hydra.fabric_scene_delegate.plugin] using high frequency span with attrs is disabled
+2026-10-04T12:40:26Z [11,879ms] [Warning] [usdrt.hydra.fabric_scene_delegate.plugin] using high frequency span with attrs is disabled
+2026-10-04T12:40:26Z [12,013ms] [Warning] [rtx.postprocessing.plugin] DLSS increasing input dimensions: Render resolution of (74, 56) is below minimal input resolution of 300.
+[INFO]: Time taken for simulation start : 1.268289 seconds
+[INFO] Command Manager:  <CommandManager> contains 0 active terms.
++------------------------+
+|  Active Command Terms  |
++--------+-------+-------+
+| Index  | Name  |  Type |
++--------+-------+-------+
++--------+-------+-------+
+
+[INFO] Event Manager:  <EventManager> contains 2 active terms.
++-------------------------------------+
+| Active Event Terms in Mode: 'reset' |
++---------+---------------------------+
+|  Index  | Name                      |
++---------+---------------------------+
+|    0    | reset_base                |
+|    1    | reset_robot_joints        |
++---------+---------------------------+
++-------------------------------------+
+| Active Event Terms in Mode: 'startup' |
++----------+--------------------------+
+|  Index   | Name                     |
++----------+--------------------------+
+|    0     | random_friction          |
++----------+--------------------------+
+
+[INFO] Recorder Manager:  <RecorderManager> contains 0 active terms.
++---------------------+
+| Active Recorder Terms |
++-----------+---------+
+|   Index   | Name    |
++-----------+---------+
++-----------+---------+
+
+[INFO] Action Manager:  <ActionManager> contains 1 active terms.
++----------------------------------+
+|  Active Action Terms (shape: 8)  |
++-------+--------------+-----------+
+| Index | Name         | Dimension |
++-------+--------------+-----------+
+|   0   | joint_effort |         8 |
++-------+--------------+-----------+
+
+[INFO] Observation Manager: <ObservationManager> contains 2 groups.
++-----------------------------------------------------------+
+| Active Observation Terms in Group: 'policy' (shape: (59,)) |
++-----------+-----------------------------------+-----------+
+|   Index   | Name                              |   Shape   |
++-----------+-----------------------------------+-----------+
+|     0     | base_lin_vel                      |    (3,)   |
+|     1     | base_ang_vel                      |    (3,)   |
+|     2     | base_yaw_roll                     |    (2,)   |
+|     3     | base_angle_to_target              |    (1,)   |
+|     4     | base_up_proj                      |    (1,)   |
+|     5     | base_heading_proj                 |    (1,)   |
+|     6     | joint_pos_norm                    |    (8,)   |
+|     7     | joint_vel_rel                     |    (8,)   |
+|     8     | feet_body_forces                  |   (24,)   |
+|     9     | actions                           |    (8,)   |
++-----------+-----------------------------------+-----------+
++----------------------------------------------------------+
+| Active Observation Terms in Group: 'depth' (shape: (48, 64, 1)) |
++--------------+--------------+----------------------------+
+|    Index     | Name         |           Shape            |
++--------------+--------------+----------------------------+
+|      0       | image        |        (48, 64, 1)         |
++--------------+--------------+----------------------------+
+
+[INFO] Termination Manager:  <TerminationManager> contains 2 active terms.
++--------------------------------+
+|    Active Termination Terms    |
++-------+-------------+----------+
+| Index | Name        | Time Out |
++-------+-------------+----------+
+|   0   | time_out    |   True   |
+|   1   | body_z_down |  False   |
++-------+-------------+----------+
+
+[INFO] Reward Manager:  <RewardManager> contains 7 active terms.
++-----------------------------------+
+|        Active Reward Terms        |
++-------+------------------+--------+
+| Index | Name             | Weight |
++-------+------------------+--------+
+|   0   | progress         |    1.0 |
+|   1   | alive            |    0.5 |
+|   2   | upright          |    0.1 |
+|   3   | move_to_target   |    0.5 |
+|   4   | action_l2        | -0.005 |
+|   5   | energy           |  -0.05 |
+|   6   | joint_pos_limits |   -0.1 |
++-------+------------------+--------+
+
+[INFO] Curriculum Manager:  <CurriculumManager> contains 0 active terms.
++----------------------+
+| Active Curriculum Terms |
++-----------+----------+
+|   Index   | Name     |
++-----------+----------+
++-----------+----------+
+
+[INFO]: Completed setting up the environment...
+[INIT] environment created
+[INIT] wrapper initial reset
+[INIT] first observations ready
+2026-10-04T12:40:39Z [24,936ms] [Error] [omni.syntheticdata.plugin] OgnSdOnNewFrame : frames [3862|30, 3862|30] discarded
+2026-10-04T12:41:49Z [94,885ms] [Error] [omni.syntheticdata.plugin] OgnSdOnNewFrame : frames [25407|30, 25407|30] discarded
+Timeout (0:01:30)!
+Thread 0x000074d40e706640 (most recent call first):
+  File "/home/zxro/anaconda3/envs/env_isaaclab_231/lib/python3.11/concurrent/futures/thread.py", line 81 in _worker
+  File "/home/zxro/anaconda3/envs/env_isaaclab_231/lib/python3.11/threading.py", line 982 in run
+  File "/home/zxro/anaconda3/envs/env_isaaclab_231/lib/python3.11/threading.py", line 1045 in _bootstrap_inner
+  File "/home/zxro/anaconda3/envs/env_isaaclab_231/lib/python3.11/threading.py", line 1002 in _bootstrap
+
+Thread 0x000074e20e0ea640 (most recent call first):
+  File "/home/zxro/anaconda3/envs/env_isaaclab_231/lib/python3.11/concurrent/futures/thread.py", line 81 in _worker
+  File "/home/zxro/anaconda3/envs/env_isaaclab_231/lib/python3.11/threading.py", line 982 in run
+  File "/home/zxro/anaconda3/envs/env_isaaclab_231/lib/python3.11/threading.py", line 1045 in _bootstrap_inner
+  File "/home/zxro/anaconda3/envs/env_isaaclab_231/lib/python3.11/threading.py", line 1002 in _bootstrap
+
+Thread 0x000074e20e8eb640 (most recent call first):
+  File "/home/zxro/anaconda3/envs/env_isaaclab_231/lib/python3.11/concurrent/futures/thread.py", line 81 in _worker
+  File "/home/zxro/anaconda3/envs/env_isaaclab_231/lib/python3.11/threading.py", line 982 in run
+  File "/home/zxro/anaconda3/envs/env_isaaclab_231/lib/python3.11/threading.py", line 1045 in _bootstrap_inner
+  File "/home/zxro/anaconda3/envs/env_isaaclab_231/lib/python3.11/threading.py", line 1002 in _bootstrap
+
+Thread 0x000074e39d5bb640 (most recent call first):
+  File "/home/zxro/anaconda3/envs/env_isaaclab_231/lib/python3.11/concurrent/futures/thread.py", line 81 in _worker
+  File "/home/zxro/anaconda3/envs/env_isaaclab_231/lib/python3.11/threading.py", line 982 in run
+  File "/home/zxro/anaconda3/envs/env_isaaclab_231/lib/python3.11/threading.py", line 1045 in _bootstrap_inner
+  File "/home/zxro/anaconda3/envs/env_isaaclab_231/lib/python3.11/threading.py", line 1002 in _bootstrap
+
+Thread 0x000074e39e0ff640 (most recent call first):
+  File "/home/zxro/anaconda3/envs/env_isaaclab_231/lib/python3.11/concurrent/futures/thread.py", line 81 in _worker
+  File "/home/zxro/anaconda3/envs/env_isaaclab_231/lib/python3.11/threading.py", line 982 in run
+  File "/home/zxro/anaconda3/envs/env_isaaclab_231/lib/python3.11/threading.py", line 1045 in _bootstrap_inner
+  File "/home/zxro/anaconda3/envs/env_isaaclab_231/lib/python3.11/threading.py", line 1002 in _bootstrap
+
+Thread 0x000074e7ea906740 (most recent call first):
+  File "/home/zxro/IsaacLab_RS/source/isaaclab/isaaclab/sim/simulation_context.py", line 592 in render
+  File "/home/zxro/IsaacLab_RS/source/isaaclab/isaaclab/sim/simulation_context.py", line 979 in _app_control_on_stop_handle_fn
+  File "/home/zxro/IsaacLab_RS/source/isaaclab/isaaclab/sim/simulation_context.py", line 241 in <lambda>
+  File "/home/zxro/anaconda3/envs/env_isaaclab/lib/python3.11/site-packages/isaacsim/extscache/omni.replicator.core-1.12.16+107.3.1.lx64.r.cp311/omni/replicator/core/scripts/orchestrator.py", line 247 in _on_status_change
+  File "/home/zxro/anaconda3/envs/env_isaaclab/lib/python3.11/site-packages/isaacsim/extscache/omni.replicator.core-1.12.16+107.3.1.lx64.r.cp311/omni/replicator/core/scripts/orchestrator.py", line 759 in _notify_status_observers
+  File "/home/zxro/anaconda3/envs/env_isaaclab/lib/python3.11/site-packages/isaacsim/extscache/omni.replicator.core-1.12.16+107.3.1.lx64.r.cp311/omni/replicator/core/scripts/orchestrator.py", line 755 in status
+  File "/home/zxro/anaconda3/envs/env_isaaclab/lib/python3.11/site-packages/isaacsim/extscache/omni.replicator.core-1.12.16+107.3.1.lx64.r.cp311/omni/replicator/core/scripts/orchestrator.py", line 815 in stop
+  File "/home/zxro/anaconda3/envs/env_isaaclab/lib/python3.11/site-packages/isaacsim/extscache/omni.replicator.core-1.12.16+107.3.1.lx64.r.cp311/omni/replicator/core/scripts/orchestrator.py", line 1200 in stop
+  File "/home/zxro/anaconda3/envs/env_isaaclab/lib/python3.11/site-packages/isaacsim/exts/isaacsim.simulation_app/isaacsim/simulation_app/simulation_app.py", line 634 in close
+  File "/home/zxro/teammate_ant_rl/cross_eval_team1_policy/evaluate_depth_policy.py", line 196 in <module>
+2026-10-04T12:41:51Z [97,274ms] [Error] [omni.syntheticdata.plugin] OgnSdOnNewFrame : frames [26211|30, 26211|30] discarded

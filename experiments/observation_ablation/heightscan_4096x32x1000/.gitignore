@@ -1,0 +1,2 @@
+# Preserve the initial pre-fix smoke output locally; validated smoke is smoke_verified.
+/smoke/

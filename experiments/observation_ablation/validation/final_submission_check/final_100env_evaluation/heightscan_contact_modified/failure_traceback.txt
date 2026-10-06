@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/home/zxro/ant_rl_submission/scripts/stage2_observation_ablation.py", line 421, in <module>
+    main()
+  File "/home/zxro/ant_rl_submission/scripts/stage2_observation_ablation.py", line 154, in main
+    saved_weights = yaml.safe_load((ROOT / "logs/rsl_rl/ant/v3_depth/params/reward_weights.yaml").read_text())
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/pathlib.py", line 1058, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/zxro/ant_rl_submission/logs/rsl_rl/ant/v3_depth/params/reward_weights.yaml'

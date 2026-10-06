@@ -1,0 +1,11 @@
+{
+  "completed": true,
+  "iterations": 10000,
+  "selected_checkpoint": "logs/rsl_rl/observation_ablation/ablation_heightscan_stock_s42/best_model.pt",
+  "checkpoint_sha256": "ffd81a6826d674ba88f920c8a7f57464adbec96d140a5199e904b90c72beab7b",
+  "selected_iteration": 4911,
+  "selection": "best_model: highest training logged completed-episode mean return; no evaluation-based selection",
+  "selected_training_mean_reward": 55.10101938975975,
+  "repository_checkpoint": "experiments/observation_ablation/heightscan/checkpoints/best_model.pt",
+  "checkpoint_bytes": 3619381
+}

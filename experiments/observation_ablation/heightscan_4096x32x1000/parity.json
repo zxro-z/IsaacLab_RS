@@ -1,0 +1,10 @@
+{
+  "environment": true,
+  "reward": true,
+  "ppo": true,
+  "architecture": true,
+  "observation": true,
+  "terrain_mesh": true,
+  "evaluation_terrain_assignment": true,
+  "budget_only_change": true
+}

@@ -1,0 +1,109 @@
+{
+  "probe": "e",
+  "command": [
+    "./isaaclab.sh",
+    "-p",
+    "/home/zxro/ant_rl_submission/experiments/observation_ablation/validation/final_submission_check/shutdown_probe_e.py"
+  ],
+  "cwd": "/home/zxro/ant_rl_submission",
+  "python": "/home/zxro/miniforge3/envs/lerobot-arena/bin/python",
+  "conda_environment": "lerobot-arena",
+  "LD_PRELOAD": null,
+  "PYTHONPATH": "/home/zxro/ant_rl_submission/source:/home/zxro/ant_rl_submission/source/isaaclab:/home/zxro/ant_rl_submission/source/isaaclab_assets:/home/zxro/ant_rl_submission/source/isaaclab_tasks:/home/zxro/ant_rl_submission/source/isaaclab_rl:/home/zxro/ant_rl_submission/source/isaaclab_mimic",
+  "imports_requested": [
+    "isaaclab",
+    "isaaclab_tasks",
+    "ant",
+    "isaaclab_tasks.manager_based.classic.ant.ant_contact_observations",
+    "isaaclab_tasks.manager_based.classic.ant.ant_terrain_heightscan_env_cfg"
+  ],
+  "initialization_completed_timestamp": "2026-10-06T04:51:51.744983+00:00",
+  "close_invoked_timestamp": "2026-10-06T04:51:51.781696+00:00",
+  "close_returned_timestamp": null,
+  "timeout_after_close_seconds": 30,
+  "timeout_reason": "close timeout after 30 seconds",
+  "exit_code": -9,
+  "termination_signal": "SIGKILL",
+  "clean_shutdown": false,
+  "events": [
+    {
+      "event": "process_started",
+      "timestamp": "2026-10-06T04:51:47.386564+00:00",
+      "monotonic": 677432.469031831,
+      "python": "/home/zxro/miniforge3/envs/lerobot-arena/bin/python",
+      "cwd": "/home/zxro/ant_rl_submission",
+      "conda_prefix": "/home/zxro/miniforge3/envs/lerobot-arena",
+      "LD_PRELOAD": null
+    },
+    {
+      "event": "initialization_completed",
+      "timestamp": "2026-10-06T04:51:51.744983+00:00",
+      "monotonic": 677436.8274491,
+      "experience": "/home/zxro/ant_rl_submission/apps/isaaclab.python.headless.kit",
+      "launcher_source": "/home/zxro/ant_rl_submission/source/isaaclab/isaaclab/app/__init__.py",
+      "isaac_sim_location": "/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim",
+      "kit_location": "/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim/kit"
+    },
+    {
+      "event": "import_pass",
+      "timestamp": "2026-10-06T04:51:51.746213+00:00",
+      "monotonic": 677436.828673053,
+      "module": "isaaclab",
+      "file": "/home/zxro/ant_rl_submission/source/isaaclab/isaaclab/__init__.py"
+    },
+    {
+      "event": "import_pass",
+      "timestamp": "2026-10-06T04:51:51.746887+00:00",
+      "monotonic": 677436.82934627,
+      "module": "isaaclab_tasks",
+      "file": "/home/zxro/ant_rl_submission/source/isaaclab_tasks/isaaclab_tasks/__init__.py"
+    },
+    {
+      "event": "import_pass",
+      "timestamp": "2026-10-06T04:51:51.748012+00:00",
+      "monotonic": 677436.830473174,
+      "module": "ant",
+      "file": "/home/zxro/ant_rl_submission/source/ant/__init__.py"
+    },
+    {
+      "event": "import_pass",
+      "timestamp": "2026-10-06T04:51:51.749150+00:00",
+      "monotonic": 677436.831610456,
+      "module": "isaaclab_tasks.manager_based.classic.ant.ant_contact_observations",
+      "file": "/home/zxro/ant_rl_submission/source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_contact_observations.py"
+    },
+    {
+      "event": "import_pass",
+      "timestamp": "2026-10-06T04:51:51.780449+00:00",
+      "monotonic": 677436.862911653,
+      "module": "isaaclab_tasks.manager_based.classic.ant.ant_terrain_heightscan_env_cfg",
+      "file": "/home/zxro/ant_rl_submission/source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_terrain_heightscan_env_cfg.py"
+    },
+    {
+      "event": "close_invoked",
+      "timestamp": "2026-10-06T04:51:51.781696+00:00",
+      "monotonic": 677436.864160125
+    }
+  ],
+  "wall_seconds": 34.46417041902896,
+  "last_console_lines": [
+    "\u001b[3g",
+    "\u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH    \u001bH   ",
+    "[INFO] Using python from: /home/zxro/miniforge3/envs/lerobot-arena/bin/python",
+    "{\"event\": \"process_started\", \"timestamp\": \"2026-10-06T04:51:47.386564+00:00\", \"monotonic\": 677432.469031831, \"python\": \"/home/zxro/miniforge3/envs/lerobot-arena/bin/python\", \"cwd\": \"/home/zxro/ant_rl_submission\", \"conda_prefix\": \"/home/zxro/miniforge3/envs/lerobot-arena\", \"LD_PRELOAD\": null}",
+    "MESA: warning: Driver does not support the 0x7d67 PCI ID.",
+    "MESA: warning: Driver does not support the 0x7d67 PCI ID.",
+    "[INFO][AppLauncher]: Using device: cuda:0",
+    "[INFO][AppLauncher]: Loading experience file: /home/zxro/ant_rl_submission/apps/isaaclab.python.headless.kit",
+    "{\"event\": \"initialization_completed\", \"timestamp\": \"2026-10-06T04:51:51.744983+00:00\", \"monotonic\": 677436.8274491, \"experience\": \"/home/zxro/ant_rl_submission/apps/isaaclab.python.headless.kit\", \"launcher_source\": \"/home/zxro/ant_rl_submission/source/isaaclab/isaaclab/app/__init__.py\", \"isaac_sim_location\": \"/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim\", \"kit_location\": \"/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim/kit\"}",
+    "{\"event\": \"import_pass\", \"timestamp\": \"2026-10-06T04:51:51.746213+00:00\", \"monotonic\": 677436.828673053, \"module\": \"isaaclab\", \"file\": \"/home/zxro/ant_rl_submission/source/isaaclab/isaaclab/__init__.py\"}",
+    "{\"event\": \"import_pass\", \"timestamp\": \"2026-10-06T04:51:51.746887+00:00\", \"monotonic\": 677436.82934627, \"module\": \"isaaclab_tasks\", \"file\": \"/home/zxro/ant_rl_submission/source/isaaclab_tasks/isaaclab_tasks/__init__.py\"}",
+    "{\"event\": \"import_pass\", \"timestamp\": \"2026-10-06T04:51:51.748012+00:00\", \"monotonic\": 677436.830473174, \"module\": \"ant\", \"file\": \"/home/zxro/ant_rl_submission/source/ant/__init__.py\"}",
+    "{\"event\": \"import_pass\", \"timestamp\": \"2026-10-06T04:51:51.749150+00:00\", \"monotonic\": 677436.831610456, \"module\": \"isaaclab_tasks.manager_based.classic.ant.ant_contact_observations\", \"file\": \"/home/zxro/ant_rl_submission/source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_contact_observations.py\"}",
+    "{\"event\": \"import_pass\", \"timestamp\": \"2026-10-06T04:51:51.780449+00:00\", \"monotonic\": 677436.862911653, \"module\": \"isaaclab_tasks.manager_based.classic.ant.ant_terrain_heightscan_env_cfg\", \"file\": \"/home/zxro/ant_rl_submission/source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_terrain_heightscan_env_cfg.py\"}",
+    "{\"event\": \"close_invoked\", \"timestamp\": \"2026-10-06T04:51:51.781696+00:00\", \"monotonic\": 677436.864160125}"
+  ],
+  "forced_kill_is_clean_shutdown": false,
+  "environment_created": false,
+  "explicit_physics_steps": 0
+}

@@ -1,0 +1,19 @@
+{
+  "rule": "best_model: highest training logged completed-episode mean return; no evaluation-based selection",
+  "fixed_before_training": true,
+  "selected_training_mean_return": 53.0052067925781,
+  "checkpoints": {
+    "best_model.pt": {
+      "path": "experiments/observation_ablation/heightscan_4096x32x1000/checkpoints/best_model.pt",
+      "sha256": "49a8a007f152ed9c63df616fbee12a866873be0ee0337ad83597d653ec9b3c06",
+      "bytes": 3619381,
+      "saved_iteration": 804
+    },
+    "final_model.pt": {
+      "path": "experiments/observation_ablation/heightscan_4096x32x1000/checkpoints/final_model.pt",
+      "sha256": "ea9db8ebce1ef9acd0b7ef2e4efe2ef2964816d0a9959c30e193dcc8807e097b",
+      "bytes": 3619307,
+      "saved_iteration": 999
+    }
+  }
+}

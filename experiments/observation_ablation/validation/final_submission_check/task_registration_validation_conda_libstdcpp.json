@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "tasks": [
+    {
+      "task": "Ant-rl-v0",
+      "entry_point": "isaaclab.envs:ManagerBasedRLEnv",
+      "kwargs": {
+        "env_cfg_entry_point": "ant.ant_env_cfg:AntEnvCfg",
+        "rsl_rl_cfg_entry_point": "ant.agents.rsl_rl_ppo_cfg:AntPPORunnerCfg"
+      }
+    },
+    {
+      "task": "Ant-rl-Ablation-HeightScan-v0",
+      "entry_point": "isaaclab.envs:ManagerBasedRLEnv",
+      "kwargs": {
+        "env_cfg_entry_point": "ant.ablation_env_cfg:AblationHeightScanCfg",
+        "rsl_rl_cfg_entry_point": "ant.agents.ablation_ppo_cfg:AblationHeightScanPPORunnerCfg"
+      }
+    },
+    {
+      "task": "Ant-rl-Ablation-HeightScan-Contact-Stock-v0",
+      "entry_point": "isaaclab.envs:ManagerBasedRLEnv",
+      "kwargs": {
+        "env_cfg_entry_point": "ant.contact_stock_env_cfg:HeightScanContactStockCfg",
+        "rsl_rl_cfg_entry_point": "ant.agents.contact_stock_ppo_cfg:HeightScanContactStockPPORunnerCfg"
+      }
+    },
+    {
+      "task": "Ant-rl-Ablation-HeightScan-Contact-ModifiedReward-v0",
+      "entry_point": "isaaclab.envs:ManagerBasedRLEnv",
+      "kwargs": {
+        "env_cfg_entry_point": "ant.stage2_env_cfg:Stage2HeightScanContactCfg",
+        "rsl_rl_cfg_entry_point": "ant.agents.stage2_ppo_cfg:Stage2HeightScanContactPPORunnerCfg"
+      }
+    }
+  ],
+  "environment_created": false
+}

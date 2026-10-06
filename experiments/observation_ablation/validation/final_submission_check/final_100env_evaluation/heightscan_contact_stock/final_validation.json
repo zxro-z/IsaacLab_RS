@@ -1,0 +1,181 @@
+{
+  "condition": "heightscan_contact_stock",
+  "selected_iteration": 972,
+  "checkpoint_path": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/checkpoints/best_model.pt",
+  "checkpoint_sha256": "82c7d0f781c37e0620230ff4b401835d54ef0a18102cdbc8c22c28bb576f57b9",
+  "checkpoint_hash_matches": true,
+  "expected_actor_input_dimension": 126,
+  "evaluation_seed": 24,
+  "terrain_seed": 42,
+  "num_envs": 100,
+  "command": {
+    "command": [
+      "./isaaclab.sh",
+      "-p",
+      "/home/zxro/ant_rl_submission/experiments/observation_ablation/validation/final_submission_check/final_100env_evaluation/canonical_evaluation_evidence_launcher.py",
+      "/home/zxro/ant_rl_submission/scripts/contact_stock_observation_ablation.py",
+      "evaluate",
+      "--headless",
+      "--checkpoint",
+      "/home/zxro/ant_rl_submission/experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/checkpoints/best_model.pt",
+      "--output",
+      "/home/zxro/ant_rl_submission/experiments/observation_ablation/validation/final_submission_check/final_100env_evaluation/heightscan_contact_stock/canonical_evaluator_output"
+    ],
+    "cwd": "/home/zxro/ant_rl_submission",
+    "environment_overrides": {
+      "CONDA_PREFIX": "/home/zxro/miniforge3/envs/lerobot-arena",
+      "CONDA_DEFAULT_ENV": "lerobot-arena",
+      "ISAACLAB_RS": "/home/zxro/ant_rl_submission",
+      "ISAACLAB_ROOT": "/home/zxro/ant_rl_submission",
+      "PYTHONPATH": "/home/zxro/ant_rl_submission/source:/home/zxro/ant_rl_submission/source/isaaclab:/home/zxro/ant_rl_submission/source/isaaclab_assets:/home/zxro/ant_rl_submission/source/isaaclab_tasks:/home/zxro/ant_rl_submission/source/isaaclab_rl:/home/zxro/ant_rl_submission/source/isaaclab_mimic",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "LD_PRELOAD": null
+  },
+  "process": {
+    "exit_code": 0,
+    "termination_signal": null,
+    "timeout_reason": null,
+    "wall_seconds": 17.525288071949035,
+    "complete_summary_exists": true,
+    "normal_close_return_marker_required_for_clean_shutdown": true
+  },
+  "output_path": "experiments/observation_ablation/validation/final_submission_check/final_100env_evaluation/heightscan_contact_stock/canonical_evaluator_output",
+  "shutdown": "process exited 0; close return not independently observed",
+  "runtime_observation_shape": [
+    100,
+    126
+  ],
+  "completed_episodes": 100,
+  "result": "PASS",
+  "comparison": "REPRODUCED",
+  "historical_summary": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/evaluation_summary.json",
+  "task_id": "Ant-rl-Ablation-HeightScan-Contact-Stock-v0",
+  "runtime_observation_shape_evidence": "Canonical evaluator runtime assertions check obs.policy.shape == (n,width) and finite values during every evaluation step; runtime config has 100 envs and output has 100 distinct episodes. Passive profiler emitted no post-AppLauncher observations, so no independent tensor dump is claimed.",
+  "metrics": {
+    "episode_return": {
+      "mean": 63.56817330943188,
+      "std": 28.577748402663342,
+      "min": -0.002331134397536516,
+      "max": 93.92395073641092
+    },
+    "episode_steps": {
+      "mean": 774.53,
+      "std": 323.73295955154146,
+      "min": 17.0,
+      "max": 960.0
+    },
+    "episode_duration": {
+      "mean": 12.908833333333334,
+      "std": 5.395549325859024,
+      "min": 0.2833333333333333,
+      "max": 16.0
+    },
+    "forward_displacement": {
+      "mean": 61.85288869857788,
+      "std": 27.801679399227,
+      "min": -0.0009393692016601562,
+      "max": 93.23307800292969
+    },
+    "mean_forward_velocity": {
+      "mean": 4.369179286250989,
+      "std": 1.3281156308002393,
+      "min": 0.0018322814209386707,
+      "max": 5.816541960117562
+    },
+    "fall": {
+      "count": 29,
+      "ratio": 0.29
+    },
+    "timeout": {
+      "count": 71,
+      "ratio": 0.71
+    },
+    "other": {
+      "count": 0,
+      "ratio": 0.0
+    },
+    ">=2m": {
+      "count": 90,
+      "ratio": 0.9
+    },
+    ">=5m": {
+      "count": 89,
+      "ratio": 0.89
+    },
+    ">=10m": {
+      "count": 88,
+      "ratio": 0.88
+    },
+    "out_of_terrain_x": {
+      "count": 27,
+      "ratio": 0.27
+    }
+  },
+  "reward_components": {
+    "progress": {
+      "mean": 61.83394285013514,
+      "std": 27.80947539390851,
+      "min": -0.015494792925892398,
+      "max": 92.80866425401473
+    },
+    "alive": {
+      "mean": 6.452000336498022,
+      "std": 2.701165043901594,
+      "min": 0.13333334028720856,
+      "max": 8.000000417232513
+    },
+    "upright": {
+      "mean": 1.187566778373439,
+      "std": 0.5510764944061769,
+      "min": 0.0033333336468786,
+      "max": 1.600000150501728
+    },
+    "move_to_target": {
+      "mean": 5.874515277088856,
+      "std": 2.6762768090210907,
+      "min": 0.08414114896004321,
+      "max": 7.996782931499183
+    },
+    "action_l2": {
+      "mean": -0.5343304171016741,
+      "std": 1.3955375953986078,
+      "min": -9.063868505655137,
+      "max": -0.0036988016581744887
+    },
+    "energy": {
+      "mean": -7.62403633275409,
+      "std": 3.3849033634113477,
+      "min": -11.414612994567506,
+      "max": -0.1250392688671127
+    },
+    "joint_pos_limits": {
+      "mean": -3.621483971780867,
+      "std": 1.698804952204708,
+      "min": -8.846909651241731,
+      "max": -0.07674755982588977
+    },
+    "total": {
+      "mean": 63.56817330943188,
+      "std": 28.577748402663342,
+      "min": -0.002331134397536516,
+      "max": 93.92395073641092
+    }
+  },
+  "residuals": {
+    "max_step_reward_residual": 3.14321368932724e-08,
+    "max_episode_reward_residual": 2.3497427719121333e-06,
+    "mean_episode_reward_residual": 1.2115074855501008e-06
+  },
+  "summary_exactly_matches_historical": true,
+  "episode_csv_byte_identical_to_historical": true,
+  "comparison_basis": "Summary and per-episode CSV exactly match; terrain mesh hash matches. Historical simulator bindings are not fully established independently, so runtime-stack identity is not asserted.",
+  "manifest_provenance": {
+    "git_commit": "4513d7cae5d4fdc6af9288349531e6b49422f7b1",
+    "git_commit_source": "preserved_submission_provenance",
+    "repository_snapshot": true
+  },
+  "control_dt": 0.016666666666666666,
+  "episode_length_s": 16.0,
+  "reward_finite": true
+}

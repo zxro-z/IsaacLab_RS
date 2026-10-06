@@ -1,0 +1,12 @@
+# Working directory: /home/zxro/teammate_ant_rl
+# Environment for each runtime command:
+# ISAAC_SIM_SITE_PACKAGES=/home/zxro/anaconda3/envs/env_isaaclab/lib/python3.11/site-packages
+# PYTHONDONTWRITEBYTECODE=1
+# CONDA_PREFIX=/home/zxro/anaconda3/envs/env_isaaclab_231
+# PYTHON=/home/zxro/anaconda3/envs/env_isaaclab_231/bin/python
+# Initial launch failed during runner.learn argument validation before any rollout.
+# Corrected source was smoke-tested again; failed launch is preserved in ignored logs with suffix _initialization_error.
+python -u scripts/observation_ablation_budget.py smoke --headless --output experiments/observation_ablation/heightscan_4096x32x1000/smoke_verified
+python -u scripts/observation_ablation_budget.py train --headless --output logs/rsl_rl/observation_ablation/ablation_heightscan_stock_s42_e4096_n32_i1000
+python -u scripts/observation_ablation_budget.py evaluate --headless --output experiments/observation_ablation/heightscan_4096x32x1000/results --checkpoint logs/rsl_rl/observation_ablation/ablation_heightscan_stock_s42_e4096_n32_i1000/best_model.pt
+python scripts/finalize_observation_ablation_budget.py

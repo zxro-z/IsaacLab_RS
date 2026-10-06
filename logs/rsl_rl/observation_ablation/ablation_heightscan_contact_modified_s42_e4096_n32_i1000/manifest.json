@@ -1,0 +1,361 @@
+{
+  "task": "Ant-rl-Ablation-HeightScan-Contact-ModifiedReward-v0",
+  "git_commit": "e74d3fe5f08b3f070ff314e6f0b6349985458b61",
+  "training_environment": "Team1 AntEnvCfg",
+  "evaluation_environment": "Team1 AntEnvCfg (same dynamics/terrain)",
+  "training_seed": 42,
+  "evaluation_seed": 24,
+  "terrain_seed": 42,
+  "num_envs": 4096,
+  "training_num_envs": 4096,
+  "evaluation_num_envs": 100,
+  "iterations": 1000,
+  "num_steps_per_env": 32,
+  "total_transitions": 131072000,
+  "resume": false,
+  "load_run": null,
+  "load_checkpoint": null,
+  "checkpoint_interval": 50,
+  "checkpoint_selection": "best_model: highest training logged completed-episode mean return; no evaluation-based selection",
+  "control_dt": 0.016666666666666666,
+  "physics_dt": 0.008333333333333333,
+  "episode_length_s": 16.0,
+  "observation": {
+    "proprio": 59,
+    "heightscan": 63,
+    "contact": 4,
+    "actor": 126,
+    "critic": 126,
+    "order": [
+      "base_lin_vel",
+      "base_ang_vel",
+      "base_yaw_roll",
+      "base_angle_to_target",
+      "base_up_proj",
+      "base_heading_proj",
+      "joint_pos_norm",
+      "joint_vel_rel",
+      "feet_body_forces",
+      "actions",
+      "height_scan",
+      "foot_contacts"
+    ],
+    "scan_formula": "sensor.data.pos_w[:,2] - ray_hits_w[...,2] - 0.5",
+    "clip": [
+      -1,
+      1
+    ],
+    "scale": 1.0,
+    "empirical_normalization": false,
+    "grid": [
+      9,
+      7
+    ],
+    "ordering": "xy (x varies fastest)",
+    "offset": [
+      0.8,
+      0,
+      20
+    ],
+    "direction": [
+      0,
+      0,
+      -1
+    ],
+    "max_distance": 1000000.0,
+    "added_contact_observation": true,
+    "cnn": false,
+    "native_foot_wrench_preserved": true
+  },
+  "architecture": {
+    "class_name": "ActorCritic",
+    "init_noise_std": 1.0,
+    "noise_std_type": "scalar",
+    "actor_obs_normalization": false,
+    "critic_obs_normalization": false,
+    "actor_hidden_dims": [
+      400,
+      200,
+      100
+    ],
+    "critic_hidden_dims": [
+      400,
+      200,
+      100
+    ],
+    "activation": "elu"
+  },
+  "ppo": {
+    "class_name": "PPO",
+    "num_learning_epochs": 5,
+    "num_mini_batches": 4,
+    "learning_rate": 0.0005,
+    "schedule": "adaptive",
+    "gamma": 0.99,
+    "lam": 0.95,
+    "entropy_coef": 0.0,
+    "desired_kl": 0.01,
+    "max_grad_norm": 1.0,
+    "value_loss_coef": 1.0,
+    "use_clipped_value_loss": true,
+    "clip_param": 0.2,
+    "normalize_advantage_per_mini_batch": false,
+    "rnd_cfg": null,
+    "symmetry_cfg": null
+  },
+  "training_reward": [
+    {
+      "term": "progress",
+      "weight": 2.5,
+      "constant": "PROGRESS_WEIGHT"
+    },
+    {
+      "term": "alive",
+      "weight": 0.5,
+      "constant": "ALIVE_WEIGHT"
+    },
+    {
+      "term": "upright",
+      "weight": 0.05,
+      "constant": "UPRIGHT_WEIGHT"
+    },
+    {
+      "term": "move_to_target",
+      "weight": 1.5,
+      "constant": "HEADING_WEIGHT"
+    },
+    {
+      "term": "foot_contact",
+      "weight": 1.0,
+      "constant": "CONTACT_WEIGHT"
+    },
+    {
+      "term": "action_l2",
+      "weight": -0.005,
+      "constant": "ACTION_WEIGHT"
+    },
+    {
+      "term": "energy",
+      "weight": -0.15,
+      "constant": "ENERGY_WEIGHT"
+    },
+    {
+      "term": "joint_velocity",
+      "weight": -0.001,
+      "constant": "JOINT_VEL_WEIGHT"
+    },
+    {
+      "term": "joint_pos_limits",
+      "weight": -0.5,
+      "constant": "JOINT_LIMIT_WEIGHT"
+    },
+    {
+      "term": "foot_slip",
+      "weight": -0.07,
+      "constant": "FOOT_SLIP_WEIGHT"
+    }
+  ],
+  "evaluation_reward": [
+    {
+      "term": "progress",
+      "weight": 2.5,
+      "constant": "PROGRESS_WEIGHT"
+    },
+    {
+      "term": "alive",
+      "weight": 0.5,
+      "constant": "ALIVE_WEIGHT"
+    },
+    {
+      "term": "upright",
+      "weight": 0.05,
+      "constant": "UPRIGHT_WEIGHT"
+    },
+    {
+      "term": "move_to_target",
+      "weight": 1.5,
+      "constant": "HEADING_WEIGHT"
+    },
+    {
+      "term": "foot_contact",
+      "weight": 1.0,
+      "constant": "CONTACT_WEIGHT"
+    },
+    {
+      "term": "action_l2",
+      "weight": -0.005,
+      "constant": "ACTION_WEIGHT"
+    },
+    {
+      "term": "energy",
+      "weight": -0.15,
+      "constant": "ENERGY_WEIGHT"
+    },
+    {
+      "term": "joint_velocity",
+      "weight": -0.001,
+      "constant": "JOINT_VEL_WEIGHT"
+    },
+    {
+      "term": "joint_pos_limits",
+      "weight": -0.5,
+      "constant": "JOINT_LIMIT_WEIGHT"
+    },
+    {
+      "term": "foot_slip",
+      "weight": -0.07,
+      "constant": "FOOT_SLIP_WEIGHT"
+    }
+  ],
+  "reward_manager_terms": [
+    "total_reward"
+  ],
+  "manager_weight": 1.0,
+  "contact_observation_spec": {
+    "canonical_source": "IsaacLab_RS/manager_based/classic/ant/ant_contact_observations.py",
+    "source_sha256": "e463d5bf8866b2d6b05caab9a651112e13053c7972ad0cb63853f747e977a132",
+    "sensor": "feet_contacts",
+    "foot_body_names": [
+      "front_left_foot",
+      "front_right_foot",
+      "left_back_foot",
+      "right_back_foot"
+    ],
+    "preserve_order": true,
+    "force_source": "ContactSensor.data.net_forces_w (world-frame current net force)",
+    "force_reduction": "L2 norm over xyz",
+    "threshold_N": 1.0,
+    "binary_condition": "force_norm > threshold (strict)",
+    "history_length": 0,
+    "history_semantics": "current sample only; no temporal max",
+    "update_period": 0.0,
+    "dtype": "force tensor dtype (runtime float32)",
+    "encoding": [
+      0.0,
+      1.0
+    ],
+    "scale": 1.0,
+    "clip": null,
+    "normalization": false,
+    "output_dim": 4,
+    "concatenation": "after proprio and terrain representation",
+    "heightscan_indices": [
+      122,
+      126
+    ]
+  },
+  "terrain_mesh_sha256": "02fb4a9b98d8a7fec29717b8863c36deca737b55e90763d3994801f3bb8b3459",
+  "terrain_x_bounds": [
+    -102.0,
+    102.0
+  ],
+  "terrain_samples": [
+    {
+      "env_id": 0,
+      "terrain_row": 13,
+      "terrain_column": 0,
+      "origin": [
+        35.0,
+        -45.0,
+        1.0707716941833496
+      ],
+      "scan_min": -4.76837158203125e-07,
+      "scan_max": 0.31493520736694336,
+      "scan_mean": 0.16096530854701996
+    },
+    {
+      "env_id": 1,
+      "terrain_row": 1,
+      "terrain_column": 0,
+      "origin": [
+        -85.0,
+        -45.0,
+        0.2800000011920929
+      ],
+      "scan_min": -7.152557373046875e-07,
+      "scan_max": 0.07499814033508301,
+      "scan_mean": 0.01968209445476532
+    },
+    {
+      "env_id": 2,
+      "terrain_row": 11,
+      "terrain_column": 0,
+      "origin": [
+        15.0,
+        -45.0,
+        -0.8422371745109558
+      ],
+      "scan_min": -0.24771660566329956,
+      "scan_max": 2.980232238769531e-07,
+      "scan_mean": -0.14155222475528717
+    },
+    {
+      "env_id": 3,
+      "terrain_row": 0,
+      "terrain_column": 0,
+      "origin": [
+        -95.0,
+        -45.0,
+        0.3449999988079071
+      ],
+      "scan_min": 7.152557373046875e-07,
+      "scan_max": 0.09000086784362793,
+      "scan_mean": 0.024603061378002167
+    },
+    {
+      "env_id": 4,
+      "terrain_row": 0,
+      "terrain_column": 0,
+      "origin": [
+        -95.0,
+        -45.0,
+        0.3449999988079071
+      ],
+      "scan_min": 7.152557373046875e-07,
+      "scan_max": 0.09000086784362793,
+      "scan_mean": 0.024603061378002167
+    },
+    {
+      "env_id": 5,
+      "terrain_row": 0,
+      "terrain_column": 0,
+      "origin": [
+        -95.0,
+        -45.0,
+        0.3449999988079071
+      ],
+      "scan_min": 7.152557373046875e-07,
+      "scan_max": 0.09000086784362793,
+      "scan_mean": 0.024603061378002167
+    },
+    {
+      "env_id": 6,
+      "terrain_row": 0,
+      "terrain_column": 0,
+      "origin": [
+        -95.0,
+        -45.0,
+        0.3449999988079071
+      ],
+      "scan_min": 7.152557373046875e-07,
+      "scan_max": 0.09000086784362793,
+      "scan_mean": 0.024603061378002167
+    },
+    {
+      "env_id": 7,
+      "terrain_row": 0,
+      "terrain_column": 0,
+      "origin": [
+        -95.0,
+        -45.0,
+        0.3449999988079071
+      ],
+      "scan_min": 7.152557373046875e-07,
+      "scan_max": 0.09000086784362793,
+      "scan_mean": 0.024603061378002167
+    }
+  ],
+  "evaluation_protocol": "100 envs, seed24, deterministic mean actions, first episode only, terminal step included",
+  "fall_semantics": "body_z_down: bad_orientation(pi/2), no torso height termination",
+  "reward_contribution": "TotalReward actual weighted_rewards * manager weight(1) * step_dt; episode_sums already apply dt once"
+}

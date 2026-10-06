@@ -1,0 +1,7 @@
+{"event": "canonical_evaluator_started", "timestamp": "2026-10-06T05:16:17.531144+00:00", "monotonic": 678902.613614417, "script": "/home/zxro/ant_rl_submission/scripts/stage2_observation_ablation.py", "arguments": ["/home/zxro/ant_rl_submission/scripts/stage2_observation_ablation.py", "evaluate", "--headless", "--checkpoint", "/home/zxro/ant_rl_submission/experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/checkpoints/best_model.pt", "--output", "/home/zxro/ant_rl_submission/experiments/observation_ablation/validation/final_submission_check/final_100env_evaluation/heightscan_contact_modified/relocated_params_attempt/canonical_evaluator_output"], "python": "/home/zxro/miniforge3/envs/lerobot-arena/bin/python"}
+{"event": "collector_rearmed_after_app_startup", "timestamp": "2026-10-06T05:16:23.086547+00:00", "monotonic": 678908.16901447}
+{"event": "policy_observation", "timestamp": "2026-10-06T05:16:29.915374+00:00", "monotonic": 678914.997843372, "shape": [100, 126], "dtype": "torch.float32", "device": "cuda:0"}
+{"event": "checkpoint_loaded", "timestamp": "2026-10-06T05:16:29.988670+00:00", "monotonic": 678915.071138159, "actor_first_layer_shape": [400, 126], "selected_iteration": 788}
+{"event": "env_close_invoked", "timestamp": "2026-10-06T05:16:39.633820+00:00", "monotonic": 678924.716291759}
+{"event": "env_close_returned", "timestamp": "2026-10-06T05:16:39.987255+00:00", "monotonic": 678925.069728279}
+{"event": "app_close_invoked", "timestamp": "2026-10-06T05:16:39.992216+00:00", "monotonic": 678925.0746869}

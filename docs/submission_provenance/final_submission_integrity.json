@@ -1,0 +1,324 @@
+{
+  "framework": {
+    "source_repository": "/home/zxro/arena/IsaacLab",
+    "commit": "3c6e67bb5c7ada942a6d1884ab69338f57596f77",
+    "tag": "v2.3.0",
+    "method": "git archive from committed tree, not working tree"
+  },
+  "project_source": {
+    "repository": "https://github.com/dding222/ant_rl.git",
+    "branch": "observation-ablation",
+    "HEAD": "4513d7cae5d4fdc6af9288349531e6b49422f7b1"
+  },
+  "runtime": {
+    "conda": "lerobot-arena",
+    "isaacsim": "5.1.0",
+    "isaaclab": "2.3.0"
+  },
+  "selected_policies": [
+    {
+      "experiment": "HeightScan + Stock",
+      "task": "Ant-rl-Ablation-HeightScan-v0",
+      "checkpoint": "experiments/observation_ablation/heightscan_4096x32x1000/checkpoints/best_model.pt",
+      "sha256": "49a8a007f152ed9c63df616fbee12a866873be0ee0337ad83597d653ec9b3c06",
+      "selected_iteration": 804,
+      "runtime_observation_dimension": 122,
+      "num_envs": 100,
+      "evaluation_seed": 24,
+      "terrain_seed": 42,
+      "reproduction": "REPRODUCED",
+      "validation_directory": "experiments/observation_ablation/validation/final_submission_check/final_100env_evaluation/heightscan_stock/canonical_evaluator_output",
+      "metrics": {
+        "episode_return": {
+          "mean": 61.3353775697478,
+          "std": 31.23054870280697,
+          "min": -18.08592062292155,
+          "max": 98.28984913649037
+        },
+        "episode_steps": {
+          "mean": 731.68,
+          "std": 335.5798229929803,
+          "min": 13.0,
+          "max": 960.0
+        },
+        "episode_duration": {
+          "mean": 12.194666666666667,
+          "std": 5.592997049883005,
+          "min": 0.21666666666666667,
+          "max": 16.0
+        },
+        "forward_displacement": {
+          "mean": 60.514010734558106,
+          "std": 29.188002298239002,
+          "min": -0.09758853912353516,
+          "max": 95.82622528076172
+        },
+        "mean_forward_velocity": {
+          "mean": 4.45055399709225,
+          "std": 1.5330584921646118,
+          "min": -0.3734110909012648,
+          "max": 6.21959255762678
+        },
+        "fall": {
+          "count": 41,
+          "ratio": 0.4099999964237213
+        },
+        "timeout": {
+          "count": 59,
+          "ratio": 0.5899999737739563
+        },
+        "other": {
+          "count": 0,
+          "ratio": 0.0
+        },
+        ">=2m": {
+          "count": 87,
+          "ratio": 0.8700000047683716
+        },
+        ">=5m": {
+          "count": 87,
+          "ratio": 0.8700000047683716
+        },
+        ">=10m": {
+          "count": 86,
+          "ratio": 0.85999995470047
+        },
+        "out_of_terrain_x": {
+          "count": 28,
+          "ratio": 0.28
+        }
+      }
+    },
+    {
+      "experiment": "HeightScan + Contact + Stock",
+      "task": "Ant-rl-Ablation-HeightScan-Contact-Stock-v0",
+      "checkpoint": "experiments/observation_ablation/heightscan_contact_stock_4096x32x1000/checkpoints/best_model.pt",
+      "sha256": "82c7d0f781c37e0620230ff4b401835d54ef0a18102cdbc8c22c28bb576f57b9",
+      "selected_iteration": 972,
+      "runtime_observation_dimension": 126,
+      "num_envs": 100,
+      "evaluation_seed": 24,
+      "terrain_seed": 42,
+      "reproduction": "REPRODUCED",
+      "validation_directory": "experiments/observation_ablation/validation/final_submission_check/final_100env_evaluation/heightscan_contact_stock/canonical_evaluator_output",
+      "metrics": {
+        "episode_return": {
+          "mean": 63.56817330943188,
+          "std": 28.577748402663342,
+          "min": -0.002331134397536516,
+          "max": 93.92395073641092
+        },
+        "episode_steps": {
+          "mean": 774.53,
+          "std": 323.73295955154146,
+          "min": 17.0,
+          "max": 960.0
+        },
+        "episode_duration": {
+          "mean": 12.908833333333334,
+          "std": 5.395549325859024,
+          "min": 0.2833333333333333,
+          "max": 16.0
+        },
+        "forward_displacement": {
+          "mean": 61.85288869857788,
+          "std": 27.801679399227,
+          "min": -0.0009393692016601562,
+          "max": 93.23307800292969
+        },
+        "mean_forward_velocity": {
+          "mean": 4.369179286250989,
+          "std": 1.3281156308002393,
+          "min": 0.0018322814209386707,
+          "max": 5.816541960117562
+        },
+        "fall": {
+          "count": 29,
+          "ratio": 0.29
+        },
+        "timeout": {
+          "count": 71,
+          "ratio": 0.71
+        },
+        "other": {
+          "count": 0,
+          "ratio": 0.0
+        },
+        ">=2m": {
+          "count": 90,
+          "ratio": 0.9
+        },
+        ">=5m": {
+          "count": 89,
+          "ratio": 0.89
+        },
+        ">=10m": {
+          "count": 88,
+          "ratio": 0.88
+        },
+        "out_of_terrain_x": {
+          "count": 27,
+          "ratio": 0.27
+        }
+      }
+    },
+    {
+      "experiment": "HeightScan + Contact + Modified",
+      "task": "Ant-rl-Ablation-HeightScan-Contact-ModifiedReward-v0",
+      "checkpoint": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/checkpoints/best_model.pt",
+      "sha256": "0471caaadd646feac85cb7bbed0d2c3668279d2d65db9507030a649895ea11b4",
+      "selected_iteration": 788,
+      "runtime_observation_dimension": 126,
+      "num_envs": 100,
+      "evaluation_seed": 24,
+      "terrain_seed": 42,
+      "reproduction": "REPRODUCED",
+      "validation_directory": "experiments/observation_ablation/validation/final_submission_check/final_100env_evaluation/heightscan_contact_modified/relocated_params_attempt/canonical_evaluator_output",
+      "metrics": {
+        "episode_return": {
+          "mean": 134.8413062994602,
+          "std": 68.01870008545355,
+          "min": -0.2847863882780075,
+          "max": 220.21659920813215
+        },
+        "episode_steps": {
+          "mean": 727.12,
+          "std": 340.8911931980643,
+          "min": 14.0,
+          "max": 960.0
+        },
+        "episode_duration": {
+          "mean": 12.118666666666668,
+          "std": 5.681519886634405,
+          "min": 0.23333333333333334,
+          "max": 16.0
+        },
+        "forward_displacement": {
+          "mean": 56.562676486968996,
+          "std": 28.363852967095763,
+          "min": -0.2662334442138672,
+          "max": 91.76393127441406
+        },
+        "mean_forward_velocity": {
+          "mean": 4.071815782239149,
+          "std": 1.5654030958855099,
+          "min": -0.7707883176349458,
+          "max": 5.743081742556654
+        },
+        "fall": {
+          "count": 43,
+          "ratio": 0.43
+        },
+        "timeout": {
+          "count": 57,
+          "ratio": 0.57
+        },
+        "other": {
+          "count": 0,
+          "ratio": 0.0
+        },
+        ">=2m": {
+          "count": 86,
+          "ratio": 0.86
+        },
+        ">=5m": {
+          "count": 86,
+          "ratio": 0.86
+        },
+        ">=10m": {
+          "count": 84,
+          "ratio": 0.84
+        },
+        "out_of_terrain_x": {
+          "count": 26,
+          "ratio": 0.26
+        }
+      }
+    }
+  ],
+  "modified_YAML_mapping": {
+    "original_runtime_path": "logs/rsl_rl/ant/v3_depth/params/",
+    "submission_path": "logs/rsl_rl/ant/modified/params/",
+    "scope": "Two directly source-hash-verified saved configuration files; no legacy run/checkpoint sequence copied. YAML contents preserved byte-for-byte.",
+    "source_repository_commit": "4513d7cae5d4fdc6af9288349531e6b49422f7b1",
+    "source_branch": "observation-ablation",
+    "files": [
+      {
+        "source": "/home/zxro/teammate_ant_rl/logs/rsl_rl/ant/v3_depth/params/env.yaml",
+        "destination": "logs/rsl_rl/ant/modified/params/env.yaml",
+        "sha256": "2a1d81c4824d8fb6aaac56d920bdd7c8df31e3f09b827344fb409d666fbb9d8e",
+        "bytes": 20229,
+        "training_hash_match": true,
+        "evaluation_hash_match": true,
+        "evidence": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/source_mapping.json"
+      },
+      {
+        "source": "/home/zxro/teammate_ant_rl/logs/rsl_rl/ant/v3_depth/params/reward_weights.yaml",
+        "destination": "logs/rsl_rl/ant/modified/params/reward_weights.yaml",
+        "sha256": "2caf923da1f64d35ecfc1100d0b52dd2a50847221b062190819fcf47ffb5d969",
+        "bytes": 217,
+        "training_hash_match": true,
+        "evaluation_hash_match": true,
+        "evidence": "experiments/observation_ablation/heightscan_contact_modified_4096x32x1000/source_mapping.json"
+      }
+    ],
+    "active_evaluator": "scripts/stage2_observation_ablation.py",
+    "active_path_reference_replacements": 4,
+    "evaluator_before_sha256": "e1272646d7d4c43de81dfa2aee50c6eab770aa3242dc20a0c432af8c79375cab",
+    "evaluator_after_sha256": "ca8ae87dd763a1fe85b18338dca74f19e2c149736673d356bc1bb2c85b6a6b52",
+    "historical_manifests_and_logs_modified": false
+  },
+  "runtime_helper_sha256": {
+    "ant_contact_observations.py": "e463d5bf8866b2d6b05caab9a651112e13053c7972ad0cb63853f747e977a132",
+    "ant_terrain_heightscan_env_cfg.py": "e93ca45ac82d7687a1cee28c4d2178d7daf193544a0beb44911feac578f910e7",
+    "ant_friction_random_env_cfg.py": "15b6a2807aa3c71bc052a3cfc741ec760a80ac41c8bc2496112163fbe4b9fa0a",
+    "ant_ood_terrain_env_cfg.py": "efe5cc160fc3a82244d7c7c18382d194c74e61476177a4113d1da9aa33630d0a"
+  },
+  "protocol": {
+    "training_seed": 42,
+    "evaluation_seed": 24,
+    "terrain_seed": 42,
+    "num_envs": 100,
+    "deterministic_mean_action": true,
+    "first_episode_only": true,
+    "maximum_episode_seconds": 16,
+    "maximum_control_steps": 960,
+    "control_dt": 0.016666666666666666,
+    "terminal_reward_included": true,
+    "post_reset_rewards_excluded": true
+  },
+  "DepthCam_status": "RESULTS / PROVENANCE ONLY; canonical binaries/run directories not supplied or substituted",
+  "shutdown_limitation": "Processes exited 0; env.close returned in observed checks; final SimulationApp.close return marker not observed. Earlier base-runtime probes failed outside project overlay.",
+  "validation_root": "experiments/observation_ablation/validation/final_submission_check/",
+  "approved_source_changes": "Four evaluator provenance call sites plus helper; Modified evaluator saved-config path relocation only. Original task logic unchanged.",
+  "whitespace_policy": {
+    "full_staged_tree_check": {
+      "command": "git diff --cached --check",
+      "exit_code": 2,
+      "findings": 3020,
+      "status": "KNOWN PROVENANCE-PRESERVING EXCEPTION",
+      "cause": "Preserved upstream framework, historical project source and raw runtime/evidence content."
+    },
+    "submission_authored_modified_check": {
+      "status": "PASS",
+      "pathspecs": [
+        "README.md",
+        "scripts/submission_provenance.py",
+        "scripts/observation_ablation.py",
+        "scripts/observation_ablation_budget.py",
+        "scripts/contact_stock_observation_ablation.py",
+        "scripts/stage2_observation_ablation.py",
+        "docs/submission_provenance/",
+        "experiments/observation_ablation/validation/final_submission_check/",
+        ":(exclude)**/*.log",
+        ":(exclude)**/*.patch"
+      ],
+      "raw_output_exclusions": [
+        "*.log: unedited runtime console output",
+        "*.patch: preserved diff context"
+      ]
+    },
+    "provenance_files_reformatted_to_suppress_warnings": false,
+    "approval": "User approved scoped whitespace policy and local final submission commit; no remote or push."
+  }
+}

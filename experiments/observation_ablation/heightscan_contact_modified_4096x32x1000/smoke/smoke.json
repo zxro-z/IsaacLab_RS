@@ -1,0 +1,132 @@
+{
+  "pass_": true,
+  "pass": true,
+  "registration": true,
+  "terrain": true,
+  "robot": true,
+  "raycaster": true,
+  "proprio": 59,
+  "heightscan": 63,
+  "contact": 4,
+  "actor": 126,
+  "critic": 126,
+  "contact_dynamic": true,
+  "actions": 8,
+  "finite": true,
+  "reward_terms": [
+    {
+      "term": "progress",
+      "weight": 2.5,
+      "constant": "PROGRESS_WEIGHT"
+    },
+    {
+      "term": "alive",
+      "weight": 0.5,
+      "constant": "ALIVE_WEIGHT"
+    },
+    {
+      "term": "upright",
+      "weight": 0.05,
+      "constant": "UPRIGHT_WEIGHT"
+    },
+    {
+      "term": "move_to_target",
+      "weight": 1.5,
+      "constant": "HEADING_WEIGHT"
+    },
+    {
+      "term": "foot_contact",
+      "weight": 1.0,
+      "constant": "CONTACT_WEIGHT"
+    },
+    {
+      "term": "action_l2",
+      "weight": -0.005,
+      "constant": "ACTION_WEIGHT"
+    },
+    {
+      "term": "energy",
+      "weight": -0.15,
+      "constant": "ENERGY_WEIGHT"
+    },
+    {
+      "term": "joint_velocity",
+      "weight": -0.001,
+      "constant": "JOINT_VEL_WEIGHT"
+    },
+    {
+      "term": "joint_pos_limits",
+      "weight": -0.5,
+      "constant": "JOINT_LIMIT_WEIGHT"
+    },
+    {
+      "term": "foot_slip",
+      "weight": -0.07,
+      "constant": "FOOT_SLIP_WEIGHT"
+    }
+  ],
+  "custom_reward_active": true,
+  "reward_manager_terms": [
+    "total_reward"
+  ],
+  "modified_reward_parity": true,
+  "added_contact_observation": true,
+  "geometric_scan_variation": 0.12893936038017273,
+  "scan_changed_during_steps": true,
+  "steps": 120,
+  "max_step_reward_residual": 9.444192983210087e-09,
+  "samples": [
+    {
+      "env_id": 0,
+      "terrain_row": 14,
+      "terrain_column": 0,
+      "origin": [
+        45.0,
+        -45.0,
+        0.6334189176559448
+      ],
+      "scan_min": -1.1920928955078125e-07,
+      "scan_max": 0.1863020658493042,
+      "scan_mean": 0.09521984308958054
+    },
+    {
+      "env_id": 1,
+      "terrain_row": 3,
+      "terrain_column": 2,
+      "origin": [
+        -65.0,
+        -25.0,
+        0.4399999976158142
+      ],
+      "scan_min": -2.4437904357910156e-06,
+      "scan_max": 0.11999839544296265,
+      "scan_mean": 0.03285593539476395
+    },
+    {
+      "env_id": 2,
+      "terrain_row": 8,
+      "terrain_column": 4,
+      "origin": [
+        -15.0,
+        -5.0,
+        -1.1579716205596924
+      ],
+      "scan_min": -0.34058117866516113,
+      "scan_max": 7.152557373046875e-07,
+      "scan_mean": -0.1946176141500473
+    },
+    {
+      "env_id": 3,
+      "terrain_row": 10,
+      "terrain_column": 7,
+      "origin": [
+        5.0,
+        25.0,
+        0.5899999737739563
+      ],
+      "scan_min": -2.1457672119140625e-06,
+      "scan_max": 0.15999960899353027,
+      "scan_mean": 0.0444442555308342
+    }
+  ]
+}

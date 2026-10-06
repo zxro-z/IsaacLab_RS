@@ -1,0 +1,22 @@
+{
+  "scripts/observation_ablation.py": {
+    "before_sha256": "c4c48d82f0f0957f302815c9ad05ad7f70470696cb32121524842a6b4d2b9752",
+    "after_sha256": "0d582a7a9de18d1ab4bd5995fe04d56301195459f49a631d9c80ed0632a6acdb"
+  },
+  "scripts/observation_ablation_budget.py": {
+    "before_sha256": "520e831ae703b139011ca78ecf7825dcd5aa3a4260ec50f93a556c3d2716c12f",
+    "after_sha256": "4e2d8416526957c513e0da3e56558d093fa5b7581c67a7d3b692fe12be09b137"
+  },
+  "scripts/contact_stock_observation_ablation.py": {
+    "before_sha256": "f48973ce62a892d25570445cdfa51ecfc9019977f35f10292b8b002baadf2cfc",
+    "after_sha256": "30875b81e442dadec0ef7e162c9fee244a242a833b022ef54b29a9a94525e91c"
+  },
+  "scripts/stage2_observation_ablation.py": {
+    "before_sha256": "c39cb7da740ef0493767d313a49488b85d101ba15dd245ca036a49b151d1eb49",
+    "after_sha256": "e1272646d7d4c43de81dfa2aee50c6eab770aa3242dc20a0c432af8c79375cab"
+  },
+  "scripts/submission_provenance.py": {
+    "before_sha256": null,
+    "after_sha256": "a8231b3c37b8ee040810000932fe8864f8b312204e3a58dad2665c8cec817a10"
+  }
+}

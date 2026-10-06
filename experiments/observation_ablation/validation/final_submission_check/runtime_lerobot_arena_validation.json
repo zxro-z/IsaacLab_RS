@@ -1,0 +1,72 @@
+{
+  "python": "/home/zxro/miniforge3/envs/lerobot-arena/bin/python",
+  "conda_prefix": "/home/zxro/miniforge3/envs/lerobot-arena",
+  "isaaclab_root": "/home/zxro/ant_rl_submission",
+  "framework_VERSION": "2.3.0",
+  "LD_PRELOAD": null,
+  "imports": [
+    {
+      "module": "omni.log",
+      "status": "PASS",
+      "file": "/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim/kit/kernel/py/omni/log/__init__.py"
+    },
+    {
+      "module": "carb",
+      "status": "PASS",
+      "file": "/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim/kit/kernel/py/carb/__init__.py"
+    },
+    {
+      "module": "isaaclab",
+      "status": "PASS",
+      "file": "/home/zxro/ant_rl_submission/source/isaaclab/isaaclab/__init__.py"
+    },
+    {
+      "module": "isaaclab_tasks",
+      "status": "PASS",
+      "file": "/home/zxro/ant_rl_submission/source/isaaclab_tasks/isaaclab_tasks/__init__.py"
+    },
+    {
+      "module": "ant",
+      "status": "PASS",
+      "file": "/home/zxro/ant_rl_submission/source/ant/__init__.py"
+    },
+    {
+      "module": "isaaclab_tasks.manager_based.classic.ant.ant_contact_observations",
+      "status": "PASS",
+      "file": "/home/zxro/ant_rl_submission/source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_contact_observations.py"
+    },
+    {
+      "module": "isaaclab_tasks.manager_based.classic.ant.ant_terrain_heightscan_env_cfg",
+      "status": "PASS",
+      "file": "/home/zxro/ant_rl_submission/source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_terrain_heightscan_env_cfg.py"
+    }
+  ],
+  "environment_created": false,
+  "physics_steps": 0,
+  "checkpoints_loaded": false,
+  "application_closed_cleanly": false,
+  "app_launcher": "PASS",
+  "isaac_sim_location": "/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim",
+  "kit_location": "/home/zxro/miniforge3/envs/lerobot-arena/lib/python3.11/site-packages/isaacsim/kit",
+  "experience": "/home/zxro/ant_rl_submission/apps/isaaclab.python.headless.kit",
+  "isaac_sim_VERSION": "5.1.0-rc.19+release.26219.9c81211b.gl",
+  "task_registration_module_import": "PASS: ant/__init__.py executed; registry lookup deferred until clean shutdown passes",
+  "imports_status": "PASS",
+  "loaded_libstdc++": [
+    "/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30"
+  ],
+  "status": "BLOCKED: clean shutdown timed out",
+  "process_status": {
+    "timeout_seconds": 150,
+    "exit_code": -9,
+    "process_group_stopped": true,
+    "wall_seconds": 150.00122261047363
+  },
+  "record_note": "Recovered after timeout from the before-close report; no previous diagnostic record was overwritten",
+  "libstdcxx_issue": false,
+  "ld_preload_needed": false,
+  "task_registration_lookup": "NOT RUN: clean shutdown prerequisite failed",
+  "checkpoint_target_environment_validation": "NOT RUN: clean shutdown prerequisite failed",
+  "one_env_observation_shape_validation": "NOT RUN: clean shutdown prerequisite failed",
+  "full_evaluation_ready": false
+}

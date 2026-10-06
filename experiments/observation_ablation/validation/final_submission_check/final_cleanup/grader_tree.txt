@@ -1,0 +1,46 @@
+ant_rl_submission/
+├── README.md
+├── VERSION                         # Isaac Lab 2.3.0
+├── isaaclab.sh, apps/               # official framework snapshot
+├── source/
+│   ├── ant/                        # project tasks/configs/rewards/DepthCam/PPO
+│   ├── isaaclab/                    # framework runtime
+│   ├── isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/
+│   │   ├── ant_env_cfg.py, __init__.py, agents/
+│   │   ├── ant_contact_observations.py
+│   │   ├── ant_terrain_heightscan_env_cfg.py
+│   │   ├── ant_friction_random_env_cfg.py
+│   │   └── ant_ood_terrain_env_cfg.py
+│   └── isaaclab_assets/, isaaclab_rl/, isaaclab_mimic/
+├── scripts/
+│   ├── reinforcement_learning/rsl_rl/
+│   ├── observation_ablation_budget.py
+│   ├── contact_stock_observation_ablation.py
+│   ├── stage2_observation_ablation.py
+│   ├── evaluate_depthcam_ablation.py
+│   └── submission_provenance.py
+├── logs/rsl_rl/
+│   ├── observation_ablation/
+│   │   ├── ablation_heightscan_stock_s42_e4096_n32_i1000/
+│   │   ├── ablation_heightscan_contact_stock_s42_e4096_n32_i1000/
+│   │   └── ablation_heightscan_contact_modified_s42_e4096_n32_i1000/
+│   └── ant/modified/params/env.yaml, reward_weights.yaml
+├── experiments/observation_ablation/
+│   ├── README.md, protocol.json, shared/
+│   ├── heightscan_4096x32x1000/
+│   ├── heightscan_contact_stock_4096x32x1000/
+│   ├── heightscan_contact_modified_4096x32x1000/
+│   ├── depthcam_2048x32x2000/                 # results/provenance only
+│   ├── depthcam_modified_2048x32x2000/        # results/provenance only
+│   ├── heightscan/                          # historical/exploratory
+│   └── validation/final_submission_check/
+│       ├── final_100env_evaluation/
+│       └── final_cleanup/
+├── cross_eval_team1_policy/                 # supplementary evidence
+├── validation_compare/                      # supplementary evidence
+├── docs/submission_provenance/
+│   ├── README.md, copy_manifest.json
+│   ├── modified_config_mapping.json
+│   ├── final_submission_integrity.json
+│   └── official_README.md, official_gitattributes, other originals
+└── .gitignore, .gitattributes
